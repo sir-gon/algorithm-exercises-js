@@ -4,6 +4,15 @@
 
 // What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 
+///////////////////////////////////////////////////////////////////////////////
+// NOTE: I think a better way to solve problem 0005.
+// If I got prime numbers in beetwen [1,20], can I test them as
+// prime factos, testing a combinatorial exponents that satisfies 
+// the condition that the number found is divisible by all 
+// the numbers in beetwen [1,20],
+// Instead, this solution is brute force.
+///////////////////////////////////////////////////////////////////////////////
+
 let test;
 let found;
 let i, j;
