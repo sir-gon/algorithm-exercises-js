@@ -1,0 +1,12 @@
+{
+  "name": "projecteuler.net",
+  "version": "1.0.0",
+  "description": "Solutions to the first 100 problems from [Project Euler](https://projecteuler.net/)",
+  "main": "problem0001.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gonzalo Diaz <devel@gon.cl>",
+  "license": "MIT",
+  "type": "module"
+}
