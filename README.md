@@ -5,6 +5,22 @@
 
 Use this answers to learn some tip and tricks for algorithms tests.
 
+# How to use
+
+Run every problem using Node.js cli as following example:
+
+```
+node problem00001.js
+
+```
+
+Teste with:
+
+```
+node --version
+v16.0.0
+```
+
 # Why i publish solutions?
 
 As Project Euler says:
