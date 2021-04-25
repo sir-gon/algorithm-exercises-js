@@ -1,3 +1,7 @@
 import { isPrime } from './isPrime'
+import { isPalindrome } from './isPalindrome.js'
 
-export { isPrime }
+export { 
+    isPrime,
+    isPalindrome
+}
