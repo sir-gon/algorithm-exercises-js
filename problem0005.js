@@ -11,6 +11,11 @@
 // the condition that the number found is divisible by all 
 // the numbers in beetwen [1,20],
 // Instead, this solution is brute force.
+
+///////////////////////////////////////////////////////////////////////////////
+// Solution found after a LONG TIME running this routine:
+// 
+// FOUND: 232792560 divisible by any element beetwen 1 and 20
 ///////////////////////////////////////////////////////////////////////////////
 
 let test;
