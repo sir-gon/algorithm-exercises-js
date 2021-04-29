@@ -52,38 +52,58 @@ const matrix = [
     [ 1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52,  1, 89, 19, 67, 48]
 ]
 
+let max = 0;
+let acum;
+
 for(let i=0; i < top; i++)
 {
     for(let j=0; j < top; j++)
     {
-        
+        acum = 1;
+
         if(i < top - (step-1) && j < top) {
             console.log(`---- VERTICAL ------------------------------------------`);
             // vertical
             for(let k=0; k < step; k++)
             {
                 console.log(`row: i ${i+k}, column: ${j}, step ${k} => ${matrix[i+k][j]}`);
+            
+                acum *= matrix[i+k][j];
             }
+        
+            if(acum > max)
+                max = acum;
         }
 
+        acum = 1;
         if(i < top && j < top - (step-1) ) {
             console.log(`---- HORIZONTAL ----------------------------------------`);
             // horizontal
             for(let k=0; k < step; k++)
             {
                 console.log(`row: i ${i}, column: ${j+k} => ${matrix[i][j+k]}`);
+                acum *= matrix[i][j+k];
             }
+        
+            if(acum > max)
+                max = acum;
         }
 
+        acum = 1;
         if(i + (step-1) < top && j + (step-1) < top) {                 
             // diagonal top left -> bottom right
             console.log(`---- DIAG \\ ---------------------------------------------`);
             for(let k=0; k < step; k++)
             {   
                 console.log(`diag: (${i+k}, ${j+k}) => ${matrix[i+k][j+k]}`);
+                acum *= matrix[i+k][j+k];
             }
+        
+            if(acum > max)
+                max = acum;
         }
 
+        acum = 1;
         if(i + (step-1) < top && j + (step-1) < top) { 
             
             // diagonal top rigth -> bottom left
@@ -91,8 +111,14 @@ for(let i=0; i < top; i++)
             for(let k=0; k < step; k++)
             {
                 console.log(`diag: (${i+k}, ${j+(step-1)-k}) => ${matrix[i+k][j+(step-1)-k]}`);
+                acum *= matrix[i+k][j+(step-1)-k];
             }
+        
+            if(acum > max)
+                max = acum;
         }
     }    
     
 }
+
+console.log(`Maximum product: ${max}`)
