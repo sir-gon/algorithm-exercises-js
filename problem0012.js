@@ -18,14 +18,23 @@
 
 import { divisors } from './helpers/index.js'
 
-// divisors(1, true);
-// divisors(3, true);
-// divisors(6, true);
-// divisors(10, true);
-console.log( `${divisors(1)}` );
-console.log( `${divisors(3)}` );
-console.log( `${divisors(6)}` );
-console.log( `${divisors(10)}` );
-console.log( `${divisors(15)}` );
-console.log( `${divisors(21)}` );
-console.log( `${divisors(28)}` );
+let top = 500;
+let count = 0;
+let triangular = 0;
+let i = 1;
+
+while( count < top ) {
+
+    triangular = triangular + i;
+    let d = divisors(triangular);
+
+    console.log(`Triangular number: ${triangular} has ${d.length} divisors`);
+
+    if(d.length > count) {
+        count = d.length;
+    }
+
+    i++;
+}
+
+console.log( `FOUND: ${count}` );
