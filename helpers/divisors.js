@@ -1,5 +1,4 @@
 function divisors(target, debug = false) {
-
   let top = Math.abs(target);
 
   const divs = [];
@@ -18,7 +17,7 @@ function divisors(target, debug = false) {
       divs.push(i);
       divs.push(target / i);
 
-      if (debug) console.log(`adding ${i}`)
+      if (debug) console.log(`adding ${i}`);
     }
     top = target / i;
   }

@@ -4,58 +4,55 @@
 
 // Find the largest palindrome made from the product of two 3-digit numbers.
 
-///////////////////////////////////////////////////////////////////////////////
+/// ////////////////////////////////////////////////////////////////////////////
 // NOTES ABOUT THE SOLUTION:
 // This solution cycles to test all pairs of factors between 111 and 999 that meet the condition of generating a palindrome and saves the largest found.
 // I think there must be another optimal solution to avoid testing all cases
 // cutting the loop around the largest factor pair
 // That's why I thought about doing the loop from highest to lowest.
-///////////////////////////////////////////////////////////////////////////////
+/// ////////////////////////////////////////////////////////////////////////////
 
-import { isPalindrome } from './helpers/index.js'
+/// ////////////////////////////////////////////////////////////////////////////
 
-function problem0004(_DEBUG = false) {
+import { isPalindrome } from './helpers/index.js';
+
+function problem0004(_bottom, _top, _DEBUG) {
   let i;
   let j;
   let foundi;
   let foundj;
   let foundPalindrome;
 
-  let bottom = 111
-  let top = 999
+  // const bottom = 111;
+  // const top = 999;
 
   // Find all cases
-  i = top;
+  i = _top;
   do {
+    j = _top;
+    do {
+      if (isPalindrome(j * i)) {
+        if (_DEBUG) console.log(`FOUND: ${i} x ${j} = ${j * i} is Palindrome`);
 
-      j = top;
-      do {
-
-          if( isPalindrome( j * i ) )
-          {
-              if (_DEBUG) console.log(`FOUND: ${i} x ${j} = ${j * i} is Palindrome`);
-
-              if(!foundPalindrome || (i*j) > foundPalindrome)
-              {
-                  foundi = i;
-                  foundj = j;
-                  foundPalindrome = (i*j);
-              }
-
-          } else {
-              // if (_DEBUG) console.log(`FOUND: ${i} x ${j} = ${j * i} is NOT Palindrome`);
-          }
-
-          j--;
+        if (!foundPalindrome || i * j > foundPalindrome) {
+          foundi = i;
+          foundj = j;
+          foundPalindrome = i * j;
+        }
+      } else {
+        // console.log(`FOUND: ${i} x ${j} = ${j * i} is NOT Palindrome`);
       }
-      while ( j >= bottom /*&& !(found1 && found2)*/)
 
+      j -= 1;
+    } while (j >= _bottom /* && !(found1 && found2) */);
 
-      i--;
-  }
-  while ( i >= bottom /* && !(found1 && found2) */ )
+    i -= 1;
+  } while (i >= _bottom /* && !(found1 && found2) */);
 
-  if (_DEBUG) console.log(`Largest Palindrome => ${foundi} 𝗑 ${foundj} = ${foundPalindrome}`);
+  if (_DEBUG)
+    console.log(
+      `Largest Palindrome => ${foundi} 𝗑 ${foundj} = ${foundPalindrome}`
+    );
 
   return foundPalindrome;
 }
