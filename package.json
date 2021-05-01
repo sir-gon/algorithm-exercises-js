@@ -4,9 +4,14 @@
   "description": "Solutions to the first 100 problems from [Project Euler](https://projecteuler.net/)",
   "main": "problem0001.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "jest": "NODE_OPTIONS=--experimental-vm-modules CI=true npx jest --ci --color --detectOpenHandles --forceExit",
+    "jest:watch": "NODE_OPTIONS=--experimental-vm-modules CI=true npx jest --ci --color --detectOpenHandles --forceExit --watchAll",
+    "test": "npm run jest && echo '✔  Your code looks good.'"
   },
   "author": "Gonzalo Diaz <devel@gon.cl>",
   "license": "MIT",
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
 }
