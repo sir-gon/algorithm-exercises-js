@@ -18,8 +18,8 @@
 
     "env": {
       "node": true,
-      "es6": true
-      //"jest/globals": true
+      "es6": true,
+      "jest/globals": true
     },
 
     "parserOptions": {
@@ -38,7 +38,7 @@
 
     "plugins":[
       "import",
-      //"jest",
+      "jest",
       "prettier"
     ],
 
@@ -48,8 +48,8 @@
       "airbnb-base",
       "prettier",
       "plugin:import/errors",
-      "plugin:import/warnings"
-      //"plugin:jest/all"
+      "plugin:import/warnings",
+      "plugin:jest/all"
     ],
 
     "rules": {
@@ -64,7 +64,6 @@
       "no-plusplus":                    ["error", { "allowForLoopAfterthoughts": true }],
       "import/no-unresolved":           [2, {"commonjs": true, "amd": true}],
       "import/extensions":              ["error", { "js": "always"}]
-
     }
 
   }

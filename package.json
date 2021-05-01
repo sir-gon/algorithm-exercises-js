@@ -4,17 +4,20 @@
   "description": "Solutions to the first 100 problems from [Project Euler](https://projecteuler.net/)",
   "main": "problem0001.js",
   "scripts": {
-    "test": "npm run lint",
     "lint": "npx eslint . --color --max-warnings=0 && echo '✔  Your code looks good.'",
     "lint:watch": "npx esw . --color --max-warnings=0 --watch",
     "jest": "NODE_OPTIONS=--experimental-vm-modules CI=true npx jest --ci --color --detectOpenHandles --forceExit",
     "jest:watch": "NODE_OPTIONS=--experimental-vm-modules CI=true npx jest --ci --color --detectOpenHandles --forceExit --watchAll",
-    "prettier": "npx prettier --write 'src/**/*.js'"
+    "prettier": "npx prettier --write 'src/**/*.js'",
+    "test": "npm run lint && npm run jest && echo 'Done.'",
+    "test:watch": "concurrently -k -s first --names \"LINT,TEST\" -p \"[{name}]\" \"npm run lint:watch\" \"npm run jest:watch\""
+
   },
   "author": "Gonzalo Diaz <devel@gon.cl>",
   "license": "MIT",
   "type": "module",
   "devDependencies": {
+    "concurrently": "^6.0.2",
     "eslint": "^7.25.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
