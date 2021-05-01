@@ -4,6 +4,7 @@ let num = [
 
 
 let divisor = 1000000000000000000000000000000000000000;
+let top = 10000000000;
 let sum = 0;
 
 for(let i=0; i < num.length; i++) {
@@ -11,3 +12,11 @@ for(let i=0; i < num.length; i++) {
 }
 
 console.log(sum);
+
+while(sum > top)
+{
+    sum = Math.trunc(sum/10);
+    console.log(sum);
+}
+
+console.log(`First 10 digits of huge sume are ${sum}`);
