@@ -4,9 +4,28 @@
   "description": "Solutions to the first 100 problems from [Project Euler](https://projecteuler.net/)",
   "main": "problem0001.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "npx eslint . --color --max-warnings=0 && echo '✔  Your code looks good.'",
+    "lint:watch": "npx esw . --color --max-warnings=0 --watch",
+    "jest": "NODE_OPTIONS=--experimental-vm-modules CI=true npx jest --ci --color --detectOpenHandles --forceExit --runInBand --debug --collectCoverage --coverageReporters='text'",
+    "jest:watch": "NODE_OPTIONS=--experimental-vm-modules CI=true npx jest --ci --color --detectOpenHandles --forceExit --runInBand --debug --collectCoverage --coverageReporters='text' --watchAll",
+    "prettier": "npx prettier --write 'src/**/*.js'",
+    "test": "npm run lint && npm run jest && echo 'Done.'",
+    "test:watch": "concurrently -k -s first --names \"LINT,TEST\" -p \"[{name}]\" \"npm run lint:watch\" \"npm run jest:watch\""
+
   },
   "author": "Gonzalo Diaz <devel@gon.cl>",
   "license": "MIT",
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "concurrently": "^6.0.2",
+    "eslint": "^7.25.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.3.6",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-watch": "^7.0.0",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1"
+  }
 }

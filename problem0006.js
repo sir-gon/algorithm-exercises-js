@@ -8,24 +8,34 @@
 // [image unavailable]
 // Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 
-const top = 100;
-const bottom = 1;
+function problem0006() {
+  const top = 100;
+  const bottom = 1;
 
-let sumOfSquares = 0;
-let baseForSquareOfSum = 0;
-let squareOfSum = 0;
+  let sumOfSquares = 0;
+  let baseForSquareOfSum = 0;
+  let squareOfSum = 0;
 
-for (let i = bottom; i <= top; i++)
-{
+  for (let i = bottom; i <= top; i++) {
     // console.log(`${i}^2 = ${Math.pow(i, 2)}`);
-    sumOfSquares = sumOfSquares + Math.pow(i, 2);
-    baseForSquareOfSum = baseForSquareOfSum + i;
+    sumOfSquares += i ** 2;
+    baseForSquareOfSum += i;
+  }
+
+  squareOfSum = baseForSquareOfSum ** 2;
+
+  console.log(`Sum of first ${top} squares = ${sumOfSquares}`);
+  console.log(`Base for Square Of Sum of first ${top} = ${baseForSquareOfSum}`);
+  console.log(`Square Of Sum of first ${top} = ${squareOfSum}`);
+
+  console.log(
+    `Difference found ${squareOfSum} - ${sumOfSquares} =  ${
+      squareOfSum - sumOfSquares
+    }`
+  );
+
+  return squareOfSum - sumOfSquares;
 }
 
-squareOfSum = Math.pow(baseForSquareOfSum, 2)
-
-console.log(`Sum of first ${top} squares = ${sumOfSquares}`)
-console.log(`Base for Square Of Sum of first ${top} = ${baseForSquareOfSum}`)
-console.log(`Square Of Sum of first ${top} = ${squareOfSum}`)
-
-console.log(`Difference found ${squareOfSum} - ${sumOfSquares} =  ${squareOfSum - sumOfSquares}`)
+export default problem0006;
+export { problem0006 };

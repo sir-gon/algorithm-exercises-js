@@ -1,0 +1,9 @@
+# .prettierrc or .prettierrc.yaml
+singleQuote: true
+quoteProps: preserve
+useTabs: false
+printWidth: 80
+tabWidth: 2
+trailingComma: none
+jsxBracketSameLine: false
+parser: typescript
