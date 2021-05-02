@@ -4,27 +4,36 @@
 
 // By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
-let i = 0;
-let fibo = 0;
-let last1 = 1;
-let last2 = 0;
-let evenSum = 0;
-do {
+import { fiboStep } from './helpers/index.js';
 
-        // last2 + last1 = fibo
-        fibo = last2 + last1;
-        console.log(`${i}: ${last2} + ${last1} = ${fibo}`)
+const DEBUG =
+  process.env.DEBUG === 'true' || process.env.DEBUG === '1' || false;
 
-        if(fibo % 2 === 0)
-        {
-            evenSum = evenSum + fibo;
-        }
+function problem0002(_top, _DEBUG) {
+  let i = 0;
+  let last1 = 1;
+  let last2 = 0;
+  let evenSum = 0;
 
-        // next keys:
-        last2 = last1;
-        last1 = fibo;
-    
-    i++;
-} while ( fibo < 4000000 )
+  let fibo = 0;
+  do {
+    fibo = fiboStep(i, last1, last2);
 
-console.log(`RESULT = ${evenSum}`)
+    if (_DEBUG) console.log(`Fibonacci (${i}) = ${fibo}`);
+
+    if (fibo % 2 === 0) {
+      evenSum += fibo;
+    }
+
+    // next keys:
+    last2 = last1;
+    last1 = fibo;
+    i += 1;
+  } while (fibo < _top);
+
+  if (_DEBUG) console.log(`RESULT = ${evenSum}`);
+  return evenSum;
+}
+
+export default problem0002;
+export { problem0002 };
