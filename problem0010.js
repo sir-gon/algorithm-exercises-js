@@ -2,32 +2,29 @@
 
 // Find the sum of all the primes below two million.
 
-///////////////////////////////////////////////////////////////////////////////
+/// ////////////////////////////////////////////////////////////////////////////
 
-import { isPrime, sum } from './helpers/index.js'
+import { isPrime, sum } from './helpers/index.js';
 
 function problem0010(_DEBUG) {
+  const top = 2000000;
+  const bottom = 1;
 
-  let top = 2000000;
-  let bottom = 1;
-
-  let primes = [];
+  const primes = [];
   let i = bottom;
 
   do {
+    i += 1;
 
-    i++
-
-    if(isPrime(i))
-    {
+    if (isPrime(i)) {
       primes.push(i);
-      if (_DEBUG) console.log(`Prime found ${i} put in position: ${primes.length}`)
+      if (_DEBUG)
+        console.log(`Prime found ${i} put in position: ${primes.length}`);
     }
+  } while (i < top);
 
-  } while (i < top)
-
-  if (_DEBUG) console.log(`primes count: ${primes.length}`)
-  if (_DEBUG) console.log(`Sum of primes below ${top} is: ${sum(primes)}`)
+  if (_DEBUG) console.log(`primes count: ${primes.length}`);
+  if (_DEBUG) console.log(`Sum of primes below ${top} is: ${sum(primes)}`);
 
   return sum(primes);
 }
