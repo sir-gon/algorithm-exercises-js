@@ -6,8 +6,8 @@
   "scripts": {
     "lint": "npx eslint . --color --max-warnings=0 && echo '✔  Your code looks good.'",
     "lint:watch": "npx esw . --color --max-warnings=0 --watch",
-    "jest": "NODE_OPTIONS=--experimental-vm-modules CI=true npx jest --ci --color --detectOpenHandles --forceExit",
-    "jest:watch": "NODE_OPTIONS=--experimental-vm-modules CI=true npx jest --ci --color --detectOpenHandles --forceExit --watchAll",
+    "jest": "NODE_OPTIONS=--experimental-vm-modules CI=true npx jest --ci --color --detectOpenHandles --forceExit --runInBand --debug --collectCoverage --coverageReporters='text'",
+    "jest:watch": "NODE_OPTIONS=--experimental-vm-modules CI=true npx jest --ci --color --detectOpenHandles --forceExit --runInBand --debug --collectCoverage --coverageReporters='text' --watchAll",
     "prettier": "npx prettier --write 'src/**/*.js'",
     "test": "npm run lint && npm run jest && echo 'Done.'",
     "test:watch": "concurrently -k -s first --names \"LINT,TEST\" -p \"[{name}]\" \"npm run lint:watch\" \"npm run jest:watch\""
