@@ -18,7 +18,7 @@ function divisors(target, debug = false) {
       divs.push(i);
       divs.push(target / i);
 
-      // console.log(`adding ${i}`)
+      if (debug) console.log(`adding ${i}`)
     }
     top = target / i;
   }
