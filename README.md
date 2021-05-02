@@ -10,11 +10,27 @@ Use this answers to learn some tip and tricks for algorithms tests.
 Run every problem using Node.js cli as following example:
 
 ```
+cd src/
 node problem00001.js
 
 ```
 
-Teste with:
+## Testing
+Run all tests, you must install dependencies:
+
+```
+npm install
+```
+
+and then:
+
+```
+npm run jest
+```
+
+## About development
+
+Developed with runtime:
 
 ```
 node --version
