@@ -12,11 +12,12 @@ function problem0007(_DEBUG) {
   let i = bottom;
 
   do {
-    i++;
+    i += 1;
 
     if (isPrime(i)) {
       primes.push(i);
-      if (_DEBUG) console.log(`Prime found ${i} put in position: ${primes.length}`);
+      if (_DEBUG)
+        console.log(`Prime found ${i} put in position: ${primes.length}`);
     }
   } while (primes.length < top);
 

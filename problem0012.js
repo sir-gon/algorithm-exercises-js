@@ -18,27 +18,26 @@
 import { divisors } from './helpers/index.js';
 
 function problem0012(_DEBUG) {
-
-  let top = 500;
+  const top = 500;
   let count = 0;
   let triangular = 0;
   let i = 1;
 
-  while( count < top ) {
+  while (count < top) {
+    triangular += i;
+    const d = divisors(triangular);
 
-    triangular = triangular + i;
-    let d = divisors(triangular);
+    if (_DEBUG)
+      console.log(`Triangular number: ${triangular} has ${d.length} divisors`);
 
-    if (_DEBUG) console.log(`Triangular number: ${triangular} has ${d.length} divisors`);
-
-    if(d.length > count) {
+    if (d.length > count) {
       count = d.length;
     }
 
-    i++;
+    i += 1;
   }
 
-  if (_DEBUG) console.log( `FOUND: ${count}` );
+  if (_DEBUG) console.log(`FOUND: ${count}`);
 
   return count;
 }

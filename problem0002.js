@@ -6,9 +6,6 @@
 
 import { fiboStep } from './helpers/index.js';
 
-const DEBUG =
-  process.env.DEBUG === 'true' || process.env.DEBUG === '1' || false;
-
 function problem0002(_top, _DEBUG) {
   let i = 0;
   let last1 = 1;

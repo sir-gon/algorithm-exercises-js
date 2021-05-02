@@ -14,6 +14,5 @@ describe('number is prime', () => {
     expect(isPrime(10)).toStrictEqual(false);
     expect(isPrime(100)).toStrictEqual(false);
     expect(isPrime(3000)).toStrictEqual(false);
-
   });
 });

@@ -11,21 +11,21 @@
  * ////////////////////////////////////////////////////////////////////////////
  */
 
- import { problem0007 } from './problem0007.js';
+import { problem0007 } from './problem0007.js';
 
- const DEBUG =
-   process.env.DEBUG === 'true' || process.env.DEBUG === '1' || false;
+const DEBUG =
+  process.env.DEBUG === 'true' || process.env.DEBUG === '1' || false;
 
- describe('problem 0007', () => {
-   it('problem 0007 solution found', () => {
-     expect.assertions(1);
+describe('problem 0007', () => {
+  it('problem 0007 solution found', () => {
+    expect.assertions(1);
 
-     const solutionFound = 104743;
+    const solutionFound = 104743;
 
-     const calculated = problem0007(DEBUG);
+    const calculated = problem0007(DEBUG);
 
-     console.log(`PROBLEM 0007 solution found: ${calculated}`);
+    console.log(`PROBLEM 0007 solution found: ${calculated}`);
 
-     expect(calculated).toBe(solutionFound);
-   });
- });
+    expect(calculated).toBe(solutionFound);
+  });
+});
