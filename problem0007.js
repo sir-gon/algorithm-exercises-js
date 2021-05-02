@@ -2,25 +2,30 @@
 
 // What is the 10 001st prime number?
 
-import { isPrime } from './helpers/isPrime.js'
+import { isPrime } from './helpers/index.js';
 
-let top = 10001;
-let bottom = 1;
+function problem0007(_DEBUG) {
+  const top = 10001;
+  const bottom = 1;
 
-let primes = [];
-let i = bottom;
+  const primes = [];
+  let i = bottom;
 
-do {
+  do {
+    i++;
 
-    i++
-
-    if(isPrime(i))
-    {
-        primes.push(i);
-        console.log(`Prime found ${i} put in position: ${primes.length}`)
+    if (isPrime(i)) {
+      primes.push(i);
+      if (_DEBUG) console.log(`Prime found ${i} put in position: ${primes.length}`);
     }
+  } while (primes.length < top);
 
-} while (primes.length < top) 
+  if (_DEBUG) console.log(`primes count: ${primes.length}`);
+  if (_DEBUG)
+    console.log(`${top} prime number is: ${primes[primes.length - 1]}`);
 
-console.log(`primes count: ${primes.length}`)
-console.log(`${top} prime number is: ${primes[primes.length-1]}`)
+  return primes[primes.length - 1];
+}
+
+export default problem0007;
+export { problem0007 };

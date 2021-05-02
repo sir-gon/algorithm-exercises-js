@@ -1,14 +1,14 @@
 import { sum } from './sum.js';
 
-describe('Sum all numbers in array', () => {
+describe('sum all numbers in array', () => {
+  it('sum of some consecutives positive integers', () => {
+    expect.assertions(1);
 
-  test('Sum of some consecutives positive integers', () => {
     expect(sum([1, 2, 3, 4])).toBe(10);
   });
 
-  test('Sum of some positive or negative integers', () => {
+  it('sum of some positive or negative integers', () => {
+    expect.assertions(1);
     expect(sum([-1, -2, 1, 2])).toBe(0);
   });
-
-
 });

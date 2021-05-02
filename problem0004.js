@@ -12,58 +12,53 @@
 // That's why I thought about doing the loop from highest to lowest.
 ///////////////////////////////////////////////////////////////////////////////
 
-let bottom = 111
-let top = 999
+import { isPalindrome } from './helpers/index.js'
 
-function isPalindrome(n) {
-    // console.log(`${ n.toString().split("").reverse().join("") }`);
-    // console.log(`${ n.toString()}`) ;
-    
-    return n.toString().split("").reverse().join("") === n.toString();
+function problem0004(_DEBUG = false) {
+  let i;
+  let j;
+  let foundi;
+  let foundj;
+  let foundPalindrome;
+
+  let bottom = 111
+  let top = 999
+
+  // Find all cases
+  i = top;
+  do {
+
+      j = top;
+      do {
+
+          if( isPalindrome( j * i ) )
+          {
+              if (_DEBUG) console.log(`FOUND: ${i} x ${j} = ${j * i} is Palindrome`);
+
+              if(!foundPalindrome || (i*j) > foundPalindrome)
+              {
+                  foundi = i;
+                  foundj = j;
+                  foundPalindrome = (i*j);
+              }
+
+          } else {
+              // if (_DEBUG) console.log(`FOUND: ${i} x ${j} = ${j * i} is NOT Palindrome`);
+          }
+
+          j--;
+      }
+      while ( j >= bottom /*&& !(found1 && found2)*/)
+
+
+      i--;
+  }
+  while ( i >= bottom /* && !(found1 && found2) */ )
+
+  if (_DEBUG) console.log(`Largest Palindrome => ${foundi} 𝗑 ${foundj} = ${foundPalindrome}`);
+
+  return foundPalindrome;
 }
 
-// Test isPalindrome condition
-// console.log(isPalindrome('1000'));
-// console.log(isPalindrome('1001'));
-// console.log(isPalindrome('3443'));
-// console.log(isPalindrome('3435'));
-
-
-let i;
-let j;
-let foundi;
-let foundj;
-let foundPalindrome;
-
-// Find all cases
-i = top;
-do {
-
-    j = top;
-    do {
-
-        if( isPalindrome( j * i ) )
-        {   
-            console.log(`FOUND: ${i} x ${j} = ${j * i} is Palindrome`);
-            
-            if(!foundPalindrome || (i*j) > foundPalindrome)
-            {
-                foundi = i;
-                foundj = j;
-                foundPalindrome = (i*j);
-            }
-
-        } else {
-            // console.log(`FOUND: ${i} x ${j} = ${j * i} is NOT Palindrome`);
-        }
-
-        j--;
-    }
-    while ( j >= bottom /*&& !(found1 && found2)*/)
-    
-
-    i--;
-}
-while ( i >= bottom /* && !(found1 && found2) */ )
-
-console.log(`Largest Palindrome => ${foundi} 𝗑 ${foundj} = ${foundPalindrome}`);
+export default problem0004;
+export { problem0004 };

@@ -1,18 +1,23 @@
 /**
- * If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. * The sum of these multiples is 23.
- * Find the sum of all the multiples of 3 or 5 below 1000.
+ * https://projecteuler.net/problem=1
+ *
+ * Multiples of 3 and 5
  */
 
-let total = 0;
-let top = 1000;
+function problem0001(_top, _DEBUG = true) {
+  let total = 0;
 
-for (let i= 0; i < top; i++)
-{
-    if(i % 3 == 0 || i % 5 ==0)
-    {
-        console.log(`i = ${i}`);
-        total = total+i;
+  for (let i = 0; i < _top; i++) {
+    if (i % 3 === 0 || i % 5 === 0) {
+      if (_DEBUG) console.log(`i = ${i}`);
+      total += i;
     }
+  }
+
+  if (_DEBUG) console.log(`TOTAL = ${total}`);
+
+  return total;
 }
 
-console.log(`TOTAL = ${total}`);
+export default problem0001;
+export { problem0001 };

@@ -10,45 +10,53 @@
 
 // const top
 
-let a, b, c;
+function problem0009(_DEBUG) {
 
-const balance = 1000;
+  let a, b, c;
 
-a = 1;
-b = 2;
-c = 997;
+  const balance = 1000;
 
-console.log(`a = ${a} | b = ${b} | c = ${c}`)
+  a = 1;
+  b = 2;
+  c = 997;
 
-let found;
+  if (_DEBUG) console.log(`a = ${a} | b = ${b} | c = ${c}`)
 
-function isPythagoreanTriplet(a, b, c) {
+  let found;
+
+  function isPythagoreanTriplet(a, b, c) {
     return ( Math.pow(a, 2) + Math.pow(b, 2) === Math.pow(c, 2) );
-}
+  }
 
-while ( a < b && !found) {
+  while ( a < b && !found) {
 
     b = a+1;
-    
+
     while ( a < b  && b < c && !found) {
-        
-        // TESTING
-        console.log(`TESTING: a = ${a} b = ${b} c = ${c}`)
 
-        if( isPythagoreanTriplet(a, b, c))
-        {
-            found = {a, b ,c}
-            //console.log(`FOUND: a = ${a} b = ${b} c = ${c}`)
+      // TESTING
+      if (_DEBUG) console.log(`TESTING: a = ${a} b = ${b} c = ${c}`)
 
-        }
-        
-        // INCREASE 
-        b++;
-        c = balance - b - a;
+      if( isPythagoreanTriplet(a, b, c))
+      {
+        found = {a, b ,c}
+        //console.log(`FOUND: a = ${a} b = ${b} c = ${c}`)
+
+      }
+
+      // INCREASE
+      b++;
+      c = balance - b - a;
     }
-    
+
     a++;
+  }
+
+  if (_DEBUG) console.log(`FOUND: a = ${found.a} b = ${found.b} c = ${found.c}`)
+  if (_DEBUG) console.log(`PRODUCT: a * b * c = ${found.a*found.b*found.c}`)
+
+  return found.a*found.b*found.c;
 }
 
-console.log(`FOUND: a = ${found.a} b = ${found.b} c = ${found.c}`)
-console.log(`PRODUCT: a * b * c = ${found.a*found.b*found.c}`)
+export default problem0009;
+export { problem0009 };

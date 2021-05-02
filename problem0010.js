@@ -6,23 +6,33 @@
 
 import { isPrime, sum } from './helpers/index.js'
 
-let top = 2000000;
-let bottom = 1;
+function problem0010(_DEBUG) {
 
-let primes = [];
-let i = bottom;
+  let top = 2000000;
+  let bottom = 1;
 
-do {
+  let primes = [];
+  let i = bottom;
+
+  do {
 
     i++
 
     if(isPrime(i))
     {
-        primes.push(i);
-        console.log(`Prime found ${i} put in position: ${primes.length}`)
+      primes.push(i);
+      if (_DEBUG) console.log(`Prime found ${i} put in position: ${primes.length}`)
     }
 
-} while (i < top) 
+  } while (i < top)
 
-console.log(`primes count: ${primes.length}`)
-console.log(`Sum of primes below ${top} is: ${sum(primes)}`)
+  if (_DEBUG) console.log(`primes count: ${primes.length}`)
+  if (_DEBUG) console.log(`Sum of primes below ${top} is: ${sum(primes)}`)
+
+  return sum(primes);
+}
+
+export default problem0010;
+export { problem0010 };
+
+problem0010(true);
