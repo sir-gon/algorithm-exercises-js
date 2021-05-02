@@ -21,7 +21,7 @@ describe('problem 0001', () => {
 
     const calculated = problem0001(top, DEBUG);
 
-    console.log(calculated);
+    console.log(`PROBLEM 0001 solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });
