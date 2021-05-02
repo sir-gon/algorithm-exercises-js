@@ -21,12 +21,10 @@
 let test;
 let found;
 let i;
-let j;
-let top;
-let bottom;
-
-top = 20;
-bottom = 1;
+// let j;
+const top = 20;
+const bottom = 1;
+let fail;
 
 test = 1;
 // test = 1*2*3*4*5*6*7*8*9*10*11*12*13*14*15*16*17*18*19*20 // Just to test end condition
@@ -35,14 +33,14 @@ do {
   i = 2;
   fail = false;
   do {
-    if (test % i != 0) {
+    if (test % i !== 0) {
       fail = true;
       console.log(`Fail ${test} not divisible by ${i}`);
     } else {
       console.log(`Testing: ${test} divisible by ${i}`);
     }
 
-    i++;
+    i += 1;
   } while (i <= top && !fail);
 
   if (!fail) {
@@ -50,7 +48,7 @@ do {
   }
 
   fail = false;
-  test++;
+  test += 1;
 } while (!found);
 
 console.log(
