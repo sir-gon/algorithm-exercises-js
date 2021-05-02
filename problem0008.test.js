@@ -29,7 +29,7 @@
 // Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
  */
 
-///////////////////////////////////////////////////////////////////////////////
+/// ///////////////////////////////////////////////////////////////////////////
 // About solution:
 // A integer number with 1000 digits in javascript node.js is translated to
 // special type "Infinity", so it can't be operated as number.
@@ -41,23 +41,23 @@
 // to operate numbers in strings.
 //
 // Solution found: The the greatest product of 13 consecutive digits is: 23514624000
-///////////////////////////////////////////////////////////////////////////////
+/// ///////////////////////////////////////////////////////////////////////////
 
- import { problem0008 } from './problem0008.js';
+import { problem0008 } from './problem0008.js';
 
- const DEBUG =
-   process.env.DEBUG === 'true' || process.env.DEBUG === '1' || false;
+const DEBUG =
+  process.env.DEBUG === 'true' || process.env.DEBUG === '1' || false;
 
- describe('problem 0008', () => {
-   it('problem 0008 solution found', () => {
-     expect.assertions(1);
+describe('problem 0008', () => {
+  it('problem 0008 solution found', () => {
+    expect.assertions(1);
 
-     const solutionFound = 23514624000;
+    const solutionFound = 23514624000;
 
-     const calculated = problem0008(DEBUG);
+    const calculated = problem0008(DEBUG);
 
-     console.log(`PROBLEM 0008 solution found: ${calculated}`);
+    console.log(`PROBLEM 0008 solution found: ${calculated}`);
 
-     expect(calculated).toBe(solutionFound);
-   });
- });
+    expect(calculated).toBe(solutionFound);
+  });
+});
