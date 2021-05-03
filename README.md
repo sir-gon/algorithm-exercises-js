@@ -1,3 +1,4 @@
+[![Node.js CI](https://github.com/sir-gon/projecteuler.net/actions/workflows/node.js.yml/badge.svg)](https://github.com/sir-gon/projecteuler.net/actions/workflows/node.js.yml)
 
 # What is this?
 
