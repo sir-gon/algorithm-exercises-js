@@ -6,18 +6,18 @@
   "scripts": {
     "lint": "npx eslint . --color --max-warnings=0 && echo '✔  Your code looks good.'",
     "lint:watch": "npx esw . --color --max-warnings=0 --watch",
-    "jest": "NODE_OPTIONS=--experimental-vm-modules CI=true npx jest --ci --color --detectOpenHandles --forceExit --runInBand --debug --collectCoverage --coverageReporters='text'",
-    "jest:watch": "NODE_OPTIONS=--experimental-vm-modules CI=true npx jest --ci --color --detectOpenHandles --forceExit --runInBand --debug --collectCoverage --coverageReporters='text' --watchAll",
+    "jest": "cross-env NODE_OPTIONS=--experimental-vm-modules CI=true npx jest --ci --color --detectOpenHandles --forceExit --runInBand --debug --collectCoverage --coverageReporters='text'",
+    "jest:watch": "cross-env NODE_OPTIONS=--experimental-vm-modules CI=true  npx jest --ci --color --detectOpenHandles --forceExit --runInBand --debug --collectCoverage --coverageReporters='text' --watchAll",
     "prettier": "npx prettier --write 'src/**/*.js'",
     "test": "npm run lint && npm run jest && echo 'Done.'",
     "test:watch": "concurrently -k -s first --names \"LINT,TEST\" -p \"[{name}]\" \"npm run lint:watch\" \"npm run jest:watch\""
-
   },
   "author": "Gonzalo Diaz <devel@gon.cl>",
   "license": "MIT",
   "type": "module",
   "devDependencies": {
     "concurrently": "^6.0.2",
+    "cross-env": "^7.0.3",
     "eslint": "^7.25.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
