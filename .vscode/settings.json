@@ -2,5 +2,6 @@
   "jest.nodeEnv": {
 
     "NODE_OPTIONS":"--experimental-vm-modules"
-  }
+  },
+  "jest.jestCommandLine": "npx jest --ci --color --detectOpenHandles --forceExit --runInBand --debug --collectCoverage --coverageReporters='text'"
 }
