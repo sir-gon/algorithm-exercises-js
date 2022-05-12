@@ -1,3 +1,11 @@
+export {
+  bigNum,
+  bigSum,
+  bigSumMany,
+  bigMultiplyRowToBigNum,
+  bigMultiplyRowToString,
+  bigMultiply
+} from './bigNumbers.js';
 export { collatz } from './collatz.js';
 export { divisors } from './divisors.js';
 export { fiboStep } from './fibonacci.js';
