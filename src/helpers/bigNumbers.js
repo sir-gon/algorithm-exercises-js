@@ -6,7 +6,6 @@ function bigNum(strNumber, base = 10) {
     result.push(parseInt(strNumber.charAt(i), base));
   }
 
-  // console.log(`result: ${result}`);
   return result;
 }
 
@@ -72,9 +71,6 @@ function bigMultiplyRowToBigNum(strNumber, multiplierDigit) {
   let carry = 0;
   let digit = 0;
 
-  // console.log(`Multiply number ${number}`);
-  // console.log(`Multiplier digit ${multiplierDigit}`);
-
   for (let i = 0; i < number.length; i++) {
     mul = number[i] * multiplierDigit + carry;
 
@@ -124,9 +120,6 @@ function bigMultiply(strMultiply, strNumMultiplier) {
       .reverse()
       .reduce((previous, current) => `${previous}${current}`, '');
   }
-
-  // console.log(`result: ${result}`);
-
   return bigSumMany(result);
 }
 
