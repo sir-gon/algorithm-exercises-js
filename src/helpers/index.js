@@ -4,7 +4,8 @@ export {
   bigSumMany,
   bigMultiplyRowToBigNum,
   bigMultiplyRowToString,
-  bigMultiply
+  bigMultiply,
+  bigPower
 } from './bigNumbers.js';
 export { collatz } from './collatz.js';
 export { divisors } from './divisors.js';
