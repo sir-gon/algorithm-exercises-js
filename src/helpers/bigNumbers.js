@@ -1,4 +1,4 @@
-function bigNum(strNumber, base = 10) {
+export function bigNum(strNumber, base = 10) {
   const result = [];
   let i;
 
@@ -9,7 +9,7 @@ function bigNum(strNumber, base = 10) {
   return result;
 }
 
-function bigSum(strNumberA, strNumberB) {
+export function bigSum(strNumberA, strNumberB) {
   const result = [];
 
   const a = bigNum(strNumberA).reverse();
@@ -53,7 +53,7 @@ function bigSum(strNumberA, strNumberB) {
     .reduce((previous, current) => `${previous}${current}`, '');
 }
 
-function bigSumMany(strNumberArr) {
+export function bigSumMany(strNumberArr) {
   let result = '0';
 
   for (let i = 0; i < strNumberArr.length; i++) {
@@ -63,7 +63,7 @@ function bigSumMany(strNumberArr) {
   return result;
 }
 
-function bigMultiplyRowToBigNum(strNumber, multiplierDigit) {
+export function bigMultiplyRowToBigNum(strNumber, multiplierDigit) {
   const number = bigNum(strNumber).reverse();
   const result = [];
 
@@ -89,14 +89,14 @@ function bigMultiplyRowToBigNum(strNumber, multiplierDigit) {
   return result.reverse();
 }
 
-function bigMultiplyRowToString(strNumber, multiplierDigit) {
+export function bigMultiplyRowToString(strNumber, multiplierDigit) {
   return bigMultiplyRowToBigNum(strNumber, multiplierDigit).reduce(
     (previous, current) => `${previous}${current}`,
     ''
   );
 }
 
-function bigMultiply(strMultiply, strNumMultiplier) {
+export function bigMultiply(strMultiply, strNumMultiplier) {
   const result = [];
   // const bigNumMultiply = bigNum(strMultiply).reverse();
   const bigNumMultiplier = bigNum(strNumMultiplier).reverse();
@@ -124,14 +124,6 @@ function bigMultiply(strMultiply, strNumMultiplier) {
 }
 
 export default {
-  bigNum,
-  bigSum,
-  bigSumMany,
-  bigMultiplyRowToBigNum,
-  bigMultiplyRowToString,
-  bigMultiply
-};
-export {
   bigNum,
   bigSum,
   bigSumMany,
