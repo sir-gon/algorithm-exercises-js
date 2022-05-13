@@ -123,11 +123,22 @@ export function bigMultiply(strMultiply, strNumMultiplier) {
   return bigSumMany(result);
 }
 
+export function bigPower(strBase, intExp) {
+  let result = '1';
+
+  for (let i = 0; i < intExp; i++) {
+    result = bigMultiply(result, strBase);
+  }
+
+  return result;
+}
+
 export default {
   bigNum,
   bigSum,
   bigSumMany,
   bigMultiplyRowToBigNum,
   bigMultiplyRowToString,
-  bigMultiply
+  bigMultiply,
+  bigPower
 };
