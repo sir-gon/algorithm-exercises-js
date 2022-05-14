@@ -55,13 +55,17 @@ function bigNumToWord(value, bigValue) {
   }
 
   if (bigValue.length === 2 && value >= 20 && value <= 99) {
-    console.log(`value = ${value}`);
+    // console.log(`value = ${value}`);
 
     const dec = Math.floor(value / 10) * 10;
     const unit = Math.floor(value % 10);
 
     // console.log(`dec = ${dec}`);
     // console.log(`unit = ${unit}`);
+
+    if (unit === 0) {
+      return `${dictionary[dec]}`;
+    }
 
     return `${dictionary[dec]}-${dictionary[unit]}`;
   }
@@ -88,7 +92,7 @@ function bigNumToWord(value, bigValue) {
 
   if (bigValue.length === 4) {
     const rest = Math.floor(value % 10 ** (bigValue.length - 1));
-    console.log(`mill rest = ${rest}`);
+    // console.log(`mill rest = ${rest}`);
 
     if (rest === 0) {
       return `${dictionary[bigValue[0]]} ${_MILLS_}`;
