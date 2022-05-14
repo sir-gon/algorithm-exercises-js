@@ -17,18 +17,31 @@
  *
  * ////////////////////////////////////////////////////////////////////////////
  *
- * Result found:
+ * Result found: 21124
  * ////////////////////////////////////////////////////////////////////////////
  */
 
 import { numberToWord } from './helpers/index.js';
 
 export default function problem0017(init, last, _DEBUG) {
+  let replaced;
+  let word;
+  let acum = 0;
+
   for (let i = init; i <= last; i++) {
-    console.log(numberToWord(i));
+    word = numberToWord(i);
+    replaced = word.replace(/[^a-z0-9]/gi, '');
+
+    if (_DEBUG) console.log(word);
+
+    acum += replaced.length;
+
+    if (_DEBUG) console.log(replaced);
   }
 
-  return null;
+  console.log(acum);
+
+  return acum;
 }
 
 export { problem0017 };

@@ -17,7 +17,7 @@
  *
  * ////////////////////////////////////////////////////////////////////////////
  *
- * Result found:
+ * Result found: 21124
  * ////////////////////////////////////////////////////////////////////////////
  */
 
@@ -32,7 +32,7 @@ describe('problem 0017', () => {
 
     const init = 1;
     const last = 1000;
-    const solutionFound = null;
+    const solutionFound = 21124;
 
     const calculated = problem0017(init, last, DEBUG);
 
