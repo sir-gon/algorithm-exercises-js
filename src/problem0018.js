@@ -42,12 +42,39 @@
  *
  * ////////////////////////////////////////////////////////////////////////////
  *
- * Result found:
+ * Result found: 1074
  * ////////////////////////////////////////////////////////////////////////////
  */
 
-export function problem0018() {
-  return null;
+import { buildBNodeTree, buildBNodeTreeWeigth } from './lib/BNode.js';
+import data from './data/problem0018.json';
+
+const rootCoordinateI = 0;
+const rootCoordinateJ = 0;
+
+export function problem0018(_DEBUG) {
+  if (_DEBUG) console.log('data', data);
+  if (_DEBUG) {
+    const valuesTree = buildBNodeTree(data, 0, 0);
+    console.log('data', JSON.stringify(valuesTree, null, 4));
+  }
+
+  const leafs = [];
+  const weightsTree = buildBNodeTreeWeigth(
+    data,
+    rootCoordinateI,
+    rootCoordinateJ,
+    0,
+    leafs
+  );
+
+  if (_DEBUG) {
+    console.log('data', JSON.stringify(weightsTree, null, 4));
+    console.log('leafs count', leafs.length, 'leafs', leafs);
+  }
+  const max = leafs.reduce((a, b) => (a > b ? a : b));
+
+  return max;
 }
 
 export default { problem0018 };
