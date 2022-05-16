@@ -49,6 +49,124 @@
 import { problem0018 } from './problem0018.js';
 import data from './data/problem0018.json';
 
+class BNode {
+  constructor(value, l, r) {
+    if (value instanceof BNode) {
+      this.value = value.getValue();
+      return;
+    }
+    if (typeof value === 'number') {
+      this.value = value;
+      return;
+    }
+
+    this.l = l instanceof BNode ? l : undefined;
+    this.r = r instanceof BNode ? r : undefined;
+
+    this.getValue = () => this.value;
+  }
+
+  getValue() {
+    return this.value;
+  }
+
+  setLeft(left) {
+    if (left instanceof BNode) {
+      this.l = left;
+      return;
+    }
+    if (typeof left === 'number') {
+      this.l = new BNode(left);
+      return;
+    }
+
+    throw new Error('left Value must be a number or BNode');
+  }
+
+  setRigth(right) {
+    if (right instanceof BNode) {
+      this.r = right;
+      return;
+    }
+    if (typeof right === 'number') {
+      this.r = new BNode(right);
+      return;
+    }
+
+    throw new Error('rigth Value must be a number or BNode');
+  }
+
+  isLeaft() {
+    if (!this.l && !this.r) return true;
+
+    return false;
+  }
+}
+
+function buildBNodeTree(dataTree, i, j) {
+  if (!dataTree) return null;
+
+  if (dataTree[i] && dataTree[i][j]) {
+    const result = new BNode(dataTree[i][j]);
+
+    if (dataTree[i + 1] && dataTree[i + 1][j] && dataTree[i + 1][j + 1]) {
+      // Next left coordinates: [i + 1][j]
+      result.setLeft(buildBNodeTree(dataTree, i + 1, j));
+
+      // Next rigth coordinates: [i + 1][j + 1]
+      result.setRigth(buildBNodeTree(dataTree, i + 1, j + 1));
+    }
+
+    return result;
+  }
+  return null;
+}
+
+function buildBNodeTreeWeigth(
+  dataTree,
+  i,
+  j,
+  rootValue = 0,
+  leafCollector = null
+) {
+  if (!dataTree) return null;
+
+  if (dataTree[i] && dataTree[i][j]) {
+    const result = new BNode(dataTree[i][j] + rootValue);
+
+    if (!dataTree[i + 1]) {
+      if (leafCollector) leafCollector.push(result.getValue());
+    }
+
+    if (dataTree[i + 1] && dataTree[i + 1][j] && dataTree[i + 1][j + 1]) {
+      // Next left coordinates: [i + 1][j]
+      result.setLeft(
+        buildBNodeTreeWeigth(
+          dataTree,
+          i + 1,
+          j,
+          result.getValue(),
+          leafCollector
+        )
+      );
+
+      // Next rigth coordinates: [i + 1][j + 1]
+      result.setRigth(
+        buildBNodeTreeWeigth(
+          dataTree,
+          i + 1,
+          j + 1,
+          result.getValue(),
+          leafCollector
+        )
+      );
+    }
+
+    return result;
+  }
+  return null;
+}
+
 const DEBUG =
   process.env._DEBUG === 'true' || process.env.DEBUG === '1' || false;
 
@@ -58,11 +176,23 @@ describe('problem 0018', () => {
 
     const solutionFound = null;
 
-    console.log(data);
+    console.log('data', data);
+
+    // const valuesTree = buildBNodeTree(data, 0, 0);
+    const leafs = [];
+    const weightsTree = buildBNodeTreeWeigth(data, 0, 0, 0, leafs);
+
+    // console.log('data', JSON.stringify(valuesTree, null, 4));
+    // console.log('data', JSON.stringify(weightsTree, null, 4));
+    console.log('leafs count', leafs.length, 'leafs', leafs);
+
+    const max = leafs.reduce((a, b) => (a > b ? a : b));
+
+    console.log('max', max);
 
     const calculated = problem0018(data, DEBUG);
 
-    console.log(`PROBLEM 0017 solution found: ${calculated}`);
+    console.log(`PROBLEM 0018 solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });
