@@ -42,7 +42,7 @@
  *
  * ////////////////////////////////////////////////////////////////////////////
  *
- * Result found:
+ * ResultNode found:
  * ////////////////////////////////////////////////////////////////////////////
  */
 
@@ -107,17 +107,17 @@ function buildBNodeTree(dataTree, i, j) {
   if (!dataTree) return null;
 
   if (dataTree[i] && dataTree[i][j]) {
-    const result = new BNode(dataTree[i][j]);
+    const resultNode = new BNode(dataTree[i][j]);
 
     if (dataTree[i + 1] && dataTree[i + 1][j] && dataTree[i + 1][j + 1]) {
       // Next left coordinates: [i + 1][j]
-      result.setLeft(buildBNodeTree(dataTree, i + 1, j));
+      resultNode.setLeft(buildBNodeTree(dataTree, i + 1, j));
 
       // Next rigth coordinates: [i + 1][j + 1]
-      result.setRigth(buildBNodeTree(dataTree, i + 1, j + 1));
+      resultNode.setRigth(buildBNodeTree(dataTree, i + 1, j + 1));
     }
 
-    return result;
+    return resultNode;
   }
   return null;
 }
@@ -132,37 +132,37 @@ function buildBNodeTreeWeigth(
   if (!dataTree) return null;
 
   if (dataTree[i] && dataTree[i][j]) {
-    const result = new BNode(dataTree[i][j] + rootValue);
-
-    if (!dataTree[i + 1]) {
-      if (leafCollector) leafCollector.push(result.getValue());
-    }
+    const resultNode = new BNode(dataTree[i][j] + rootValue);
 
     if (dataTree[i + 1] && dataTree[i + 1][j] && dataTree[i + 1][j + 1]) {
       // Next left coordinates: [i + 1][j]
-      result.setLeft(
+      resultNode.setLeft(
         buildBNodeTreeWeigth(
           dataTree,
           i + 1,
           j,
-          result.getValue(),
+          resultNode.getValue(),
           leafCollector
         )
       );
 
       // Next rigth coordinates: [i + 1][j + 1]
-      result.setRigth(
+      resultNode.setRigth(
         buildBNodeTreeWeigth(
           dataTree,
           i + 1,
           j + 1,
-          result.getValue(),
+          resultNode.getValue(),
           leafCollector
         )
       );
     }
 
-    return result;
+    if (resultNode.isLeaft()) {
+      if (leafCollector) leafCollector.push(resultNode.getValue());
+    }
+
+    return resultNode;
   }
   return null;
 }
