@@ -19,18 +19,53 @@
  *
  * ////////////////////////////////////////////////////////////////////////////
  *
- * Result found:
+ * Result found: 31626
+ *
+ * Amicable numbers found:
+ * amicableNumbers [
+      '220',  '284',
+      '1184', '1210',
+      '2620', '2924',
+      '5020', '5564',
+      '6232', '6368'
+    ]
  * ////////////////////////////////////////////////////////////////////////////
  */
 
-export function problem0021(_DEBUG) {
-  const result = null;
+import { divisors, bigSumMany } from './helpers/index.js';
 
-  if (_DEBUG) {
-    console.log(`result`);
+export function problem0021(_DEBUG) {
+  const start = 1;
+  const limit = 10000;
+
+  const data = {};
+
+  for (let i = start; i <= limit; i++) {
+    data[i] = `${divisors(i).reduce((x, y) => x + y, 0) - i}`;
   }
 
-  return result;
+  const amicableNumbers = [];
+
+  Object.entries(data).forEach((entry) => {
+    const [index, value] = entry;
+
+    if (
+      value &&
+      data[index] &&
+      data[data[index]] &&
+      index !== data[index] &&
+      index === data[data[index]]
+    ) {
+      amicableNumbers.push(`${index}`);
+    }
+  });
+
+  if (_DEBUG) {
+    console.log(`result`, data);
+    console.log(`amicableNumbers`, amicableNumbers);
+  }
+
+  return bigSumMany(amicableNumbers);
 }
 
 export default { problem0021 };

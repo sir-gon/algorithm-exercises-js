@@ -19,7 +19,16 @@
  *
  * ////////////////////////////////////////////////////////////////////////////
  *
- * Result found:
+ * Result found: 31626
+ *
+ * Amicable numbers found:
+ * amicableNumbers [
+      '220',  '284',
+      '1184', '1210',
+      '2620', '2924',
+      '5020', '5564',
+      '6232', '6368'
+    ]
  * ////////////////////////////////////////////////////////////////////////////
  */
 
@@ -32,7 +41,7 @@ describe('problem 0021', () => {
   it('problem 0021 solution found', () => {
     expect.assertions(1);
 
-    const solutionFound = null;
+    const solutionFound = '31626';
 
     const calculated = problem0021(DEBUG);
 
