@@ -133,6 +133,18 @@ export function bigPower(strBase, intExp) {
   return result;
 }
 
+export function bigFactorial(number) {
+  // check number as int
+
+  let acum = '1';
+
+  for (let multiplier = 1; multiplier <= number; multiplier++) {
+    acum = bigMultiply(acum, `${multiplier}`);
+  }
+
+  return acum;
+}
+
 export default {
   bigNum,
   bigSum,

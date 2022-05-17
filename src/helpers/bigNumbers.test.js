@@ -5,7 +5,8 @@ import {
   bigNum,
   bigSum,
   bigSumMany,
-  bigPower
+  bigPower,
+  bigFactorial
 } from './bigNumbers.js';
 
 describe('bigNumber operations', () => {
@@ -103,5 +104,14 @@ describe('bigNumber operations', () => {
     expect(bigPower('2', 1000)).toStrictEqual(
       '10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376'
     );
+  });
+
+  it('bigFactorial examples', () => {
+    expect.assertions(4);
+
+    expect(bigFactorial('2')).toStrictEqual('2');
+    expect(bigFactorial('3')).toStrictEqual('6');
+    expect(bigFactorial('5')).toStrictEqual('120');
+    expect(bigFactorial('10')).toStrictEqual('3628800');
   });
 });
