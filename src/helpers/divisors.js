@@ -1,4 +1,10 @@
-function divisors(target, debug = false) {
+import { sum } from './sum.js';
+
+export const ___DIVISORS_ABUNDANT___ = 'abundant';
+export const ___DIVISORS_PERFECT___ = 'perfect';
+export const ___DIVISORS_DEFICIENT___ = 'deficient';
+
+export function divisors(target, debug = false) {
   let top = Math.abs(target);
 
   const divs = [];
@@ -28,5 +34,31 @@ function divisors(target, debug = false) {
   return divs;
 }
 
-export default divisors;
-export { divisors };
+export function abundancy(target, _DEBUG) {
+  const divs = divisors(target);
+  const divSum = sum(divs) - target;
+
+  if (_DEBUG) {
+    console.log(divs);
+    console.log('target', target, 'divSum', divSum);
+  }
+
+  switch (true) {
+    case divSum > target:
+      return ___DIVISORS_ABUNDANT___;
+    case divSum < target:
+      return ___DIVISORS_DEFICIENT___;
+    case divSum === target:
+      return ___DIVISORS_PERFECT___;
+    default:
+      return null;
+  }
+}
+
+export default {
+  ___DIVISORS_DEFICIENT___,
+  ___DIVISORS_PERFECT___,
+  ___DIVISORS_ABUNDANT___,
+  abundancy,
+  divisors
+};
