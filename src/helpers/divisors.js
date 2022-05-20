@@ -31,7 +31,7 @@ export function divisors(target, debug = false) {
   // sort divisors
   divs.sort((a, b) => a - b);
 
-  return divs;
+  return [...new Set(divs)];
 }
 
 export function abundancy(target, _DEBUG) {
