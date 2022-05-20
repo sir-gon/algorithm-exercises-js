@@ -1,4 +1,10 @@
-function divisors(target, debug = false) {
+import { sum } from './sum.js';
+
+export const ___DIVISORS_ABUNDANT___ = 'abundant';
+export const ___DIVISORS_PERFECT___ = 'perfect';
+export const ___DIVISORS_DEFICIENT___ = 'deficient';
+
+export function divisors(target, debug = false) {
   let top = Math.abs(target);
 
   const divs = [];
@@ -25,8 +31,36 @@ function divisors(target, debug = false) {
   // sort divisors
   divs.sort((a, b) => a - b);
 
-  return divs;
+  return [...new Set(divs)];
 }
 
-export default divisors;
-export { divisors };
+export function abundance(target, _DEBUG) {
+  const divs = divisors(target);
+  // Due the definition of https://mathworld.wolfram.com/AbundantNumber.html
+  const comparator = 2 * target;
+  const divSum = sum(divs);
+
+  if (_DEBUG) {
+    console.log(divs);
+    console.log('target', target, 'divSum', divSum);
+  }
+
+  switch (true) {
+    case divSum > comparator:
+      return ___DIVISORS_ABUNDANT___;
+    case divSum < comparator:
+      return ___DIVISORS_DEFICIENT___;
+    case divSum === comparator:
+      return ___DIVISORS_PERFECT___;
+    default:
+      return null;
+  }
+}
+
+export default {
+  ___DIVISORS_DEFICIENT___,
+  ___DIVISORS_PERFECT___,
+  ___DIVISORS_ABUNDANT___,
+  abundance,
+  divisors
+};
