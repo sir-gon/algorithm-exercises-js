@@ -34,9 +34,11 @@ export function divisors(target, debug = false) {
   return [...new Set(divs)];
 }
 
-export function abundancy(target, _DEBUG) {
+export function abundance(target, _DEBUG) {
   const divs = divisors(target);
-  const divSum = sum(divs) - target;
+  // Due the definition of https://mathworld.wolfram.com/AbundantNumber.html
+  const comparator = 2 * target;
+  const divSum = sum(divs);
 
   if (_DEBUG) {
     console.log(divs);
@@ -44,11 +46,11 @@ export function abundancy(target, _DEBUG) {
   }
 
   switch (true) {
-    case divSum > target:
+    case divSum > comparator:
       return ___DIVISORS_ABUNDANT___;
-    case divSum < target:
+    case divSum < comparator:
       return ___DIVISORS_DEFICIENT___;
-    case divSum === target:
+    case divSum === comparator:
       return ___DIVISORS_PERFECT___;
     default:
       return null;
@@ -59,6 +61,6 @@ export default {
   ___DIVISORS_DEFICIENT___,
   ___DIVISORS_PERFECT___,
   ___DIVISORS_ABUNDANT___,
-  abundancy,
+  abundance,
   divisors
 };
