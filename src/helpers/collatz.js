@@ -6,12 +6,11 @@
  * 13 → 40 → 20 → 10 → 5 → 16 → 8 → 4 → 2 → 1
  */
 
-function collatz(n) {
+export const collatz = (n) => {
   if (n % 2 === 0) {
     return n / 2;
   }
   return 3 * n + 1;
-}
+};
 
-export default collatz;
-export { collatz };
+export default { collatz };
