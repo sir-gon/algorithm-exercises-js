@@ -1,9 +1,4 @@
-function isPalindrome(n) {
-  // console.log(`${ n.toString().split("").reverse().join("") }`);
-  // console.log(`${ n.toString()}`) ;
+export const isPalindrome = (n) =>
+  n.toString().split('').reverse().join('') === n.toString();
 
-  return n.toString().split('').reverse().join('') === n.toString();
-}
-
-export default isPalindrome;
-export { isPalindrome };
+export default { isPalindrome };
