@@ -14,7 +14,7 @@ function problem0002(_top, _DEBUG) {
 
   let fibo = 0;
   do {
-    fibo = fiboStep(i, last1, last2);
+    fibo = fiboStep(last1, last2);
 
     if (_DEBUG) console.log(`Fibonacci (${i}) = ${fibo}`);
 

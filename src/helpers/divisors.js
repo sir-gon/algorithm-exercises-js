@@ -4,13 +4,10 @@ export const ___DIVISORS_ABUNDANT___ = 'abundant';
 export const ___DIVISORS_PERFECT___ = 'perfect';
 export const ___DIVISORS_DEFICIENT___ = 'deficient';
 
-export function divisors(target, debug = false) {
+export const divisors = (target) => {
   let top = Math.abs(target);
 
   const divs = [];
-
-  if (debug) console.log(`adding ${1}`);
-  if (debug) console.log(`adding ${target}`);
 
   divs.push(1);
   if (target !== 1) {
@@ -22,8 +19,6 @@ export function divisors(target, debug = false) {
     if (target % i === 0) {
       divs.push(i);
       divs.push(target / i);
-
-      if (debug) console.log(`adding ${i}`);
     }
     top = target / i;
   }
@@ -32,30 +27,24 @@ export function divisors(target, debug = false) {
   divs.sort((a, b) => a - b);
 
   return [...new Set(divs)];
-}
+};
 
-export function abundance(target, _DEBUG) {
+export const abundance = (target) => {
   const divs = divisors(target);
   // Due the definition of https://mathworld.wolfram.com/AbundantNumber.html
   const comparator = 2 * target;
   const divSum = sum(divs);
 
-  if (_DEBUG) {
-    console.log(divs);
-    console.log('target', target, 'divSum', divSum);
+  if (divSum > comparator) {
+    return ___DIVISORS_ABUNDANT___;
   }
 
-  switch (true) {
-    case divSum > comparator:
-      return ___DIVISORS_ABUNDANT___;
-    case divSum < comparator:
-      return ___DIVISORS_DEFICIENT___;
-    case divSum === comparator:
-      return ___DIVISORS_PERFECT___;
-    default:
-      return null;
+  if (divSum < comparator) {
+    return ___DIVISORS_DEFICIENT___;
   }
-}
+
+  return ___DIVISORS_PERFECT___;
+};
 
 export default {
   ___DIVISORS_DEFICIENT___,
