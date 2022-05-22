@@ -1,4 +1,4 @@
-function numberToDigits(toDecimal) {
+export const numberToDigits = (toDecimal) => {
   let value = toDecimal.valueOf();
   const result = [];
   let res;
@@ -14,11 +14,8 @@ function numberToDigits(toDecimal) {
   result.reverse();
 
   return result;
-}
+};
 
-function countDigits(decimal) {
-  return numberToDigits(decimal).length;
-}
+export const countDigits = (decimal) => numberToDigits(decimal).length;
 
-export default numberToDigits;
-export { countDigits, numberToDigits };
+export default { countDigits, numberToDigits };
