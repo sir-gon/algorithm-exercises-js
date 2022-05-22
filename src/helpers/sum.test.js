@@ -11,4 +11,11 @@ describe('sum all numbers in array', () => {
     expect.assertions(1);
     expect(sum([-1, -2, 1, 2])).toBe(0);
   });
+
+  it('sum of empty list', () => {
+    expect.assertions(2);
+
+    expect(sum()).toBe(0);
+    expect(sum([])).toBe(0);
+  });
 });
