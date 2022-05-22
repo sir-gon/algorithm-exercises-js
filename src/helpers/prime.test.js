@@ -21,7 +21,13 @@ describe('number is prime', () => {
   it('generate a list of prime numbers', () => {
     expect.assertions(2);
 
-    expect(primeListGenerator(1, 10)).toStrictEqual([2, 3, 5, 7]);
+    expect(primeListGenerator(2, 10)).toStrictEqual([2, 3, 5, 7]);
     expect(primeListGenerator(3, 20)).toStrictEqual([3, 5, 7, 11, 13, 17, 19]);
+  });
+
+  it('border case generate minimal prime list', () => {
+    expect.assertions(1);
+
+    expect(primeListGenerator()).toStrictEqual([]);
   });
 });
