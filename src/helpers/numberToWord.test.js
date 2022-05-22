@@ -3,8 +3,8 @@
 
 import { numberToWord } from './numberToWord.js';
 
-describe('numbers to Array of decimal digits', () => {
-  it('count digits (decimal) of positve integers', () => {
+describe('transform numbers to word representation in british english', () => {
+  it('transform numbers to word, common cases', () => {
     expect.assertions(8);
 
     expect(numberToWord(1)).toStrictEqual('one');
@@ -19,5 +19,15 @@ describe('numbers to Array of decimal digits', () => {
     // expect(numberToWord(9999)).toStrictEqual(
     //   'nine thousand nine hundred and ninety-nine'
     // );
+  });
+
+  it('transform numbers to word, border cases', () => {
+    expect.assertions(2);
+
+    expect(numberToWord()).toStrictEqual('');
+
+    expect(() => {
+      numberToWord(999999);
+    }).toThrow('invalid value');
   });
 });

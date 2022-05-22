@@ -8,14 +8,14 @@ const _MILLS_ = 'thousand';
 
 const dictionary = {
   '1': 'one',
-  2: 'two',
-  3: 'three',
-  4: 'four',
-  5: 'five',
-  6: 'six',
-  7: 'seven',
-  8: 'eight',
-  9: 'nine',
+  '2': 'two',
+  '3': 'three',
+  '4': 'four',
+  '5': 'five',
+  '6': 'six',
+  '7': 'seven',
+  '8': 'eight',
+  '9': 'nine',
   '10': 'ten',
   '11': 'eleven',
   '12': 'twelve',
@@ -38,18 +38,18 @@ const dictionary = {
   '1000': 'thousand'
 };
 
-function bigNumToWord(value, bigValue) {
+const bigNumToWord = (value, bigValue) => {
   // console.log(`input value = ${value}`);
   // console.log(`input bigValue = ${bigValue}`);
 
-  if (value > 9999) {
-    throw new Error('too big');
-  }
+  // if (value > 1001) {
+  //   throw new Error('too big');
+  // }
 
   /// 0
-  if (bigValue.length === 0) {
-    return '';
-  }
+  // if (bigValue.length === 0) {
+  //   return '';
+  // }
 
   /// 1 to 19
   if (bigValue.length <= 2 && value > 0 && value <= 19) {
@@ -81,9 +81,9 @@ function bigNumToWord(value, bigValue) {
     // console.log(`rest = ${rest}`);
 
     if (rest === 0) {
-      if (bigValue[0] === 0) {
-        return `and ${bigNumToWord(rest, [bigValue[1], bigValue[2]])}`;
-      }
+      // if (bigValue[0] === 0) {
+      //   return `and ${bigNumToWord(rest, [bigValue[1], bigValue[2]])}`;
+      // }
 
       return `${dictionary[bigValue[0]]} ${_CENTS_}`;
     }
@@ -94,30 +94,33 @@ function bigNumToWord(value, bigValue) {
     ])}`;
   }
 
-  /// 1000 to 9999
-  if (bigValue.length === 4) {
-    const rest = Math.floor(value % 10 ** (bigValue.length - 1));
-    // console.log(`mill rest = ${rest}`);
-
-    if (rest === 0) {
-      return `${dictionary[bigValue[0]]} ${_MILLS_}`;
-    }
-
-    return `${dictionary[bigValue[0]]} ${_MILLS_} ${bigNumToWord(rest, [
-      bigValue[1],
-      bigValue[2],
-      bigValue[3]
-    ])}`;
+  /// up to 1000
+  if (value === 1000) {
+    return `${dictionary[bigValue[0]]} ${_MILLS_}`;
   }
 
-  return '';
-}
+  // if (bigValue.length === 4) {
+  //   const rest = Math.floor(value % 10 ** (bigValue.length - 1));
+  //   console.log(`mill rest = ${rest}`);
 
-export function numberToWord(n) {
+  //   return `${dictionary[bigValue[0]]} ${_MILLS_} ${bigNumToWord(rest, [
+  //     bigValue[1],
+  //     bigValue[2],
+  //     bigValue[3]
+  //   ])}`;
+  // }
+
+  throw new Error('invalid value');
+};
+
+// public functions
+export const numberToWord = (n) => {
+  if (!n) return '';
+
   const value = n.valueOf();
   const bigValue = bigNum(`${value}`);
 
   return bigNumToWord(value, bigValue);
-}
+};
 
 export default { numberToWord };
