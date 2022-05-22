@@ -3,5 +3,7 @@
     "_DEBUG": 1,
     "NODE_OPTIONS":"--experimental-vm-modules"
   },
-  "jest.jestCommandLine": "npx jest --ci --color --detectOpenHandles --forceExit --runInBand --debug --collectCoverage --coverageReporters='text'"
+  "jest.jestCommandLine": "npx jest --ci --color --detectOpenHandles --forceExit --runInBand --debug",
+  "jest.debugMode": false,
+  "jest.showCoverageOnLoad": true
 }
