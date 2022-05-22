@@ -27,7 +27,7 @@ export const _scoreLetter = {
   'Z': 26
 };
 
-export function wordScore(word) {
+export const wordScore = (word) => {
   let result = 0;
   let i;
 
@@ -38,6 +38,6 @@ export function wordScore(word) {
   }
 
   return result;
-}
+};
 
 export default { wordScore };
