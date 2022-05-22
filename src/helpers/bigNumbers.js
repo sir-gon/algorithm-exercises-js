@@ -32,19 +32,17 @@ export const bigSum = (strNumberA, strNumberB) => {
 
   // do the sum
   for (let i = 0; i < a.length; i++) {
-    if (i < b.length) {
-      sum = a[i] + b[i] + carry;
+    sum = a[i] + b[i] + carry;
 
-      if (sum < 10) {
-        digit = sum;
-        carry = 0;
-      } else {
-        digit = Math.floor(sum % 10);
-        carry = Math.floor(sum / 10);
-      }
-
-      result.push(digit);
+    if (sum < 10) {
+      digit = sum;
+      carry = 0;
+    } else {
+      digit = Math.floor(sum % 10);
+      carry = Math.floor(sum / 10);
     }
+
+    result.push(digit);
   }
   if (carry > 0) result.push(carry);
 
