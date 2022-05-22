@@ -16,4 +16,11 @@ describe('product of all numbers in array', () => {
     expect.assertions(1);
     expect(product([-1, -2, 1, 2])).toBe(4);
   });
+
+  it('product of empty list', () => {
+    expect.assertions(2);
+
+    expect(product()).toBe(0);
+    expect(product([])).toBe(0);
+  });
 });
