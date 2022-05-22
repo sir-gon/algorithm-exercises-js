@@ -38,7 +38,7 @@ node --version
 v16.0.0
 ```
 
-# Why i publish solutions?
+# Why I publish solutions?
 
 As Project Euler says:
 
