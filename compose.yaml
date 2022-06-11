@@ -1,0 +1,8 @@
+services:
+  projecteuler:
+    image: projecteuler-js:latest
+    build:
+      context: .
+      target: testing
+    volumes:
+      - ./:/app
