@@ -4,18 +4,18 @@ describe('number is prime', () => {
   it('some numbers are prime', () => {
     expect.assertions(10);
 
-    expect(isPrime(1)).toStrictEqual(false);
-    expect(isPrime(1)).toStrictEqual(false);
+    expect(isPrime(1)).toBe(false);
+    expect(isPrime(1)).toBe(false);
 
-    expect(isPrime(2)).toStrictEqual(true);
-    expect(isPrime(7)).toStrictEqual(true);
-    expect(isPrime(13)).toStrictEqual(true);
-    expect(isPrime(29)).toStrictEqual(true);
+    expect(isPrime(2)).toBe(true);
+    expect(isPrime(7)).toBe(true);
+    expect(isPrime(13)).toBe(true);
+    expect(isPrime(29)).toBe(true);
 
-    expect(isPrime(4)).toStrictEqual(false);
-    expect(isPrime(10)).toStrictEqual(false);
-    expect(isPrime(100)).toStrictEqual(false);
-    expect(isPrime(3000)).toStrictEqual(false);
+    expect(isPrime(4)).toBe(false);
+    expect(isPrime(10)).toBe(false);
+    expect(isPrime(100)).toBe(false);
+    expect(isPrime(3000)).toBe(false);
   });
 
   it('generate a list of prime numbers', () => {

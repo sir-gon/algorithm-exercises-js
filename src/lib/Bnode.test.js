@@ -7,8 +7,8 @@ describe('class BNode for binary trees', () => {
     const testNodeA = new BNode(5);
     const testNodeB = new BNode(testNodeA);
 
-    expect(testNodeA.getValue()).toStrictEqual(5);
-    expect(testNodeB.getValue()).toStrictEqual(5);
+    expect(testNodeA.getValue()).toBe(5);
+    expect(testNodeB.getValue()).toBe(5);
   });
 
   it('class BNode left value', () => {
@@ -60,8 +60,8 @@ describe('class BNode for binary trees', () => {
     testNodeA.setLeft(testNodeB);
     testNodeA.setRight(testNodeC);
 
-    expect(testNodeA.isLeaft()).toStrictEqual(false);
-    expect(testNodeB.isLeaft()).toStrictEqual(true);
-    expect(testNodeB.isLeaft()).toStrictEqual(true);
+    expect(testNodeA.isLeaft()).toBe(false);
+    expect(testNodeB.isLeaft()).toBe(true);
+    expect(testNodeB.isLeaft()).toBe(true);
   });
 });

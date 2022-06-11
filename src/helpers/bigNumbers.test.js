@@ -32,33 +32,33 @@ describe('bigNumber operations', () => {
   it('bigSum examples', () => {
     expect.assertions(7);
 
-    expect(bigSum('2', '2')).toStrictEqual('4');
-    expect(bigSum('12', '12')).toStrictEqual('24');
-    expect(bigSum('123', '321')).toStrictEqual('444');
+    expect(bigSum('2', '2')).toBe('4');
+    expect(bigSum('12', '12')).toBe('24');
+    expect(bigSum('123', '321')).toBe('444');
 
-    expect(bigSum('249', '654')).toStrictEqual('903');
-    expect(bigSum('349', '854')).toStrictEqual('1203');
+    expect(bigSum('249', '654')).toBe('903');
+    expect(bigSum('349', '854')).toBe('1203');
 
-    expect(bigSum('3491', '854')).toStrictEqual('4345');
-    expect(
-      bigSum('12345678901234567890', '12345678901234567890')
-    ).toStrictEqual('24691357802469135780');
+    expect(bigSum('3491', '854')).toBe('4345');
+    expect(bigSum('12345678901234567890', '12345678901234567890')).toBe(
+      '24691357802469135780'
+    );
   });
 
   it('bigSumMany examples', () => {
     expect.assertions(8);
 
-    expect(bigSumMany(['2', '2'])).toStrictEqual('4');
-    expect(bigSumMany(['12', '12'])).toStrictEqual('24');
-    expect(bigSumMany(['123', '321'])).toStrictEqual('444');
+    expect(bigSumMany(['2', '2'])).toBe('4');
+    expect(bigSumMany(['12', '12'])).toBe('24');
+    expect(bigSumMany(['123', '321'])).toBe('444');
 
-    expect(bigSumMany(['2', '2', '2'])).toStrictEqual('6');
-    expect(bigSumMany(['349', '854'])).toStrictEqual('1203');
+    expect(bigSumMany(['2', '2', '2'])).toBe('6');
+    expect(bigSumMany(['349', '854'])).toBe('1203');
 
-    expect(bigSumMany(['349', '854', '213', '543'])).toStrictEqual('1959');
-    expect(
-      bigSumMany(['12345678901234567890', '12345678901234567890'])
-    ).toStrictEqual('24691357802469135780');
+    expect(bigSumMany(['349', '854', '213', '543'])).toBe('1959');
+    expect(bigSumMany(['12345678901234567890', '12345678901234567890'])).toBe(
+      '24691357802469135780'
+    );
     expect(
       bigSumMany([
         '12345678901234567890',
@@ -66,7 +66,7 @@ describe('bigNumber operations', () => {
         '12345678901234567890',
         '12345678901234567890'
       ])
-    ).toStrictEqual('49382715604938271560');
+    ).toBe('49382715604938271560');
   });
 
   it('bigMultiplyRowToBigNum examples', () => {
@@ -77,31 +77,31 @@ describe('bigNumber operations', () => {
     expect(bigMultiplyRowToBigNum('12', 4)).toStrictEqual([4, 8]);
     expect(bigMultiplyRowToBigNum('999', 9)).toStrictEqual([8, 9, 9, 1]);
 
-    expect(bigMultiplyRowToString('2', 2)).toStrictEqual('4');
-    expect(bigMultiplyRowToString('12', 2)).toStrictEqual('24');
-    expect(bigMultiplyRowToString('12', 4)).toStrictEqual('48');
-    expect(bigMultiplyRowToString('999', 9)).toStrictEqual('8991');
+    expect(bigMultiplyRowToString('2', 2)).toBe('4');
+    expect(bigMultiplyRowToString('12', 2)).toBe('24');
+    expect(bigMultiplyRowToString('12', 4)).toBe('48');
+    expect(bigMultiplyRowToString('999', 9)).toBe('8991');
   });
 
   it('bigMultiply examples', () => {
     expect.assertions(4);
 
-    expect(bigMultiply('2', '2')).toStrictEqual('4');
-    expect(bigMultiply('2', '22')).toStrictEqual('44');
+    expect(bigMultiply('2', '2')).toBe('4');
+    expect(bigMultiply('2', '22')).toBe('44');
 
-    expect(bigMultiply('999', '999')).toStrictEqual('998001');
-    expect(
-      bigMultiply('12345678901234567890', '12345678901234567890')
-    ).toStrictEqual('152415787532388367501905199875019052100');
+    expect(bigMultiply('999', '999')).toBe('998001');
+    expect(bigMultiply('12345678901234567890', '12345678901234567890')).toBe(
+      '152415787532388367501905199875019052100'
+    );
   });
 
   it('bigPower examples', () => {
     expect.assertions(4);
 
-    expect(bigPower('2', 2)).toStrictEqual('4');
-    expect(bigPower('2', 4)).toStrictEqual('16');
-    expect(bigPower('2', 5)).toStrictEqual('32');
-    expect(bigPower('2', 1000)).toStrictEqual(
+    expect(bigPower('2', 2)).toBe('4');
+    expect(bigPower('2', 4)).toBe('16');
+    expect(bigPower('2', 5)).toBe('32');
+    expect(bigPower('2', 1000)).toBe(
       '10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376'
     );
   });
@@ -109,9 +109,9 @@ describe('bigNumber operations', () => {
   it('bigFactorial examples', () => {
     expect.assertions(4);
 
-    expect(bigFactorial('2')).toStrictEqual('2');
-    expect(bigFactorial('3')).toStrictEqual('6');
-    expect(bigFactorial('5')).toStrictEqual('120');
-    expect(bigFactorial('10')).toStrictEqual('3628800');
+    expect(bigFactorial('2')).toBe('2');
+    expect(bigFactorial('3')).toBe('6');
+    expect(bigFactorial('5')).toBe('120');
+    expect(bigFactorial('10')).toBe('3628800');
   });
 });
