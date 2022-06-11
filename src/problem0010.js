@@ -31,5 +31,3 @@ function problem0010(_DEBUG) {
 
 export default problem0010;
 export { problem0010 };
-
-problem0010(true);
