@@ -1,3 +1,4 @@
+/* eslint-disable jest/no-disabled-tests */
 /**
  * Smallest multiple
  *
@@ -28,7 +29,8 @@ import logger from './logger.js';
 import { problem0005 } from './problem0005.js';
 
 describe('problem 0005', () => {
-  it('problem 0005 solution found', () => {
+  it.skip('problem 0005 solution found', async () => {
+    // Your test
     expect.assertions(1);
 
     const solutionFound = 232792560;
