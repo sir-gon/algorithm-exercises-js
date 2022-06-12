@@ -26,6 +26,7 @@
 // What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
 
 import logger from './logger.js';
+import { maximum } from './helpers/index.js';
 import matrix from './data/problem0011.json';
 
 function problem0011() {
@@ -51,7 +52,7 @@ function problem0011() {
           acum *= matrix[i + k][j];
         }
 
-        if (acum > max) max = acum;
+        max = maximum(acum, max);
       }
 
       acum = 1;
@@ -63,7 +64,7 @@ function problem0011() {
           acum *= matrix[i][j + k];
         }
 
-        if (acum > max) max = acum;
+        max = maximum(acum, max);
       }
 
       acum = 1;
@@ -77,7 +78,7 @@ function problem0011() {
           acum *= matrix[i + k][j + k];
         }
 
-        if (acum > max) max = acum;
+        max = maximum(acum, max);
       }
 
       acum = 1;
@@ -95,7 +96,7 @@ function problem0011() {
           acum *= matrix[i + k][j + (step - 1) - k];
         }
 
-        if (acum > max) max = acum;
+        max = maximum(acum, max);
       }
     }
   }
