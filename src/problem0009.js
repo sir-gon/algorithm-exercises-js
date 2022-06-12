@@ -58,5 +58,3 @@ function problem0009() {
 
 export default problem0009;
 export { problem0009 };
-
-// problem0009(true);

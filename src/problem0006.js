@@ -19,7 +19,6 @@ function problem0006() {
   let squareOfSum = 0;
 
   for (let i = bottom; i <= top; i++) {
-    // logger.info(`${i}^2 = ${Math.pow(i, 2)}`);
     sumOfSquares += i ** 2;
     baseForSquareOfSum += i;
   }
