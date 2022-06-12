@@ -33,4 +33,16 @@ describe('problem 0015', () => {
 
     expect(calculated).toBe(solutionFound);
   });
+
+  it('problem 0015 solution with default values', () => {
+    expect.assertions(1);
+
+    const solutionFound = 137846528820;
+
+    const calculated = problem0015();
+
+    logger.info(`PROBLEM 0015 solution found: ${calculated}`);
+
+    expect(calculated).toBe(solutionFound);
+  });
 });
