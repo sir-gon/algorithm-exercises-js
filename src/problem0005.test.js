@@ -1,3 +1,4 @@
+/* eslint-disable jest/no-disabled-tests */
 /**
  * Smallest multiple
  *
@@ -23,21 +24,21 @@
  / ////////////////////////////////////////////////////////////////////////////
  */
 
+import logger from './logger.js';
+
 import { problem0005 } from './problem0005.js';
 
-const DEBUG =
-  process.env.DEBUG === 'true' || process.env.DEBUG === '1' || false;
-
 describe('problem 0005', () => {
-  it('problem 0005 solution found', () => {
+  it.skip('problem 0005 solution found', async () => {
+    // Your test
     expect.assertions(1);
 
     const solutionFound = 232792560;
     const startFrom = solutionFound - 1000;
 
-    const calculated = problem0005(startFrom, DEBUG);
+    const calculated = problem0005(startFrom);
 
-    console.log(`PROBLEM 0005 solution found: ${calculated}`);
+    logger.info(`PROBLEM 0005 solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

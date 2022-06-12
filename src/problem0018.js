@@ -46,85 +46,23 @@
  * ////////////////////////////////////////////////////////////////////////////
  */
 
-import { BNode } from './lib/BNode.js';
+// import { BNode } from './lib/BNode.js';
+import { BNodeBuilder } from './lib/BNodeBuilder.js';
 import data from './data/problem0018.json';
+import logger from './logger.js';
 
 const rootCoordinateI = 0;
 const rootCoordinateJ = 0;
 
-function buildBNodeTree(dataTree, i, j) {
-  if (!dataTree) return null;
-
-  if (dataTree[i] && dataTree[i][j]) {
-    const resultNode = new BNode(dataTree[i][j]);
-
-    if (dataTree[i + 1] && dataTree[i + 1][j] && dataTree[i + 1][j + 1]) {
-      // Next left coordinates: [i + 1][j]
-      resultNode.setLeft(buildBNodeTree(dataTree, i + 1, j));
-
-      // Next rigth coordinates: [i + 1][j + 1]
-      resultNode.setRight(buildBNodeTree(dataTree, i + 1, j + 1));
-    }
-
-    return resultNode;
-  }
-  return null;
-}
-
-function buildBNodeTreeWeigth(
-  dataTree,
-  i,
-  j,
-  rootValue = 0,
-  leafCollector = null
-) {
-  if (!dataTree) return null;
-
-  if (dataTree[i] && dataTree[i][j]) {
-    const resultNode = new BNode(dataTree[i][j] + rootValue);
-
-    if (dataTree[i + 1] && dataTree[i + 1][j] && dataTree[i + 1][j + 1]) {
-      // Next left coordinates: [i + 1][j]
-      resultNode.setLeft(
-        buildBNodeTreeWeigth(
-          dataTree,
-          i + 1,
-          j,
-          resultNode.getValue(),
-          leafCollector
-        )
-      );
-
-      // Next rigth coordinates: [i + 1][j + 1]
-      resultNode.setRight(
-        buildBNodeTreeWeigth(
-          dataTree,
-          i + 1,
-          j + 1,
-          resultNode.getValue(),
-          leafCollector
-        )
-      );
-    }
-
-    if (resultNode.isLeaft()) {
-      if (leafCollector) leafCollector.push(resultNode.getValue());
-    }
-
-    return resultNode;
-  }
-  return null;
-}
-
-export function problem0018(_DEBUG) {
-  if (_DEBUG) console.log('data', data);
-  if (_DEBUG) {
-    const valuesTree = buildBNodeTree(data, 0, 0);
-    console.log('data', JSON.stringify(valuesTree, null, 4));
-  }
+export function problem0018() {
+  logger.info('data', data);
+  logger.info(
+    'data',
+    JSON.stringify(BNodeBuilder.buildBNodeTree(data, 0, 0), null, 4)
+  );
 
   const leafs = [];
-  const weightsTree = buildBNodeTreeWeigth(
+  const weightsTree = BNodeBuilder.buildBNodeTreeWeigth(
     data,
     rootCoordinateI,
     rootCoordinateJ,
@@ -132,10 +70,9 @@ export function problem0018(_DEBUG) {
     leafs
   );
 
-  if (_DEBUG) {
-    console.log('data', JSON.stringify(weightsTree, null, 4));
-    console.log('leafs count', leafs.length, 'leafs', leafs);
-  }
+  logger.info('data', JSON.stringify(weightsTree, null, 4));
+  logger.info('leafs count', leafs.length, 'leafs', leafs);
+
   const max = leafs.reduce((a, b) => (a > b ? a : b));
 
   return max;

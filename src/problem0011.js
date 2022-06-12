@@ -25,11 +25,11 @@
 
 // What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
 
-import matrix from './problem0011-matrix.json';
+import logger from './logger.js';
+import { maximum } from './helpers/index.js';
+import matrix from './data/problem0011.json';
 
-// console.log(matrix);
-
-function problem0011(_DEBUG) {
+function problem0011() {
   const top = 20;
   // const bottom = 0;
   const step = 4;
@@ -42,80 +42,66 @@ function problem0011(_DEBUG) {
       acum = 1;
 
       if (i < top - (step - 1) && j < top) {
-        if (_DEBUG)
-          console.log(
-            `---- VERTICAL ------------------------------------------`
-          );
+        logger.info(`---- VERTICAL ------------------------------------------`);
         // vertical
         for (let k = 0; k < step; k++) {
-          if (_DEBUG)
-            console.log(
-              `row: i ${i + k}, column: ${j}, step ${k} => ${matrix[i + k][j]}`
-            );
+          logger.info(
+            `row: i ${i + k}, column: ${j}, step ${k} => ${matrix[i + k][j]}`
+          );
 
           acum *= matrix[i + k][j];
         }
 
-        if (acum > max) max = acum;
+        max = maximum(acum, max);
       }
 
       acum = 1;
       if (i < top && j < top - (step - 1)) {
-        if (_DEBUG)
-          console.log(
-            `---- HORIZONTAL ----------------------------------------`
-          );
+        logger.info(`---- HORIZONTAL ----------------------------------------`);
         // horizontal
         for (let k = 0; k < step; k++) {
-          if (_DEBUG)
-            console.log(`row: i ${i}, column: ${j + k} => ${matrix[i][j + k]}`);
+          logger.info(`row: i ${i}, column: ${j + k} => ${matrix[i][j + k]}`);
           acum *= matrix[i][j + k];
         }
 
-        if (acum > max) max = acum;
+        max = maximum(acum, max);
       }
 
       acum = 1;
       if (i + (step - 1) < top && j + (step - 1) < top) {
         // diagonal top left -> bottom right
-        if (_DEBUG)
-          console.log(
-            `---- DIAG \\ ---------------------------------------------`
-          );
+        logger.info(
+          `---- DIAG \\ ---------------------------------------------`
+        );
         for (let k = 0; k < step; k++) {
-          if (_DEBUG)
-            console.log(
-              `diag: (${i + k}, ${j + k}) => ${matrix[i + k][j + k]}`
-            );
+          logger.info(`diag: (${i + k}, ${j + k}) => ${matrix[i + k][j + k]}`);
           acum *= matrix[i + k][j + k];
         }
 
-        if (acum > max) max = acum;
+        max = maximum(acum, max);
       }
 
       acum = 1;
       if (i + (step - 1) < top && j + (step - 1) < top) {
         // diagonal top rigth -> bottom left
-        if (_DEBUG)
-          console.log(
-            `---- DIAG / ---------------------------------------------`
-          );
+        logger.info(
+          `---- DIAG / ---------------------------------------------`
+        );
         for (let k = 0; k < step; k++) {
-          if (_DEBUG)
-            console.log(
-              `diag: (${i + k}, ${j + (step - 1) - k}) => ${
-                matrix[i + k][j + (step - 1) - k]
-              }`
-            );
+          logger.info(
+            `diag: (${i + k}, ${j + (step - 1) - k}) => ${
+              matrix[i + k][j + (step - 1) - k]
+            }`
+          );
           acum *= matrix[i + k][j + (step - 1) - k];
         }
 
-        if (acum > max) max = acum;
+        max = maximum(acum, max);
       }
     }
   }
 
-  if (_DEBUG) console.log(`Maximum product: ${max}`);
+  logger.info(`Maximum product: ${max}`);
 
   return max;
 }

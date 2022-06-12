@@ -32,9 +32,11 @@
  * ////////////////////////////////////////////////////////////////////////////
  */
 
+import logger from './logger.js';
+
 import { divisors, bigSumMany } from './helpers/index.js';
 
-export function problem0021(_DEBUG) {
+export function problem0021() {
   const start = 1;
   const limit = 10000;
 
@@ -60,10 +62,8 @@ export function problem0021(_DEBUG) {
     }
   });
 
-  if (_DEBUG) {
-    console.log(`result`, data);
-    console.log(`amicableNumbers`, amicableNumbers);
-  }
+  logger.info(`result`, data);
+  logger.info(`amicableNumbers`, amicableNumbers);
 
   return bigSumMany(amicableNumbers);
 }

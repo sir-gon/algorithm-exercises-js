@@ -16,10 +16,9 @@
  * ////////////////////////////////////////////////////////////////////////////
  */
 
-import { problem0016 } from './problem0016.js';
+import logger from './logger.js';
 
-const DEBUG =
-  process.env.DEBUG === 'true' || process.env.DEBUG === '1' || false;
+import { problem0016 } from './problem0016.js';
 
 describe('problem 0016', () => {
   it('problem 0016 solution found', () => {
@@ -29,9 +28,9 @@ describe('problem 0016', () => {
     const exponent = 1000;
     const solutionFound = '1366';
 
-    const calculated = problem0016(base, exponent, DEBUG);
+    const calculated = problem0016(base, exponent);
 
-    console.log(`PROBLEM 0016 solution found: ${calculated}`);
+    logger.info(`PROBLEM 0016 solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

@@ -43,10 +43,9 @@
 // Solution found: The the greatest product of 13 consecutive digits is: 23514624000
 /// ///////////////////////////////////////////////////////////////////////////
 
-import { problem0008 } from './problem0008.js';
+import logger from './logger.js';
 
-const DEBUG =
-  process.env.DEBUG === 'true' || process.env.DEBUG === '1' || false;
+import { problem0008 } from './problem0008.js';
 
 describe('problem 0008', () => {
   it('problem 0008 solution found', () => {
@@ -54,9 +53,9 @@ describe('problem 0008', () => {
 
     const solutionFound = 23514624000;
 
-    const calculated = problem0008(DEBUG);
+    const calculated = problem0008();
 
-    console.log(`PROBLEM 0008 solution found: ${calculated}`);
+    logger.info(`PROBLEM 0008 solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

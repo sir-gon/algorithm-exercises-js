@@ -4,11 +4,13 @@
 
 // What is the largest prime factor of the number 600851475143 ?
 
+import logger from './logger.js';
+
 import { divisors, isPrime } from './helpers/index.js';
 
-function problem0003(_top, _DEBUG) {
+function problem0003(_top) {
   let middle;
-  const divs = divisors(_top, _DEBUG);
+  const divs = divisors(_top);
   let i;
 
   if (divs.length % 2 === 0) {
@@ -20,18 +22,20 @@ function problem0003(_top, _DEBUG) {
   // check half divisors, each is Prime? wich is largest?
   let maxPrimeFactor;
 
+  logger.info(`Divisors of ${_top}: ${divs}`);
+
   i = middle;
   do {
     const prime = isPrime(divs[i]);
 
-    if (_DEBUG) console.log(`${divs[i]} is Prime? ${prime}`);
+    logger.info(`${divs[i]} is Prime? ${prime}`);
 
     if (prime) maxPrimeFactor = divs[i];
 
     i -= 1;
   } while (i >= 0 && !maxPrimeFactor);
 
-  if (_DEBUG) console.log(`${maxPrimeFactor}`); // Solution found 6857
+  logger.info(`${maxPrimeFactor}`); // Solution found 6857
 
   return maxPrimeFactor;
 }

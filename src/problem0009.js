@@ -8,12 +8,14 @@
 
 /// ////////////////////////////////////////////////////////////////////////////
 
+import logger from './logger.js';
+
 // const top
 function isPythagoreanTriplet(a, b, c) {
   return a ** 2 + b ** 2 === c ** 2;
 }
 
-function problem0009(_DEBUG) {
+function problem0009() {
   let a;
   let b;
   let c;
@@ -24,7 +26,7 @@ function problem0009(_DEBUG) {
   b = 2;
   c = 997;
 
-  if (_DEBUG) console.log(`a = ${a} | b = ${b} | c = ${c}`);
+  logger.info(`a = ${a} | b = ${b} | c = ${c}`);
 
   let found;
 
@@ -33,11 +35,11 @@ function problem0009(_DEBUG) {
 
     while (a < b && b < c && !found) {
       // TESTING
-      if (_DEBUG) console.log(`TESTING: a = ${a} b = ${b} c = ${c}`);
+      logger.info(`TESTING: a = ${a} b = ${b} c = ${c}`);
 
       if (isPythagoreanTriplet(a, b, c)) {
         found = { a, b, c };
-        // if (_DEBUG) console.log(`FOUND: a = ${a} b = ${b} c = ${c}`)
+        // logger.info(`FOUND: a = ${a} b = ${b} c = ${c}`)
       }
 
       // INCREASE
@@ -48,15 +50,11 @@ function problem0009(_DEBUG) {
     a += 1;
   }
 
-  if (_DEBUG)
-    console.log(`FOUND: a = ${found.a} b = ${found.b} c = ${found.c}`);
-  if (_DEBUG)
-    console.log(`PRODUCT: a * b * c = ${found.a * found.b * found.c}`);
+  logger.info(`FOUND: a = ${found.a} b = ${found.b} c = ${found.c}`);
+  logger.info(`PRODUCT: a * b * c = ${found.a * found.b * found.c}`);
 
   return found.a * found.b * found.c;
 }
 
 export default problem0009;
 export { problem0009 };
-
-// problem0009(true);

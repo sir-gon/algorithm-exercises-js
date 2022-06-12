@@ -6,10 +6,9 @@
  * Solution found: Largest Palindrome => 993 𝗑 913 = 906609
  */
 
-import { problem0004 } from './problem0004.js';
+import logger from './logger.js';
 
-const DEBUG =
-  process.env.DEBUG === 'true' || process.env.DEBUG === '1' || false;
+import { problem0004 } from './problem0004.js';
 
 describe('problem 0004', () => {
   it('problem 0004 solution found', () => {
@@ -20,9 +19,9 @@ describe('problem 0004', () => {
     const bottom = 111;
     const top = 999;
 
-    const calculated = problem0004(bottom, top, DEBUG);
+    const calculated = problem0004(bottom, top);
 
-    console.log(`PROBLEM 0004 solution found: ${calculated}`);
+    logger.info(`PROBLEM 0004 solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

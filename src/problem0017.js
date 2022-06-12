@@ -21,9 +21,11 @@
  * ////////////////////////////////////////////////////////////////////////////
  */
 
+import logger from './logger.js';
+
 import { numberToWord } from './helpers/index.js';
 
-export default function problem0017(init, last, _DEBUG) {
+export default function problem0017(init, last) {
   let replaced;
   let word;
   let acum = 0;
@@ -32,14 +34,12 @@ export default function problem0017(init, last, _DEBUG) {
     word = numberToWord(i);
     replaced = word.replace(/[^a-z0-9]/gi, '');
 
-    if (_DEBUG) console.log(word);
-
     acum += replaced.length;
 
-    if (_DEBUG) console.log(replaced);
+    logger.info(`acum: ${acum} => word: ${word}`);
   }
 
-  console.log(acum);
+  logger.info(`acum => ${acum}`);
 
   return acum;
 }

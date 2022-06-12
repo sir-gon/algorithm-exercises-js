@@ -26,10 +26,11 @@
  * ////////////////////////////////////////////////////////////////////////////
  */
 
+import logger from './logger.js';
 import names from './data/p022_names.json';
 import { wordScore } from './helpers/wordScore.js';
 
-export function problem0022(_DEBUG) {
+export function problem0022() {
   names.sort((a, b) => a.localeCompare(b));
 
   let result = 0;
@@ -39,9 +40,7 @@ export function problem0022(_DEBUG) {
     result += (i + 1) * wordScore(names[i]);
   }
 
-  if (_DEBUG) {
-    console.log(`result`, result);
-  }
+  logger.info(`result`, result);
 
   return result;
 }

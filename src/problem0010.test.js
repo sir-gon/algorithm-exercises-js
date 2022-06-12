@@ -1,3 +1,4 @@
+/* eslint-disable jest/no-disabled-tests */
 /**
  *
  *
@@ -20,20 +21,19 @@
  *
  */
 
+import logger from './logger.js';
+
 import { problem0010 } from './problem0010.js';
 
-const DEBUG =
-  process.env.DEBUG === 'true' || process.env.DEBUG === '1' || false;
-
 describe('problem 0010', () => {
-  it('problem 0010 solution found', () => {
+  it.skip('problem 0010 solution found', () => {
     expect.assertions(1);
 
     const solutionFound = 142913828922;
 
-    const calculated = problem0010(DEBUG);
+    const calculated = problem0010();
 
-    console.log(`PROBLEM 0010 solution found: ${calculated}`);
+    logger.info(`PROBLEM 0010 solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

@@ -16,9 +16,11 @@
  * ////////////////////////////////////////////////////////////////////////////
  */
 
+import logger from './logger.js';
+
 import { matrix } from './helpers/index.js';
 
-function problem0015(gridSide = 20, _DEBUG) {
+function problem0015(gridSide = 20) {
   const vertexMatrix = matrix(gridSide + 1, gridSide + 1, 1);
 
   for (let i = 1; i <= gridSide; i++) {
@@ -30,8 +32,8 @@ function problem0015(gridSide = 20, _DEBUG) {
     }
   }
 
-  if (_DEBUG) console.table(`Paths found: ${vertexMatrix[gridSide][gridSide]}`);
-  if (_DEBUG) console.table(vertexMatrix);
+  logger.info(`Paths found: ${vertexMatrix[gridSide][gridSide]}`);
+  logger.info(vertexMatrix);
 
   return vertexMatrix[gridSide][gridSide];
 }

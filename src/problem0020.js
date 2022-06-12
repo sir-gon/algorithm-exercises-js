@@ -18,18 +18,16 @@
  * ////////////////////////////////////////////////////////////////////////////
  */
 
+import logger from './logger.js';
+
 import { bigFactorial, bigSumMany } from './helpers/bigNumbers.js';
 
-export function problem0020(_DEBUG) {
+export function problem0020() {
   const limit = 100;
 
   const strFactorial = bigFactorial(limit);
 
-  console.log(`Factorial of ${limit}!:`, strFactorial);
-
-  if (_DEBUG) {
-    console.log(`Factorial of ${limit}!:`, strFactorial);
-  }
+  logger.info(`Factorial of ${limit}!:`, strFactorial);
 
   const result = bigSumMany(strFactorial);
 

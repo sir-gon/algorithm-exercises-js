@@ -12,10 +12,9 @@
  * find the sum of the even-valued terms.
  */
 
-import { problem0002 } from './problem0002.js';
+import logger from './logger.js';
 
-const DEBUG =
-  process.env.DEBUG === 'true' || process.env.DEBUG === '1' || false;
+import { problem0002 } from './problem0002.js';
 
 describe('problem 0002', () => {
   it('problem 0002 solution found', () => {
@@ -24,9 +23,9 @@ describe('problem 0002', () => {
     const solutionFound = 4613732;
     const top = 4000000;
 
-    const calculated = problem0002(top, DEBUG);
+    const calculated = problem0002(top);
 
-    console.log(`PROBLEM 0002 solution found: ${calculated}`);
+    logger.info(`PROBLEM 0002 solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });
