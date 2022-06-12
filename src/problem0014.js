@@ -3,7 +3,9 @@ import logger from './logger.js';
 
 function problem0014(bottom = 1, top = 10) {
   // const top = 1000000;
-  if (bottom <= 1) throw new Error('bottom must be a positive integer');
+  if (bottom < 1) throw new Error('bottom must be a positive integer');
+  if (bottom >= top)
+    throw new Error('top must be and integer, higher than bottom');
 
   let maxSequence = [];
 
@@ -29,9 +31,8 @@ function problem0014(bottom = 1, top = 10) {
     `Large sequence found: ${maxSequence} has ${maxSequence.length} elements`
   );
 
-  if (maxSequence.length > 0) return maxSequence[0];
-
-  return null;
+  // return firt element
+  return [...new Set(maxSequence)].shift();
 }
 
 export default problem0014;

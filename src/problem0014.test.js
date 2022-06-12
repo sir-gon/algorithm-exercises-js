@@ -43,7 +43,7 @@ describe('problem 0014', () => {
     expect(calculated).toBe(solutionFound);
   });
 
-  it('problem 0014 border cases', () => {
+  it('problem 0014 border case bottom is negative', () => {
     expect.assertions(1);
 
     const bottom = -1;
@@ -51,5 +51,26 @@ describe('problem 0014', () => {
     expect(() => {
       problem0014(bottom);
     }).toThrow('bottom must be a positive integer');
+  });
+
+  it('problem 0014 border case bottom higher than top', () => {
+    expect.assertions(1);
+
+    const top = 0;
+    const bottom = 10;
+
+    expect(() => {
+      problem0014(bottom, top);
+    }).toThrow('top must be and integer, higher than bottom');
+  });
+
+  it('problem 0014 default values', () => {
+    expect.assertions(1);
+
+    const calculated = problem0014();
+
+    logger.info(`PROBLEM 0014 solution found: ${calculated}`);
+
+    expect(calculated).toBe(9);
   });
 });
