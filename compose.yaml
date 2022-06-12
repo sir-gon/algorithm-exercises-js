@@ -4,5 +4,7 @@ services:
     build:
       context: .
       target: testing
+    environment:
+      _DEBUG: ${_DEBUG}
     volumes:
       - ./:/app
