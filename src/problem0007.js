@@ -2,9 +2,10 @@
 
 // What is the 10 001st prime number?
 
+import logger from './logger.js';
 import { isPrime } from './helpers/index.js';
 
-function problem0007(_DEBUG) {
+function problem0007() {
   const top = 10001;
   const bottom = 1;
 
@@ -16,14 +17,14 @@ function problem0007(_DEBUG) {
 
     if (isPrime(i)) {
       primes.push(i);
-      if (_DEBUG)
-        console.log(`Prime found ${i} put in position: ${primes.length}`);
+
+      logger.info(`Prime found ${i} put in position: ${primes.length}`);
     }
   } while (primes.length < top);
 
-  if (_DEBUG) console.log(`primes count: ${primes.length}`);
-  if (_DEBUG)
-    console.log(`${top} prime number is: ${primes[primes.length - 1]}`);
+  logger.info(`primes count: ${primes.length}`);
+
+  logger.info(`${top} prime number is: ${primes[primes.length - 1]}`);
 
   return primes[primes.length - 1];
 }

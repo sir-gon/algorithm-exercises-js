@@ -7,10 +7,9 @@
  * Find the sum of all the multiples of 3 or 5 below 1000.
  */
 
-import { problem0001 } from './problem0001.js';
+import logger from './logger.js';
 
-const DEBUG =
-  process.env.DEBUG === 'true' || process.env.DEBUG === '1' || false;
+import { problem0001 } from './problem0001.js';
 
 describe('problem 0001', () => {
   it('problem 0001 solution found', () => {
@@ -19,9 +18,9 @@ describe('problem 0001', () => {
     const solutionFound = 233168;
     const top = 1000;
 
-    const calculated = problem0001(top, DEBUG);
+    const calculated = problem0001(top);
 
-    console.log(`PROBLEM 0001 solution found: ${calculated}`);
+    logger.info(`PROBLEM 0001 solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

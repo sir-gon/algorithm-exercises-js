@@ -21,10 +21,9 @@
  * ////////////////////////////////////////////////////////////////////////////
  */
 
-import { problem0017 } from './problem0017.js';
+import logger from './logger.js';
 
-const DEBUG =
-  process.env._DEBUG === 'true' || process.env.DEBUG === '1' || false;
+import { problem0017 } from './problem0017.js';
 
 describe('problem 0017', () => {
   it('problem 0017 solution found', () => {
@@ -34,9 +33,9 @@ describe('problem 0017', () => {
     const last = 1000;
     const solutionFound = 21124;
 
-    const calculated = problem0017(init, last, DEBUG);
+    const calculated = problem0017(init, last);
 
-    console.log(`PROBLEM 0017 solution found: ${calculated}`);
+    logger.info(`PROBLEM 0017 solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

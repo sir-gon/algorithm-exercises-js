@@ -6,7 +6,9 @@
 
 import { fiboStep } from './helpers/index.js';
 
-function problem0002(_top, _DEBUG) {
+import logger from './logger.js';
+
+function problem0002(_top) {
   let i = 0;
   let last1 = 1;
   let last2 = 0;
@@ -16,7 +18,7 @@ function problem0002(_top, _DEBUG) {
   do {
     fibo = fiboStep(last1, last2);
 
-    if (_DEBUG) console.log(`Fibonacci (${i}) = ${fibo}`);
+    logger.info(`Fibonacci (${i}) = ${fibo}`);
 
     if (fibo % 2 === 0) {
       evenSum += fibo;
@@ -28,7 +30,7 @@ function problem0002(_top, _DEBUG) {
     i += 1;
   } while (fibo < _top);
 
-  if (_DEBUG) console.log(`RESULT = ${evenSum}`);
+  logger.info(`RESULT = ${evenSum}`);
   return evenSum;
 }
 

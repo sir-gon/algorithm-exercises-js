@@ -48,6 +48,7 @@
 
 import { BNode } from './lib/BNode.js';
 import data from './data/problem0018.json';
+import logger from './logger.js';
 
 const rootCoordinateI = 0;
 const rootCoordinateJ = 0;
@@ -116,12 +117,9 @@ function buildBNodeTreeWeigth(
   return null;
 }
 
-export function problem0018(_DEBUG) {
-  if (_DEBUG) console.log('data', data);
-  if (_DEBUG) {
-    const valuesTree = buildBNodeTree(data, 0, 0);
-    console.log('data', JSON.stringify(valuesTree, null, 4));
-  }
+export function problem0018() {
+  logger.info('data', data);
+  logger.info('data', JSON.stringify(buildBNodeTree(data, 0, 0), null, 4));
 
   const leafs = [];
   const weightsTree = buildBNodeTreeWeigth(
@@ -132,10 +130,9 @@ export function problem0018(_DEBUG) {
     leafs
   );
 
-  if (_DEBUG) {
-    console.log('data', JSON.stringify(weightsTree, null, 4));
-    console.log('leafs count', leafs.length, 'leafs', leafs);
-  }
+  logger.info('data', JSON.stringify(weightsTree, null, 4));
+  logger.info('leafs count', leafs.length, 'leafs', leafs);
+
   const max = leafs.reduce((a, b) => (a > b ? a : b));
 
   return max;

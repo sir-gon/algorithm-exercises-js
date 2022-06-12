@@ -12,11 +12,11 @@
  * ////////////////////////////////////////////////////////////////////////////
  */
 
-export function problem0000template(_DEBUG) {
+import logger from './logger.js';
+
+export function problem0000template() {
   const result = null;
-  if (_DEBUG) {
-    console.log(`result`, result);
-  }
+  logger.info(`result`, result);
 
   return result;
 }

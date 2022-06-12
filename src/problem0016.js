@@ -16,16 +16,18 @@
  * ////////////////////////////////////////////////////////////////////////////
  */
 
+import logger from './logger.js';
+
 import { bigPower, bigSumMany } from './helpers/index.js';
 
-function problem0016(base, exponent, _DEBUG) {
+function problem0016(base, exponent) {
   const strPower = bigPower(base, exponent);
 
-  if (_DEBUG) console.table(`Digits of power found: (${strPower})`);
+  logger.info(`Digits of power found: (${strPower})`);
 
   const result = bigSumMany(strPower);
 
-  if (_DEBUG) console.table(`Sum of Digits: (${result})`);
+  logger.info(`Sum of Digits: (${result})`);
 
   return result;
 }

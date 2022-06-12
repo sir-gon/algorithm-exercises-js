@@ -4,9 +4,11 @@
 
 /// ////////////////////////////////////////////////////////////////////////////
 
+import logger from './logger.js';
+
 import { isPrime, sum } from './helpers/index.js';
 
-function problem0010(_DEBUG) {
+function problem0010() {
   const top = 2000000;
   const bottom = 1;
 
@@ -18,13 +20,12 @@ function problem0010(_DEBUG) {
 
     if (isPrime(i)) {
       primes.push(i);
-      if (_DEBUG)
-        console.log(`Prime found ${i} put in position: ${primes.length}`);
+      logger.info(`Prime found ${i} put in position: ${primes.length}`);
     }
   } while (i < top);
 
-  if (_DEBUG) console.log(`primes count: ${primes.length}`);
-  if (_DEBUG) console.log(`Sum of primes below ${top} is: ${sum(primes)}`);
+  logger.info(`primes count: ${primes.length}`);
+  logger.info(`Sum of primes below ${top} is: ${sum(primes)}`);
 
   return sum(primes);
 }

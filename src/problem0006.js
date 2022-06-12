@@ -8,6 +8,8 @@
 // [image unavailable]
 // Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 
+import logger from './logger.js';
+
 function problem0006() {
   const top = 100;
   const bottom = 1;
@@ -17,18 +19,18 @@ function problem0006() {
   let squareOfSum = 0;
 
   for (let i = bottom; i <= top; i++) {
-    // console.log(`${i}^2 = ${Math.pow(i, 2)}`);
+    // logger.info(`${i}^2 = ${Math.pow(i, 2)}`);
     sumOfSquares += i ** 2;
     baseForSquareOfSum += i;
   }
 
   squareOfSum = baseForSquareOfSum ** 2;
 
-  console.log(`Sum of first ${top} squares = ${sumOfSquares}`);
-  console.log(`Base for Square Of Sum of first ${top} = ${baseForSquareOfSum}`);
-  console.log(`Square Of Sum of first ${top} = ${squareOfSum}`);
+  logger.info(`Sum of first ${top} squares = ${sumOfSquares}`);
+  logger.info(`Base for Square Of Sum of first ${top} = ${baseForSquareOfSum}`);
+  logger.info(`Square Of Sum of first ${top} = ${squareOfSum}`);
 
-  console.log(
+  logger.info(
     `Difference found ${squareOfSum} - ${sumOfSquares} =  ${
       squareOfSum - sumOfSquares
     }`

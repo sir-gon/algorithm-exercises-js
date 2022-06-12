@@ -15,9 +15,11 @@
 
 // What is the value of the first triangle number to have over five hundred divisors?
 
+import logger from './logger.js';
+
 import { divisors } from './helpers/index.js';
 
-function problem0012(_DEBUG) {
+function problem0012() {
   const top = 500;
   let count = 0;
   let triangular = 0;
@@ -27,8 +29,7 @@ function problem0012(_DEBUG) {
     triangular += i;
     const d = divisors(triangular);
 
-    if (_DEBUG)
-      console.log(`Triangular number: ${triangular} has ${d.length} divisors`);
+    logger.info(`Triangular number: ${triangular} has ${d.length} divisors`);
 
     if (d.length > count) {
       count = d.length;
@@ -37,7 +38,7 @@ function problem0012(_DEBUG) {
     i += 1;
   }
 
-  if (_DEBUG) console.log(`FOUND: ${count}`);
+  logger.info(`FOUND: ${count}`);
 
   return count;
 }

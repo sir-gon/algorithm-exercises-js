@@ -30,17 +30,11 @@
  * ////////////////////////////////////////////////////////////////////////////
  */
 
-import util from 'util';
+import logger from './logger.js';
+
 import { abundance, ___DIVISORS_ABUNDANT___, sum } from './helpers/index.js';
 
-export function problem0023(_DEBUG) {
-  if (_DEBUG) {
-    util.inspect.defaultOptions.maxArrayLength = null;
-    util.inspect.defaultOptions.colors = true;
-    util.inspect.defaultOptions.depth = null;
-    util.inspect.defaultOptions.showHidden = false;
-  }
-
+export function problem0023() {
   const underLimit = 12;
   const superLimit = 28123;
   const allNumsList = [];
@@ -61,21 +55,11 @@ export function problem0023(_DEBUG) {
     allNumsList.push(i);
   }
 
-  if (_DEBUG) {
-    console.log(
-      'all nums list size:',
-      allNumsList.length,
-      `=>`,
-      util.inspect(allNumsList, {})
-    );
+  logger.info(`all nums list size: ${allNumsList.length} => ${allNumsList}`);
 
-    console.log(
-      'non abundant nums list:',
-      nonAbundantList.length,
-      `=>`,
-      util.inspect(nonAbundantList, {})
-    );
-  }
+  logger.info(
+    `non abundant nums list: ${nonAbundantList.length} => ${nonAbundantList}`
+  );
 
   let sumsAbundantNums = [];
 
@@ -96,32 +80,18 @@ export function problem0023(_DEBUG) {
   // filter duplicates
   sumsAbundantNums = [...new Set(sumsAbundantNums)];
 
-  if (_DEBUG) {
-    console.log(
-      'sumsAbundantNums size:',
-      sumsAbundantNums.length,
-      `result`,
-      util.inspect(sumsAbundantNums, {})
-    );
-  }
+  logger.info(
+    `sumsAbundantNums size: ${sumsAbundantNums.length}. result => ${sumsAbundantNums}`
+  );
 
   // All numbers below limit that not present in list of sums of pair of abundant numbers
   const found = allNumsList.filter((x) => !sumsAbundantNums.includes(x));
 
-  if (_DEBUG) {
-    console.log(
-      'found size:',
-      found.length,
-      'found =>',
-      util.inspect(found, {})
-    );
-  }
+  logger.info(`found size: ${found.length}, found => ${found}`);
 
   const result = sum(found);
 
-  if (_DEBUG) {
-    console.log(`result`, result);
-  }
+  logger.info(`result ${result}`);
 
   return result;
 }
