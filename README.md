@@ -6,36 +6,45 @@
 
 Use this answers to learn some tip and tricks for algorithms tests.
 
-# How to use
+# Using NodeJS runtime
 
-Run every problem using Node.js cli as following example:
+## Requirements
 
-```
-cd src/
-node problem00001.js
-
-```
-
-## Testing
-Run all tests, you must install dependencies:
+You must install dependencies:
 
 ```
 npm install
 ```
 
-and then:
+## Testing silently
+
+Every problem is a function with unit test.
+Unit test has test cases and input data to solve the problem.
+
+Run all tests:
 
 ```
 npm run jest
 ```
 
-## About development
+## Testing with full logs
+
+Logs are conditioned to _DEBUG environment variable set to 1.
+
+Run all tests with debug outputs:
+
+```
+_DEBUG=0 npm run test
+```
+
+
+# About development
 
 Developed with runtime:
 
 ```
 node --version
-v16.0.0
+v18.2.0
 ```
 
 # Why I publish solutions?
