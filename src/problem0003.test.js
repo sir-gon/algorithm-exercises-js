@@ -30,4 +30,17 @@ describe('problem 0003', () => {
 
     expect(calculated).toBe(solutionFound);
   });
+
+  it('problem 0003 border cases', () => {
+    expect.assertions(1);
+
+    const solutionFound = 2;
+    const top = 16;
+
+    const calculated = problem0003(top);
+
+    logger.info(`PROBLEM 0003 border case: ${calculated}`);
+
+    expect(calculated).toBe(solutionFound);
+  });
 });

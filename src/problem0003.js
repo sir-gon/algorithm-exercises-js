@@ -8,9 +8,9 @@ import logger from './logger.js';
 
 import { divisors, isPrime } from './helpers/index.js';
 
-function problem0003(_top, _DEBUG) {
+function problem0003(_top) {
   let middle;
-  const divs = divisors(_top, _DEBUG);
+  const divs = divisors(_top);
   let i;
 
   if (divs.length % 2 === 0) {
@@ -21,6 +21,8 @@ function problem0003(_top, _DEBUG) {
 
   // check half divisors, each is Prime? wich is largest?
   let maxPrimeFactor;
+
+  logger.info(`Divisors of ${_top}: ${divs}`);
 
   i = middle;
   do {
