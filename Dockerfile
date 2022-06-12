@@ -1,17 +1,16 @@
-FROM node:18.3.0-alpine3.15 as base
-
+FROM node:18.3.0-alpine3.16 as base
+ENV WORKDIR=/app
+WORKDIR ${WORKDIR}
 
 FROM base as development
 
 FROM development as builder
 
-COPY ./src /app/src
-COPY ./package.json /app/package.json
-COPY ./package-lock.json /app/package-lock.json
+COPY ./src ${WORKDIR}/src
+COPY ./package.json ${WORKDIR}/package.json
+COPY ./package-lock.json ${WORKDIR}/package-lock.json
 
-WORKDIR /app
-
-RUN npm install
+RUN npm ci --verbose
 
 FROM builder as testing
 
@@ -23,4 +22,5 @@ COPY ./.prettierrc /app/.prettierrc
 
 RUN ls -alh
 
+USER node
 CMD ["npm", "run", "test"]
