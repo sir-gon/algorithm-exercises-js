@@ -2,13 +2,17 @@ import { BNode } from './BNode.js';
 
 describe('class BNode for binary trees', () => {
   it('class BNode basic value', () => {
-    expect.assertions(2);
+    expect.assertions(4);
 
     const testNodeA = new BNode(5);
     const testNodeB = new BNode(testNodeA);
+    const testNodeC = new BNode().setValue(5);
+    const testNodeD = new BNode().setValue(testNodeC);
 
     expect(testNodeA.getValue()).toBe(5);
     expect(testNodeB.getValue()).toBe(5);
+    expect(testNodeC.getValue()).toBe(5);
+    expect(testNodeD.getValue()).toBe(5);
   });
 
   it('class BNode left value', () => {

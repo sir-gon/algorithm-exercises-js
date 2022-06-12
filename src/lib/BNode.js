@@ -1,7 +1,3 @@
-/**
- * TODO create a unit-test suit
- */
-
 export default class BNode {
   constructor(value, l, r) {
     this.value = null;
