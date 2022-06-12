@@ -29,6 +29,7 @@
     "prettier": "^2.2.1"
   },
   "dependencies": {
-    "pino": "^8.0.0"
+    "pino": "^8.0.0",
+    "pino-pretty": "^8.0.0"
   }
 }
