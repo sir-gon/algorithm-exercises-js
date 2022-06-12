@@ -42,4 +42,14 @@ describe('problem 0014', () => {
 
     expect(calculated).toBe(solutionFound);
   });
+
+  it('problem 0014 border cases', () => {
+    expect.assertions(1);
+
+    const bottom = -1;
+
+    expect(() => {
+      problem0014(bottom);
+    }).toThrow('bottom must be a positive integer');
+  });
 });
