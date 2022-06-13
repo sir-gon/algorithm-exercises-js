@@ -36,7 +36,33 @@ Run all tests with debug outputs:
 ```
 _DEBUG=0 npm run test
 ```
+# Running with Docker 🐳
 
+## Build a complete image with and run all tests
+Running container with testing (final) target.
+
+Designed to store all application files and dependencies as a complete runnable image.
+Coverage results will be stored in host **/coverage** directory (mounted as volume).
+
+```
+# Build a complete image
+docker-compose build --compress projecteuler-js
+docker-compose run --rm projecteuler-js npm run test
+```
+
+
+## Build and run a development image
+
+Running container with development target.
+Designed to develop on top of this image. All source application is mounted as a volume in **/app** directory.
+Dependencies should be installed to run (not present in this target) so, you must install dependencies before run (or after a dependency add/change).
+
+```
+# install node_modules dependencies using docker runtime and store them in host directory
+docker-compose build --compress projecteuler-js-dev
+docker-compose run --rm projecteuler-js-dev npm install --verbose
+docker-compose run --rm projecteuler-js-dev npm run test
+```
 
 # About development
 

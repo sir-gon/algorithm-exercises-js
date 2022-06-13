@@ -1,5 +1,5 @@
 services:
-  projecteuler:
+  projecteuler-js:
     image: projecteuler-js:latest
     build:
       context: .
@@ -7,4 +7,16 @@ services:
     environment:
       _DEBUG: ${_DEBUG}
     volumes:
+      - ./coverage:/app/coverage
+    profiles: ["testing"]
+
+  projecteuler-js-dev:
+    image: projecteuler-js:dev
+    build:
+      context: .
+      target: development
+    environment:
+      _DEBUG: ${_DEBUG}
+    volumes:
       - ./:/app
+    profiles: ["development"]
