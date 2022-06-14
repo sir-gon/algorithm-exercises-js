@@ -1,4 +1,4 @@
-[![Node.js CI](https://github.com/sir-gon/projecteuler.net/actions/workflows/node.js.yml/badge.svg)](https://github.com/sir-gon/projecteuler.net/actions/workflows/node.js.yml)
+[![Node.js CI](https://github.com/sir-gon/projecteuler-js/actions/workflows/node.js.yml/badge.svg)](https://github.com/sir-gon/projecteuler-js/actions/workflows/node.js.yml)
 
 # What is this?
 
