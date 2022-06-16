@@ -4,8 +4,6 @@
 
 // By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
-import { fiboStep } from './helpers/index.js';
-
 import logger from './logger.js';
 
 function problem0002(_top) {
@@ -16,7 +14,7 @@ function problem0002(_top) {
 
   let fibo = 0;
   do {
-    fibo = fiboStep(last1, last2);
+    fibo = last2 + last1;
 
     logger.info(`Fibonacci (${i}) = ${fibo}`);
 
