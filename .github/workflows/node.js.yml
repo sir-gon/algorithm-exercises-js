@@ -27,3 +27,5 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install
     - run: npm run test
+    - name: Upload coverage reports to Codecov with GitHub Action
+      uses: codecov/codecov-action@v3
