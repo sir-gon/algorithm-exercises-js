@@ -1,6 +1,6 @@
 [![Node.js CI](https://github.com/sir-gon/projecteuler-js/actions/workflows/node.js.yml/badge.svg)](https://github.com/sir-gon/projecteuler-js/actions/workflows/node.js.yml) [![codecov](https://codecov.io/gh/sir-gon/projecteuler-js/branch/main/graph/badge.svg?token=TBP53GERMA)](https://codecov.io/gh/sir-gon/projecteuler-js)
 
- ![GitHub language count](https://img.shields.io/github/languages/count/sir-gon/projecteuler-js) ![GitHub top language](https://img.shields.io/github/languages/top/sir-gon/projecteuler-js)
+![GitHub](https://img.shields.io/github/license/sir-gon/projecteuler-js) ![GitHub language count](https://img.shields.io/github/languages/count/sir-gon/projecteuler-js) ![GitHub top language](https://img.shields.io/github/languages/top/sir-gon/projecteuler-js)
 
 # What is this?
 
