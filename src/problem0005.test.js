@@ -29,14 +29,16 @@ import logger from './logger.js';
 import { problem0005 } from './problem0005.js';
 
 describe('problem 0005', () => {
-  it.skip('problem 0005 solution found', async () => {
+  it('problem 0005 solution found', async () => {
     // Your test
     expect.assertions(1);
 
     const solutionFound = 232792560;
+    const bottom = 1;
+    const top = 20;
     const startFrom = solutionFound - 1000;
 
-    const calculated = problem0005(startFrom);
+    const calculated = problem0005(bottom, top, startFrom);
 
     logger.info(`PROBLEM 0005 solution found: ${calculated}`);
 

@@ -25,13 +25,12 @@
 
 import logger from './logger.js';
 
-function problem0005() {
-  let test = 1;
+function problem0005(_bottom, _top, _startFrom) {
   let found;
-  let i;
-  const top = 20;
-  const bottom = 1;
+
   let fail;
+  let i;
+  let test = _startFrom;
 
   do {
     i = 2;
@@ -46,7 +45,7 @@ function problem0005() {
       }
 
       i += 1;
-    } while (i <= top && !fail);
+    } while (i <= _top && !fail);
 
     if (!fail) {
       found = test;
@@ -57,7 +56,7 @@ function problem0005() {
   } while (!found);
 
   logger.info(
-    `FOUND: ${found} divisible by any element beetwen ${bottom} and ${top}`
+    `FOUND: ${found} divisible by any element beetwen ${_bottom} and ${_top}`
   );
 
   return found;
