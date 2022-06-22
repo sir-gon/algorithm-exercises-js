@@ -7,30 +7,30 @@
     "start": "npm run test",
     "lint": "npx eslint . --color --max-warnings=0 && echo '✔  Your code looks good.'",
     "lint:watch": "npx esw . --color --max-warnings=0 --watch",
-    "jest": "cross-env NODE_OPTIONS=--experimental-vm-modules CI=true npx jest --ci --color --detectOpenHandles --forceExit --runInBand --debug",
-    "jest:watch": "cross-env NODE_OPTIONS=--experimental-vm-modules CI=true  npx jest --ci --color --detectOpenHandles --forceExit --runInBand --debug --watchAll",
+    "jest": "node --experimental-vm-modules ./node_modules/.bin/jest --ci --color --detectOpenHandles --forceExit --runInBand --debug",
+    "jest:watch": "node --experimental-vm-modules ./node_modules/.bin/jest --ci --color --detectOpenHandles --forceExit --runInBand --debug --watchAll",
     "prettier": "npx prettier --write 'src/**/*.js'",
     "test": "printenv && npm run lint && npm run jest && echo 'Done.'",
-    "test:watch": "printenv; concurrently -k -s first --names \"LINT,TEST\" -p \"[{name}]\" \"npm run lint:watch\" \"npm run jest:watch\""
+    "test:watch": "printenv; concurrently -k -s first --names \"LINT,TEST\" -p \"[{name}]\" \"npm run lint:watch\" \"npm run jest:watch\"",
+    "update-all": "npm install $(npm outdated | cut -d' ' -f 1 | sed '1d' | xargs -I '$' echo '$@latest' | xargs echo)"
   },
   "author": "Gonzalo Diaz <devel@gon.cl>",
   "license": "MIT",
   "type": "module",
   "devDependencies": {
-    "concurrently": "7.2.2",
-    "cross-env": "7.0.3",
-    "eslint": "8.18.0",
-    "eslint-config-airbnb-base": "15.0.0",
-    "eslint-config-prettier": "8.5.0",
-    "eslint-plugin-import": "2.26.0",
-    "eslint-plugin-jest": "26.5.3",
-    "eslint-plugin-prettier": "4.0.0",
-    "eslint-watch": "8.0.0",
-    "jest": "28.1.1",
-    "prettier": "2.7.1"
+    "concurrently": "^7.2.2",
+    "eslint": "^8.18.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^26.5.3",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-watch": "^8.0.0",
+    "jest": "^28.1.1",
+    "prettier": "^2.2.1"
   },
   "dependencies": {
-    "pino": "^8.0.0",
-    "pino-pretty": "^8.0.0"
+    "pino": "^8.1.0",
+    "pino-pretty": "^8.1.0"
   }
 }
