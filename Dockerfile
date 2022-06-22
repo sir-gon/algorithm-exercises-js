@@ -1,4 +1,7 @@
 FROM node:18.4.0-alpine3.16 as base
+
+RUN apk add --update --no-cache make
+
 ENV WORKDIR=/app
 WORKDIR ${WORKDIR}
 
