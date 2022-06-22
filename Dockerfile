@@ -1,4 +1,4 @@
-FROM node:18.3.0-alpine3.16 as base
+FROM node:18.4.0-alpine3.16 as base
 ENV WORKDIR=/app
 WORKDIR ${WORKDIR}
 
