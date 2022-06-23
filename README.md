@@ -36,7 +36,7 @@ Logs are conditioned to _DEBUG environment variable set to 1.
 Run all tests with debug outputs:
 
 ```
-_DEBUG=0 npm run test
+LOG_LEVEL=debug npm run test
 ```
 # Running with Docker 🐳
 

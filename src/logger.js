@@ -1,3 +1,4 @@
+/* eslint-disable jest/require-hook */
 // import util from 'util';
 import pino from 'pino';
 
@@ -6,14 +7,18 @@ const logger = pino({
     target: 'pino-pretty',
     options: {
       colorize: true,
-      sync: true,
+      // sync: true,
       ignore: 'pid,hostname'
     }
   },
-  enabled: !!(process.env._DEBUG && process.env._DEBUG === '1')
+  level: process.env.LOG_LEVEL || 'fatal'
 });
 
-// eslint-disable-next-line jest/require-hook
-logger.info('LOG ENABLED');
+logger.debug('LOG: DEBUG LEVEL ENABLED');
+logger.error('LOG: ERROR LEVEL ENABLED');
+logger.warn('LOG: WARN ENABLED');
+logger.info('LOG: INFO LEVEL ENABLED');
+
+logger.info(`LOG LEVEL: ${logger.levelVal}`);
 
 export default logger;
