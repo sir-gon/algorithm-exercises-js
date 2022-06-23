@@ -5,7 +5,7 @@ services:
       context: .
       target: testing
     environment:
-      _DEBUG: ${_DEBUG}
+      LOG_LEVEL: ${LOG_LEVEL}
     volumes:
       - ./coverage:/app/coverage
     profiles: ["testing"]
@@ -16,7 +16,7 @@ services:
       context: .
       target: development
     environment:
-      _DEBUG: ${_DEBUG}
+      LOG_LEVEL: ${LOG_LEVEL}
     volumes:
       - ./:/app
     profiles: ["development"]
