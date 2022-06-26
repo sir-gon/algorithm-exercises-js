@@ -16,16 +16,30 @@ jobs:
 
     strategy:
       matrix:
+        os: [
+            "windows-latest",
+            "ubuntu-latest",
+            "macOS-latest"
+          ]
         node-version: [16.x, 18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - uses: actions/checkout@v3
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm install
-    - run: npm run test
+
+    - name: Dependencies
+      run: npm install
+
+    - name: Lint
+      run: npm run lint
+
+    - name: Test
+      run: npm run test
+
     - name: Upload coverage reports to Codecov with GitHub Action
       uses: codecov/codecov-action@v3

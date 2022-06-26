@@ -10,7 +10,8 @@
     "jest": "node --experimental-vm-modules ./node_modules/.bin/jest --no-cache --ci --color --detectOpenHandles --forceExit --runInBand --debug",
     "jest:watch": "node --experimental-vm-modules ./node_modules/.bin/jest --no-cache --ci --color --detectOpenHandles --forceExit --runInBand --debug --watchAll",
     "prettier": "npx prettier --write 'src/**/*.js'",
-    "test": "npm run lint && npm run jest && echo 'Done.'",
+    "test": "npm run jest",
+    "test:all": "npm run lint && npm run jest && echo 'Done.'",
     "test:watch": "concurrently -k -s first --names \"LINT,TEST\" -p \"[{name}]\" \"npm run lint:watch\" \"npm run jest:watch\"",
     "update-all": "npm install $(npm outdated | cut -d' ' -f 1 | sed '1d' | xargs -I '$' echo '$@latest' | xargs echo)"
   },
