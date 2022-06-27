@@ -1,7 +1,6 @@
 /**
- *
  * Non-abundant sums
-
+ *
  *
  * https://projecteuler.net/problem=23
  *
@@ -23,11 +22,6 @@
  *
  * Find the sum of all the positive integers which cannot be written as
  * the sum of two abundant numbers.
- *
- * ////////////////////////////////////////////////////////////////////////////
- *
- * Result: 4179871
- * ////////////////////////////////////////////////////////////////////////////
  */
 
 import logger from './logger.js';
