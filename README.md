@@ -1,7 +1,7 @@
 [![Node.js CI](https://github.com/sir-gon/projecteuler-js/actions/workflows/node.js.yml/badge.svg)](https://github.com/sir-gon/projecteuler-js/actions/workflows/node.js.yml) [![codecov](https://codecov.io/gh/sir-gon/projecteuler-js/branch/main/graph/badge.svg?token=TBP53GERMA)](https://codecov.io/gh/sir-gon/projecteuler-js) 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-js.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-js?ref=badge_shield) [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/6198/badge)](https://bestpractices.coreinfrastructure.org/projects/6198)
 
-![GitHub](https://img.shields.io/github/license/sir-gon/projecteuler-js) ![GitHub language count](https://img.shields.io/github/languages/count/sir-gon/projecteuler-js) ![GitHub top language](https://img.shields.io/github/languages/top/sir-gon/projecteuler-js)
+![GitHub](https://img.shields.io/github/license/sir-gon/projecteuler-js) ![GitHub language count](https://img.shields.io/github/languages/count/sir-gon/projecteuler-js) ![GitHub top language](https://img.shields.io/github/languages/top/sir-gon/projecteuler-js) [![Total alerts](https://img.shields.io/lgtm/alerts/g/sir-gon/projecteuler-js.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/sir-gon/projecteuler-js/alerts/) [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/sir-gon/projecteuler-js.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/sir-gon/projecteuler-js/context:javascript)
 
 # What is this?
 
