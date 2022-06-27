@@ -1,5 +1,4 @@
 /**
- *
  * Names scores
  *
  * https://projecteuler.net/problem=22
@@ -19,16 +18,19 @@
  * a score of 938 × 53 = 49714.
  *
  * What is the total of all the name scores in the file?
- *
- * ////////////////////////////////////////////////////////////////////////////
- *
- * Result found: 871198282
- * ////////////////////////////////////////////////////////////////////////////
  */
+
+// ////////////////////////////////////////////////////////////////////////////
+// See:
+//    - src/data/p022_names.txt
+//    - src/data/p022_names.json
+// ////////////////////////////////////////////////////////////////////////////
 
 import logger from './logger.js';
 
 import { problem0022 } from './problem0022.js';
+
+import inputNames from './data/p022_names.json';
 
 describe('problem 0022', () => {
   it('problem 0022 solution found', () => {
@@ -36,7 +38,7 @@ describe('problem 0022', () => {
 
     const solutionFound = 871198282;
 
-    const calculated = problem0022();
+    const calculated = problem0022(inputNames);
 
     logger.info(`PROBLEM 0022 solution found: ${calculated}`);
 

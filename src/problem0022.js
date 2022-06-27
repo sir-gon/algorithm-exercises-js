@@ -1,10 +1,9 @@
 /**
- *
  * Names scores
  *
  * https://projecteuler.net/problem=22
  *
- * Using names.txt https://projecteuler.net/project/resources/p022_names.txt
+ * Using listOfNames.txt https://projecteuler.net/project/resources/p022_listOfNames.txt
  * (right click and 'Save Link/Target As...'),
  * a 46K text file containing over five-thousand first names,
  * begin by sorting it into alphabetical order.
@@ -19,25 +18,25 @@
  * a score of 938 × 53 = 49714.
  *
  * What is the total of all the name scores in the file?
- *
- * ////////////////////////////////////////////////////////////////////////////
- *
- * Result found: 871198282
- * ////////////////////////////////////////////////////////////////////////////
  */
 
+// ////////////////////////////////////////////////////////////////////////////
+// See:
+//    - src/data/p022_listOfNames.txt
+//    - src/data/p022_listOfNames.json
+// ////////////////////////////////////////////////////////////////////////////
+
 import logger from './logger.js';
-import names from './data/p022_names.json';
 import { wordScore } from './helpers/wordScore.js';
 
-export function problem0022() {
-  names.sort((a, b) => a.localeCompare(b));
+export function problem0022(listOfNames) {
+  listOfNames.sort((a, b) => a.localeCompare(b));
 
   let result = 0;
   let i;
 
-  for (i = 0; i < names.length; i++) {
-    result += (i + 1) * wordScore(names[i]);
+  for (i = 0; i < listOfNames.length; i++) {
+    result += (i + 1) * wordScore(listOfNames[i]);
   }
 
   logger.info(`result`, result);

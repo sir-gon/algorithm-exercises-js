@@ -12,7 +12,7 @@
 /// ////////////////////////////////////////////////////////////////////////////
 // NOTE: I think a better way to solve problem 0005.
 // If I got prime numbers in beetwen [1,20], can I test them as
-// prime factos, testing a combinatorial exponents that satisfies
+// prime factors, testing a combinatorial exponents that satisfies
 // the condition that the number found is divisible by all
 // the numbers in beetwen [1,20],
 // Instead, this solution is brute force.
