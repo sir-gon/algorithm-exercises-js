@@ -1,17 +1,17 @@
 /**
+ * Large sum
  *
  * https://projecteuler.net/problem=13
  *
- * ////////////////////////////////////////////////////////////////////////////
- * Solution found:
+ * Work out the first ten digits of the sum of the following one-hundred 50-digit numbers.
  *
- * First 10 digits of huge sume are 5537376230
- * ////////////////////////////////////////////////////////////////////////////
+ * See: src/data/problem0013.json
  */
 
 import logger from './logger.js';
 
 import { problem0013 } from './problem0013.js';
+import inputNums from './data/problem0013.json';
 
 describe('problem 0013', () => {
   it('problem 0013 solution found', () => {
@@ -19,7 +19,7 @@ describe('problem 0013', () => {
 
     const solutionFound = 5537376230;
 
-    const calculated = problem0013();
+    const calculated = problem0013(inputNums);
 
     logger.info(`PROBLEM 0013 solution found: ${calculated}`);
 
