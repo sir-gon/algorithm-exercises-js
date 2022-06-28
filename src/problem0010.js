@@ -26,10 +26,7 @@ import logger from './logger.js';
 
 import { isPrime, sum } from './helpers/index.js';
 
-function problem0010() {
-  const top = 2000000;
-  const bottom = 1;
-
+function problem0010(bottom, top) {
   const primes = [];
   let i = bottom;
 
