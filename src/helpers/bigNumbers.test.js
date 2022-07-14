@@ -30,15 +30,11 @@ describe('bigNumber operations', () => {
   });
 
   it('bigSum examples', () => {
-    expect.assertions(7);
+    expect.assertions(5);
 
     expect(bigSum('2', '2')).toBe('4');
     expect(bigSum('12', '12')).toBe('24');
-    expect(bigSum('123', '321')).toBe('444');
-
     expect(bigSum('249', '654')).toBe('903');
-    expect(bigSum('349', '854')).toBe('1203');
-
     expect(bigSum('3491', '854')).toBe('4345');
     expect(bigSum('12345678901234567890', '12345678901234567890')).toBe(
       '24691357802469135780'
@@ -46,19 +42,15 @@ describe('bigNumber operations', () => {
   });
 
   it('bigSumMany examples', () => {
-    expect.assertions(8);
+    expect.assertions(5);
 
     expect(bigSumMany(['2', '2'])).toBe('4');
-    expect(bigSumMany(['12', '12'])).toBe('24');
     expect(bigSumMany(['123', '321'])).toBe('444');
 
     expect(bigSumMany(['2', '2', '2'])).toBe('6');
-    expect(bigSumMany(['349', '854'])).toBe('1203');
 
     expect(bigSumMany(['349', '854', '213', '543'])).toBe('1959');
-    expect(bigSumMany(['12345678901234567890', '12345678901234567890'])).toBe(
-      '24691357802469135780'
-    );
+
     expect(
       bigSumMany([
         '12345678901234567890',
@@ -70,12 +62,16 @@ describe('bigNumber operations', () => {
   });
 
   it('bigMultiplyRowToBigNum examples', () => {
-    expect.assertions(8);
+    expect.assertions(4);
 
     expect(bigMultiplyRowToBigNum('2', 2)).toStrictEqual([4]);
     expect(bigMultiplyRowToBigNum('12', 2)).toStrictEqual([2, 4]);
     expect(bigMultiplyRowToBigNum('12', 4)).toStrictEqual([4, 8]);
     expect(bigMultiplyRowToBigNum('999', 9)).toStrictEqual([8, 9, 9, 1]);
+  });
+
+  it('bigMultiplyRowToString examples', () => {
+    expect.assertions(4);
 
     expect(bigMultiplyRowToString('2', 2)).toBe('4');
     expect(bigMultiplyRowToString('12', 2)).toBe('24');
