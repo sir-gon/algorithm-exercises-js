@@ -20,7 +20,7 @@
   "type": "module",
   "devDependencies": {
     "concurrently": "^7.3.0",
-    "eslint": "8.20.0",
+    "eslint": "8.21.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.22.1",
