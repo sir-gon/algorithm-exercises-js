@@ -20,6 +20,7 @@ dependencies:
 	npm install --verbose
 
 test: dependencies
+	npm run lint
 	npm run test
 
 outdated:
