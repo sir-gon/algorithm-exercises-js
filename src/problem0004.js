@@ -32,10 +32,14 @@ function problem0004(_bottom, _top) {
   let foundPalindrome;
 
   // Find all cases
+  let cycles = 0;
+
   i = _top;
-  do {
-    j = _top;
-    do {
+  while (i >= _bottom) {
+    j = i;
+    while (j >= _bottom && (!foundj || j >= foundj)) {
+      cycles += 1;
+
       if (isPalindrome(j * i)) {
         logger.info(`FOUND: ${i} x ${j} = ${j * i} is Palindrome`);
 
@@ -49,13 +53,13 @@ function problem0004(_bottom, _top) {
       }
 
       j -= 1;
-    } while (j >= _bottom /* && !(found1 && found2) */);
+    }
 
     i -= 1;
-  } while (i >= _bottom /* && !(found1 && found2) */);
+  }
 
   logger.info(
-    `Largest Palindrome => ${foundi} 𝗑 ${foundj} = ${foundPalindrome}`
+    `Problem 0004 Largest Palindrome  => ${foundi} 𝗑 ${foundj} = ${foundPalindrome} in ${cycles} cycles`
   );
 
   return foundPalindrome;
