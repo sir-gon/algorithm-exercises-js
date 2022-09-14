@@ -1,5 +1,6 @@
 import {
   divisors,
+  divisorsUnique,
   abundance,
   ___DIVISORS_DEFICIENT___,
   ___DIVISORS_PERFECT___,
@@ -7,14 +8,24 @@ import {
 } from './divisors.js';
 
 describe('divisors of a number', () => {
-  it('divisors of a number of some consecutives positive integers', () => {
+  it('divisors of a number', () => {
     expect.assertions(4);
 
     expect(divisors(1)).toStrictEqual([1]);
     expect(divisors(2)).toStrictEqual([1, 2]);
 
-    expect(divisors(10)).toStrictEqual([1, 2, 5, 10]);
-    expect(divisors(12)).toStrictEqual([1, 2, 3, 4, 6, 12]);
+    expect(divisors(9)).toStrictEqual([1, 3, 3, 9]);
+    expect(divisors(16)).toStrictEqual([1, 2, 4, 4, 8, 16]);
+  });
+
+  it('divisors of a number without repeated factors', () => {
+    expect.assertions(4);
+
+    expect(divisorsUnique(1)).toStrictEqual([1]);
+    expect(divisorsUnique(2)).toStrictEqual([1, 2]);
+
+    expect(divisorsUnique(10)).toStrictEqual([1, 2, 5, 10]);
+    expect(divisorsUnique(16)).toStrictEqual([1, 2, 4, 8, 16]);
   });
 
   it('abundance of a integer number', () => {

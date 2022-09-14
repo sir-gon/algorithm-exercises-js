@@ -1,3 +1,5 @@
+import logger from '../logger.js';
+
 import { sum } from './sum.js';
 
 export const ___DIVISORS_ABUNDANT___ = 'abundant';
@@ -6,31 +8,46 @@ export const ___DIVISORS_DEFICIENT___ = 'deficient';
 
 export const divisors = (target) => {
   let top = Math.abs(target);
-
   const divs = [];
 
-  divs.push(1);
-  if (target !== 1) {
-    divs.push(target);
+  if (target === 1) {
+    divs.push(1);
+    return divs;
   }
 
+  logger.debug(`Find divisors of ${target}`);
+
   // fast divisors finding loop
-  for (let i = 2; i < top; i++) {
+  let i = 1;
+  while (i <= top) {
     if (target % i === 0) {
       divs.push(i);
       divs.push(target / i);
     }
+    i += 1;
     top = target / i;
   }
 
+  logger.debug(`collected divisors {divs}`);
+
   // sort divisors
   divs.sort((a, b) => a - b);
+  logger.debug(`sorted divisors {divs}`);
 
-  return [...new Set(divs)];
+  return divs;
+};
+
+export const divisorsUnique = (target) => {
+  let divs = divisors(target);
+  divs = [...new Set(divs)];
+
+  logger.debug(`unique divisors ${divs}`);
+
+  return divs;
 };
 
 export const abundance = (target) => {
-  const divs = divisors(target);
+  const divs = divisorsUnique(target);
   // Due the definition of https://mathworld.wolfram.com/AbundantNumber.html
   const comparator = 2 * target;
   const divSum = sum(divs);
@@ -51,5 +68,6 @@ export default {
   ___DIVISORS_PERFECT___,
   ___DIVISORS_ABUNDANT___,
   abundance,
-  divisors
+  divisors,
+  divisorsUnique
 };
