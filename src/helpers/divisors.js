@@ -46,6 +46,53 @@ export const divisorsUnique = (target) => {
   return divs;
 };
 
+// eslint-disable-next-line consistent-return
+export const nextPrimeFactor = (_target) => {
+  const top = Math.abs(_target);
+  let cycles = 0;
+
+  if (top === 1) {
+    return {
+      'factor': 1,
+      'carry': 1,
+      'cycles': cycles
+    };
+  }
+
+  let i = 2;
+  while (i <= top) {
+    cycles += 1;
+    if (top % i === 0) {
+      return {
+        'factor': i,
+        'carry': top / i,
+        'cycles': cycles
+      };
+    }
+    i += 1;
+  }
+};
+
+export const primeFactors = (target) => {
+  const factors = [];
+  let cycles = 0;
+
+  if (target === 1) {
+    return { 'factors': [1], 'cycles': 1 };
+  }
+
+  let factor = target;
+  while (factor !== 1) {
+    const partial = nextPrimeFactor(factor);
+    cycles += partial.cycles;
+
+    factors.push(partial.factor);
+    factor = partial.carry;
+  }
+
+  return { 'factors': factors, 'cycles': cycles };
+};
+
 export const abundance = (target) => {
   const divs = divisorsUnique(target);
   // Due the definition of https://mathworld.wolfram.com/AbundantNumber.html
@@ -69,5 +116,7 @@ export default {
   ___DIVISORS_ABUNDANT___,
   abundance,
   divisors,
-  divisorsUnique
+  divisorsUnique,
+  nextPrimeFactor,
+  primeFactors
 };
