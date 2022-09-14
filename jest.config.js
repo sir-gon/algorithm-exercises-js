@@ -11,7 +11,7 @@ export default {
     'clover',
     'json',
     'lcov',
-    ['text', { 'skipFull': true }]
+    ['text', { 'skipFull': false }]
   ],
   'coverageDirectory': 'coverage/',
   'testMatch': ['**/?(*.)+(spec|test).js?(x)']
