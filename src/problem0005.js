@@ -24,42 +24,71 @@
 /// ////////////////////////////////////////////////////////////////////////////
 
 import logger from './logger.js';
+import { primeFactors } from './helpers/divisors.js';
 
-function problem0005(_bottom, _top, _startFrom) {
-  let found;
+function _increase(_element, _group) {
+  const group = _group;
+  if (Object.hasOwn(group, _element)) {
+    group[_element] += 1;
+  } else {
+    group[_element] = 1;
+  }
 
-  let fail;
-  let i;
-  let test = _startFrom;
+  return _group;
+}
 
-  do {
-    i = 2;
-    fail = false;
-    do {
-      fail = test % i !== 0;
+function _replaceMaximum(_element, count, _group) {
+  const group = _group;
+  if (Object.hasOwn(group, _element)) {
+    const elem = _group[_element];
+    group[_element] = count > elem ? count : elem;
+  } else {
+    group[_element] = count;
+  }
 
-      if (fail) {
-        logger.info(`Fail ${test} not divisible by ${i}`);
-      } else {
-        logger.info(`Testing: ${test} divisible by ${i}`);
-      }
+  return _group;
+}
 
-      i += 1;
-    } while (i <= _top && !fail);
+function _primeFactorsCollection(_factors) {
+  let collection = {};
 
-    if (!fail) {
-      found = test;
+  _factors.forEach((factor) => {
+    collection = _increase(factor, collection);
+  });
+
+  return collection;
+}
+
+function problem0005(_bottom, _top) {
+  const minimumPrimeFactors = {};
+  let result = 1;
+  let cycles = 0;
+
+  for (let i = _bottom; i <= _top; i++) {
+    const primes = primeFactors(i);
+    cycles += primes.cycles;
+
+    const factors = _primeFactorsCollection(primes.factors);
+    cycles += primes.length;
+
+    logger.info(`Prime Factors of ${i} list    => ${primes}`);
+    logger.info(`Prime Factors of ${i} grouped => ${factors}`);
+
+    for (const [factor, quantity] of Object.entries(factors)) {
+      cycles += 1;
+      _replaceMaximum(factor, quantity, minimumPrimeFactors);
     }
 
-    fail = false;
-    test += 1;
-  } while (!found);
+    logger.info(`Prime Factors of ${i} grouped => ${minimumPrimeFactors}`);
+  }
 
-  logger.info(
-    `FOUND: ${found} divisible by any element beetwen ${_bottom} and ${_top}`
-  );
+  for (const [factor, quantity] of Object.entries(minimumPrimeFactors)) {
+    cycles += 1;
+    result *= factor ** quantity;
+  }
 
-  return found;
+  logger.info(`Problem 0005: ${result} in ${cycles} cycles`);
+  return result;
 }
 
 export default problem0005;

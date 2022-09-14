@@ -13,15 +13,11 @@ import logger from './logger.js';
 import { divisors, isPrime } from './helpers/index.js';
 
 function problem0003(_top) {
-  let middle;
   const divs = divisors(_top);
   let i;
 
-  if (divs.length % 2 === 0) {
-    middle = divs.length / 2 - 1;
-  } else {
-    middle = divs.length - 1;
-  }
+  // not-unique divisors are always even, then the middle term is:
+  const middle = divs.length / 2 - 1;
 
   // check half divisors, each is Prime? wich is largest?
   let maxPrimeFactor;
