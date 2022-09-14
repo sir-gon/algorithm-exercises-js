@@ -69,17 +69,17 @@ function problem0005(_bottom, _top) {
     cycles += primes.cycles;
 
     const factors = _primeFactorsCollection(primes.factors);
-    cycles += primes.length;
+    cycles += primes.factors.length;
 
-    logger.info(`Prime Factors of ${i} list    => ${primes}`);
-    logger.info(`Prime Factors of ${i} grouped => ${factors}`);
+    logger.info('Prime Factors of %d list    => %o', i, primes);
+    logger.info('Prime Factors of %d grouped => %o', i, factors);
 
     for (const [factor, quantity] of Object.entries(factors)) {
       cycles += 1;
       _replaceMaximum(factor, quantity, minimumPrimeFactors);
     }
 
-    logger.info(`Prime Factors of ${i} grouped => ${minimumPrimeFactors}`);
+    logger.info('Prime Factors of %d grouped => %o', i, minimumPrimeFactors);
   }
 
   for (const [factor, quantity] of Object.entries(minimumPrimeFactors)) {
@@ -87,7 +87,7 @@ function problem0005(_bottom, _top) {
     result *= factor ** quantity;
   }
 
-  logger.info(`Problem 0005: ${result} in ${cycles} cycles`);
+  logger.info('Problem 0005: %d in %d cycles', result, cycles);
   return result;
 }
 
