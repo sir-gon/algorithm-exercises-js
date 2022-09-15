@@ -60,7 +60,7 @@ export const nextPrimeFactor = (_target) => {
   }
 
   let i = 2;
-  while (i <= top) {
+  while (i < top) {
     cycles += 1;
     if (top % i === 0) {
       return {
@@ -71,6 +71,12 @@ export const nextPrimeFactor = (_target) => {
     }
     i += 1;
   }
+
+  return {
+    'factor': i,
+    'carry': top / i,
+    'cycles': cycles + 1
+  };
 };
 
 export const primeFactors = (target) => {
