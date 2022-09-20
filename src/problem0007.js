@@ -13,28 +13,30 @@
 import logger from './logger.js';
 import { isPrime } from './helpers/index.js';
 
-function problem0007() {
-  const top = 10001;
-  const bottom = 1;
-
+function problem0007(_top) {
   const primes = [];
-  let i = bottom;
 
-  do {
+  let i = 0;
+  let j = 2;
+  while (primes.length < _top) {
     i += 1;
+    if (isPrime(j)) {
+      primes.push(j);
 
-    if (isPrime(i)) {
-      primes.push(i);
-
-      logger.info(`Prime found ${i} put in position: ${primes.length}`);
+      logger.info(`Prime found ${j} put in position: ${primes.length}`);
     }
-  } while (primes.length < top);
+
+    j = 2 * i + 1;
+  }
 
   logger.info(`primes count: ${primes.length}`);
 
-  logger.info(`${top} prime number is: ${primes[primes.length - 1]}`);
+  const answer = primes[primes.length - 1];
 
-  return primes[primes.length - 1];
+  const cycles = i;
+  logger.info(`${_top} prime number is: ${answer} in ${cycles} cycles`);
+
+  return answer;
 }
 
 export default problem0007;
