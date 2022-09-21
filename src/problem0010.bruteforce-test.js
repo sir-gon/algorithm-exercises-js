@@ -27,12 +27,12 @@ import logger from './logger.js';
 import { problem0010 } from './problem0010.js';
 
 describe('problem 0010', () => {
-  it('problem 0010 small case', () => {
+  it('problem 0010 solution found BRUTE FORCE', () => {
     expect.assertions(1);
 
-    const solutionFound = 17;
+    const solutionFound = 142913828922;
     const bottom = 1;
-    const top = 10;
+    const top = 2000000;
 
     const calculated = problem0010(bottom, top);
 

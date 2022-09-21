@@ -1,5 +1,3 @@
-/* eslint-disable jest/no-disabled-tests */
-
 /**
  * Smallest multiple
  *
@@ -27,33 +25,33 @@
 
 import logger from './logger.js';
 
-import { problem0005 } from './problem0005.js';
+import { problem0005BruteForce } from './problem0005-brute-force.js';
 
 describe('problem 0005', () => {
-  it('problem 0005 solution found BASIC', async () => {
-    // Your test
+  it('problem 0005 solution found by BRUTE FORCE BASIC', async () => {
     expect.assertions(1);
 
     const solutionFound = 2520;
     const bottom = 1;
     const top = 10;
+    const startFrom = 0;
 
-    const calculated = problem0005(bottom, top);
+    const calculated = problem0005BruteForce(bottom, top, startFrom);
 
     logger.info(`PROBLEM 0005 solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });
 
-  it('problem 0005 solution found FULL', async () => {
-    // Your test
+  it('problem 0005 solution found by BRUTE FORCE FULL', async () => {
     expect.assertions(1);
 
     const solutionFound = 232792560;
     const bottom = 1;
     const top = 20;
+    const startFrom = solutionFound - 1000;
 
-    const calculated = problem0005(bottom, top);
+    const calculated = problem0005BruteForce(bottom, top, startFrom);
 
     logger.info(`PROBLEM 0005 solution found: ${calculated}`);
 
