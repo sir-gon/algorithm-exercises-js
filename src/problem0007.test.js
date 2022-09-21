@@ -14,7 +14,7 @@ import logger from './logger.js';
 
 import { problem0007 } from './problem0007.js';
 
-describe('problem 0007', () => {
+describe('problem 0007 basic', () => {
   it('problem 0007 basic', () => {
     expect.assertions(1);
 

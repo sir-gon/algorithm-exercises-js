@@ -14,9 +14,9 @@ import logger from './logger.js';
 
 import { problem0007 } from './problem0007.js';
 
-describe('problem 0007', () => {
+describe('problem 0007 BRUTEFORCE', () => {
   // eslint-disable-next-line jest/no-disabled-tests
-  it('problem 0007 BRUTEFORCE', () => {
+  it('problem 0007 BRUTEFORCE large', () => {
     expect.assertions(1);
 
     const solutionFound = 104743;
