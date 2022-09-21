@@ -8,6 +8,7 @@
     "lint": "npx eslint . --color --max-warnings=0 && echo '✔  Your code looks good.'",
     "lint:watch": "npx esw . --color --max-warnings=0 --watch",
     "jest": "node --experimental-vm-modules ./node_modules/.bin/jest --no-cache --ci --color --detectOpenHandles --forceExit --runInBand --debug",
+    "jest:bruteforce": "BRUTEFORCE=true node --experimental-vm-modules ./node_modules/.bin/jest --no-cache --ci --color --detectOpenHandles --forceExit --runInBand --debug",
     "jest:watch": "node --experimental-vm-modules ./node_modules/.bin/jest --no-cache --ci --color --detectOpenHandles --forceExit --runInBand --debug --watchAll",
     "prettier": "npx prettier --write 'src/**/*.js'",
     "test": "npm run jest",

@@ -19,9 +19,14 @@ clean:
 dependencies:
 	npm install --verbose
 
-test: dependencies
+test/static: dependencies
 	npm run lint
+
+test: dependencies test/static
 	npm run test
+
+test/bruteforce: dependencies test/static
+	npm run jest:bruteforce
 
 outdated:
 	-npm outdated

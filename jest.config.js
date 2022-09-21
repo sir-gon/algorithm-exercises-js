@@ -1,4 +1,7 @@
-export default {
+const BRUTEFORCE =
+  process.env.BRUTEFORCE && process.env.BRUTEFORCE.toUpperCase() === 'TRUE';
+
+const jestConfig = {
   'verbose': true,
   'testEnvironment': 'node',
   'globals': {
@@ -13,6 +16,13 @@ export default {
     'lcov',
     ['text', { 'skipFull': false }]
   ],
+  'testPathIgnorePatterns': ['/node_modules/', '<rootDir>/coverage'],
   'coverageDirectory': 'coverage/',
   'testMatch': ['**/?(*.)+(spec|test).js?(x)']
 };
+
+if (BRUTEFORCE) {
+  jestConfig.testMatch.push('**/?(*.)+(bruteforce-test).js?(x)');
+}
+
+export default jestConfig;
