@@ -33,6 +33,6 @@
   },
   "dependencies": {
     "pino": "^8.6.1",
-    "pino-pretty": "^9.1.0"
+    "pino-pretty": "^9.1.1"
   }
 }
