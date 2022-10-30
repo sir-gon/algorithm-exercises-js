@@ -25,9 +25,7 @@ function isPythagoreanTriplet(a, b, c) {
   return a ** 2 + b ** 2 === c ** 2;
 }
 
-function problem0009() {
-  const balance = 1000;
-
+function problem0009(_limit) {
   let a = 1;
   let b = 2;
   let c = 997;
@@ -50,7 +48,7 @@ function problem0009() {
 
       // INCREASE
       b += 1;
-      c = balance - b - a;
+      c = _limit - b - a;
     }
 
     a += 1;
