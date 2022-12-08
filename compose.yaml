@@ -5,7 +5,8 @@ services:
       context: .
       target: testing
     environment:
-      LOG_LEVEL: ${LOG_LEVEL}
+      LOG_LEVEL: ${LOG_LEVEL:-info} ## (1) ## info | debug
+      BRUTEFORCE: ${BRUTEFORCE:-false} ## (1) ## true | false
     volumes:
       - ./coverage:/app/coverage
     profiles: ["testing"]
@@ -16,7 +17,13 @@ services:
       context: .
       target: development
     environment:
-      LOG_LEVEL: ${LOG_LEVEL}
+      LOG_LEVEL: ${LOG_LEVEL:-info} ## (1) ## info | debug
+      BRUTEFORCE: ${BRUTEFORCE:-false} ## (1) ## true | false
     volumes:
       - ./:/app
     profiles: ["development"]
+
+## REFERENCES:
+## (1) Passing Environment variable with fallback value:
+##    https://stackoverflow.com/a/70772707/6366150
+##
