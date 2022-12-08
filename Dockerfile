@@ -14,7 +14,7 @@ COPY ./package.json ${WORKDIR}/package.json
 COPY ./package-lock.json ${WORKDIR}/package-lock.json
 COPY ./Makefile ${WORKDIR}/
 
-RUN npm ci --verbose --unsafe-perm
+RUN npm ci --verbose
 
 FROM builder as testing
 
@@ -29,5 +29,5 @@ COPY ./.prettierrc /app/.prettierrc
 COPY --from=builder /app/node_modules /app/node_modules
 RUN ls -alh
 
-# USER node
+USER node
 CMD ["npm", "run", "test"]

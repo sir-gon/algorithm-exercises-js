@@ -3,7 +3,7 @@
 ##    https://stackoverflow.com/a/70772707/6366150
 ##
 
-LOG_LEVEL := "info" ## (1) ## INFO | DEBUG
+LOG_LEVEL := "info" ## (1) ## info | debug
 BRUTEFORCE := "false" # true | false
 
 NPM=npm
@@ -35,7 +35,7 @@ dependencies:
 	@echo "################################################################################"
 	@echo "## Dependencies: ###############################################################"
 	@echo "################################################################################"
-	npm install --verbose
+	test -x ./node_modules ||  npm install --verbose
 	@echo "################################################################################"
 
 test/static: dependencies
@@ -43,9 +43,6 @@ test/static: dependencies
 
 test: env dependencies test/static
 	npm run test
-
-test/bruteforce: dependencies test/static
-	npm run jest:bruteforce
 
 outdated:
 	-npm outdated
@@ -60,6 +57,6 @@ docker/rebuild:
 	BUILDKIT_PROGRESS=plain docker-compose --profile testing build --no-cache
 
 docker/compose-run: docker/build
-	docker-compose --profile testing run --rm projecteuler-js make test -e DEBUG=$(DEBUG) -e BRUTEFORCE=$(BRUTEFORCE)
+	docker-compose --profile testing run --rm projecteuler-js make test -e LOG_LEVEL=$(LOG_LEVEL) -e BRUTEFORCE=$(BRUTEFORCE)
 
-all: test
+all: env dependencies test
