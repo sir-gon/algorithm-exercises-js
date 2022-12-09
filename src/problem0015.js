@@ -27,7 +27,7 @@ function problem0015(gridSide = 20) {
   }
 
   logger.info(`Paths found: ${vertexMatrix[gridSide][gridSide]}`);
-  logger.info(vertexMatrix);
+  logger.debug(vertexMatrix);
 
   return vertexMatrix[gridSide][gridSide];
 }

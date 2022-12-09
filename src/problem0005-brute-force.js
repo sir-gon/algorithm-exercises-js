@@ -39,9 +39,9 @@ function problem0005BruteForce(_bottom, _top, _startFrom) {
       fail = test % i !== 0;
 
       if (fail) {
-        logger.info(`Fail ${test} not divisible by ${i}`);
+        logger.debug(`Fail ${test} not divisible by ${i}`);
       } else {
-        logger.info(`Testing: ${test} divisible by ${i}`);
+        logger.debug(`Testing: ${test} divisible by ${i}`);
       }
 
       i += 1;

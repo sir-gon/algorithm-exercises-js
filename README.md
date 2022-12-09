@@ -1,4 +1,4 @@
-[![Node.js CI](https://github.com/sir-gon/projecteuler-js/actions/workflows/node.js.yml/badge.svg)](https://github.com/sir-gon/projecteuler-js/actions/workflows/node.js.yml) [![codecov](https://codecov.io/gh/sir-gon/projecteuler-js/branch/main/graph/badge.svg?token=TBP53GERMA)](https://codecov.io/gh/sir-gon/projecteuler-js) 
+[![Node.js CI](https://github.com/sir-gon/projecteuler-js/actions/workflows/node.js.yml/badge.svg)](https://github.com/sir-gon/projecteuler-js/actions/workflows/node.js.yml) [![codecov](https://codecov.io/gh/sir-gon/projecteuler-js/branch/main/graph/badge.svg?token=TBP53GERMA)](https://codecov.io/gh/sir-gon/projecteuler-js)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-js.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-js?ref=badge_shield) [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/6198/badge)](https://bestpractices.coreinfrastructure.org/projects/6198)
 
 ![GitHub](https://img.shields.io/github/license/sir-gon/projecteuler-js) ![GitHub language count](https://img.shields.io/github/languages/count/sir-gon/projecteuler-js) ![GitHub top language](https://img.shields.io/github/languages/top/sir-gon/projecteuler-js) [![Total alerts](https://img.shields.io/lgtm/alerts/g/sir-gon/projecteuler-js.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/sir-gon/projecteuler-js/alerts/) [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/sir-gon/projecteuler-js.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/sir-gon/projecteuler-js/context:javascript)
@@ -38,6 +38,12 @@ You must install dependencies:
 npm install
 ```
 
+Or using make
+
+```
+make dependencies
+```
+
 ## Testing silently
 
 Every problem is a function with unit test.
@@ -46,18 +52,46 @@ Unit test has test cases and input data to solve the problem.
 Run all tests:
 
 ```
-npm run jest
+npm run test
 ```
 
-## Testing with full logs
-
-Logs are conditioned to LOG_LEVEL environment variable set to 1.
+### Testing with full logs
 
 Run all tests with debug outputs:
 
 ```
 LOG_LEVEL=debug npm run test
 ```
+
+Use one of following values: debug, warning, error, info.
+
+## Testing using make
+
+```
+make test
+```
+
+### Enable all large BRUTEFORCE tests
+
+Direct in host using a make:
+
+```
+make test -e BRUTEFORCE=true
+```
+
+### Enable all DEBUG outputs
+
+
+```
+make test -e LOG_LEVEL=debug
+```
+
+### Enable all large BRUTEFORCE tests and all DEBUG outputs
+
+```
+make test -e LOG_LEVEL=debug -e BRUTEFORCE=true
+```
+
 # Running with Docker 🐳
 
 ## Build a complete image with and run all tests
@@ -68,10 +102,22 @@ Coverage results will be stored in host **/coverage** directory (mounted as volu
 
 ```
 # Build a complete image
-docker-compose build --compress projecteuler-js
+docker-compose build projecteuler-js
 docker-compose run --rm projecteuler-js npm run test
 ```
 
+## Enable BRUTEFORCE tests with full DEBUG output
+
+With docker-compose:
+
+```
+docker-compose --profile testing run --rm projecteuler-js make test -e LOG_LEVEL=DEBUG -e BRUTEFORCE=true
+```
+
+Using make:
+```
+make docker/compose-run -e LOG_LEVEL=DEBUG -e BRUTEFORCE=true
+```
 
 ## Build and run a development image
 

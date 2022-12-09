@@ -23,7 +23,7 @@ function problem0007(_top) {
     if (isPrime(j)) {
       primes.push(j);
 
-      logger.info(`Prime found ${j} put in position: ${primes.length}`);
+      logger.debug(`Prime found ${j} put in position: ${primes.length}`);
     }
 
     j = 2 * i + 1;

@@ -49,9 +49,9 @@ export function problem0023() {
     allNumsList.push(i);
   }
 
-  logger.info(`all nums list size: ${allNumsList.length} => ${allNumsList}`);
+  logger.debug(`all nums list size: ${allNumsList.length} => ${allNumsList}`);
 
-  logger.info(
+  logger.debug(
     `non abundant nums list: ${nonAbundantList.length} => ${nonAbundantList}`
   );
 
@@ -74,14 +74,14 @@ export function problem0023() {
   // filter duplicates
   sumsAbundantNums = [...new Set(sumsAbundantNums)];
 
-  logger.info(
+  logger.debug(
     `sumsAbundantNums size: ${sumsAbundantNums.length}. result => ${sumsAbundantNums}`
   );
 
   // All numbers below limit that not present in list of sums of pair of abundant numbers
   const found = allNumsList.filter((x) => !sumsAbundantNums.includes(x));
 
-  logger.info(`found size: ${found.length}, found => ${found}`);
+  logger.debug(`found size: ${found.length}, found => ${found}`);
 
   const result = sum(found);
 

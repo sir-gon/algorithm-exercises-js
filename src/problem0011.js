@@ -49,10 +49,12 @@ function problem0011() {
       acum = 1;
 
       if (i < top - (step - 1) && j < top) {
-        logger.info(`---- VERTICAL ------------------------------------------`);
+        logger.debug(
+          `---- VERTICAL ------------------------------------------`
+        );
         // vertical
         for (let k = 0; k < step; k++) {
-          logger.info(
+          logger.debug(
             `row: i ${i + k}, column: ${j}, step ${k} => ${matrix[i + k][j]}`
           );
 
@@ -64,10 +66,12 @@ function problem0011() {
 
       acum = 1;
       if (i < top && j < top - (step - 1)) {
-        logger.info(`---- HORIZONTAL ----------------------------------------`);
+        logger.debug(
+          `---- HORIZONTAL ----------------------------------------`
+        );
         // horizontal
         for (let k = 0; k < step; k++) {
-          logger.info(`row: i ${i}, column: ${j + k} => ${matrix[i][j + k]}`);
+          logger.debug(`row: i ${i}, column: ${j + k} => ${matrix[i][j + k]}`);
           acum *= matrix[i][j + k];
         }
 
@@ -77,11 +81,11 @@ function problem0011() {
       acum = 1;
       if (i + (step - 1) < top && j + (step - 1) < top) {
         // diagonal top left -> bottom right
-        logger.info(
+        logger.debug(
           `---- DIAG \\ ---------------------------------------------`
         );
         for (let k = 0; k < step; k++) {
-          logger.info(`diag: (${i + k}, ${j + k}) => ${matrix[i + k][j + k]}`);
+          logger.debug(`diag: (${i + k}, ${j + k}) => ${matrix[i + k][j + k]}`);
           acum *= matrix[i + k][j + k];
         }
 
@@ -91,11 +95,11 @@ function problem0011() {
       acum = 1;
       if (i + (step - 1) < top && j + (step - 1) < top) {
         // diagonal top rigth -> bottom left
-        logger.info(
+        logger.debug(
           `---- DIAG / ---------------------------------------------`
         );
         for (let k = 0; k < step; k++) {
-          logger.info(
+          logger.debug(
             `diag: (${i + k}, ${j + (step - 1) - k}) => ${
               matrix[i + k][j + (step - 1) - k]
             }`

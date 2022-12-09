@@ -38,7 +38,7 @@ function problem0012() {
     triangular += i;
     const d = divisors(triangular);
 
-    logger.info(`Triangular number: ${triangular} has ${d.length} divisors`);
+    logger.debug(`Triangular number: ${triangular} has ${d.length} divisors`);
 
     if (d.length > count) {
       count = d.length;
