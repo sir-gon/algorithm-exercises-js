@@ -11,7 +11,7 @@ const logger = pino({
       ignore: 'pid,hostname'
     }
   },
-  level: process.env.LOG_LEVEL || 'fatal'
+  level: process.env.LOG_LEVEL?.toLowerCase() || 'fatal'
 });
 
 logger.debug('LOG: DEBUG LEVEL ENABLED');
