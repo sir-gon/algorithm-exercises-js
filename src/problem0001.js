@@ -16,7 +16,7 @@ function problem0001(_top) {
 
   for (let i = 0; i < _top; i++) {
     if (i % 3 === 0 || i % 5 === 0) {
-      logger.info(`i = ${i}`);
+      logger.debug(`i = ${i}`);
       total += i;
     }
   }

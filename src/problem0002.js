@@ -24,7 +24,7 @@ function problem0002(_top) {
   do {
     fibo = last2 + last1;
 
-    logger.info(`Fibonacci (${i}) = ${fibo}`);
+    logger.debug(`Fibonacci (${i}) = ${fibo}`);
 
     if (fibo % 2 === 0) {
       evenSum += fibo;

@@ -44,14 +44,14 @@ function problem0014(bottom = 1, top = 10) {
       // console.log(`sequence of ${i}: ${c}`);
     } while (c !== 1);
 
-    logger.info(`sequence of ${i}: ${sequence}`);
+    logger.debug(`sequence of ${i}: ${sequence}`);
 
     if (sequence.length > maxSequence.length) {
       maxSequence = sequence;
     }
   }
 
-  logger.info(
+  logger.debug(
     `Large sequence found: ${maxSequence} has ${maxSequence.length} elements`
   );
 

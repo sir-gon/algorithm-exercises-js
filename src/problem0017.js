@@ -32,7 +32,7 @@ export default function problem0017(init, last) {
 
     acum += replaced.length;
 
-    logger.info(`acum: ${acum} => word: ${word}`);
+    logger.debug(`acum: ${acum} => word: ${word}`);
   }
 
   logger.info(`acum => ${acum}`);

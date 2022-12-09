@@ -69,7 +69,7 @@ function problem0008() {
     }
 
     const currentProduct = product(digitsSet);
-    logger.info(
+    logger.debug(
       `Product beetwen ${i} and ${i + interval} is: ${currentProduct}`
     );
 

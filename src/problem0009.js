@@ -43,7 +43,7 @@ function problem0009(_limit) {
 
       if (isPythagoreanTriplet(a, b, c)) {
         found = { a, b, c };
-        logger.info(`FOUND: a = ${a} b = ${b} c = ${c}`);
+        logger.debug(`FOUND: a = ${a} b = ${b} c = ${c}`);
       }
 
       // INCREASE

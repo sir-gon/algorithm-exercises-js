@@ -41,7 +41,7 @@ function problem0004(_bottom, _top) {
       cycles += 1;
 
       if (isPalindrome(j * i)) {
-        logger.info(`FOUND: ${i} x ${j} = ${j * i} is Palindrome`);
+        logger.debug(`FOUND: ${i} x ${j} = ${j * i} is Palindrome`);
 
         if (!foundPalindrome || i * j > foundPalindrome) {
           foundi = i;

@@ -19,11 +19,11 @@ function problem0013(arrayOfNumbers) {
     sum += arrayOfNumbers[i] / divisor;
   }
 
-  logger.info(sum);
+  logger.debug(`sum: ${sum}`);
 
   while (sum > top) {
     sum = Math.trunc(sum / 10);
-    logger.info(sum);
+    logger.debug(`sum: ${sum}`);
   }
 
   logger.info(`First 10 digits of huge sume are ${sum}`);

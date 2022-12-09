@@ -35,7 +35,7 @@ function problem0010(bottom, top) {
 
     if (isPrime(i)) {
       primes.push(i);
-      logger.info(`Prime found ${i} put in position: ${primes.length}`);
+      logger.debug(`Prime found ${i} put in position: ${primes.length}`);
     }
   } while (i < top);
 

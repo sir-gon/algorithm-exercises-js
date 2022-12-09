@@ -28,7 +28,7 @@ function problem0003(_top) {
   do {
     const prime = isPrime(divs[i]);
 
-    logger.info(`${divs[i]} is Prime? ${prime}`);
+    logger.debug(`${divs[i]} is Prime? ${prime}`);
 
     if (prime) maxPrimeFactor = divs[i];
 
