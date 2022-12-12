@@ -74,7 +74,7 @@ docker/compose-build: env
 docker/compose-rebuild: env
 	docker-compose --profile testing build --no-cache
 
-docker/compose-run: env docker/build
+docker/compose-run: docker/compose-build
 	docker-compose --profile testing run --rm projecteuler-js make test
 
 all: env dependencies test
