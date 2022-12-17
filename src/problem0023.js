@@ -28,18 +28,16 @@ import logger from './logger.js';
 
 import { abundance, ___DIVISORS_ABUNDANT___, sum } from './helpers/index.js';
 
-export function problem0023() {
-  const underLimit = 12;
-  const superLimit = 28123;
+export function problem0023(_underLimit, _superLimit) {
   const allNumsList = [];
   const nonAbundantList = [];
 
-  for (let i = 1; i < underLimit; i++) {
+  for (let i = 1; i < _underLimit; i++) {
     allNumsList.push(i);
   }
 
   // Produce a list of abundant numbers below limit
-  for (let i = underLimit; i <= superLimit; i++) {
+  for (let i = _underLimit; i <= _superLimit; i++) {
     const abundancyOf = abundance(i);
 
     if (abundancyOf === ___DIVISORS_ABUNDANT___) {
@@ -63,7 +61,7 @@ export function problem0023() {
 
     for (
       let j = 0;
-      nonAbundantList[i] + nonAbundantList[j] <= superLimit &&
+      nonAbundantList[i] + nonAbundantList[j] <= _superLimit &&
       j < nonAbundantList.length;
       j++
     ) {
