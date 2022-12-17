@@ -41,8 +41,10 @@ describe('problem 0021', () => {
     expect.assertions(1);
 
     const solutionFound = '31626';
+    const inputStart = 1;
+    const inputLimit = 10000;
 
-    const calculated = problem0021();
+    const calculated = problem0021(inputStart, inputLimit);
 
     logger.info(`PROBLEM 0021 solution found: ${calculated}`);
 
