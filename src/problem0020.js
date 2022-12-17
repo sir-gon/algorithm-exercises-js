@@ -23,12 +23,10 @@ import logger from './logger.js';
 
 import { bigFactorial, bigSumMany } from './helpers/bigNumbers.js';
 
-export function problem0020() {
-  const limit = 100;
+export function problem0020(_limit) {
+  const strFactorial = bigFactorial(_limit);
 
-  const strFactorial = bigFactorial(limit);
-
-  logger.info(`Factorial of ${limit}!:`, strFactorial);
+  logger.info(`Factorial of ${_limit}!:`, strFactorial);
 
   const result = bigSumMany(strFactorial);
 
