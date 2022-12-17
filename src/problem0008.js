@@ -4,7 +4,7 @@
  * https://projecteuler.net/problem=8
  *
  *
- * The four adjacent digits in the 1000-digit number that have the greatest
+ * The four adjacent digits in the 1000-digit _number that have the greatest
  * product are 9 × 9 × 8 × 9 = 5832.
  *
  * 73167176531330624919225119674426574742355349194934
@@ -28,20 +28,20 @@
  * 05886116467109405077541002256983155200055935729725
  * 71636269561882670428252483600823257530420752963450
  *
- * Find the thirteen adjacent digits in the 1000-digit number that have
+ * Find the thirteen adjacent digits in the 1000-digit _number that have
  * the greatest product. What is the value of this product?
  */
 
 /// ///////////////////////////////////////////////////////////////////////////
 // About solution:
-// A integer number with 1000 digits in javascript node.js is translated to
-// special type "Infinity", so it can't be operated as number.
+// A integer _number with 1000 digits in javascript node.js is translated to
+// special type "Infinity", so it can't be operated as _number.
 //
-// This solution runs through the number as an array of 1-character
+// This solution runs through the _number as an array of 1-character
 // strings that each digit represents.
 //
 // NOTE: In javascript it is not necessary to do type casting
-// to operate numbers in strings.
+// to operate _numbers in strings.
 //
 // Solution found:
 //    The the greatest product of 13 consecutive digits is: 23514624000
@@ -50,27 +50,23 @@
 import { product } from './helpers/index.js';
 import logger from './logger.js';
 
-function problem0008() {
-  const number =
-    '7316717653133062491922511967442657474235534919493496983520312774506326239578318016984801869478851843858615607891129494954595017379583319528532088055111254069874715852386305071569329096329522744304355766896648950445244523161731856403098711121722383113622298934233803081353362766142828064444866452387493035890729629049156044077239071381051585930796086670172427121883998797908792274921901699720888093776657273330010533678812202354218097512545405947522435258490771167055601360483958644670632441572215539753697817977846174064955149290862569321978468622482839722413756570560574902614079729686524145351004748216637048440319989000889524345065854122758866688116427171479924442928230863465674813919123162824586178664583591245665294765456828489128831426076900422421902267105562632111110937054421750694165896040807198403850962455444362981230987879927244284909188845801561660979191338754992005240636899125607176060588611646710940507754100225698315520005593572972571636269561882670428252483600823257530420752963450';
-
-  const digits = number.toString().split('');
-  const interval = 13;
+function problem0008(_number, _interval) {
+  const digits = _number.toString().split('');
   const bottom = 0;
   const top = digits.length;
 
   let max = 0;
 
-  for (let i = bottom; i < top - interval; i++) {
+  for (let i = bottom; i < top - _interval; i++) {
     const digitsSet = [];
 
-    for (let j = 0; j < interval; j++) {
+    for (let j = 0; j < _interval; j++) {
       digitsSet.push(digits[i + j]);
     }
 
     const currentProduct = product(digitsSet);
     logger.debug(
-      `Product beetwen ${i} and ${i + interval} is: ${currentProduct}`
+      `Product beetwen ${i} and ${i + _interval} is: ${currentProduct}`
     );
 
     if (currentProduct > max) {
@@ -79,7 +75,7 @@ function problem0008() {
   }
 
   logger.info(
-    `The the greatest product of ${interval} consecutive digits is: ${max}`
+    `The the greatest product of ${_interval} consecutive digits is: ${max}`
   );
 
   return max;
