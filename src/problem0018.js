@@ -43,30 +43,29 @@
 
 // import { BNode } from './lib/BNode.js';
 import { BNodeBuilder } from './lib/BNodeBuilder.js';
-import data from './data/problem0018.json';
 import logger from './logger.js';
 
 const rootCoordinateI = 0;
 const rootCoordinateJ = 0;
 
-export function problem0018() {
-  logger.info('data', data);
-  logger.info(
-    'data',
-    JSON.stringify(BNodeBuilder.buildBNodeTree(data, 0, 0), null, 4)
+export function problem0018(_triangle) {
+  logger.debug('_triangle', _triangle);
+  logger.debug(
+    '_triangle',
+    JSON.stringify(BNodeBuilder.buildBNodeTree(_triangle, 0, 0), null, 4)
   );
 
   const leafs = [];
   const weightsTree = BNodeBuilder.buildBNodeTreeWeigth(
-    data,
+    _triangle,
     rootCoordinateI,
     rootCoordinateJ,
     0,
     leafs
   );
 
-  logger.info('data', JSON.stringify(weightsTree, null, 4));
-  logger.info('leafs count', leafs.length, 'leafs', leafs);
+  logger.debug('_triangle', JSON.stringify(weightsTree, null, 4));
+  logger.debug('leafs count', leafs.length, 'leafs', leafs);
 
   const max = leafs.reduce((a, b) => (a > b ? a : b));
 
