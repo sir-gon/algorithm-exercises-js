@@ -29,32 +29,35 @@
 
 import logger from './logger.js';
 
-function problem0006() {
-  const top = 100;
-  const bottom = 1;
+function problem0006(_bottom = 1, _top = 100) {
+  let answer = 0;
 
   let sumOfSquares = 0;
   let baseForSquareOfSum = 0;
   let squareOfSum = 0;
 
-  for (let i = bottom; i <= top; i++) {
+  for (let i = _bottom; i <= _top; i++) {
     sumOfSquares += i ** 2;
     baseForSquareOfSum += i;
   }
 
   squareOfSum = baseForSquareOfSum ** 2;
+  answer = squareOfSum - sumOfSquares;
 
-  logger.info(`Sum of first ${top} squares = ${sumOfSquares}`);
-  logger.info(`Base for Square Of Sum of first ${top} = ${baseForSquareOfSum}`);
-  logger.info(`Square Of Sum of first ${top} = ${squareOfSum}`);
+  logger.debug(`Sum of first ${_top} squares = ${sumOfSquares}`);
+  logger.debug(
+    `Base for Square Of Sum of first ${_top} = ${baseForSquareOfSum}`
+  );
+  logger.debug(`Square Of Sum of first ${_top} = ${squareOfSum}`);
 
-  logger.info(
+  logger.debug(
     `Difference found ${squareOfSum} - ${sumOfSquares} =  ${
       squareOfSum - sumOfSquares
     }`
   );
 
-  return squareOfSum - sumOfSquares;
+  logger.info('Problem 0006 result: %i', answer);
+  return answer;
 }
 
 export default problem0006;

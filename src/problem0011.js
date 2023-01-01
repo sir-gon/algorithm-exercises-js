@@ -34,12 +34,9 @@
 
 import logger from './logger.js';
 import { maximum } from './helpers/index.js';
-import matrix from './data/problem0011.json';
 
-function problem0011() {
-  const top = 20;
-  // const bottom = 0;
-  const step = 4;
+function problem0011(_squareMatrix, _interval) {
+  const top = _squareMatrix.length;
 
   let max = 0;
   let acum;
@@ -48,63 +45,69 @@ function problem0011() {
     for (let j = 0; j < top; j++) {
       acum = 1;
 
-      if (i < top - (step - 1) && j < top) {
+      if (i < top - (_interval - 1) && j < top) {
         logger.debug(
           `---- VERTICAL ------------------------------------------`
         );
         // vertical
-        for (let k = 0; k < step; k++) {
+        for (let k = 0; k < _interval; k++) {
           logger.debug(
-            `row: i ${i + k}, column: ${j}, step ${k} => ${matrix[i + k][j]}`
+            `row: i ${i + k}, column: ${j}, _interval ${k} => ${
+              _squareMatrix[i + k][j]
+            }`
           );
 
-          acum *= matrix[i + k][j];
+          acum *= _squareMatrix[i + k][j];
         }
 
         max = maximum(acum, max);
       }
 
       acum = 1;
-      if (i < top && j < top - (step - 1)) {
+      if (i < top && j < top - (_interval - 1)) {
         logger.debug(
           `---- HORIZONTAL ----------------------------------------`
         );
         // horizontal
-        for (let k = 0; k < step; k++) {
-          logger.debug(`row: i ${i}, column: ${j + k} => ${matrix[i][j + k]}`);
-          acum *= matrix[i][j + k];
+        for (let k = 0; k < _interval; k++) {
+          logger.debug(
+            `row: i ${i}, column: ${j + k} => ${_squareMatrix[i][j + k]}`
+          );
+          acum *= _squareMatrix[i][j + k];
         }
 
         max = maximum(acum, max);
       }
 
       acum = 1;
-      if (i + (step - 1) < top && j + (step - 1) < top) {
+      if (i + (_interval - 1) < top && j + (_interval - 1) < top) {
         // diagonal top left -> bottom right
         logger.debug(
           `---- DIAG \\ ---------------------------------------------`
         );
-        for (let k = 0; k < step; k++) {
-          logger.debug(`diag: (${i + k}, ${j + k}) => ${matrix[i + k][j + k]}`);
-          acum *= matrix[i + k][j + k];
+        for (let k = 0; k < _interval; k++) {
+          logger.debug(
+            `diag: (${i + k}, ${j + k}) => ${_squareMatrix[i + k][j + k]}`
+          );
+          acum *= _squareMatrix[i + k][j + k];
         }
 
         max = maximum(acum, max);
       }
 
       acum = 1;
-      if (i + (step - 1) < top && j + (step - 1) < top) {
+      if (i + (_interval - 1) < top && j + (_interval - 1) < top) {
         // diagonal top rigth -> bottom left
         logger.debug(
           `---- DIAG / ---------------------------------------------`
         );
-        for (let k = 0; k < step; k++) {
+        for (let k = 0; k < _interval; k++) {
           logger.debug(
-            `diag: (${i + k}, ${j + (step - 1) - k}) => ${
-              matrix[i + k][j + (step - 1) - k]
+            `diag: (${i + k}, ${j + (_interval - 1) - k}) => ${
+              _squareMatrix[i + k][j + (_interval - 1) - k]
             }`
           );
-          acum *= matrix[i + k][j + (step - 1) - k];
+          acum *= _squareMatrix[i + k][j + (_interval - 1) - k];
         }
 
         max = maximum(acum, max);

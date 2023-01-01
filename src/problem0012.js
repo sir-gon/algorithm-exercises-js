@@ -28,13 +28,12 @@ import logger from './logger.js';
 
 import { divisors } from './helpers/index.js';
 
-function problem0012() {
-  const top = 500;
+function problem0012(_top) {
   let count = 0;
   let triangular = 0;
   let i = 1;
 
-  while (count < top) {
+  while (count < _top) {
     triangular += i;
     const d = divisors(triangular);
 

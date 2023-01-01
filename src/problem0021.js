@@ -36,13 +36,10 @@ import logger from './logger.js';
 
 import { divisors, bigSumMany } from './helpers/index.js';
 
-export function problem0021() {
-  const start = 1;
-  const limit = 10000;
-
+export function problem0021(_start, _limit) {
   const data = {};
 
-  for (let i = start; i <= limit; i++) {
+  for (let i = _start; i <= _limit; i++) {
     data[i] = `${divisors(i).reduce((x, y) => x + y, 0) - i}`;
   }
 

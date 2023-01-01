@@ -29,8 +29,9 @@ describe('problem 0020', () => {
 
     // const digitsFound = '4613732';
     const solutionFound = '648';
+    const inputLimit = 100;
 
-    const calculated = problem0020();
+    const calculated = problem0020(inputLimit);
 
     logger.info(`PROBLEM 0020 solution found: ${calculated}`);
 
