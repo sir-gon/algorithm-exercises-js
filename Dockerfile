@@ -1,4 +1,4 @@
-FROM node:19.3.0-alpine3.16 as base
+FROM node:19.4.0-alpine3.16 as base
 
 RUN apk add --update --no-cache make
 
