@@ -22,9 +22,16 @@
       "jest/globals": true
     },
 
+    "parser": "@babel/eslint-parser",
+
     "parserOptions": {
-      "ecmaVersion": 2020,
-      "sourceType": "module"
+      "ecmaVersion": 2022,
+      "sourceType": "module",
+      "babelOptions": {
+        "parserOpts": {
+          "plugins": ["importAssertions"]
+        }
+      }
     },
 
     "globals": {

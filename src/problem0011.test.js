@@ -36,7 +36,7 @@ import logger from './logger.js';
 
 import { problem0011 } from './problem0011.js';
 
-import matrix from './data/problem0011.json';
+import matrix from './data/problem0011.json' assert { type: 'json' };
 
 describe('problem 0011', () => {
   it('problem 0011 solution found', () => {

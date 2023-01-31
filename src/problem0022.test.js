@@ -30,7 +30,7 @@ import logger from './logger.js';
 
 import { problem0022 } from './problem0022.js';
 
-import inputNames from './data/p022_names.json';
+import inputNames from './data/p022_names.json' assert { type: 'json' };
 
 describe('problem 0022', () => {
   it('problem 0022 solution found', () => {

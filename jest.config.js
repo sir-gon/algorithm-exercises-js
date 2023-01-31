@@ -16,9 +16,13 @@ const jestConfig = {
     'lcov',
     ['text', { 'skipFull': false }]
   ],
-  'testPathIgnorePatterns': ['/node_modules/', '<rootDir>/coverage'],
   'coverageDirectory': 'coverage/',
-  'testMatch': ['**/?(*.)+(spec|test).js?(x)']
+  'collectCoverageFrom': ['src/**/*.{js,jsx,ts}', '!src/**/*.tsx'],
+  'testPathIgnorePatterns': ['/node_modules/', '<rootDir>/coverage'],
+  'testMatch': ['**/?(*.)+(spec|test).js?(x)'],
+  'transform': {
+    '^.+\\.(js|jsx)$': 'babel-jest'
+  }
 };
 
 if (BRUTEFORCE) {
