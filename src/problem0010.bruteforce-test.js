@@ -1,5 +1,4 @@
-/* eslint-disable jest/no-disabled-tests */
-
+/* istanbul ignore file */
 /**
  * Summation of primes
  *

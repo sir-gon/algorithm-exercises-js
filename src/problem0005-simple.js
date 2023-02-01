@@ -25,7 +25,7 @@
 
 import logger from './logger.js';
 
-function problem0005BruteForce(_bottom, _top, _startFrom) {
+function problem0005Simple(_bottom, _top, _startFrom) {
   let found;
 
   let fail;
@@ -62,5 +62,5 @@ function problem0005BruteForce(_bottom, _top, _startFrom) {
   return found;
 }
 
-export default problem0005BruteForce;
-export { problem0005BruteForce };
+export default problem0005Simple;
+export { problem0005Simple };

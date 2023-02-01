@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 /**
  * 10001st prime
  *

@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 /**
  * Smallest multiple
  *
@@ -29,13 +28,13 @@ import logger from './logger.js';
 import { problem0005Simple } from './problem0005-simple.js';
 
 describe('problem 0005 simple', () => {
-  it('problem 0005 simple solution found by BRUTE FORCE FULL', async () => {
+  it('problem 0005 simple solution found by BRUTE FORCE BASIC', async () => {
     expect.assertions(1);
 
-    const solutionFound = 232792560;
+    const solutionFound = 2520;
     const bottom = 1;
-    const top = 20;
-    const startFrom = solutionFound - 1000;
+    const top = 10;
+    const startFrom = 0;
 
     const calculated = problem0005Simple(bottom, top, startFrom);
 
