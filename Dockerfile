@@ -23,9 +23,10 @@ ENV BRUTEFORCE=false
 
 WORKDIR /app
 
-COPY ./jest.config.js /app/jest.config.js
+COPY ./.babelrc /app/.babelrc
 COPY ./.eslintrc /app/.eslintrc
 COPY ./.prettierrc /app/.prettierrc
+COPY ./jest.config.js /app/jest.config.js
 COPY --from=builder /app/node_modules /app/node_modules
 RUN ls -alh
 
