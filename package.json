@@ -20,7 +20,7 @@
   "license": "MIT",
   "type": "module",
   "devDependencies": {
-    "@babel/eslint-parser": "^7.19.1",
+    "@babel/eslint-parser": "^7.21.3",
     "@babel/plugin-syntax-import-assertions": "^7.20.0",
     "concurrently": "7.6.0",
     "eslint": "8.37.0",
