@@ -20,3 +20,6 @@ jobs:
       run: make compose/rebuild
     - name: Run test in Docker image
       run: make compose/run
+    - name: Tag Docker image
+      run: docker tag projecteuler-js:latest projecteuler-js:${{ github.sha }}
+
