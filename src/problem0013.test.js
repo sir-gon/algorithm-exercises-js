@@ -3,7 +3,8 @@
  *
  * https://projecteuler.net/problem=13
  *
- * Work out the first ten digits of the sum of the following one-hundred 50-digit numbers.
+ * Work out the first ten digits of the sum of the following
+ * one-hundred 50-digit numbers.
  *
  * See: src/data/problem0013.json
  */
@@ -18,8 +19,9 @@ describe('problem 0013', () => {
     expect.assertions(1);
 
     const solutionFound = 5537376230;
+    const firtsDigits = 10;
 
-    const calculated = problem0013(inputNums);
+    const calculated = problem0013(inputNums, firtsDigits);
 
     logger.info(`PROBLEM 0013 solution found: ${calculated}`);
 
