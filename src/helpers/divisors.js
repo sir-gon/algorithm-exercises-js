@@ -10,23 +10,33 @@ export const divisors = (target) => {
   let top = Math.abs(target);
   const divs = [];
 
+  divs.push(1);
+
   if (target === 1) {
-    divs.push(1);
     return divs;
   }
 
   logger.debug(`Find divisors of ${target}`);
 
   // fast divisors finding loop
-  let i = 1;
+  let i = 2;
   while (i <= top) {
-    if (target % i === 0) {
-      divs.push(i);
-      divs.push(target / i);
+    top = target / i;
+    const remainder = target % i;
+
+    if (top > 2 && remainder === 0) {
+      if (i <= top) {
+        divs.push(i);
+      }
+
+      if (i < top) {
+        divs.push(top);
+      }
     }
     i += 1;
-    top = target / i;
   }
+
+  divs.push(target);
 
   logger.debug(`collected divisors {divs}`);
 
@@ -37,13 +47,11 @@ export const divisors = (target) => {
   return divs;
 };
 
-export const divisorsUnique = (target) => {
-  let divs = divisors(target);
-  divs = [...new Set(divs)];
+export const properDivisors = (target) => {
+  const theDivisors = divisors(target);
+  theDivisors.pop();
 
-  logger.debug(`unique divisors ${divs}`);
-
-  return divs;
+  return theDivisors;
 };
 
 // eslint-disable-next-line consistent-return
@@ -100,16 +108,14 @@ export const primeFactors = (target) => {
 };
 
 export const abundance = (target) => {
-  const divs = divisorsUnique(target);
-  // Due the definition of https://mathworld.wolfram.com/AbundantNumber.html
-  const comparator = 2 * target;
-  const divSum = sum(divs);
+  const theDivisors = properDivisors(target);
+  const divSum = sum(theDivisors);
 
-  if (divSum > comparator) {
+  if (divSum > target) {
     return ___DIVISORS_ABUNDANT___;
   }
 
-  if (divSum < comparator) {
+  if (divSum < target) {
     return ___DIVISORS_DEFICIENT___;
   }
 
@@ -122,7 +128,6 @@ export default {
   ___DIVISORS_ABUNDANT___,
   abundance,
   divisors,
-  divisorsUnique,
   nextPrimeFactor,
   primeFactors
 };

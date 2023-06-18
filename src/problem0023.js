@@ -50,7 +50,7 @@ export function problem0023(_underLimit, _superLimit) {
   logger.debug(`all nums list size: ${allNumsList.length} => ${allNumsList}`);
 
   logger.debug(
-    `non abundant nums list: ${nonAbundantList.length} => ${nonAbundantList}`
+    `abundant nums list: ${nonAbundantList.length} => ${nonAbundantList}`
   );
 
   let sumsAbundantNums = [];

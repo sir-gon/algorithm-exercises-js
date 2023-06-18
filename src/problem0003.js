@@ -17,7 +17,7 @@ function problem0003(_top) {
   let i;
 
   // not-unique divisors are always even, then the middle term is:
-  const middle = divs.length / 2 - 1;
+  const middle = Math.ceil(divs.length / 2) - 1;
 
   // check half divisors, each is Prime? wich is largest?
   let maxPrimeFactor;
