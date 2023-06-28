@@ -30,11 +30,12 @@ export function problem0019(
   _sinceYear = 1901,
   _untilYear = 2000
 ) {
+  const initYear = 1900;
   let resultCount = 0;
   let accumulatedRemainder = 0;
   let excess = 0;
 
-  for (let y = 1900; y <= _untilYear; y++) {
+  for (let y = initYear; y <= _untilYear; y++) {
     const leap = (y % 4 === 0 && y % 100 !== 0) || y % 400 === 0 ? 1 : 0;
     daysInMonth[__FEBRUARY__KEY__] = 28 + leap;
 
