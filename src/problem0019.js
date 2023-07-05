@@ -30,20 +30,26 @@ export function problem0019(
   _sinceYear = 1901,
   _untilYear = 2000
 ) {
+  const initYear = 1900;
   let resultCount = 0;
   let accumulatedRemainder = 0;
   let excess = 0;
 
-  for (let y = 1900; y <= _untilYear; y++) {
-    const leap = (y % 4 === 0 && y % 100 !== 0) || y % 400 === 0 ? 1 : 0;
+  for (let year = initYear; year <= _untilYear; year++) {
+    const leap =
+      (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0 ? 1 : 0;
     daysInMonth[__FEBRUARY__KEY__] = 28 + leap;
 
+    if (leap !== 0) {
+      logger.debug(`Year ${year} has leap-day`);
+    }
+
     for (const [month, days] of Object.entries(daysInMonth)) {
-      logger.debug(`Month: ${month} | days: ${days}`);
+      logger.debug(`Year: ${year} | Month: ${month} | days: ${days}`);
 
       accumulatedRemainder += days % 7;
       if (accumulatedRemainder % 7 === _dayOfWeek) {
-        if (y <= _sinceYear) {
+        if (year <= _sinceYear) {
           excess += 1;
         }
         resultCount += 1;
@@ -51,7 +57,11 @@ export function problem0019(
     }
   }
 
-  logger.info(`result ${String(resultCount)}`);
+  logger.info(
+    `Problem0019 result: (${resultCount} - ${excess}) => ${
+      resultCount - excess
+    }`
+  );
 
   return resultCount - excess;
 }
