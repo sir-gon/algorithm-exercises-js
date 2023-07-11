@@ -21,8 +21,8 @@ describe('problem 0024', () => {
   it('problem 0024 solution found small case', () => {
     expect.assertions(1);
 
-    const solutionFound = ['A', 'D', 'C', 'B'];
-    const inputElements = 'ABCD'.split('');
+    const solutionFound = 'ADCB';
+    const inputElements = 'ABCD';
     const inputPermutationToFind = 6;
 
     const calculated = problem0024(inputElements, inputPermutationToFind);
@@ -35,8 +35,8 @@ describe('problem 0024', () => {
   it('problem 0024 solution found full solution', () => {
     expect.assertions(1);
 
-    const solutionFound = ['2', '7', '8', '3', '9', '1', '5', '4', '6', '0'];
-    const inputElements = '0123456789'.split('');
+    const solutionFound = '2783915460';
+    const inputElements = '0123456789';
     const inputPermutationToFind = 1000000;
 
     const calculated = problem0024(inputElements, inputPermutationToFind);
