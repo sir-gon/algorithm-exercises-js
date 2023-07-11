@@ -15,61 +15,38 @@
 
 import logger from './logger.js';
 
-export const lexicographicPermutationFind = (elements, permutationToFind) => {
-  // "inner global variable" to catch the result shared acroos recursive branch calls.
-  let lastBranchCollector = [];
-  let currentCycle = 0;
+const factorial = (n) => {
+  let i = n;
+  let out = 1;
+  while (i > 1) {
+    out *= i;
+    i -= 1;
+  }
+  return out;
+};
 
-  // Initial values
-  const initBranchCollector = [];
+const permute = (symbols, target) => {
+  const choices = symbols.split('');
+  let answer = '';
+  let min = 0;
 
-  // Recursive way to compute permutations
-  const computePermutations = (stopAtCycle, inputElements, branchCollector) => {
-    if (currentCycle >= stopAtCycle) {
-      return;
+  while (choices.length > 0) {
+    let index = 0;
+    const combos = factorial(choices.length - 1);
+    min += combos;
+    while (target > min) {
+      index += 1;
+      min += combos;
     }
+    answer += choices.splice(index, 1);
+    min -= combos;
+  }
 
-    for (let i = 0; i < inputElements.length; i++) {
-      const rootElement = inputElements[i];
-      const restOfElements = [];
-
-      logger.debug(`root element: ${i} -> ${rootElement}`);
-
-      for (let j = 0; j < inputElements.length; j++) {
-        if (i !== j) {
-          restOfElements.push(inputElements[j]);
-        }
-      }
-
-      const [...newBranchCollector] = branchCollector;
-      newBranchCollector.push(rootElement);
-
-      // finally...
-      if (restOfElements.length > 0) {
-        logger.debug(`REST: ${restOfElements}`);
-
-        computePermutations(stopAtCycle, restOfElements, newBranchCollector);
-      } else {
-        lastBranchCollector = newBranchCollector;
-        currentCycle += 1;
-
-        logger.debug(
-          `FINISH BRANCH: ${currentCycle} -> ${lastBranchCollector}`
-        );
-      }
-    }
-  };
-
-  computePermutations(permutationToFind, elements, initBranchCollector);
-
-  return lastBranchCollector;
+  return answer;
 };
 
 export function problem0024(inputElements, inputPermutationToFind) {
-  const permutationFound = lexicographicPermutationFind(
-    inputElements,
-    inputPermutationToFind
-  );
+  const permutationFound = permute(inputElements, inputPermutationToFind);
 
   logger.debug(`result ${String(permutationFound)}`);
 
