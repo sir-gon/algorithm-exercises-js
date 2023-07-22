@@ -1,9 +1,11 @@
 /* eslint-disable jest/require-hook */
 /* istanbul ignore file */
-// import util from 'util';
 import pino from 'pino';
 
 const logger = pino({
+  customLevels: {
+    log: 30
+  },
   transport: {
     target: 'pino-pretty',
     options: {
@@ -23,3 +25,4 @@ logger.info('LOG: INFO LEVEL ENABLED');
 logger.info(`LOG LEVEL: ${logger.levelVal}`);
 
 export default logger;
+export { logger };
