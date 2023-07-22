@@ -10,7 +10,7 @@
  * Find the largest palindrome made from the product of two 3-digit numbers.
  */
 
-import logger from '../logger.js';
+import { logger as console } from '../logger.js';
 
 import { problem0004 } from './problem0004.js';
 
@@ -25,7 +25,7 @@ describe('problem 0004', () => {
 
     const calculated = problem0004(bottom, top);
 
-    logger.info(`PROBLEM 0004 solution found: ${calculated}`);
+    console.log(`PROBLEM 0004 solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

@@ -22,7 +22,7 @@
 //
 // ////////////////////////////////////////////////////////////////////////////
 
-import logger from '../logger.js';
+import { logger as console } from '../logger.js';
 
 import { isPrime, sum } from './helpers/index.js';
 
@@ -35,12 +35,12 @@ function problem0010(bottom, top) {
 
     if (isPrime(i)) {
       primes.push(i);
-      logger.debug(`Prime found ${i} put in position: ${primes.length}`);
+      console.debug(`Prime found ${i} put in position: ${primes.length}`);
     }
   } while (i < top);
 
-  logger.info(`primes count: ${primes.length}`);
-  logger.info(`Sum of primes below ${top} is: ${sum(primes)}`);
+  console.log(`primes count: ${primes.length}`);
+  console.log(`Sum of primes below ${top} is: ${sum(primes)}`);
 
   return sum(primes);
 }

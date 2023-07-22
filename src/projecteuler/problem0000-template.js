@@ -12,12 +12,12 @@
  * ////////////////////////////////////////////////////////////////////////////
  */
 
-import logger from '../logger.js';
+import { logger as console } from '../logger.js';
 
 export function problem0000template() {
   const result = null;
 
-  logger.info(`result ${String(result)}`);
+  console.log(`result ${String(result)}`);
 
   return result;
 }

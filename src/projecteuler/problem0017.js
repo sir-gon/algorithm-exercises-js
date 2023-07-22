@@ -17,7 +17,7 @@
  * when writing out numbers is in compliance with British usage.
  */
 
-import logger from '../logger.js';
+import { logger as console } from '../logger.js';
 
 import { numberToWord } from './helpers/index.js';
 
@@ -32,10 +32,10 @@ export default function problem0017(init, last) {
 
     acum += replaced.length;
 
-    logger.debug(`acum: ${acum} => word: ${word}`);
+    console.debug(`acum: ${acum} => word: ${word}`);
   }
 
-  logger.info(`acum => ${acum}`);
+  console.log(`acum => ${acum}`);
 
   return acum;
 }

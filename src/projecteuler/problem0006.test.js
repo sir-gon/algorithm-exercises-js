@@ -27,7 +27,7 @@
 // Difference found 25502500 - 338350 =  25164150
 // ////////////////////////////////////////////////////////////////////////////
 
-import logger from '../logger.js';
+import { logger as console } from '../logger.js';
 
 import { problem0006 } from './problem0006.js';
 
@@ -39,7 +39,7 @@ describe('problem 0006', () => {
 
     const calculated = problem0006();
 
-    logger.info(`PROBLEM 0006 solution found: ${calculated}`);
+    console.log(`PROBLEM 0006 solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

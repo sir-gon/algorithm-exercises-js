@@ -32,7 +32,7 @@
 //    ]
 // ////////////////////////////////////////////////////////////////////////////
 
-import logger from '../logger.js';
+import { logger as console } from '../logger.js';
 
 import { problem0021 } from './problem0021.js';
 
@@ -46,7 +46,7 @@ describe('problem 0021', () => {
 
     const calculated = problem0021(inputStart, inputLimit);
 
-    logger.info(`PROBLEM 0021 solution found: ${calculated}`);
+    console.log(`PROBLEM 0021 solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

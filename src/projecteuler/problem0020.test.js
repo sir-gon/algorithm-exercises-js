@@ -19,7 +19,7 @@
 //            7920827223758251185210916864000000000000000000000000
 // ////////////////////////////////////////////////////////////////////////////
 
-import logger from '../logger.js';
+import { logger as console } from '../logger.js';
 
 import { problem0020 } from './problem0020.js';
 
@@ -33,7 +33,7 @@ describe('problem 0020', () => {
 
     const calculated = problem0020(inputLimit);
 
-    logger.info(`PROBLEM 0020 solution found: ${calculated}`);
+    console.log(`PROBLEM 0020 solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

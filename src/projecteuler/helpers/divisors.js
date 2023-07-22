@@ -1,4 +1,4 @@
-import logger from '../../logger.js';
+import { logger as console } from '../../logger.js';
 
 import { sum } from './sum.js';
 
@@ -16,7 +16,7 @@ export const divisors = (target) => {
     return divs;
   }
 
-  logger.debug(`Find divisors of ${target}`);
+  console.debug(`Find divisors of ${target}`);
 
   // fast divisors finding loop
   let i = 2;
@@ -38,11 +38,11 @@ export const divisors = (target) => {
 
   divs.push(target);
 
-  logger.debug(`collected divisors {divs}`);
+  console.debug(`collected divisors {divs}`);
 
   // sort divisors
   divs.sort((a, b) => a - b);
-  logger.debug(`sorted divisors {divs}`);
+  console.debug(`sorted divisors {divs}`);
 
   return divs;
 };

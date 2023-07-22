@@ -25,7 +25,7 @@
 // FOUND: 232792560 divisible by any element beetwen 1 and 20
 /// ////////////////////////////////////////////////////////////////////////////
 
-import logger from '../logger.js';
+import { logger as console } from '../logger.js';
 
 import { problem0005 } from './problem0005.js';
 
@@ -40,7 +40,7 @@ describe('problem 0005', () => {
 
     const calculated = problem0005(bottom, top);
 
-    logger.info(`PROBLEM 0005 solution found: ${calculated}`);
+    console.log(`PROBLEM 0005 solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });
@@ -55,7 +55,7 @@ describe('problem 0005', () => {
 
     const calculated = problem0005(bottom, top);
 
-    logger.info(`PROBLEM 0005 solution found: ${calculated}`);
+    console.log(`PROBLEM 0005 solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

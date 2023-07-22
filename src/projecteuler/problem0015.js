@@ -10,7 +10,7 @@
  * How many such routes are there through a 20×20 grid?
  */
 
-import logger from '../logger.js';
+import { logger as console } from '../logger.js';
 
 import { matrix } from './helpers/index.js';
 
@@ -26,8 +26,8 @@ function problem0015(gridSide = 20) {
     }
   }
 
-  logger.info(`Paths found: ${vertexMatrix[gridSide][gridSide]}`);
-  logger.debug(vertexMatrix);
+  console.log(`Paths found: ${vertexMatrix[gridSide][gridSide]}`);
+  console.debug(vertexMatrix);
 
   return vertexMatrix[gridSide][gridSide];
 }

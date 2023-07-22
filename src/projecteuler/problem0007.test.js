@@ -10,7 +10,7 @@
  *
  */
 
-import logger from '../logger.js';
+import { logger as console } from '../logger.js';
 
 import { problem0007 } from './problem0007.js';
 
@@ -23,7 +23,7 @@ describe('problem 0007 basic', () => {
 
     const calculated = problem0007(top);
 
-    logger.info(`PROBLEM 0007 solution found: ${calculated}`);
+    console.log(`PROBLEM 0007 solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

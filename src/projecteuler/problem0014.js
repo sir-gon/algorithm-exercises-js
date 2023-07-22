@@ -21,7 +21,7 @@
  * NOTE: Once the chain starts the terms are allowed to go above one million.
  */
 
-import logger from '../logger.js';
+import { logger as console } from '../logger.js';
 
 import { collatz } from './helpers/index.js';
 
@@ -44,14 +44,14 @@ function problem0014(bottom = 1, top = 10) {
       // console.log(`sequence of ${i}: ${c}`);
     } while (c !== 1);
 
-    logger.debug(`sequence of ${i}: ${sequence}`);
+    console.debug(`sequence of ${i}: ${sequence}`);
 
     if (sequence.length > maxSequence.length) {
       maxSequence = sequence;
     }
   }
 
-  logger.debug(
+  console.debug(
     `Large sequence found: ${maxSequence} has ${maxSequence.length} elements`
   );
 

@@ -23,7 +23,7 @@
 // FOUND: 232792560 divisible by any element beetwen 1 and 20
 /// ////////////////////////////////////////////////////////////////////////////
 
-import logger from '../logger.js';
+import { logger as console } from '../logger.js';
 import { primeFactors } from './helpers/divisors.js';
 
 function _increase(_element, _group) {
@@ -71,15 +71,15 @@ function problem0005(_bottom, _top) {
     const factors = _primeFactorsCollection(primes.factors);
     cycles += primes.factors.length;
 
-    logger.debug('Prime Factors of %d list    => %o', i, primes);
-    logger.debug('Prime Factors of %d grouped => %o', i, factors);
+    console.debug('Prime Factors of %d list    => %o', i, primes);
+    console.debug('Prime Factors of %d grouped => %o', i, factors);
 
     for (const [factor, quantity] of Object.entries(factors)) {
       cycles += 1;
       _replaceMaximum(factor, quantity, minimumPrimeFactors);
     }
 
-    logger.debug('Prime Factors of %d grouped => %o', i, minimumPrimeFactors);
+    console.debug('Prime Factors of %d grouped => %o', i, minimumPrimeFactors);
   }
 
   for (const [factor, quantity] of Object.entries(minimumPrimeFactors)) {
@@ -87,7 +87,7 @@ function problem0005(_bottom, _top) {
     result *= factor ** quantity;
   }
 
-  logger.info('Problem 0005: %d in %d cycles', result, cycles);
+  console.log('Problem 0005: %d in %d cycles', result, cycles);
   return result;
 }
 

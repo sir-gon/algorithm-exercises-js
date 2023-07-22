@@ -32,7 +32,7 @@
  * (up, down, left, right, or diagonally) in the 20×20 grid?
  */
 
-import logger from '../logger.js';
+import { logger as console } from '../logger.js';
 import { maximum } from './helpers/index.js';
 
 function problem0011(_squareMatrix, _interval) {
@@ -46,12 +46,12 @@ function problem0011(_squareMatrix, _interval) {
       acum = 1;
 
       if (i < top - (_interval - 1)) {
-        logger.debug(
+        console.debug(
           `---- VERTICAL ------------------------------------------`
         );
         // vertical
         for (let k = 0; k < _interval; k++) {
-          logger.debug(
+          console.debug(
             `row: i ${i + k}, column: ${j}, _interval ${k} => ${
               _squareMatrix[i + k][j]
             }`
@@ -65,12 +65,12 @@ function problem0011(_squareMatrix, _interval) {
 
       acum = 1;
       if (j < top - (_interval - 1)) {
-        logger.debug(
+        console.debug(
           `---- HORIZONTAL ----------------------------------------`
         );
         // horizontal
         for (let k = 0; k < _interval; k++) {
-          logger.debug(
+          console.debug(
             `row: i ${i}, column: ${j + k} => ${_squareMatrix[i][j + k]}`
           );
           acum *= _squareMatrix[i][j + k];
@@ -82,11 +82,11 @@ function problem0011(_squareMatrix, _interval) {
       acum = 1;
       if (i + (_interval - 1) < top && j + (_interval - 1) < top) {
         // diagonal top left -> bottom right
-        logger.debug(
+        console.debug(
           `---- DIAG \\ ---------------------------------------------`
         );
         for (let k = 0; k < _interval; k++) {
-          logger.debug(
+          console.debug(
             `diag: (${i + k}, ${j + k}) => ${_squareMatrix[i + k][j + k]}`
           );
           acum *= _squareMatrix[i + k][j + k];
@@ -98,11 +98,11 @@ function problem0011(_squareMatrix, _interval) {
       acum = 1;
       if (i + (_interval - 1) < top && j + (_interval - 1) < top) {
         // diagonal top rigth -> bottom left
-        logger.debug(
+        console.debug(
           `---- DIAG / ---------------------------------------------`
         );
         for (let k = 0; k < _interval; k++) {
-          logger.debug(
+          console.debug(
             `diag: (${i + k}, ${j + (_interval - 1) - k}) => ${
               _squareMatrix[i + k][j + (_interval - 1) - k]
             }`
@@ -115,7 +115,7 @@ function problem0011(_squareMatrix, _interval) {
     }
   }
 
-  logger.info(`Maximum product: ${max}`);
+  console.log(`Maximum product: ${max}`);
 
   return max;
 }

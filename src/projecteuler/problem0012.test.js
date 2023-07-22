@@ -24,7 +24,7 @@
  * five hundred divisors?
  */
 
-import logger from '../logger.js';
+import { logger as console } from '../logger.js';
 
 import { problem0012 } from './problem0012.js';
 
@@ -37,7 +37,7 @@ describe('problem 0012', () => {
 
     const calculated = problem0012(inputTop);
 
-    logger.info(`PROBLEM 0012 solution found: ${calculated}`);
+    console.log(`PROBLEM 0012 solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

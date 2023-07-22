@@ -9,7 +9,7 @@
  * See: src/data/problem0013.json
  */
 
-import logger from '../logger.js';
+import { logger as console } from '../logger.js';
 
 import { problem0013 } from './problem0013.js';
 import inputNums from './data/problem0013.json' assert { type: 'json' };
@@ -23,7 +23,7 @@ describe('problem 0013', () => {
 
     const calculated = problem0013(inputNums, firtsDigits);
 
-    logger.info(`PROBLEM 0013 solution found: ${calculated}`);
+    console.log(`PROBLEM 0013 solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

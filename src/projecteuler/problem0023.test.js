@@ -24,7 +24,7 @@
  * the sum of two abundant numbers.
  */
 
-import logger from '../logger.js';
+import { logger as console } from '../logger.js';
 
 import { problem0023 } from './problem0023.js';
 
@@ -38,7 +38,7 @@ describe('problem 0023', () => {
 
     const calculated = problem0023(inputUnderLimit, inputSuperLimit);
 
-    logger.info(`PROBLEM 0023 solution found: ${calculated}`);
+    console.log(`PROBLEM 0023 solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

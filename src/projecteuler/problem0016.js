@@ -22,18 +22,18 @@
 //  Sum: 1366
 // ////////////////////////////////////////////////////////////////////////////
 
-import logger from '../logger.js';
+import { logger as console } from '../logger.js';
 
 import { bigPower, bigSumMany } from './helpers/index.js';
 
 function problem0016(base, exponent) {
   const strPower = bigPower(base, exponent);
 
-  logger.info(`Digits of power found: (${strPower})`);
+  console.log(`Digits of power found: (${strPower})`);
 
   const result = bigSumMany(strPower);
 
-  logger.info(`Sum of Digits: (${result})`);
+  console.log(`Sum of Digits: (${result})`);
 
   return result;
 }

@@ -18,7 +18,7 @@
 // PRODUCT: a * b * c = 31875000
 // ////////////////////////////////////////////////////////////////////////////
 
-import logger from '../logger.js';
+import { logger as console } from '../logger.js';
 
 import { problem0009 } from './problem0009.js';
 
@@ -31,7 +31,7 @@ describe('problem 0009', () => {
 
     const calculated = problem0009(inputLimit);
 
-    logger.info(`PROBLEM 0009 solution found: ${calculated}`);
+    console.log(`PROBLEM 0009 solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });
@@ -44,7 +44,7 @@ describe('problem 0009', () => {
 
     const calculated = problem0009(inputLimit);
 
-    logger.info(`PROBLEM 0009 solution found: ${calculated}`);
+    console.log(`PROBLEM 0009 solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

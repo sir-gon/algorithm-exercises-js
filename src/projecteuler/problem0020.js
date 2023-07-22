@@ -19,14 +19,14 @@
 //            7920827223758251185210916864000000000000000000000000
 // ////////////////////////////////////////////////////////////////////////////
 
-import logger from '../logger.js';
+import { logger as console } from '../logger.js';
 
 import { bigFactorial, bigSumMany } from './helpers/bigNumbers.js';
 
 export function problem0020(_limit) {
   const strFactorial = bigFactorial(_limit);
 
-  logger.info(`Factorial of ${_limit}!:`, strFactorial);
+  console.log(`Factorial of ${_limit}!:`, strFactorial);
 
   const result = bigSumMany(strFactorial);
 

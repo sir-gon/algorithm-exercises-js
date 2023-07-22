@@ -10,7 +10,7 @@
  *
  */
 
-import logger from '../logger.js';
+import { logger as console } from '../logger.js';
 import { isPrime } from './helpers/index.js';
 
 function problem0007(_top) {
@@ -23,18 +23,18 @@ function problem0007(_top) {
     if (isPrime(j)) {
       primes.push(j);
 
-      logger.debug(`Prime found ${j} put in position: ${primes.length}`);
+      console.debug(`Prime found ${j} put in position: ${primes.length}`);
     }
 
     j = 2 * i + 1;
   }
 
-  logger.info(`primes count: ${primes.length}`);
+  console.log(`primes count: ${primes.length}`);
 
   const answer = primes[primes.length - 1];
 
   const cycles = i;
-  logger.info(`${_top} prime number is: ${answer} in ${cycles} cycles`);
+  console.log(`${_top} prime number is: ${answer} in ${cycles} cycles`);
 
   return answer;
 }

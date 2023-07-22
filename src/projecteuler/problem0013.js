@@ -9,7 +9,7 @@
  * See: src/data/problem0013.json
  */
 
-import logger from '../logger.js';
+import { logger as console } from '../logger.js';
 import { bigSumMany } from './helpers/bigNumbers.js';
 
 function problem0013(arrayOfNumbers, _firtsDigits) {
@@ -17,11 +17,11 @@ function problem0013(arrayOfNumbers, _firtsDigits) {
 
   const sum = bigSumMany(arrayOfNumbers);
 
-  logger.debug(`Sum: ${sum}`);
+  console.debug(`Sum: ${sum}`);
 
   const first = parseInt(sum.slice(0, _firtsDigits), radix);
 
-  logger.info(`First ${_firtsDigits} digits of huge sume are ${first}`);
+  console.log(`First ${_firtsDigits} digits of huge sume are ${first}`);
 
   return first;
 }
