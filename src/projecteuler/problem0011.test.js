@@ -32,7 +32,7 @@
  * (up, down, left, right, or diagonally) in the 20×20 grid?
  */
 
-import logger from '../logger.js';
+import { logger as console } from '../logger.js';
 
 import { problem0011 } from './problem0011.js';
 
@@ -47,7 +47,7 @@ describe('problem 0011', () => {
 
     const calculated = problem0011(matrix, inputLineLength);
 
-    logger.info(`PROBLEM 0011 solution found: ${calculated}`);
+    console.log(`PROBLEM 0011 solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

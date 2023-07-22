@@ -20,7 +20,7 @@
  * twentieth century (1 Jan 1901 to 31 Dec 2000)?
  */
 
-import logger from '../logger.js';
+import { logger as console } from '../logger.js';
 import { daysInMonth, __SUNDAY__ } from './constants/datetime.js';
 
 const __FEBRUARY__KEY__ = 'FEBRUARY';
@@ -41,11 +41,11 @@ export function problem0019(
     daysInMonth[__FEBRUARY__KEY__] = 28 + leap;
 
     if (leap !== 0) {
-      logger.debug(`Year ${year} has leap-day`);
+      console.debug(`Year ${year} has leap-day`);
     }
 
     for (const [month, days] of Object.entries(daysInMonth)) {
-      logger.debug(`Year: ${year} | Month: ${month} | days: ${days}`);
+      console.debug(`Year: ${year} | Month: ${month} | days: ${days}`);
 
       accumulatedRemainder += days % 7;
       if (accumulatedRemainder % 7 === _dayOfWeek) {
@@ -57,7 +57,7 @@ export function problem0019(
     }
   }
 
-  logger.info(
+  console.log(
     `Problem0019 result: (${resultCount} - ${excess}) => ${
       resultCount - excess
     }`

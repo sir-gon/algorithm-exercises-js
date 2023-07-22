@@ -24,7 +24,7 @@
  * the sum of two abundant numbers.
  */
 
-import logger from '../logger.js';
+import { logger as console } from '../logger.js';
 
 import { abundance, ___DIVISORS_ABUNDANT___, sum } from './helpers/index.js';
 
@@ -47,9 +47,9 @@ export function problem0023(_underLimit, _superLimit) {
     allNumsList.push(i);
   }
 
-  logger.debug(`all nums list size: ${allNumsList.length} => ${allNumsList}`);
+  console.debug(`all nums list size: ${allNumsList.length} => ${allNumsList}`);
 
-  logger.debug(
+  console.debug(
     `abundant nums list: ${nonAbundantList.length} => ${nonAbundantList}`
   );
 
@@ -72,18 +72,18 @@ export function problem0023(_underLimit, _superLimit) {
   // filter duplicates
   sumsAbundantNums = [...new Set(sumsAbundantNums)];
 
-  logger.debug(
+  console.debug(
     `sumsAbundantNums size: ${sumsAbundantNums.length}. result => ${sumsAbundantNums}`
   );
 
   // All numbers below limit that not present in list of sums of pair of abundant numbers
   const found = allNumsList.filter((x) => !sumsAbundantNums.includes(x));
 
-  logger.debug(`found size: ${found.length}, found => ${found}`);
+  console.debug(`found size: ${found.length}, found => ${found}`);
 
   const result = sum(found);
 
-  logger.info(`result ${result}`);
+  console.log(`result ${result}`);
 
   return result;
 }

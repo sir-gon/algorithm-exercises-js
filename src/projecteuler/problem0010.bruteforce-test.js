@@ -21,7 +21,7 @@
 //
 // ////////////////////////////////////////////////////////////////////////////
 
-import logger from '../logger.js';
+import { logger as console } from '../logger.js';
 
 import { problem0010 } from './problem0010.js';
 
@@ -35,7 +35,7 @@ describe('problem 0010', () => {
 
     const calculated = problem0010(bottom, top);
 
-    logger.info(`PROBLEM 0010 solution found: ${calculated}`);
+    console.log(`PROBLEM 0010 solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

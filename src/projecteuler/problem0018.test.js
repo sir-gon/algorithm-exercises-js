@@ -38,7 +38,7 @@
  * cannot be solved by brute force, and requires a clever method! ;o)
  */
 
-import logger from '../logger.js';
+import { logger as console } from '../logger.js';
 
 import { problem0018 } from './problem0018.js';
 import inputTriangle from './data/problem0018.json' assert { type: 'json' };
@@ -51,7 +51,7 @@ describe('problem 0018', () => {
 
     const calculated = problem0018(inputTriangle);
 
-    logger.info(`PROBLEM 0018 solution found: ${calculated}`);
+    console.log(`PROBLEM 0018 solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

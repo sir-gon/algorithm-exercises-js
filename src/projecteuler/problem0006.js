@@ -27,7 +27,7 @@
 // Difference found 25502500 - 338350 =  25164150
 // ////////////////////////////////////////////////////////////////////////////
 
-import logger from '../logger.js';
+import { logger as console } from '../logger.js';
 
 function problem0006(_bottom = 1, _top = 100) {
   let answer = 0;
@@ -44,19 +44,19 @@ function problem0006(_bottom = 1, _top = 100) {
   squareOfSum = baseForSquareOfSum ** 2;
   answer = squareOfSum - sumOfSquares;
 
-  logger.debug(`Sum of first ${_top} squares = ${sumOfSquares}`);
-  logger.debug(
+  console.debug(`Sum of first ${_top} squares = ${sumOfSquares}`);
+  console.debug(
     `Base for Square Of Sum of first ${_top} = ${baseForSquareOfSum}`
   );
-  logger.debug(`Square Of Sum of first ${_top} = ${squareOfSum}`);
+  console.debug(`Square Of Sum of first ${_top} = ${squareOfSum}`);
 
-  logger.debug(
+  console.debug(
     `Difference found ${squareOfSum} - ${sumOfSquares} =  ${
       squareOfSum - sumOfSquares
     }`
   );
 
-  logger.info('Problem 0006 result: %i', answer);
+  console.log('Problem 0006 result: %i', answer);
   return answer;
 }
 

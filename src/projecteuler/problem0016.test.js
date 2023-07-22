@@ -22,7 +22,7 @@
 //  Sum: 1366
 // ////////////////////////////////////////////////////////////////////////////
 
-import logger from '../logger.js';
+import { logger as console } from '../logger.js';
 
 import { problem0016 } from './problem0016.js';
 
@@ -36,7 +36,7 @@ describe('problem 0016', () => {
 
     const calculated = problem0016(base, exponent);
 
-    logger.info(`PROBLEM 0016 solution found: ${calculated}`);
+    console.log(`PROBLEM 0016 solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

@@ -13,7 +13,7 @@
  * What is the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9?
  */
 
-import logger from '../logger.js';
+import { logger as console } from '../logger.js';
 
 import { problem0024 } from './problem0024.js';
 
@@ -27,7 +27,7 @@ describe('problem 0024', () => {
 
     const calculated = problem0024(inputElements, inputPermutationToFind);
 
-    logger.info(`PROBLEM 0024 solution found: ${calculated}`);
+    console.log(`PROBLEM 0024 solution found: ${calculated}`);
 
     expect(calculated).toStrictEqual(solutionFound);
   });
@@ -41,7 +41,7 @@ describe('problem 0024', () => {
 
     const calculated = problem0024(inputElements, inputPermutationToFind);
 
-    logger.info(`PROBLEM 0024 solution found: ${calculated}`);
+    console.log(`PROBLEM 0024 solution found: ${calculated}`);
 
     expect(calculated).toStrictEqual(solutionFound);
   });

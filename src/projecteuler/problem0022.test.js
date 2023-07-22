@@ -26,7 +26,7 @@
 //    - src/data/p022_names.json
 // ////////////////////////////////////////////////////////////////////////////
 
-import logger from '../logger.js';
+import { logger as console } from '../logger.js';
 
 import { problem0022 } from './problem0022.js';
 
@@ -40,7 +40,7 @@ describe('problem 0022', () => {
 
     const calculated = problem0022(inputNames);
 
-    logger.info(`PROBLEM 0022 solution found: ${calculated}`);
+    console.log(`PROBLEM 0022 solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

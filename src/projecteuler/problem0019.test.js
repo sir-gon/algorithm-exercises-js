@@ -20,7 +20,7 @@
  * twentieth century (1 Jan 1901 to 31 Dec 2000)?
  */
 
-import logger from '../logger.js';
+import { logger as console } from '../logger.js';
 
 import { __SUNDAY__ } from './constants/datetime.js';
 import { problem0019 } from './problem0019.js';
@@ -36,7 +36,7 @@ describe('problem 0019', () => {
 
     const calculated = problem0019(__SUNDAY__, sinceInput, untilInput);
 
-    logger.info(`PROBLEM 0019 solution found: ${calculated}`);
+    console.log(`PROBLEM 0019 solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });
@@ -51,7 +51,7 @@ describe('problem 0019', () => {
 
     const calculated = problem0019(__SUNDAY__, sinceInput, untilInput);
 
-    logger.info(`PROBLEM 0019 solution found: ${calculated}`);
+    console.log(`PROBLEM 0019 solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });
@@ -63,7 +63,7 @@ describe('problem 0019', () => {
 
     const calculated = problem0019();
 
-    logger.info(`PROBLEM 0019 solution found: ${calculated}`);
+    console.log(`PROBLEM 0019 solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });
