@@ -1,5 +1,6 @@
 export {
   bigNum,
+  bigNumToString,
   bigSum,
   bigSumMany,
   bigMultiplyRowToBigNum,
