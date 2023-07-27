@@ -145,4 +145,4 @@ v18.2.0
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-js.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-js?ref=badge_large)
 
 ## Coverage
-[![FOSSA Status](https://codecov.io/gh/sir-gon/projecteuler-js/branch/main/graphs/tree.svg?token=TBP53GERMA)](https://codecov.io/gh/sir-gon/projecteuler-js)
+[![FOSSA Status](https://codecov.io/gh/sir-gon/algorithm-exercises-js/branch/main/graphs/tree.svg?token=TBP53GERMA)](https://codecov.io/gh/sir-gon/projecteuler-js)
