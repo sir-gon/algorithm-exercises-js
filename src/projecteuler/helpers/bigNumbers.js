@@ -142,6 +142,9 @@ export const bigFactorial = (number) => {
   return acum;
 };
 
+export const bigNumToString = (number) =>
+  number.reduce((a, b) => `${a}${b}`, '');
+
 export default {
   bigNum,
   bigSum,
