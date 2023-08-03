@@ -5,7 +5,4 @@ const objTest = {
   }
 };
 
-// const funcName = 'testCall';
-
 export default objTest;
-// objTest[funcName]();
