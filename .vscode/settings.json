@@ -5,5 +5,9 @@
   },
   "jest.jestCommandLine": "npx jest --ci --color --detectOpenHandles --forceExit --runInBand --debug",
   "jest.debugMode": false,
-  "jest.showCoverageOnLoad": true
+  "jest.showCoverageOnLoad": true,
+  "sonarlint.connectedMode.project": {
+    "connectionId": "sir-gon",
+    "projectKey": "sir-gon_algorithm-exercises-js"
+  }
 }
