@@ -4,6 +4,7 @@
 [![codecov](https://codecov.io/gh/sir-gon/projecteuler-js/branch/main/graph/badge.svg?token=TBP53GERMA)](https://codecov.io/gh/sir-gon/projecteuler-js)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-js.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-js?ref=badge_shield)
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/6198/badge)](https://bestpractices.coreinfrastructure.org/projects/6198)
+[![Markdown Lint](https://github.com/sir-gon/algorithm-exercises-js/actions/workflows/markdown-lint.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-js/actions/workflows/markdown-lint.yml)
 
 ![GitHub](https://img.shields.io/github/license/sir-gon/projecteuler-js)
 ![GitHub language count](https://img.shields.io/github/languages/count/sir-gon/projecteuler-js)
@@ -30,7 +31,6 @@ However, the rule about sharing solutions outside of Project Euler does not appl
 ```
 
 If you have better answers or optimal solutions, fork and PR-me
-ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss ssssssssssssssssssssssssssssssssssss ssssssssssssssssss
 
 Enjoy 😁 !
 
