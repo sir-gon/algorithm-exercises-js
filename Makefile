@@ -56,11 +56,20 @@ dependencies:
 	test -x ./node_modules ||  npm install --verbose
 	@echo "################################################################################"
 
+mdlint:
+	markdownlint '**/*.md' --ignore node_modules && echo '✔  Your code looks good.'
+
+lint: test/static mdlint
+
 test/static: dependencies
 	npm run lint
 
 test: env dependencies test/static
 	npm run test
+
+coverage: test
+
+coverage/html: coverage
 
 outdated:
 	-npm outdated
@@ -68,13 +77,24 @@ outdated:
 update: dependencies outdated
 	npm install $(NPM_UPDATABLE_MODULES)
 
+upgrade: update
+
 compose/build: env
 	docker-compose --profile testing build
 
 compose/rebuild: env
 	docker-compose --profile testing build --no-cache
 
+compose/mdlint: env
+	docker-compose --profile lint build
+	docker-compose --profile lint run --rm algorithm-exercises-js-mdlint make mdlint
+
+compose/test/static: compose/build
+	docker-compose --profile testing run --rm algorithm-exercises-js make test/static
+
+compose/lint: compose/test/static compose/mdlint
+
 compose/run: compose/build
-	docker-compose --profile testing run --rm projecteuler-js make test
+	docker-compose --profile testing run --rm algorithm-exercises-js make test
 
 all: env dependencies test

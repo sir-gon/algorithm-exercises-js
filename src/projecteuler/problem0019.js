@@ -1,5 +1,5 @@
 import { logger as console } from '../logger.js';
-import { daysInMonth, __SUNDAY__ } from './constants/datetime.js';
+import { daysInMonth, __SUNDAY__ } from './constants/index.js';
 
 const __FEBRUARY__KEY__ = 'FEBRUARY';
 

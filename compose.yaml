@@ -1,6 +1,6 @@
 services:
-  projecteuler-js:
-    image: projecteuler-js:latest
+  algorithm-exercises-js:
+    image: algorithm-exercises-js:latest
     build:
       context: .
       target: testing
@@ -11,8 +11,20 @@ services:
       - ./coverage:/app/coverage
     profiles: ["testing"]
 
-  projecteuler-js-dev:
-    image: projecteuler-js:dev
+  algorithm-exercises-js-mdlint:
+    image: algorithm-exercises-ts:mdlint
+    build:
+      context: .
+      target: lint
+    # environment:
+      # LOG_LEVEL: ${LOG_LEVEL:-info} ## (1) ## info | debug
+      # BRUTEFORCE: ${BRUTEFORCE:-false} ## (1) ## true | false
+    volumes:
+      - ./:/app
+    profiles: ["lint"]
+
+  algorithm-exercises-js-dev:
+    image: algorithm-exercises-js:dev
     build:
       context: .
       target: development

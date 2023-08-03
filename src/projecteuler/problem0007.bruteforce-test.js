@@ -1,4 +1,5 @@
 /* istanbul ignore file */
+/* c8 ignore start */
 
 import { logger as console } from '../logger.js';
 
@@ -19,3 +20,5 @@ describe('problem 0007 BRUTEFORCE', () => {
     expect(calculated).toBe(solutionFound);
   });
 });
+
+/* c8 ignore stop */
