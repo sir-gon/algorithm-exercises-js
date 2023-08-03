@@ -1,4 +1,5 @@
 /* istanbul ignore file */
+/* c8 ignore start */
 
 // ////////////////////////////////////////////////////////////////////////////
 // About solution: BRUTE FORCE
@@ -31,3 +32,5 @@ describe('problem 0010', () => {
     expect(calculated).toBe(solutionFound);
   });
 });
+
+/* c8 ignore stop */

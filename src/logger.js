@@ -1,5 +1,7 @@
 /* eslint-disable jest/require-hook */
 /* istanbul ignore file */
+/* c8 ignore start */
+
 import pino from 'pino';
 
 const logger = pino({
@@ -26,3 +28,5 @@ console.log(`LOG LEVEL: ${logger.levelVal}`);
 
 export default logger;
 export { logger };
+
+/* c8 ignore stop */

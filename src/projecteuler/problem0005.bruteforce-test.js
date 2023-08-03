@@ -1,4 +1,6 @@
 /* istanbul ignore file */
+/* c8 ignore start */
+
 /**
  * Smallest multiple
  *
@@ -44,3 +46,5 @@ describe('problem 0005 simple', () => {
     expect(calculated).toBe(solutionFound);
   });
 });
+
+/* c8 ignore stop */
