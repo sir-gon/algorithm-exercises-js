@@ -40,7 +40,6 @@ function problem0005Simple(_bottom, _top, _startFrom) {
       found = test;
     }
 
-    fail = false;
     test += 1;
   } while (!found);
 

@@ -48,8 +48,6 @@ function problem0004(_bottom, _top) {
           foundj = j;
           foundPalindrome = i * j;
         }
-      } else {
-        // console.log(`FOUND: ${i} x ${j} = ${j * i} is NOT Palindrome`);
       }
 
       j -= 1;
