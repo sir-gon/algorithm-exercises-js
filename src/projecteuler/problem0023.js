@@ -4,7 +4,7 @@ import { abundance, ___DIVISORS_ABUNDANT___, sum } from './helpers/index.js';
 
 export function problem0023(_underLimit, _superLimit) {
   const allNumsList = [];
-  const nonAbundantList = [];
+  const abundantNumberList = [];
 
   for (let i = 1; i < _underLimit; i++) {
     allNumsList.push(i);
@@ -15,7 +15,7 @@ export function problem0023(_underLimit, _superLimit) {
     const abundancyOf = abundance(i);
 
     if (abundancyOf === ___DIVISORS_ABUNDANT___) {
-      nonAbundantList.push(i);
+      abundantNumberList.push(i);
     }
 
     allNumsList.push(i);
@@ -24,22 +24,20 @@ export function problem0023(_underLimit, _superLimit) {
   console.debug(`all nums list size: ${allNumsList.length} => ${allNumsList}`);
 
   console.debug(
-    `abundant nums list: ${nonAbundantList.length} => ${nonAbundantList}`
+    `abundant nums list: ${abundantNumberList.length} => ${abundantNumberList}`
   );
 
   let sumsAbundantNums = [];
 
   // Produce a list of sums of pair of abundant numbers below limit
-  for (let i = 0; i < nonAbundantList.length; i++) {
-    // console.log(`${i} => ${nonAbundantList[i]}`);
-
+  for (const abundantNumber of abundantNumberList) {
     for (
       let j = 0;
-      nonAbundantList[i] + nonAbundantList[j] <= _superLimit &&
-      j < nonAbundantList.length;
+      abundantNumber + abundantNumberList[j] <= _superLimit &&
+      j < abundantNumberList.length;
       j++
     ) {
-      sumsAbundantNums.push(nonAbundantList[i] + nonAbundantList[j]);
+      sumsAbundantNums.push(abundantNumber + abundantNumberList[j]);
     }
   }
 
