@@ -6,7 +6,6 @@ describe('problem 0020', () => {
   it('problem 0020 solution found', () => {
     expect.assertions(1);
 
-    // const digitsFound = '4613732';
     const solutionFound = '648';
     const inputLimit = 100;
 

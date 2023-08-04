@@ -4,7 +4,7 @@ export default class BNodeBuilder extends BNode {
   static buildBNodeTree(dataTree, i, j) {
     if (!dataTree) return null;
 
-    if (dataTree[i] && dataTree[i][j]) {
+    if (dataTree[i]?.[j]) {
       const resultNode = new BNode(dataTree[i][j]);
 
       if (dataTree[i + 1] && dataTree[i + 1][j] && dataTree[i + 1][j + 1]) {
@@ -31,7 +31,7 @@ export default class BNodeBuilder extends BNode {
   ) {
     if (!dataTree) return null;
 
-    if (dataTree[i] && dataTree[i][j]) {
+    if (dataTree[i]?.[j]) {
       const resultNode = new BNode(dataTree[i][j] + rootValue);
 
       if (dataTree[i + 1] && dataTree[i + 1][j] && dataTree[i + 1][j + 1]) {

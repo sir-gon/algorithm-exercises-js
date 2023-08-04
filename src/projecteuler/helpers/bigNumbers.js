@@ -46,7 +46,7 @@ export const bigSum = (strNumberA, strNumberB) => {
   }
   if (carry > 0) result.push(carry);
 
-  return result
+  return [...result]
     .reverse()
     .reduce((previous, current) => `${previous}${current}`, '');
 };
@@ -54,8 +54,8 @@ export const bigSum = (strNumberA, strNumberB) => {
 export const bigSumMany = (strNumberArr) => {
   let result = '0';
 
-  for (let i = 0; i < strNumberArr.length; i++) {
-    result = bigSum(result, strNumberArr[i]);
+  for (const num of strNumberArr) {
+    result = bigSum(result, num);
   }
 
   return result;
@@ -69,8 +69,8 @@ export const bigMultiplyRowToBigNum = (strNumber, multiplierDigit) => {
   let carry = 0;
   let digit = 0;
 
-  for (let i = 0; i < number.length; i++) {
-    mul = number[i] * multiplierDigit + carry;
+  for (const multiplicand of number) {
+    mul = multiplicand * multiplierDigit + carry;
 
     if (mul < 10) {
       digit = mul;
@@ -95,7 +95,6 @@ export const bigMultiplyRowToString = (strNumber, multiplierDigit) =>
 
 export const bigMultiply = (strMultiply, strNumMultiplier) => {
   const result = [];
-  // const bigNumMultiply = bigNum(strMultiply).reverse();
   const bigNumMultiplier = bigNum(strNumMultiplier).reverse();
 
   for (let i = 0; i < bigNumMultiplier.length; i++) {

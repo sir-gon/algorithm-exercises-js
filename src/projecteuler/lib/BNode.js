@@ -60,9 +60,7 @@ export default class BNode {
   }
 
   isLeaft() {
-    if (!this.l && !this.r) return true;
-
-    return false;
+    return !this.l && !this.r;
   }
 }
 
