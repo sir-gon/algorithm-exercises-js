@@ -1,17 +1,6 @@
 /* istanbul ignore file */
 /* c8 ignore start */
 
-/**
- * Smallest multiple
- *
- * https://projecteuler.net/problem=5
- *
- *
- *  2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
- *
- *  What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
- */
-
 /// ////////////////////////////////////////////////////////////////////////////
 // NOTE: I think a better way to solve problem 0005.
 // If I got prime numbers in beetwen [1,20], can I test them as
