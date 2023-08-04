@@ -54,37 +54,42 @@ export const properDivisors = (target) => {
   return theDivisors;
 };
 
-// eslint-disable-next-line consistent-return
 export const nextPrimeFactor = (_target) => {
-  const top = Math.abs(_target);
-  let cycles = 0;
+  const result = {
+    factor: null,
+    carry: null,
+    cycles: null
+  };
 
+  const top = _target;
+  let cycles = 0;
   if (top === 1) {
-    return {
-      'factor': 1,
-      'carry': 1,
-      'cycles': cycles
-    };
+    result.factor = 1;
+    result.carry = 1;
+    result.cycles = cycles;
+
+    return result;
   }
 
   let i = 2;
   while (i < top) {
     cycles += 1;
-    if (top % i === 0) {
-      return {
-        'factor': i,
-        'carry': top / i,
-        'cycles': cycles
-      };
+    const modulus = Math.floor(top % i);
+    if (modulus === 0) {
+      result.factor = i;
+      result.carry = top / i;
+      result.cycles = cycles;
+
+      return result;
     }
     i += 1;
   }
 
-  return {
-    'factor': i,
-    'carry': top / i,
-    'cycles': cycles + 1
-  };
+  result.factor = i;
+  result.carry = top / i;
+  result.cycles = cycles + 1;
+
+  return result;
 };
 
 export const primeFactors = (target) => {

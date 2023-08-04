@@ -1,5 +1,5 @@
 export default class BNode {
-  constructor(value, l, r) {
+  constructor(value = null, l = null, r = null) {
     this.value = null;
     this.l = null;
     this.r = null;
