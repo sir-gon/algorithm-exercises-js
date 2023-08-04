@@ -18,10 +18,6 @@ export function problem0019(
       (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0 ? 1 : 0;
     daysInMonth[__FEBRUARY__KEY__] = 28 + leap;
 
-    if (leap !== 0) {
-      console.debug(`Year ${year} has leap-day`);
-    }
-
     for (const [month, days] of Object.entries(daysInMonth)) {
       console.debug(`Year: ${year} | Month: ${month} | days: ${days}`);
 
