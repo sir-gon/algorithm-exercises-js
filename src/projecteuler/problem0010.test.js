@@ -1,5 +1,3 @@
-/* eslint-disable jest/no-disabled-tests */
-
 import { logger as console } from '../logger.js';
 
 import { problem0010 } from './problem0010.js';
