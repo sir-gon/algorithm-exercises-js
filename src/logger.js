@@ -1,10 +1,9 @@
 /* eslint-disable jest/require-hook */
 /* istanbul ignore file */
-/* c8 ignore start */
 
 import pino from 'pino';
 
-const logger = pino({
+const logConfig = (logLevel = 'fatal') => ({
   customLevels: {
     log: 30
   },
@@ -16,19 +15,10 @@ const logger = pino({
       ignore: 'pid,hostname'
     }
   },
-  level: process.env.LOG_LEVEL?.toLowerCase() ?? 'fatal'
+  level: logLevel
 });
 
-(() => {
-  console.log(`LOG: Instantiated at: ${new Date().toLocaleString()}`);
-  console.log(`LOG LEVEL: ${logger.levelVal}`);
-  logger.debug('LOG: DEBUG LEVEL ENABLED');
-  logger.error('LOG: ERROR LEVEL ENABLED');
-  logger.warn('LOG: WARN ENABLED');
-  logger.info('LOG: INFO LEVEL ENABLED');
-})();
+const logger = pino(logConfig(process.env.LOG_LEVEL?.toLowerCase()));
 
 export default logger;
 export { logger };
-
-/* c8 ignore stop */
