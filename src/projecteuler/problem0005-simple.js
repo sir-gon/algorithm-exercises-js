@@ -1,3 +1,6 @@
+/**
+ * @link Problem definition [[docs/projecteuler/problem0005.md]]
+ */
 /// ///////////////////////////////////////////////////////////////////////////
 // NOTE: I think a better way to solve problem 0005.
 // If I got prime numbers in beetwen [1,20], can I test them as

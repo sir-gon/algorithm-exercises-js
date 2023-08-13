@@ -1,3 +1,7 @@
+/**
+ * @link Problem definition [[docs/projecteuler/problem0022.md]]
+ */
+
 import { logger as console } from '../logger.js';
 import { wordScore } from './helpers/wordScore.js';
 

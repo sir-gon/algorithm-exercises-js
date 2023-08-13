@@ -1,5 +1,8 @@
-import { logger as console } from '../logger.js';
+/**
+ * @link Problem definition [[docs/projecteuler/problem0012.md]]
+ */
 
+import { logger as console } from '../logger.js';
 import { divisors } from './helpers/index.js';
 
 function problem0012(_top) {

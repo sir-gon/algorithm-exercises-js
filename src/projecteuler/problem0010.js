@@ -1,3 +1,6 @@
+/**
+ * @link Problem definition [[docs/projecteuler/problem0010.md]]
+ */
 // ////////////////////////////////////////////////////////////////////////////
 // About solution: BRUTE FORCE
 //

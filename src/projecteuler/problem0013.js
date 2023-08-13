@@ -1,3 +1,7 @@
+/**
+ * @link Problem definition [[docs/projecteuler/problem0013.md]]
+ */
+
 import { logger as console } from '../logger.js';
 import { bigSumMany } from './helpers/bigNumbers.js';
 

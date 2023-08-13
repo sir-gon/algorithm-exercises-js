@@ -1,5 +1,8 @@
-import { logger as console } from '../logger.js';
+/**
+ * @link Problem definition [[docs/projecteuler/problem0014.md]]
+ */
 
+import { logger as console } from '../logger.js';
 import { collatz } from './helpers/index.js';
 
 function problem0014(bottom = 1, top = 10) {

@@ -1,3 +1,6 @@
+/**
+ * @link Problem definition [[docs/projecteuler/problem0004.md]]
+ */
 /// ////////////////////////////////////////////////////////////////////////////
 // NOTES ABOUT THE SOLUTION:
 // This solution cycles to test all pairs of factors between 111 and 999 that meet the condition of generating a palindrome and saves the largest found.
@@ -9,7 +12,6 @@
 /// ////////////////////////////////////////////////////////////////////////////
 
 import { logger as console } from '../logger.js';
-
 import { isPalindrome } from './helpers/index.js';
 
 function problem0004(_bottom, _top) {

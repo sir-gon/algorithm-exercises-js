@@ -1,3 +1,6 @@
+/**
+ * @link Problem definition [[docs/projecteuler/problem0005.md]]
+ */
 /// ////////////////////////////////////////////////////////////////////////////
 // Using prime factors approach.
 //

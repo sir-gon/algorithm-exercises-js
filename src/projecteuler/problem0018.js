@@ -1,3 +1,6 @@
+/**
+ * @link Problem definition [[docs/projecteuler/problem0018.md]]
+ */
 import { BNodeBuilder } from './lib/BNodeBuilder.js';
 import { logger as console } from '../logger.js';
 
