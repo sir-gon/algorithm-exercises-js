@@ -1,3 +1,6 @@
+/**
+ * @link Problem definition [[docs/projecteuler/problem0009.md]]
+ */
 // ////////////////////////////////////////////////////////////////////////////
 // Solution found:
 // FOUND: a = 200 b = 375 c = 425

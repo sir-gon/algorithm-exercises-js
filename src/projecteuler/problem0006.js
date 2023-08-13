@@ -1,3 +1,6 @@
+/**
+ * @link Problem definition [[docs/projecteuler/problem0006.md]]
+ */
 // ////////////////////////////////////////////////////////////////////////////
 // Solution found:
 // Sum of first 100 squares = 338350

@@ -1,3 +1,6 @@
+/**
+ * @link Problem definition [[docs/projecteuler/problem0008.md]]
+ */
 /// ///////////////////////////////////////////////////////////////////////////
 // About solution:
 // A integer _number with 1000 digits in javascript node.js is translated to

@@ -1,3 +1,6 @@
+/**
+ * @link Problem definition [[docs/projecteuler/problem0020.md]]
+ */
 // ////////////////////////////////////////////////////////////////////////////
 // Result found:
 //      Factorial of 100! =

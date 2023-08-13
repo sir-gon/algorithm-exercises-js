@@ -1,5 +1,8 @@
-import { logger as console } from '../logger.js';
+/**
+ * @link Problem definition [[docs/projecteuler/problem0015.md]]
+ */
 
+import { logger as console } from '../logger.js';
 import { matrix } from './helpers/index.js';
 
 function problem0015(gridSide = 20) {

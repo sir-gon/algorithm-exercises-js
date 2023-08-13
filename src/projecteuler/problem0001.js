@@ -1,3 +1,7 @@
+/**
+ * @link Problem definition [[docs/projecteuler/problem0001.md]]
+ */
+
 import { logger as console } from '../logger.js';
 
 function problem0001(_top) {

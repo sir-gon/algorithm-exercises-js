@@ -1,3 +1,7 @@
+/**
+ * @link Problem definition [[docs/projecteuler/problem0011.md]]
+ */
+
 import { logger as console } from '../logger.js';
 import { maximum } from './helpers/index.js';
 
