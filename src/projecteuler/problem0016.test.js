@@ -14,19 +14,24 @@
 import { logger as console } from '../logger.js';
 
 import { problem0016 } from './problem0016.js';
+import { problem0016alt } from './problem0016-alt.js';
 
 describe('problem 0016', () => {
   it('problem 0016 solution found', () => {
-    expect.assertions(1);
+    expect.assertions(2);
 
     const base = '2';
     const exponent = 1000;
     const solutionFound = '1366';
 
-    const calculated = problem0016(base, exponent);
+    let calculated;
 
+    calculated = problem0016(base, exponent);
     console.log(`PROBLEM 0016 solution found: ${calculated}`);
+    expect(calculated).toBe(solutionFound);
 
+    calculated = problem0016alt(base, exponent);
+    console.log(`PROBLEM 0016 Alternative solution found: ${calculated}`);
     expect(calculated).toBe(solutionFound);
   });
 });
