@@ -2,7 +2,7 @@
  * @link Problem definition [[docs/projecteuler/problem0019.md]]
  */
 import { logger as console } from '../logger.js';
-import { daysInMonth, __SUNDAY__ } from './constants/index.js';
+import { daysInMonth, __SUNDAY__ } from '../constants/index.js';
 
 const __FEBRUARY__KEY__ = 'FEBRUARY';
 
