@@ -2,6 +2,7 @@
  * @link Problem definition [[docs/hackerrank/implementation/migratoryBirds.md]]
  */
 
+import util from 'util';
 import { logger as console } from '../../logger.js';
 
 export function migratoryBirds(arr) {
@@ -28,7 +29,7 @@ export function migratoryBirds(arr) {
       max = bird;
   }
 
-  console.debug(`map: ${map}`);
+  console.debug(`map: ${util.inspect(map)}`);
 
   return max;
 }
