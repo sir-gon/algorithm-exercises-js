@@ -1,6 +1,5 @@
-import { logger as console } from '../../logger';
-
-import { bonAppetit } from './bonAppetit';
+import { logger as console } from '../../logger.js';
+import { bonAppetit } from './bonAppetit.js';
 
 describe('bill Division', () => {
   it('bill Division Test case 0', () => {
