@@ -1,6 +1,6 @@
 import { logger as console } from '../logger.js';
 
-import { __SUNDAY__ } from './constants/datetime.js';
+import { __SUNDAY__ } from '../constants/datetime.js';
 import { problem0019 } from './problem0019.js';
 
 describe('problem 0019', () => {
