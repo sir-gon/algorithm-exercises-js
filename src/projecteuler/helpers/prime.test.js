@@ -1,3 +1,4 @@
+import { describe, expect, it } from '@jest/globals';
 import { isPrime, primeListGenerator } from './prime.js';
 
 describe('number is prime', () => {

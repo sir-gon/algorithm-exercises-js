@@ -1,3 +1,4 @@
+import { describe, expect, it } from '@jest/globals';
 import { isPalindrome } from './isPalindrome.js';
 
 describe('number is Palindrome', () => {

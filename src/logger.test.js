@@ -1,3 +1,4 @@
+import { describe, it, expect } from '@jest/globals';
 import { logger as console } from './logger.js';
 
 describe('logger', () => {

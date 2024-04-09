@@ -11,6 +11,7 @@
 //  Sum: 1366
 // ////////////////////////////////////////////////////////////////////////////
 
+import { describe, expect, it } from '@jest/globals';
 import { logger as console } from '../logger.js';
 
 import { problem0016 } from './problem0016.js';

@@ -1,6 +1,7 @@
 /*
  */
 
+import { describe, expect, it } from '@jest/globals';
 import { numberToWord } from './numberToWord.js';
 
 describe('transform numbers to word representation in british english', () => {

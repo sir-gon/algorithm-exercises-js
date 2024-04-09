@@ -1,12 +1,12 @@
 /* istanbul ignore file */
 /* c8 ignore start */
 
+import { describe, expect, it } from '@jest/globals';
 import { logger as console } from '../logger.js';
 
 import { problem0007 } from './problem0007.js';
 
 describe('problem 0007 BRUTEFORCE', () => {
-  // eslint-disable-next-line jest/no-disabled-tests
   it('problem 0007 BRUTEFORCE large', () => {
     expect.assertions(1);
 

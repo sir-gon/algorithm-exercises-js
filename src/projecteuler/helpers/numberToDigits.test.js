@@ -1,3 +1,4 @@
+import { describe, expect, it } from '@jest/globals';
 import { countDigits, numberToDigits } from './numberToDigits.js';
 
 describe('numbers to Array of decimal digits', () => {

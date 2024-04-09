@@ -15,6 +15,7 @@
 // FOUND: 232792560 divisible by any element beetwen 1 and 20
 /// ////////////////////////////////////////////////////////////////////////////
 
+import { describe, expect, it } from '@jest/globals';
 import { logger as console } from '../logger.js';
 
 import { problem0005Simple } from './problem0005-simple.js';

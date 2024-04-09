@@ -1,3 +1,4 @@
+import { describe, expect, it } from '@jest/globals';
 import { matrix } from './matrix.js';
 
 describe('matrix generator', () => {

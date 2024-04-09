@@ -1,4 +1,3 @@
-/* eslint-disable jest/require-hook */
 /* istanbul ignore file */
 
 import pino from 'pino';

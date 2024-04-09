@@ -1,3 +1,4 @@
+import { describe, expect, it } from '@jest/globals';
 import { minimum, maximum } from './minmax.js';
 
 describe('maximum and minimum', () => {

@@ -1,3 +1,4 @@
+import { describe, expect, it } from '@jest/globals';
 import { product } from './product.js';
 
 describe('product of all numbers in array', () => {
