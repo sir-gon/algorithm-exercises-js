@@ -1,3 +1,4 @@
+import { describe, expect, it } from '@jest/globals';
 import { collatz } from './collatz.js';
 
 // 13 → 40 → 20 → 10 → 5 → 16 → 8 → 4 → 2 → 1

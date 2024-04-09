@@ -1,3 +1,4 @@
+import { describe, expect, it } from '@jest/globals';
 import { logger as console } from '../logger.js';
 
 import { problem0007 } from './problem0007.js';

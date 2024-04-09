@@ -1,7 +1,8 @@
+import { describe, expect, it } from '@jest/globals';
 import { logger as console } from '../logger.js';
 
 import { problem0018 } from './problem0018.js';
-import inputTriangle from './data/problem0018.json' assert { type: 'json' };
+import inputTriangle from './data/problem0018.json';
 
 describe('problem 0018', () => {
   it('problem 0018 solution found', () => {
