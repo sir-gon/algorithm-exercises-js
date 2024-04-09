@@ -72,7 +72,9 @@
       "no-underscore-dangle":           0,
       "no-plusplus":                    ["error", { "allowForLoopAfterthoughts": true }],
       "import/no-unresolved":           [2, {"commonjs": true, "amd": true}],
-      "import/extensions":              ["error", { "js": "always", "json": "always"}]
+      "import/extensions":              ["error", { "js": "always", "json": "always"}],
+      "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.js", "**/*.bruteforce-test.js", "**/*.spec.js"]}]
+
     }
 
   }
