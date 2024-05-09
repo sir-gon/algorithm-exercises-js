@@ -26,7 +26,8 @@ export function problem0018(_triangle) {
   console.debug('_triangle', JSON.stringify(weightsTree, null, 4));
   console.debug('leafs count', leafs.length, 'leafs', leafs);
 
-  const max = leafs.reduce((a, b) => (a > b ? a : b));
+  const __START_FROM__ = 0;
+  const max = leafs.reduce((a, b) => (a > b ? a : b), __START_FROM__);
 
   return max;
 }
