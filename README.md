@@ -147,7 +147,7 @@ Developed with runtime:
 
 ```text
 node --version
-v20.5.0
+v22.1.0
 ```
 
 ### License
