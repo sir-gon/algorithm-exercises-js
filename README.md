@@ -1,14 +1,14 @@
 # Algorithm Exercises (NodeJS ES6)
 
-[![Node.js CI](https://github.com/sir-gon/projecteuler-js/actions/workflows/node.js.yml/badge.svg)](https://github.com/sir-gon/projecteuler-js/actions/workflows/node.js.yml)
-[![codecov](https://codecov.io/gh/sir-gon/projecteuler-js/branch/main/graph/badge.svg?token=TBP53GERMA)](https://codecov.io/gh/sir-gon/projecteuler-js)
+[![Node.js CI](https://github.com/sir-gon/algorithm-exercises-js/actions/workflows/node.js.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-js/actions/workflows/node.js.yml)
+[![codecov](https://codecov.io/gh/sir-gon/algorithm-exercises-js/graph/badge.svg?token=TBP53GERMA)](https://codecov.io/gh/sir-gon/algorithm-exercises-js)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-js.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-js?ref=badge_shield)
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/6198/badge)](https://bestpractices.coreinfrastructure.org/projects/6198)
 [![Markdown Lint](https://github.com/sir-gon/algorithm-exercises-js/actions/workflows/markdown-lint.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-js/actions/workflows/markdown-lint.yml)
 
-![GitHub](https://img.shields.io/github/license/sir-gon/projecteuler-js)
-![GitHub language count](https://img.shields.io/github/languages/count/sir-gon/projecteuler-js)
-![GitHub top language](https://img.shields.io/github/languages/top/sir-gon/projecteuler-js)
+![GitHub](https://img.shields.io/github/license/sir-gon/algorithm-exercises-js)
+![GitHub language count](https://img.shields.io/github/languages/count/sir-gon/algorithm-exercises-js)
+![GitHub top language](https://img.shields.io/github/languages/top/sir-gon/algorithm-exercises-js)
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=sir-gon_algorithm-exercises-js&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=sir-gon_algorithm-exercises-js)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=sir-gon_algorithm-exercises-js&metric=coverage)](https://sonarcloud.io/summary/new_code?id=sir-gon_algorithm-exercises-js)
@@ -114,8 +114,8 @@ Coverage results will be stored in host **/coverage** directory (mounted as volu
 
 ```text
 # Build a complete image
-docker-compose build projecteuler-js
-docker-compose run --rm projecteuler-js npm run test
+docker-compose build algorithm-exercises-js
+docker-compose run --rm algorithm-exercises-js npm run test
 ```
 
 ### Enable BRUTEFORCE tests with full DEBUG output
@@ -123,7 +123,7 @@ docker-compose run --rm projecteuler-js npm run test
 With docker-compose:
 
 ```text
-docker-compose --profile testing run --rm projecteuler-js make test -e LOG_LEVEL=DEBUG -e BRUTEFORCE=true
+docker-compose --profile testing run --rm algorithm-exercises-js make test -e LOG_LEVEL=DEBUG -e BRUTEFORCE=true
 ```
 
 Using make:
@@ -142,9 +142,9 @@ Dependencies should be installed to run (not present in this target) so, you
 
 ```text
 # install node_modules dependencies using docker runtime and store them in host directory
-docker-compose build --compress projecteuler-js-dev
-docker-compose run --rm projecteuler-js-dev npm install --verbose
-docker-compose run --rm projecteuler-js-dev npm run test
+docker-compose build --compress algorithm-exercises-js-dev
+docker-compose run --rm algorithm-exercises-js-dev npm install --verbose
+docker-compose run --rm algorithm-exercises-js-dev npm run test
 ```
 
 ## About development
@@ -162,4 +162,4 @@ v22.1.0
 
 ### Coverage
 
-[![FOSSA Status](https://codecov.io/gh/sir-gon/algorithm-exercises-js/branch/main/graphs/tree.svg?token=TBP53GERMA)](https://codecov.io/gh/sir-gon/projecteuler-js)
+[![Codecov](https://codecov.io/gh/sir-gon/algorithm-exercises-js/branch/main/graphs/tree.svg?token=TBP53GERMA)](https://codecov.io/gh/sir-gon/algorithm-exercises-js)
