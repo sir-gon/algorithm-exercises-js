@@ -7,7 +7,7 @@ export default class BNodeBuilder extends BNode {
     if (dataTree[i]?.[j]) {
       const resultNode = new BNode(dataTree[i][j]);
 
-      if (dataTree[i + 1] && dataTree[i + 1][j] && dataTree[i + 1][j + 1]) {
+      if (dataTree?.[i + 1]?.[j] && dataTree?.[i + 1]?.[j + 1]) {
         // Next left coordinates: [i + 1][j]
         resultNode.setLeft(BNodeBuilder.buildBNodeTree(dataTree, i + 1, j));
 
