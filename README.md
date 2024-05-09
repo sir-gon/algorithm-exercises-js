@@ -10,6 +10,12 @@
 ![GitHub language count](https://img.shields.io/github/languages/count/sir-gon/projecteuler-js)
 ![GitHub top language](https://img.shields.io/github/languages/top/sir-gon/projecteuler-js)
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=sir-gon_algorithm-exercises-js&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=sir-gon_algorithm-exercises-js)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=sir-gon_algorithm-exercises-js&metric=coverage)](https://sonarcloud.io/summary/new_code?id=sir-gon_algorithm-exercises-js)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=sir-gon_algorithm-exercises-js&metric=bugs)](https://sonarcloud.io/summary/new_code?id=sir-gon_algorithm-exercises-js)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=sir-gon_algorithm-exercises-js&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=sir-gon_algorithm-exercises-js)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=sir-gon_algorithm-exercises-js&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=sir-gon_algorithm-exercises-js)
+
 ## What is this?
 
 [Project Euler](https://projecteuler.net/) provide some algorithms and mathematical
