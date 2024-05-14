@@ -44,6 +44,7 @@ env:
 	@echo "################################################################################"
 
 clean:
+	npm run jest:clean
 	rm -vfr ./node_modules
 	rm -vfr ./coverage
 	mkdir -p ./coverage
@@ -65,7 +66,7 @@ test/static: dependencies
 	npm run lint
 
 test: env dependencies test/static
-	npm run test
+	npm run jest:ci
 
 coverage: test
 
