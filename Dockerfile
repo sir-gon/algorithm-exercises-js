@@ -1,11 +1,11 @@
-FROM node:22.1.0-alpine3.19 AS base
+FROM node:22.2.0-alpine3.19 AS base
 
 RUN apk add --update --no-cache make
 
 ENV WORKDIR=/app
 WORKDIR ${WORKDIR}
 
-FROM node:22.1.0-alpine3.19 AS lint
+FROM node:22.2.0-alpine3.19 AS lint
 
 ENV WORKDIR=/app
 WORKDIR ${WORKDIR}
