@@ -1,11 +1,13 @@
-FROM node:22.2.0-alpine3.19 AS base
+###############################################################################
+FROM node:22.2.0-alpine3.20 AS base
 
 RUN apk add --update --no-cache make
 
 ENV WORKDIR=/app
 WORKDIR ${WORKDIR}
 
-FROM node:22.2.0-alpine3.19 AS lint
+###############################################################################
+FROM node:20.14.0-alpine3.20 AS lint
 
 ENV WORKDIR=/app
 WORKDIR ${WORKDIR}
@@ -14,8 +16,10 @@ COPY ./src ${WORKDIR}/src
 RUN apk add --update --no-cache make
 RUN npm install -g markdownlint-cli
 
+###############################################################################
 FROM base AS development
 
+###############################################################################
 FROM development AS builder
 
 COPY ./src ${WORKDIR}/src
@@ -25,6 +29,7 @@ COPY ./Makefile ${WORKDIR}/
 
 RUN npm ci --verbose
 
+###############################################################################
 ### In testing stage, can't use USER, due permissions issue
 ## in github actions environment:
 ##
@@ -46,6 +51,7 @@ RUN ls -alh
 
 CMD ["npm", "run", "test"]
 
+###############################################################################
 ### In production stage
 ## in the production phase, "good practices" such as
 ## WORKSPACE and USER are maintained
