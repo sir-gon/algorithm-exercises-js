@@ -1,9 +1,21 @@
+---
+
 name: gitleaks
-on:
+
+on: # yamllint disable-line rule:truthy
   pull_request:
   push:
   workflow_dispatch:
   schedule:
+    #        ┌───────────── minute (0 - 59)
+    #        │  ┌───────────── hour (0 - 23)
+    #        │  │ ┌───────────── day of the month (1 - 31)
+    #        │  │ │ ┌───────────── month (1 - 12 or JAN-DEC)
+    #        │  │ │ │ ┌───────────── day of the week (0 - 6 or SUN-SAT)
+    #        │  │ │ │ │
+    #        │  │ │ │ │
+    #        │  │ │ │ │
+    #        *  * * * *
     - cron: "0 4 * * *" # run once a day at 4 AM
 jobs:
   scan:
@@ -16,4 +28,5 @@ jobs:
       - uses: gitleaks/gitleaks-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE}} # Only required for Organizations, not personal accounts.
+          # Only required for Organizations, not personal accounts.
+          # GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE}}

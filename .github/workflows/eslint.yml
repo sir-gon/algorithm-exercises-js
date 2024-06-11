@@ -7,15 +7,27 @@
 # More details at https://github.com/eslint/eslint
 # and https://eslint.org
 
+---
+
 name: ESLint
 
-on:
+
+on: # yamllint disable-line rule:truthy
   push:
-    branches: [ "main", "develop" ]
+    branches: ["main", "develop", "feature/*"]
   pull_request:
     # The branches below must be a subset of the branches above
-    branches: [ "main" ]
+    branches: ["main"]
   schedule:
+    #        ┌───────────── minute (0 - 59)
+    #        │  ┌───────────── hour (0 - 23)
+    #        │  │ ┌───────────── day of the month (1 - 31)
+    #        │  │ │ ┌───────────── month (1 - 12 or JAN-DEC)
+    #        │  │ │ │ ┌───────────── day of the week (0 - 6 or SUN-SAT)
+    #        │  │ │ │ │
+    #        │  │ │ │ │
+    #        │  │ │ │ │
+    #        *  * * * *
     - cron: '23 15 * * 2'
 
 jobs:
@@ -25,7 +37,9 @@ jobs:
     permissions:
       contents: read
       security-events: write
-      actions: read # only required for a private repository by github/codeql-action/upload-sarif to get the Action run status
+      # only required for a private repository by
+      # github/codeql-action/upload-sarif to get the Action run status
+      actions: read
     steps:
       - name: Checkout code
         uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4
@@ -36,7 +50,8 @@ jobs:
           npm install @microsoft/eslint-formatter-sarif@3.0.0
 
       - name: Run ESLint
-        run: npx eslint .
+        run: >
+          npx eslint .
           --config .eslintrc
           --ext .js,.jsx,.ts,.tsx
           --format @microsoft/eslint-formatter-sarif

@@ -1,3 +1,5 @@
+---
+
 services:
   algorithm-exercises-js:
     image: algorithm-exercises-js:latest
@@ -11,14 +13,14 @@ services:
       - ./coverage:/app/coverage
     profiles: ["testing"]
 
-  algorithm-exercises-js-mdlint:
-    image: algorithm-exercises-ts:mdlint
+  algorithm-exercises-js-lint:
+    image: algorithm-exercises-ts:lint
     build:
       context: .
       target: lint
     # environment:
-      # LOG_LEVEL: ${LOG_LEVEL:-info} ## (1) ## info | debug
-      # BRUTEFORCE: ${BRUTEFORCE:-false} ## (1) ## true | false
+    #   LOG_LEVEL: ${LOG_LEVEL:-info} ## (1) ## info | debug
+    #   BRUTEFORCE: ${BRUTEFORCE:-false} ## (1) ## true | false
     volumes:
       - ./:/app
     profiles: ["lint"]
@@ -34,6 +36,15 @@ services:
     volumes:
       - ./:/app
     profiles: ["development"]
+
+  algorithm-exercises-js-prod:
+    image: algorithm-exercises-js:prod
+    build:
+      context: .
+      target: production
+    volumes:
+      - ./:/app
+    profiles: ["production"]
 
 ## REFERENCES:
 ## (1) Passing Environment variable with fallback value:
