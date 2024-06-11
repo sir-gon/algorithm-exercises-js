@@ -26,6 +26,7 @@ NPM_UPDATABLE_MODULES = $(shell npm outdated | cut -d' ' -f 1 | sed '1d' | xargs
 
 # DOCKER
 BUILDKIT_PROGRESS=plain
+DOCKER_BUILDKIT=1
 
 .MAIN: test
 .PHONY: all clean dependencies help list test outdated
@@ -44,7 +45,7 @@ env:
 	@echo "################################################################################"
 
 clean:
-	npm run jest:clean
+	${NPM} run jest:clean
 	rm -vfr ./node_modules
 	rm -vfr ./coverage
 	mkdir -p ./coverage
@@ -57,43 +58,60 @@ dependencies:
 	test -x ./node_modules ||  npm install --verbose
 	@echo "################################################################################"
 
-mdlint:
+lint/markdown:
 	markdownlint '**/*.md' --ignore node_modules && echo '✔  Your code looks good.'
 
-lint: test/static mdlint
+lint/yaml:
+	yamllint --stric . && echo '✔  Your code looks good.'
+
+lint: lint/markdown lint/yaml test/styling test/static
 
 test/static: dependencies
-	npm run lint
+	${NPM} run lint
 
-test: env dependencies test/static
-	npm run jest:ci
+test/styling: dependencies
+	${NPM} run style:check
 
-coverage: test
+format: dependencies
+	${NPM} run style:format
 
-coverage/html: coverage
+test: env dependencies
+	${NPM} run jest:ci
+
+coverage: dependencies test
+
+coverage/html: dependencies test
 
 outdated:
-	-npm outdated
+	-${NPM}  outdated
 
 update: dependencies outdated
-	npm install $(NPM_UPDATABLE_MODULES)
+	${NPM}  install $(NPM_UPDATABLE_MODULES)
 
 upgrade: update
 
 compose/build: env
+	docker-compose --profile lint build
 	docker-compose --profile testing build
 
 compose/rebuild: env
+	docker-compose --profile lint build --no-cache
 	docker-compose --profile testing build --no-cache
 
-compose/mdlint: env
+compose/lint/markdown: compose/build
 	docker-compose --profile lint build
-	docker-compose --profile lint run --rm algorithm-exercises-js-mdlint make mdlint
+	docker-compose --profile lint run --rm algorithm-exercises-js-lint make lint/markdown
+
+compose/lint/yaml: compose/build
+	docker-compose --profile lint run --rm algorithm-exercises-js-lint make lint/yaml
+
+compose/test/styling: compose/build
+	docker-compose --profile lint run --rm algorithm-exercises-js-lint make test/styling
 
 compose/test/static: compose/build
-	docker-compose --profile testing run --rm algorithm-exercises-js make test/static
+	docker-compose --profile lint run --rm algorithm-exercises-js-lint make test/static
 
-compose/lint: compose/test/static compose/mdlint
+compose/lint: compose/lint/markdown compose/lint/yaml compose/test/styling compose/test/static
 
 compose/run: compose/build
 	docker-compose --profile testing run --rm algorithm-exercises-js make test
