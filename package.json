@@ -1,8 +1,8 @@
 {
-  "name": "projecteuler.net",
+  "name": "algorithm-exercises-js",
   "version": "1.0.0",
-  "description": "Solutions to the first 100 problems from [Project Euler](https://projecteuler.net/)",
-  "main": "src/problem0000-template.js",
+  "description": "Algorithm exercises solved in Javascript ECMA6, running with Jest testing suite. Developed with TDD.",
+  "main": "src/problem0000.js",
   "scripts": {
     "build": "npx --yes copyfiles --verbose -R --up 1 -e \"**/*.test.js\" -e \"**/*.config.js\" \"**/*.js\" dist/",
     "start": "npm run test",
