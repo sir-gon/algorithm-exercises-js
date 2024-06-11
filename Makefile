@@ -46,6 +46,7 @@ env:
 
 clean:
 	${NPM} run jest:clean
+	rm -vfr ./build
 	rm -vfr ./node_modules
 	rm -vfr ./coverage
 	mkdir -p ./coverage
