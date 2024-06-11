@@ -4,6 +4,7 @@
   "description": "Solutions to the first 100 problems from [Project Euler](https://projecteuler.net/)",
   "main": "src/problem0000-template.js",
   "scripts": {
+    "build": "npx --yes copyfiles --verbose -R --up 1 -e \"**/*.test.js\" -e \"**/*.config.js\" \"**/*.js\" dist/",
     "start": "npm run test",
     "lint": "npx --yes eslint . --color --max-warnings=0 && echo '✔  Your code looks good.'",
     "lint:watch": "npx --yes esw . --color --max-warnings=0 --watch",
