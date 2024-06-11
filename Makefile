@@ -52,6 +52,9 @@ clean:
 	mkdir -p ./coverage
 	touch ./coverage/.gitkeep
 
+build: dependencies
+	${NPM} run build
+
 dependencies:
 	@echo "################################################################################"
 	@echo "## Dependencies: ###############################################################"
@@ -94,10 +97,12 @@ upgrade: update
 compose/build: env
 	docker-compose --profile lint build
 	docker-compose --profile testing build
+	docker-compose --profile production build
 
 compose/rebuild: env
 	docker-compose --profile lint build --no-cache
 	docker-compose --profile testing build --no-cache
+	docker-compose --profile production build --no-cache
 
 compose/lint/markdown: compose/build
 	docker-compose --profile lint build
@@ -114,7 +119,13 @@ compose/test/static: compose/build
 
 compose/lint: compose/lint/markdown compose/lint/yaml compose/test/styling compose/test/static
 
+compose/test: compose/build
+	docker-compose --profile testing run --rm algorithm-exercises-js-test make test
+
 compose/run: compose/build
-	docker-compose --profile testing run --rm algorithm-exercises-js make test
+	docker-compose --profile production run --rm algorithm-exercises-js make run
 
 all: env dependencies test
+
+run:
+	ls -alh

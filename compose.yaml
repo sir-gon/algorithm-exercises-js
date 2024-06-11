@@ -1,8 +1,8 @@
 ---
 
 services:
-  algorithm-exercises-js:
-    image: algorithm-exercises-js:latest
+  algorithm-exercises-js-test:
+    image: algorithm-exercises-js:test
     build:
       context: .
       target: testing
@@ -37,13 +37,13 @@ services:
       - ./:/app
     profiles: ["development"]
 
-  algorithm-exercises-js-prod:
-    image: algorithm-exercises-js:prod
+  algorithm-exercises-js:
+    image: algorithm-exercises-js:latest
     build:
       context: .
       target: production
-    volumes:
-      - ./:/app
+    # volumes:
+    #   - ./:/app
     profiles: ["production"]
 
 ## REFERENCES:

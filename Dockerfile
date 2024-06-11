@@ -67,14 +67,20 @@ RUN ls -alh
 # CMD []
 WORKDIR ${WORKDIR}
 ###############################################################################
-FROM development AS builder
+FROM base AS builder
 
 ENV WORKDIR=/app
 WORKDIR ${WORKDIR}
 
-RUN make clean && npm ci --verbose --omit-dev
+COPY ./src ${WORKDIR}/src
+COPY ./package.json ${WORKDIR}/package.json
+COPY ./package-lock.json ${WORKDIR}/package-lock.json
+COPY ./Makefile ${WORKDIR}/
 
-# CMD []
+RUN rm -vfr node_modules && npm ci --verbose --omit=dev
+RUN npm run build
+
+CMD ["ls", "-alh"]
 
 ###############################################################################
 ### In testing stage, can't use USER, due permissions issue
@@ -100,21 +106,22 @@ CMD ["make", "test"]
 ## in the production phase, "good practices" such as
 ## WORKSPACE and USER are maintained
 ##
-FROM builder AS production
+FROM base AS production
 
 ENV LOG_LEVEL=info
 ENV BRUTEFORCE=false
 ENV WORKDIR=/app
 WORKDIR ${WORKDIR}
 
-# TODO find a way to exclude /src/ and exclude *.test.js files
+COPY --from=builder /app/dist ${WORKDIR}/dist
+COPY --from=builder /app/node_modules ${WORKDIR}/node_modules
 
-COPY ./.babelrc /app/.babelrc
-COPY ./.eslintrc /app/.eslintrc
-COPY ./.prettierrc /app/.prettierrc
-COPY ./jest.config.js /app/jest.config.js
-COPY --from=builder /app/node_modules /app/node_modules
+COPY ./Makefile ${WORKDIR}/
+COPY ./package.json ${WORKDIR}/package.json
+COPY ./package-lock.json ${WORKDIR}/package-lock.json
+COPY ./Makefile ${WORKDIR}/
+
 RUN ls -alh
 
 USER node
-CMD ["npm", "run", "test"]
+CMD ["ls", "-alh"]
