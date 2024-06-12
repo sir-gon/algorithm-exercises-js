@@ -61,7 +61,7 @@ COPY ./package.json ${WORKDIR}/package.json
 COPY ./package-lock.json ${WORKDIR}/package-lock.json
 COPY ./Makefile ${WORKDIR}/
 
-RUN npm ci --verbose
+RUN npm ci --verbose --ignore-scripts
 RUN ls -alh
 
 # CMD []
@@ -77,7 +77,7 @@ COPY ./package.json ${WORKDIR}/package.json
 COPY ./package-lock.json ${WORKDIR}/package-lock.json
 COPY ./Makefile ${WORKDIR}/
 
-RUN rm -vfr node_modules && npm ci --verbose --omit=dev
+RUN rm -vfr node_modules && npm ci --verbose --omit=dev --ignore-scripts
 RUN npm run build
 
 CMD ["ls", "-alh"]

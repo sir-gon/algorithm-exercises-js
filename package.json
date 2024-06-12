@@ -15,7 +15,7 @@
     "style:format": "npx --yes prettier --write 'src/**/*.js'",
     "style:check": "npx --yes prettier --check 'src/**/*.js'",
     "test": "npm run jest:ci",
-    "test:all": "npm run lint && npm run jest && echo 'Done.'",
+    "test:all": "npm run lint && npm run test && echo 'Done.'",
     "test:watch": "npx --yes concurrently -k -s first --names \"LINT,TEST\" -p \"[{name}]\" \"npm run lint:watch\" \"npm run jest:watch\"",
     "update-all": "npm install $(npm outdated | cut -d' ' -f 1 | sed '1d' | xargs -I '$' echo '$@latest' | xargs echo)"
   },
