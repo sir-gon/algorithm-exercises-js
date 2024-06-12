@@ -1,5 +1,5 @@
 ###############################################################################
-FROM node:22.2.0-alpine3.20 AS base
+FROM node:22.3.0-alpine3.20 AS base
 
 RUN apk add --update --no-cache make
 
