@@ -40,6 +40,7 @@ COPY ./Makefile ${WORKDIR}/
 COPY ./.prettierrc ${WORKDIR}/
 COPY ./.prettierignore ${WORKDIR}/
 COPY ./.eslintrc ${WORKDIR}/
+COPY ./.eslintignore ${WORKDIR}/
 COPY ./.babelrc ${WORKDIR}/
 
 # markdownlint conf
@@ -65,19 +66,12 @@ RUN npm ci --verbose --ignore-scripts
 RUN ls -alh
 
 # CMD []
-WORKDIR ${WORKDIR}
 ###############################################################################
-FROM base AS builder
+FROM development AS builder
 
 ENV WORKDIR=/app
 WORKDIR ${WORKDIR}
 
-COPY ./src ${WORKDIR}/src
-COPY ./package.json ${WORKDIR}/package.json
-COPY ./package-lock.json ${WORKDIR}/package-lock.json
-COPY ./Makefile ${WORKDIR}/
-
-RUN rm -vfr node_modules && npm ci --verbose --omit=dev --ignore-scripts
 RUN npm run build
 
 CMD ["ls", "-alh"]
@@ -114,13 +108,12 @@ ENV WORKDIR=/app
 WORKDIR ${WORKDIR}
 
 COPY --from=builder /app/dist ${WORKDIR}/dist
-COPY --from=builder /app/node_modules ${WORKDIR}/node_modules
 
 COPY ./Makefile ${WORKDIR}/
 COPY ./package.json ${WORKDIR}/package.json
 COPY ./package-lock.json ${WORKDIR}/package-lock.json
-COPY ./Makefile ${WORKDIR}/
 
+RUN npm ci --verbose --omit=dev --omit=optional --ignore-scripts --no-cache
 RUN ls -alh
 
 USER node
