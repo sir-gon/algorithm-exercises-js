@@ -8,6 +8,7 @@
 ![GitHub](https://img.shields.io/github/license/sir-gon/algorithm-exercises-js)
 ![GitHub language count](https://img.shields.io/github/languages/count/sir-gon/algorithm-exercises-js)
 ![GitHub top language](https://img.shields.io/github/languages/top/sir-gon/algorithm-exercises-js)
+[![CodeFactor](https://www.codefactor.io/repository/github/sir-gon/algorithm-exercises-js/badge)](https://www.codefactor.io/repository/github/sir-gon/algorithm-exercises-js)
 [![codecov](https://codecov.io/gh/sir-gon/algorithm-exercises-js/graph/badge.svg?token=TBP53GERMA)](https://codecov.io/gh/sir-gon/algorithm-exercises-js)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-js.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-js?ref=badge_shield)
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/6198/badge)](https://bestpractices.coreinfrastructure.org/projects/6198)
