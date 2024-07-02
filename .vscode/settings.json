@@ -9,5 +9,6 @@
   "sonarlint.connectedMode.project": {
     "connectionId": "sir-gon",
     "projectKey": "sir-gon_algorithm-exercises-js"
-  }
+  },
+  "snyk.advanced.additionalParameters": "--exclude=.trunk,coverage"
 }
