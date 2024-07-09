@@ -2,7 +2,7 @@
 
 services:
   algorithm-exercises-js-test:
-    image: algorithm-exercises-js:test
+    image: ${IMAGE_NAME:-algorithm-exercises-js}:test
     build:
       context: .
       target: testing
@@ -14,7 +14,7 @@ services:
     profiles: ["testing"]
 
   algorithm-exercises-js-lint:
-    image: algorithm-exercises-ts:lint
+    image: ${IMAGE_NAME:-algorithm-exercises-js}:lint
     build:
       context: .
       target: lint
@@ -26,7 +26,7 @@ services:
     profiles: ["lint"]
 
   algorithm-exercises-js-dev:
-    image: algorithm-exercises-js:dev
+    image: ${IMAGE_NAME:-algorithm-exercises-js}:dev
     build:
       context: .
       target: development
@@ -38,7 +38,7 @@ services:
     profiles: ["development"]
 
   algorithm-exercises-js:
-    image: algorithm-exercises-js:latest
+    image: ${IMAGE_NAME:-algorithm-exercises-js}:latest
     build:
       context: .
       target: production
