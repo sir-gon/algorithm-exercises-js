@@ -14,7 +14,7 @@ services:
     profiles: ["testing"]
 
   algorithm-exercises-js-lint:
-    image: algorithm-exercises-ts:lint
+    image: algorithm-exercises-js:lint
     build:
       context: .
       target: lint
