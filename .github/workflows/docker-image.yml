@@ -20,17 +20,6 @@ jobs:
     steps:
       - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
 
-      # - name: Build the Docker image
-      #   run: make compose/rebuild
-      # - name: Image List
-      #   run: docker image ls -a
-      # - name: Lint in Docker image
-      #   run: make compose/lint
-      # - name: Test in Docker image
-      #   run: make compose/test
-      # - name: Run in Docker image
-      #   run: make compose/run
-
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
@@ -116,7 +105,7 @@ jobs:
           docker load --input /tmp/${{ env.ARTIFACT_NAME }}_test.tar
           docker image ls -a
 
-      - name: Run lint
+      - name: Run test
         run: |
           docker run --rm ${{ env.IMAGE_NAME }}:test make test
 
@@ -173,15 +162,10 @@ jobs:
         uses: aquasecurity/trivy-action@0.20.0
         with:
           image-ref: ${{ env.IMAGE_NAME }}:${{ github.sha }}
-          format: 'table'
-          exit-code: '1'
-          ignore-unfixed: true
-          vuln-type: 'os,library'
-          severity: 'CRITICAL,HIGH'
+          format: 'sarif'
+          output: 'trivy-results.sarif'
 
-      # yamllint disable rule:comments-indentation
-      # - name: Upload Trivy scan results to GitHub Security tab
-      #   uses: github/codeql-action/upload-sarif@v2
-      #   with:
-      #     sarif_file: 'trivy-results.sarif'
-      # yamllint enable rule:comments-indentation
+      - name: Upload Trivy scan results to GitHub Security tab
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: 'trivy-results.sarif'
