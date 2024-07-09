@@ -21,6 +21,7 @@ A clear and concise description of what the bug is.
 
 **To Reproduce**
 Steps to reproduce the behavior:
+
 1. Go to '...'
 2. Click on '....'
 3. Scroll down to '....'
@@ -33,8 +34,10 @@ A clear and concise description of what you expected to happen.
 If applicable, add screenshots to help explain your problem.
 
 **Desktop (please complete the following information):**
- - OS: [e.g. MacOS, Windows, Linux <distribution>]
- - Version [e.g. 10]
+
+- OS: [e.g. MacOS, Windows, Linux \<distribution\>]
+- Version [e.g. 10]
 
 **Additional context**
-Add any other context about the problem here. Consider environment variables, IDE (+ version), framework version, runtime version, command and parameters of execution.
+Add any other context about the problem here. Consider environment variables,
+IDE (+ version), framework version, runtime version, command and parameters of execution.
