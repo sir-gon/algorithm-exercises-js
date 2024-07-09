@@ -8,6 +8,9 @@ on: # yamllint disable-line rule:truthy
   pull_request:
     branches: ["main"]
 
+env:
+  IMAGE_NAME: algorithm-exercises-js
+
 jobs:
 
   build:
@@ -28,8 +31,8 @@ jobs:
       - name: Tag Docker image
         run: >
           docker tag
-          algorithm-exercises-js:latest
-          algorithm-exercises-js:${{ github.sha }}
+          ${{ env.IMAGE_NAME }}:latest
+          ${{ env.IMAGE_NAME }}:${{ github.sha }}
 
       - name: Run Snyk to check Docker image for vulnerabilities
         # Snyk can be used to break the build when it detects vulnerabilities.
@@ -44,7 +47,7 @@ jobs:
           # yamllint enable rule:line-length
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          image: algorithm-exercises-js:latest
+          image: ${{ env.IMAGE_NAME }}:${{ github.sha }}
           args: --file=Dockerfile
         # yamllint disable rule:comments-indentation
         # - name: Upload result to GitHub Code Scanning
