@@ -85,6 +85,7 @@ test: env dependencies
 coverage: dependencies test
 
 coverage/html: dependencies test
+	open coverage/lcov-report/index.html
 
 outdated:
 	-${NPM}  outdated
