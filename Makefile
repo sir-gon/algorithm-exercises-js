@@ -46,7 +46,7 @@ env:
 
 clean:
 	${NPM} run jest:clean
-	rm -vfr ./build
+	rm -vfr ./dist
 	rm -vfr ./node_modules
 	rm -vfr ./coverage
 	mkdir -p ./coverage
@@ -85,6 +85,7 @@ test: env dependencies
 coverage: dependencies test
 
 coverage/html: dependencies test
+	open coverage/lcov-report/index.html
 
 outdated:
 	-${NPM}  outdated
