@@ -2,6 +2,7 @@
 FROM node:22.5.1-alpine3.20 AS base
 
 RUN apk add --update --no-cache make
+RUN apk upgrade --update --no-cache openssl libcrypto3 libssl3 # FIX CVE-2024-5535
 
 ENV WORKDIR=/app
 WORKDIR ${WORKDIR}
