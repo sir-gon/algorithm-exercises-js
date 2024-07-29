@@ -17,6 +17,32 @@ const TEST_CASES = [
       [3, 2]
     ],
     expected: [0, 1]
+  },
+  {
+    title: 'Sample Test Case 1',
+    input: [
+      [3, 4],
+      [2, 1003],
+      [1, 16],
+      [3, 1]
+    ],
+    expected: [0, 1]
+  },
+  {
+    title: 'Sample Test Case 2',
+    input: [
+      [1, 3],
+      [2, 3],
+      [3, 2],
+      [1, 4],
+      [1, 5],
+      [1, 5],
+      [1, 4],
+      [3, 2],
+      [2, 4],
+      [3, 2]
+    ],
+    expected: [0, 1, 1]
   }
 ];
 
