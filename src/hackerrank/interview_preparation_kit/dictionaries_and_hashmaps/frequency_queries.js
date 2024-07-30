@@ -19,54 +19,23 @@ export function freqQuery(queries) {
     const [operation, data] = query;
 
     const currentFreqValue = dataMap?.[data] ?? __INITIAL__;
+    let newFreqKey = currentFreqValue + 1;
 
     switch (operation) {
       case __INSERT__:
-        {
-          // map of values
-          dataMap[data] = currentFreqValue + 1;
+        // map of values
+        dataMap[data] = currentFreqValue + 1;
 
-          // map of frequencies
-          const newFreqKey = currentFreqValue + 1;
-          if (freqMap?.[newFreqKey]) {
-            freqMap[newFreqKey].push(data);
-          } else {
-            freqMap[newFreqKey] = [data];
-          }
-
-          if (freqMap?.[currentFreqValue]) {
-            freqMap[currentFreqValue] = freqMap[currentFreqValue].filter(
-              (f) => f !== data
-            );
-          }
-        }
+        // map of frequencies
+        newFreqKey = currentFreqValue + 1;
         break;
       case __DELETE__:
-        {
-          // map of values
-          dataMap[data] = Math.max(0, currentFreqValue - 1);
+        // map of values
+        dataMap[data] = Math.max(0, currentFreqValue - 1);
 
-          // map of frequencies
-          const newFreqKey = currentFreqValue - 1;
+        // map of frequencies
+        newFreqKey = currentFreqValue - 1;
 
-          if (newFreqKey > 0) {
-            if (freqMap?.[newFreqKey]) {
-              freqMap[newFreqKey].push(data);
-            } else {
-              freqMap[newFreqKey] = [data];
-            }
-          }
-
-          if (freqMap?.[currentFreqValue]) {
-            freqMap[currentFreqValue] = freqMap[currentFreqValue].filter(
-              (f) => f !== data
-            );
-
-            if (freqMap[currentFreqValue].length === 0) {
-              delete freqMap?.[currentFreqValue];
-            }
-          }
-        }
         break;
       case __SELECT__: {
         if (freqMap?.[data]) {
@@ -78,6 +47,26 @@ export function freqQuery(queries) {
       }
       default:
         throw new Error('Invalid operation');
+    }
+
+    if (operation === __INSERT__ || operation === __DELETE__) {
+      if (newFreqKey > 0) {
+        if (freqMap?.[newFreqKey]) {
+          freqMap[newFreqKey].push(data);
+        } else {
+          freqMap[newFreqKey] = [data];
+        }
+      }
+
+      if (freqMap?.[currentFreqValue]) {
+        freqMap[currentFreqValue] = freqMap[currentFreqValue].filter(
+          (f) => f !== data
+        );
+
+        if (freqMap[currentFreqValue].length === 0) {
+          delete freqMap?.[currentFreqValue];
+        }
+      }
     }
   });
 
