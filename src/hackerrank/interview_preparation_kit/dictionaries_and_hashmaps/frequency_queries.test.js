@@ -79,7 +79,7 @@ describe('frequency_queries', () => {
     TEST_CASES.forEach((value) => {
       const answer = freqQuery(value.input);
 
-      console.debug(`checkMagazine(${value.input}) solution found: ${answer}`);
+      console.debug(`freqQuery(${value.input}) solution found: ${answer}`);
 
       expect(answer).toStrictEqual(value.expected);
     });
