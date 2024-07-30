@@ -2,6 +2,28 @@
  * @link Problem definition [[docs/hackerrank/interview_preparation_kit/dictionaries_and_hashmaps/frequency-queries.md]]
  */
 
+export function updateFrequency(frequencyMap, data, currentFreq, newFreq) {
+  const freqMap = frequencyMap;
+
+  if (newFreq > 0) {
+    if (freqMap?.[newFreq]) {
+      freqMap[newFreq].push(data);
+    } else {
+      freqMap[newFreq] = [data];
+    }
+  }
+
+  if (freqMap?.[currentFreq]) {
+    freqMap[currentFreq] = freqMap[currentFreq].filter((f) => f !== data);
+
+    if (freqMap[currentFreq].length === 0) {
+      delete freqMap?.[currentFreq];
+    }
+  }
+
+  return freqMap;
+}
+
 export function freqQuery(queries) {
   const result = [];
   const dataMap = {};
@@ -18,23 +40,23 @@ export function freqQuery(queries) {
   queries.forEach((query) => {
     const [operation, data] = query;
 
-    const currentFreqValue = dataMap?.[data] ?? __INITIAL__;
-    let newFreqKey = currentFreqValue + 1;
+    const currentFreq = dataMap?.[data] ?? __INITIAL__;
+    let newFreq = currentFreq + 1;
 
     switch (operation) {
       case __INSERT__:
         // map of values
-        dataMap[data] = currentFreqValue + 1;
+        dataMap[data] = currentFreq + 1;
 
         // map of frequencies
-        newFreqKey = currentFreqValue + 1;
+        newFreq = currentFreq + 1;
         break;
       case __DELETE__:
         // map of values
-        dataMap[data] = Math.max(0, currentFreqValue - 1);
+        dataMap[data] = Math.max(0, currentFreq - 1);
 
         // map of frequencies
-        newFreqKey = currentFreqValue - 1;
+        newFreq = currentFreq - 1;
 
         break;
       case __SELECT__: {
@@ -50,23 +72,7 @@ export function freqQuery(queries) {
     }
 
     if (operation === __INSERT__ || operation === __DELETE__) {
-      if (newFreqKey > 0) {
-        if (freqMap?.[newFreqKey]) {
-          freqMap[newFreqKey].push(data);
-        } else {
-          freqMap[newFreqKey] = [data];
-        }
-      }
-
-      if (freqMap?.[currentFreqValue]) {
-        freqMap[currentFreqValue] = freqMap[currentFreqValue].filter(
-          (f) => f !== data
-        );
-
-        if (freqMap[currentFreqValue].length === 0) {
-          delete freqMap?.[currentFreqValue];
-        }
-      }
+      updateFrequency(freqMap, data, currentFreq, newFreq);
     }
   });
 
