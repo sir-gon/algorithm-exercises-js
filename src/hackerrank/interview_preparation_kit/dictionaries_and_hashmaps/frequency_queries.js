@@ -27,18 +27,11 @@ export function freqQuery(queries) {
         dataMap[data] = Math.max(0, current - 1);
         break;
       case __SELECT__: {
-        let i = 0;
-        const entries = Object.entries(dataMap);
-
-        for (const [key, value] of entries) {
-          console.log(key, value);
-          if (value === data) {
-            result.push(__FOUND__);
-            break;
-          }
-          i += 1;
-        }
-        if (i === entries.length) {
+        // const dataValues = Object.values(dataMap);
+        const uniqueDatavalues = new Set(Object.values(dataMap));
+        if (uniqueDatavalues.has(data)) {
+          result.push(__FOUND__);
+        } else {
           result.push(__NOT_FOUND__);
         }
         break;
