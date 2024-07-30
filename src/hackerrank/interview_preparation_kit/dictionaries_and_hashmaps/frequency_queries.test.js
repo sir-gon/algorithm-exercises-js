@@ -43,12 +43,38 @@ const TEST_CASES = [
       [3, 2]
     ],
     expected: [0, 1, 1]
+  },
+  {
+    title: 'Sample Test Case 3',
+    input: [
+      [1, 3],
+      [1, 38],
+      [2, 1],
+      [1, 16],
+      [2, 1],
+      [2, 2],
+      [1, 64],
+      [1, 84],
+      [3, 1],
+      [1, 100],
+      [1, 10],
+      [2, 2],
+      [2, 1],
+      [1, 67],
+      [2, 2],
+      [3, 1],
+      [1, 99],
+      [1, 32],
+      [1, 58],
+      [3, 2]
+    ],
+    expected: [1, 1, 0]
   }
 ];
 
 describe('frequency_queries', () => {
   it('freqQuery test cases', () => {
-    expect.assertions(1);
+    expect.assertions(4);
 
     TEST_CASES.forEach((value) => {
       const answer = freqQuery(value.input);
