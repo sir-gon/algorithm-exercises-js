@@ -5,6 +5,7 @@
 export function freqQuery(queries) {
   const result = [];
   const dataMap = {};
+  const freqMap = {};
 
   const __INITIAL__ = 0;
   const __INSERT__ = 1;
@@ -17,19 +18,58 @@ export function freqQuery(queries) {
   queries.forEach((query) => {
     const [operation, data] = query;
 
-    const current = dataMap?.[data] ?? __INITIAL__;
+    const currentFreqValue = dataMap?.[data] ?? __INITIAL__;
 
     switch (operation) {
       case __INSERT__:
-        dataMap[data] = current + 1;
+        {
+          // map of values
+          dataMap[data] = currentFreqValue + 1;
+
+          // map of frequencies
+          const newFreqKey = currentFreqValue + 1;
+          if (freqMap?.[newFreqKey]) {
+            freqMap[newFreqKey].push(data);
+          } else {
+            freqMap[newFreqKey] = [data];
+          }
+
+          if (freqMap?.[currentFreqValue]) {
+            freqMap[currentFreqValue] = freqMap[currentFreqValue].filter(
+              (f) => f !== data
+            );
+          }
+        }
         break;
       case __DELETE__:
-        dataMap[data] = Math.max(0, current - 1);
+        {
+          // map of values
+          dataMap[data] = Math.max(0, currentFreqValue - 1);
+
+          // map of frequencies
+          const newFreqKey = currentFreqValue - 1;
+
+          if (newFreqKey > 0) {
+            if (freqMap?.[newFreqKey]) {
+              freqMap[newFreqKey].push(data);
+            } else {
+              freqMap[newFreqKey] = [data];
+            }
+          }
+
+          if (freqMap?.[currentFreqValue]) {
+            freqMap[currentFreqValue] = freqMap[currentFreqValue].filter(
+              (f) => f !== data
+            );
+
+            if (freqMap[currentFreqValue].length === 0) {
+              delete freqMap?.[currentFreqValue];
+            }
+          }
+        }
         break;
       case __SELECT__: {
-        // const dataValues = Object.values(dataMap);
-        const uniqueDatavalues = new Set(Object.values(dataMap));
-        if (uniqueDatavalues.has(data)) {
+        if (freqMap?.[data]) {
           result.push(__FOUND__);
         } else {
           result.push(__NOT_FOUND__);
