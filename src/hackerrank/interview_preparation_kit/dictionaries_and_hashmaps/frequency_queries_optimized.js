@@ -1,5 +1,6 @@
 /**
  * @link Problem definition [[docs/hackerrank/interview_preparation_kit/dictionaries_and_hashmaps/frequency-queries.md]]
+ * @see Solution Notes: [[docs/hackerrank/interview_preparation_kit/dictionaries_and_hashmaps/frequency-queries-solution-notes.md]]
  */
 
 export function updateFrequency(frequencyMap, data, currentFreq, newFreq) {
