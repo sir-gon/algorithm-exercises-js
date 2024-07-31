@@ -3,10 +3,9 @@
 name: Markdown Lint
 
 on: # yamllint disable-line rule:truthy
-  push:
-    branches: ["main", "develop", "feature/*"]
   pull_request:
     branches: ["main"]
+  workflow_dispatch:
 
 jobs:
   build:
