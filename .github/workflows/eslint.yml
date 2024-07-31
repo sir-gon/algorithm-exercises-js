@@ -14,10 +14,11 @@ name: ESLint
 
 on: # yamllint disable-line rule:truthy
   push:
-    branches: ["main", "develop", "feature/*"]
+    branches: ["main"]
   pull_request:
     # The branches below must be a subset of the branches above
     branches: ["main"]
+  workflow_dispatch:
   schedule:
     #        ┌───────────── minute (0 - 59)
     #        │  ┌───────────── hour (0 - 23)
