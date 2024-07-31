@@ -1,8 +1,8 @@
 /**
  * @link Problem definition [[docs/hackerrank/interview_preparation_kit/dictionaries_and_hashmaps/frequency-queries.md]]
+ * @see Solution Notes: [[docs/hackerrank/interview_preparation_kit/dictionaries_and_hashmaps/frequency-queries-solution-notes.md]]
  */
 
-// Complete the freqQuery function below.
 export function freqQuery(queries) {
   const result = [];
   const dataMap = {};
@@ -11,6 +11,9 @@ export function freqQuery(queries) {
   const __INSERT__ = 1;
   const __DELETE__ = 2;
   const __SELECT__ = 3;
+
+  const __NOT_FOUND__ = 0;
+  const __FOUND__ = 1;
 
   queries.forEach((query) => {
     const [operation, data] = query;
@@ -24,18 +27,15 @@ export function freqQuery(queries) {
       case __DELETE__:
         dataMap[data] = Math.max(0, current - 1);
         break;
-      case __SELECT__:
-        for (const [key, value] of Object.entries(dataMap)) {
-          console.log(key, value);
-          if (value === data) {
-            result.push(1);
-            break;
-          }
-        }
-        if (result.length === 0) {
-          result.push(0);
+      case __SELECT__: {
+        const uniqueDatavalues = new Set(Object.values(dataMap));
+        if (uniqueDatavalues.has(data)) {
+          result.push(__FOUND__);
+        } else {
+          result.push(__NOT_FOUND__);
         }
         break;
+      }
       default:
         throw new Error('Invalid operation');
     }
