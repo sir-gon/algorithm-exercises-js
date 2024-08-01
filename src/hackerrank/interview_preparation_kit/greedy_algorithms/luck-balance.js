@@ -29,19 +29,27 @@ class Contest {
     this.luck = luck;
     this.important = important;
   }
+
+  getLuck() {
+    return this.luck;
+  }
+
+  isImportant() {
+    return this.important !== 0;
+  }
 }
 
 export function luckBalance(k, contests) {
-  // Write your code here
   let importantContests = [];
   const nonimportantContests = [];
 
-  contests.forEach((contest) => {
-    const [luck, important] = [...contest];
-    if (important === 1) {
-      importantContests.push(new Contest(luck, important));
+  contests.forEach((contestData) => {
+    const [luck, important] = [...contestData];
+    const contest = new Contest(luck, important);
+    if (contest.isImportant()) {
+      importantContests.push(contest);
     } else {
-      nonimportantContests.push(new Contest(luck, important));
+      nonimportantContests.push(contest);
     }
   });
 
@@ -55,11 +63,11 @@ export function luckBalance(k, contests) {
   const cut = Math.min(k, size);
 
   for (let i = 0; i < cut; i++) {
-    total += importantContests[i].luck;
+    total += importantContests[i].getLuck();
   }
 
   for (let i = cut; i < size; i++) {
-    total -= importantContests[i].luck;
+    total -= importantContests[i].getLuck();
   }
 
   nonimportantContests.forEach((contest) => {
