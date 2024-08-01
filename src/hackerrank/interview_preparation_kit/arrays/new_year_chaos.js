@@ -29,7 +29,7 @@ export function minimumBribes(q) {
 
 export function minimumBribesTransform(queue) {
   try {
-    return minimumBribes(queue);
+    return minimumBribes(queue).toString(10);
   } catch (e) {
     return TOO_CHAOTIC_ERROR;
   }
