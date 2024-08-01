@@ -1,5 +1,6 @@
 /**
  * @link Problem definition [[docs/hackerrank/interview_preparation_kit/dictionaries_and_hashmaps/sherlock_and_anagrams.md]]
+ * @see Solution Notes: [[docs/hackerrank/interview_preparation_kit/dictionaries_and_hashmaps/sherlock_and_anagrams-solution-notes.md]]
  */
 
 import { logger as console } from '../../../logger.js';
