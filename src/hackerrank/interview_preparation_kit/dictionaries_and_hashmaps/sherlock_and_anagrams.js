@@ -2,11 +2,11 @@
  * @link Problem definition [[docs/hackerrank/interview_preparation_kit/dictionaries_and_hashmaps/sherlock_and_anagrams.md]]
  */
 
-function factorial(n) {
-  if (n === 0) {
-    return 1;
-  }
-  return n * factorial(n - 1);
+import { logger as console } from '../../../logger.js';
+
+function extraLongFactorials(n) {
+  const rs = [...Array(n)].reduce((a, b, i) => a * BigInt(i + 1), 1n);
+  return rs;
 }
 
 export function sherlockAndAnagrams(s) {
@@ -16,6 +16,9 @@ export function sherlockAndAnagrams(s) {
   for (let i = 0; i < size; i++) {
     for (let j = 0; j < size - i; j++) {
       const substr = s.substring(i, size - j);
+      console.debug(
+        `i: ${i}, size: ${size}, size - j: ${size - j} | substr: ${substr}`
+      );
 
       // Add substrings to a candidate list.
       // two strings are anagrams if sorted strings are the same.
@@ -32,7 +35,8 @@ export function sherlockAndAnagrams(s) {
     }
   }
 
-  let count = 0;
+  let total = BigInt(0);
+  let qCandidates = 0;
   // Final Anagram list
   for (const word of Object.keys(candidates)) {
     const quantityOfAnagrams = candidates[word].length;
@@ -42,15 +46,22 @@ export function sherlockAndAnagrams(s) {
       delete candidates[word];
     } else {
       // Binomial coefficient: https://en.wikipedia.org/wiki/Binomial_coefficient
-      count += Math.floor(
-        factorial(quantityOfAnagrams) /
-          (factorial(k) * factorial(quantityOfAnagrams - k))
-      );
+      qCandidates += quantityOfAnagrams;
+
+      const count =
+        extraLongFactorials(quantityOfAnagrams) /
+        (extraLongFactorials(k) * extraLongFactorials(quantityOfAnagrams - k));
+      total += count;
+
+      console.debug(`'Partial anagrams of ${word}: ${count}`);
     }
   }
-  console.debug(`filtered candidates: ${count}`);
+  console.debug(
+    `'sherlockAndAnagrams(${s}) Filtered # candidates: ${qCandidates}`
+  );
+  console.debug(`'sherlockAndAnagrams(${s}) # anagrams: ${total}`);
 
-  return count;
+  return Number(total);
 }
 
 export default { sherlockAndAnagrams };

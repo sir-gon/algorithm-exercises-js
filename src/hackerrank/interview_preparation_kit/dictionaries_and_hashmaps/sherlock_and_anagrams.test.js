@@ -6,7 +6,7 @@ import TEST_CASES from './sherlock_and_anagrams.testcases.json';
 
 describe('sherlock_and_anagrams', () => {
   it('sherlockAndAnagrams test cases', () => {
-    expect.assertions(5);
+    expect.assertions(15);
 
     TEST_CASES.forEach((testSet) => {
       testSet.tests.forEach((test) => {
