@@ -11,7 +11,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/sir-gon/algorithm-exercises-js/badge)](https://www.codefactor.io/repository/github/sir-gon/algorithm-exercises-js)
 [![codecov](https://codecov.io/gh/sir-gon/algorithm-exercises-js/graph/badge.svg?token=TBP53GERMA)](https://codecov.io/gh/sir-gon/algorithm-exercises-js)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-js.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-js?ref=badge_shield)
-[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/6198/badge)](https://bestpractices.coreinfrastructure.org/projects/6198)
+[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/6198/badge)](https://www.bestpractices.dev/projects/6198)
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=sir-gon_algorithm-exercises-js&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=sir-gon_algorithm-exercises-js)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=sir-gon_algorithm-exercises-js&metric=coverage)](https://sonarcloud.io/summary/new_code?id=sir-gon_algorithm-exercises-js)
