@@ -1,5 +1,5 @@
 /**
- * @link Problem definition [[docs/hackerrank/miscellaneous/flipping-bits.md]]
+ * @link Problem definition [[docs/hackerrank/interview_preparation_kit/miscellaneous/flipping-bits.md]]
  */
 
 const __BINARY_BASE__ = 2;
