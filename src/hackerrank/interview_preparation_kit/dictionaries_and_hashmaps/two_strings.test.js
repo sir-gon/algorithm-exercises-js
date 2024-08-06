@@ -70,7 +70,7 @@ describe('two_strings', () => {
         const answer = twoStrings(test.s1, test.s2);
 
         console.debug(
-          `checkMagazine(${test.s1}, ${test.s2}) solution found: ${answer}`
+          `twoStrings(${test.s1}, ${test.s2}) solution found: ${answer}`
         );
 
         expect(answer).toStrictEqual(test.expected);

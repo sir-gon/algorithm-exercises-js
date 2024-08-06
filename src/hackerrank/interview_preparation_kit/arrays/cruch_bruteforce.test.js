@@ -13,7 +13,7 @@ describe('arrays: crush (bruteforce) small cases', () => {
       const answer = arrayManipulation(test.n, test.queries);
 
       console.debug(
-        `rotLeftOne(${test.n}, ${test.queries}) solution found: ${answer}`
+        `arrayManipulation(${test.n}, ${test.queries}) solution found: ${answer}`
       );
 
       expect(answer).toStrictEqual(test.expected);

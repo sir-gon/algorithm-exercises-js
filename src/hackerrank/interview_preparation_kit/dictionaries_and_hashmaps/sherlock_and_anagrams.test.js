@@ -12,7 +12,9 @@ describe('sherlock_and_anagrams', () => {
       testSet.tests.forEach((test) => {
         const answer = sherlockAndAnagrams(test.input);
 
-        console.debug(`checkMagazine(${test.input}) solution found: ${answer}`);
+        console.debug(
+          `sherlockAndAnagrams(${test.input}) solution found: ${answer}`
+        );
 
         expect(answer).toStrictEqual(test.expected);
       });
