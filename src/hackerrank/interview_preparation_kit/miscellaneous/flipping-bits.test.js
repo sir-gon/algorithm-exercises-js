@@ -61,7 +61,7 @@ describe('flipping bits', () => {
       testSet.tests.forEach((test) => {
         const answer = flippingBits(test.input);
 
-        console.debug(`luckBalance(${test.input}) solution found: ${answer}`);
+        console.debug(`flippingBits(${test.input}) solution found: ${answer}`);
 
         expect(answer).toStrictEqual(test.expected);
       });
@@ -76,7 +76,7 @@ describe('flipping bits', () => {
 
     const answer = flippingBits(input);
 
-    console.debug(`luckBalance(${input}) solution found: ${answer}`);
+    console.debug(`flippingBits(${input}) solution found: ${answer}`);
 
     expect(answer).toStrictEqual(expected);
   });

@@ -6,7 +6,7 @@ import { getMinimumCost } from './greedy_florist.js';
 import TEST_CASES from './greedy_florist.testcases.json';
 
 describe('greedy_florist', () => {
-  it('greedy_florist test cases', () => {
+  it('getMinimumCost test cases', () => {
     expect.assertions(3);
 
     TEST_CASES.forEach((test) => {

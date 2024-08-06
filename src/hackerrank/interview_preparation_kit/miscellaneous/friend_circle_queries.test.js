@@ -11,7 +11,7 @@ describe('friend_circle_queries', () => {
     TEST_CASES.forEach((test) => {
       const answer = maxCircle(test.arr);
 
-      console.debug(`luckBalance(${test.arr}) solution found: ${answer}`);
+      console.debug(`maxCircle(${test.arr}) solution found: ${answer}`);
 
       expect(answer).toStrictEqual(test.expected);
     });
