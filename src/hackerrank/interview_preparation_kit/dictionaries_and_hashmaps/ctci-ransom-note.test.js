@@ -23,6 +23,7 @@ const TEST_CASES = [
     expected: 'Yes'
   }
 ];
+
 describe('ctci_ransom_note', () => {
   it('checkMagazine test cases', () => {
     expect.assertions(3);

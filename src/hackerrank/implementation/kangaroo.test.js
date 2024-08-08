@@ -17,6 +17,7 @@ describe('number Line Jumps', () => {
     console.log(
       `number Line Jumps(${x1}, ${v1}, ${x2}, ${v2}) Border case: ${calculated}`
     );
+
     expect(calculated).toBe(solutionFound);
   });
 
@@ -34,6 +35,7 @@ describe('number Line Jumps', () => {
     console.log(
       `number Line Jumps(${x1}, ${v1}, ${x2}, ${v2}) Border case: ${calculated}`
     );
+
     expect(calculated).toBe(solutionFound);
   });
 
@@ -51,6 +53,7 @@ describe('number Line Jumps', () => {
     console.log(
       `number Line Jumps(${x1}, ${v1}, ${x2}, ${v2}) Test case 0: ${calculated}`
     );
+
     expect(calculated).toBe(solutionFound);
   });
 
@@ -68,6 +71,7 @@ describe('number Line Jumps', () => {
     console.log(
       `number Line Jumps(${x1}, ${v1}, ${x2}, ${v2}) Test case 1: ${calculated}`
     );
+
     expect(calculated).toBe(solutionFound);
   });
 });

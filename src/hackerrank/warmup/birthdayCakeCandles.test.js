@@ -24,6 +24,7 @@ describe('birthdayCakeCandles', () => {
       console.log(
         `birthdayCakeCandles(${test.input}) Test case 0: ${calculated}`
       );
+
       expect(calculated).toBe(test.answer);
     }
   });

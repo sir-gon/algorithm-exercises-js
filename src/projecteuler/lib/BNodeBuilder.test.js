@@ -3,6 +3,7 @@ import { BNode } from './BNode.js';
 import { BNodeBuilder } from './BNodeBuilder.js';
 
 const data = [[75], [95, 64]];
+
 describe('class BNodeBuilder for binary trees', () => {
   it('tree of BNode: building tree with null value', () => {
     expect.assertions(1);

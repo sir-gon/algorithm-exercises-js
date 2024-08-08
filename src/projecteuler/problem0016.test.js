@@ -29,10 +29,12 @@ describe('problem 0016', () => {
 
     calculated = problem0016(base, exponent);
     console.log(`PROBLEM 0016 solution found: ${calculated}`);
+
     expect(calculated).toBe(solutionFound);
 
     calculated = problem0016alt(base, exponent);
     console.log(`PROBLEM 0016 Alternative solution found: ${calculated}`);
+
     expect(calculated).toBe(solutionFound);
   });
 });
