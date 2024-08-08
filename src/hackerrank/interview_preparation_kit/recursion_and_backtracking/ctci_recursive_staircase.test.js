@@ -28,15 +28,10 @@ describe('ctci_recursive_staircase', () => {
 
     TEST_CASES_GENERALIZED.forEach((testSet) => {
       testSet?.tests.forEach((test) => {
-        const initialCache = {};
-        const answer = stepPermsComputWithCache(
-          test.input,
-          initialCache,
-          test.limit
-        );
+        const answer = stepPermsComputWithCache(test.input, test.limit);
 
         console.debug(
-          `stepPermsComputWithCache(${test.input}, ${initialCache}, ${test.limit}) solution found: ${answer}`
+          `stepPermsComputWithCache(${test.input}, ${test.limit}) solution found: ${answer}`
         );
 
         expect(answer).toStrictEqual(test.expected);
