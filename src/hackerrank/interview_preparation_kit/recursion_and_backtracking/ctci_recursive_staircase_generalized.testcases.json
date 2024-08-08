@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Own sample 1",
+    "tests": [
+      {
+        "n_steps": 4,
+        "steps_limit": 3,
+        "expected": 7
+      }
+    ]
+  },
+  {
+    "title": "Own sample 2",
+    "tests": [
+      {
+        "n_steps": 5,
+        "steps_limit": 4,
+        "expected": 15
+      }
+    ]
+  },
+  {
+    "title": "Own sample 3",
+    "tests": [
+      {
+        "n_steps": 6,
+        "steps_limit": 2,
+        "expected": 13
+      }
+    ]
+  }
+]
