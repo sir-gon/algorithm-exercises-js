@@ -11,22 +11,27 @@ describe('between Two Sets', () => {
 
     const calculatedA = getTotalX([], input);
     console.log(`Between Two Sets getTotalX([], ${input}): ${calculatedA}`);
+
     expect(calculatedA).toBe(solutionFound);
 
     const calculatedB = getTotalX(input, []);
     console.log(`Between Two Sets getTotalX(${input}, []): ${calculatedB}`);
+
     expect(calculatedB).toBe(solutionFound);
 
     const calculatedC = getTotalX([], []);
     console.log(`Between Two Sets getTotalX([], []): ${calculatedC}`);
+
     expect(calculatedC).toBe(solutionFound);
 
     const calculatedD = isFactor(1, []);
     console.log(`Between Two Sets isFactor(1, []): ${calculatedD}`);
+
     expect(calculatedD).toBe(false);
 
     const calculatedE = factorOf(1, []);
     console.log(`Between Two Sets factorOf(1, []): ${calculatedE}`);
+
     expect(calculatedE).toBe(false);
   });
 

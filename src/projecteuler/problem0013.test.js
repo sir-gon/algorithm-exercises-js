@@ -16,10 +16,12 @@ describe('problem 0013', () => {
 
     calculated = problem0013(inputNums, firtsDigits);
     console.log(`PROBLEM 0013 solution found: ${calculated}`);
+
     expect(calculated).toBe(solutionFound);
 
     calculated = problem0013alt(inputNums, firtsDigits);
     console.log(`PROBLEM 0013 Alternative solution found: ${calculated}`);
+
     expect(calculated).toBe(solutionFound);
   });
 });

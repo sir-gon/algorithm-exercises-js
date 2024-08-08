@@ -14,6 +14,7 @@ describe('timeConversion', () => {
     for (const test of tests) {
       const calculated = timeConversion(test.input);
       console.log(`timeConversion(${test.input}) Test case 0: ${calculated}`);
+
       expect(calculated).toBe(test.answer);
     }
   });
