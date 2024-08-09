@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Sample Test case 0",
+    "n": "148",
+    "k": 3,
+    "expected": 3
+  },
+  {
+    "title": "Sample Test case 10",
+    "n": "9875",
+    "k": 4,
+    "expected": 8
+  },
+  {
+    "title": "Sample Test case 11",
+    "n": "123",
+    "k": 3,
+    "expected": 9
+  },
+  {
+    "title": "Sample Test case 10",
+    "n": "9875",
+    "k": 4,
+    "expected": 8
+  }
+]
