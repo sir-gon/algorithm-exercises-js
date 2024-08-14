@@ -27,6 +27,7 @@ NPM_UPDATABLE_MODULES = $(shell npm outdated | cut -d' ' -f 1 | sed '1d' | xargs
 # DOCKER
 BUILDKIT_PROGRESS=plain
 DOCKER_BUILDKIT=1
+DOCKER_COMPOSE=docker compose
 
 .MAIN: test
 .PHONY: all clean dependencies help list test outdated
