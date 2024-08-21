@@ -1,6 +1,6 @@
 import { describe, expect, it } from '@jest/globals';
 
-import { swapNodes, buildTree, flatTree } from './swap_nodes_algo.js';
+import { Tree, swapNodes } from './swap_nodes_algo.js';
 import BIG_TEST_CASES from './swap_nodes_algo.big.testcases.json';
 
 describe('swap_nodes_algo', () => {
@@ -8,10 +8,10 @@ describe('swap_nodes_algo', () => {
     expect.assertions(1);
 
     BIG_TEST_CASES.forEach((test) => {
-      const toTest = buildTree(test.nodes);
-      const tResult = flatTree(toTest);
+      const tree = new Tree(test.nodes);
+      const tresult = tree.flatTree();
 
-      expect(tResult).toStrictEqual(test.flattened);
+      expect(tresult).toStrictEqual(test.flattened);
     });
   });
 
