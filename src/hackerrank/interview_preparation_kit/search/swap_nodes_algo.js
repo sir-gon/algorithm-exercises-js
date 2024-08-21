@@ -115,15 +115,6 @@ export function flatTree(root) {
   return output;
 }
 
-export function swapBranch(root) {
-  if (root) {
-    // eslint-disable-next-line no-param-reassign
-    [root.left, root.right] = [root.right, root.left];
-  }
-
-  return root;
-}
-
 export function swapNodes(indexes, queries) {
   const tree = buildTree(indexes);
   const output = [];
@@ -152,7 +143,8 @@ export function swapNodes(indexes, queries) {
 
       if (tLevel % query === 0) {
         for (const node of nodeList) {
-          swapBranch(node);
+          // swap branches
+          [node.left, node.right] = [node.right, node.left];
         }
       }
     }
