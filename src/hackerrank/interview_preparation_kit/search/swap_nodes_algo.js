@@ -22,18 +22,6 @@ export function callbackCollectNodes(root, collect, level) {
   }
 }
 
-export function callbackCollectFlat(root, collect, level) {
-  const _level = 0 * level; // set a unique key to use dict as a list
-  if (root) {
-    if (collect?.[_level] === undefined) {
-      // eslint-disable-next-line no-param-reassign
-      collect[_level] = [root];
-    } else {
-      collect[_level].push(root);
-    }
-  }
-}
-
 export function traverseInOrderCollector(root, collect, level, callbackFn) {
   if (root?.left !== null) {
     traverseInOrderCollector(root?.left, collect, level + 1, callbackFn);
@@ -91,24 +79,26 @@ export function buildTree(indexes) {
 }
 
 export function flatTree(root) {
-  let nodeCollector = {};
+  const nodeCollector = [];
 
-  nodeCollector = traverseInOrderCollector(
-    root,
-    nodeCollector,
-    __INITIAL_LEVEL__,
-    callbackCollectFlat
-  );
+  function traverseInOrderFlat(node) {
+    if (node?.left !== null) {
+      traverseInOrderFlat(node?.left);
+    }
 
-  const lastLevel = parseInt(
-    Object.keys(nodeCollector)
-      .sort((a, b) => parseInt(b, __RADIX__) - parseInt(a, __RADIX__))
-      .shift(),
-    __RADIX__
-  );
+    if (node) {
+      nodeCollector.push(node);
+    }
+
+    if (node?.right !== null) {
+      traverseInOrderFlat(node?.right);
+    }
+  }
+
+  traverseInOrderFlat(root);
 
   const output = [];
-  nodeCollector[lastLevel].forEach((node) => {
+  nodeCollector.forEach((node) => {
     output.push(node.data);
   });
 
