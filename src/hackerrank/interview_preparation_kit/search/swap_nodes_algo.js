@@ -39,7 +39,9 @@ export function traverseInOrderCollector(root, collect, level, callbackFn) {
 export function buildTree(indexes) {
   const indexesCopy = [...indexes];
   const root = new Node(__ROOT_VALUE__);
-  let nodeCollector = {};
+  let currentLevel = 1;
+  const nodeCollector = {};
+  nodeCollector[currentLevel] = [root];
 
   while (indexesCopy.length > 0) {
     nodeCollector = {};
@@ -60,18 +62,31 @@ export function buildTree(indexes) {
 
     const levelSize = Math.min(
       indexesCopy.length,
-      nodeCollector[lastLevel]?.length
+      nodeCollector[currentLevel]?.length
     );
+
+    const nextLevel = currentLevel + 1;
+
+    if (levelSize > 0) {
+      nodeCollector[nextLevel] = [];
+    }
+
     for (let i = 0; i < levelSize; i++) {
-      const currentNode = nodeCollector[lastLevel][i];
+      const currentNode = nodeCollector[currentLevel][i];
       const newElement = indexesCopy.shift();
 
       if ((newElement?.[0] ?? __LEAF_VALUE__) !== __LEAF_VALUE__) {
         currentNode.left = new Node(newElement[0]);
+        nodeCollector[nextLevel].push(currentNode.left);
       }
       if ((newElement?.[1] ?? __LEAF_VALUE__) !== __LEAF_VALUE__) {
         currentNode.right = new Node(newElement[1]);
+        nodeCollector[nextLevel].push(currentNode.right);
       }
+    }
+
+    if (nodeCollector[nextLevel].length > 0) {
+      currentLevel = nextLevel;
     }
   }
 
