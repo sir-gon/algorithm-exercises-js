@@ -21,6 +21,7 @@ const jestConfig = {
   collectCoverageFrom: [
     'src/**/*.{js,jsx,ts}',
     '!src/**/*.tsx',
+    '!**/lib/*.{js,jsx,ts}',
     '!**/?(*.)+(bruteforce-test).js?(x)'
   ],
 
