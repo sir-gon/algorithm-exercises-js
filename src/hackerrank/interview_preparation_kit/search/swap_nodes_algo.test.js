@@ -8,7 +8,7 @@ import {
   swapNodes,
   __INITIAL_LEVEL__
 } from './swap_nodes_algo.js';
-import TEStCASES from './swap_nodes_algo.testcases.json';
+import TESTCASES from './swap_nodes_algo.testcases.json';
 
 describe('swap_nodes_algo', () => {
   it('testbuildTree_empty', () => {
@@ -58,7 +58,7 @@ describe('swap_nodes_algo', () => {
   it('build tree and flattened tree test cases', () => {
     expect.assertions(4);
 
-    TEStCASES.forEach((test) => {
+    TESTCASES.forEach((test) => {
       const toTest = buildTree(test.nodes);
       const tresult = flatTree(toTest);
 
@@ -69,7 +69,7 @@ describe('swap_nodes_algo', () => {
   it('swapNodes test cases', () => {
     expect.assertions(4);
 
-    TEStCASES.forEach((test) => {
+    TESTCASES.forEach((test) => {
       const tresult = swapNodes(test.nodes, test.queries);
 
       expect(tresult).toStrictEqual(test.expected);
