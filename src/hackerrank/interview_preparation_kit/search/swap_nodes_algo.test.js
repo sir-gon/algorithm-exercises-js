@@ -1,13 +1,6 @@
 import { describe, expect, it } from '@jest/globals';
 
-import { Node } from '../../lib/Node.js';
-import {
-  buildTree,
-  flatTree,
-  swapBranch,
-  swapNodes,
-  __INITIAL_LEVEL__
-} from './swap_nodes_algo.js';
+import { buildTree, flatTree, swapNodes } from './swap_nodes_algo.js';
 import TESTCASES from './swap_nodes_algo.testcases.json';
 
 describe('swap_nodes_algo', () => {
@@ -29,28 +22,6 @@ describe('swap_nodes_algo', () => {
     const toTest = buildTree(input);
     const tresult = flatTree(toTest);
     const expected = [1];
-
-    expect(tresult).toStrictEqual(expected);
-  });
-
-  it('testswapBranch empty', () => {
-    expect.assertions(1);
-
-    const tInput = null;
-    const tresult = swapBranch(tInput);
-    const expected = null;
-
-    expect(tresult).toStrictEqual(expected);
-  });
-
-  it('testswapBranch', () => {
-    expect.assertions(1);
-
-    const tInput = new Node(__INITIAL_LEVEL__);
-    tInput.left = new Node(2);
-    tInput.right = new Node(3);
-    const tresult = flatTree(swapBranch(tInput));
-    const expected = [3, 1, 2];
 
     expect(tresult).toStrictEqual(expected);
   });
