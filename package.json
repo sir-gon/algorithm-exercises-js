@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npx --yes copyfiles --verbose -R --up 1 -e \"**/*.test.js\" -e \"**/*.config.js\" \"**/*.js\" dist/",
     "start": "npm run test",
-    "lint": "npx --yes eslint . --color --max-warnings=0 && echo '✔  Your code looks good.'",
+    "lint": "npx --yes eslint --env-info; npx --yes eslint . --color --max-warnings=0 && echo '✔  Your code looks good.'",
     "lint:watch": "npx --yes esw . --color --max-warnings=0 --watch",
     "jest:ci": "node --experimental-vm-modules ./node_modules/.bin/jest --no-cache --ci --color --detectOpenHandles --forceExit --runInBand --debug",
     "jest:clean": "npx --yes jest --clearCache && npx --yes watchman watch-del-all",
