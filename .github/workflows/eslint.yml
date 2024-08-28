@@ -45,6 +45,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+
       - name: Install ESLint
         run: |
           npm install --include=dev eslint@8.57.0

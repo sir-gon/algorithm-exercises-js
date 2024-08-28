@@ -11,23 +11,18 @@ on: # yamllint disable-line rule:truthy
   workflow_dispatch:
 
 jobs:
-  build:
-    strategy:
-      matrix:
-        node-version: [20.x]
-        # See supported Node.js release schedule
-        # at https://nodejs.org/en/about/releases/
-
+  lint:
+    name: Markdown Lint
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
 
-      - name: Set up Node.js ${{ matrix.node-version }}
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 22.x
 
       - name: Install dependencies
         run: npm install -g markdownlint-cli
