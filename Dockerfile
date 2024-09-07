@@ -1,8 +1,8 @@
 ###############################################################################
 FROM node:22.8.0-alpine3.20 AS base
 
-RUN apk add --update --no-cache make
-RUN apk upgrade --update --no-cache openssl libcrypto3 libssl3 # FIX CVE-2024-5535
+RUN  apk add --update --no-cache make \
+  && apk upgrade --update --no-cache openssl libcrypto3 libssl3 # FIX CVE-2024-5535
 
 ENV WORKDIR=/app
 WORKDIR ${WORKDIR}
@@ -13,10 +13,9 @@ FROM base AS lint
 ENV WORKDIR=/app
 WORKDIR ${WORKDIR}
 
-RUN apk add --update --no-cache make nodejs npm
-RUN apk add --update --no-cache yamllint
-
-RUN npm install -g --ignore-scripts markdownlint-cli
+RUN  apk add --update --no-cache make nodejs npm \
+  && apk add --update --no-cache yamllint \
+  && npm install -g --ignore-scripts markdownlint-cli
 
 # [!TIP] Use a bind-mount to "/app" to override following "copys"
 # for lint and test against "current" sources in this stage
@@ -121,8 +120,8 @@ COPY ./Makefile ${WORKDIR}/
 COPY ./package.json ${WORKDIR}/package.json
 COPY ./package-lock.json ${WORKDIR}/package-lock.json
 
-RUN npm ci --verbose --omit=dev --omit=optional --ignore-scripts --no-cache
-RUN ls -alh
+RUN  npm ci --verbose --omit=dev --omit=optional --ignore-scripts --no-cache \
+  && ls -alh
 
 USER node
 CMD ["ls", "-alh"]
