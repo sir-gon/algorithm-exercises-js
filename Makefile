@@ -97,35 +97,35 @@ update: dependencies outdated
 upgrade: update
 
 compose/build: env
-	docker-compose --profile lint build
-	docker-compose --profile testing build
-	docker-compose --profile production build
+	${DOCKER_COMPOSE} --profile lint build
+	${DOCKER_COMPOSE} --profile testing build
+	${DOCKER_COMPOSE} --profile production build
 
 compose/rebuild: env
-	docker-compose --profile lint build --no-cache
-	docker-compose --profile testing build --no-cache
-	docker-compose --profile production build --no-cache
+	${DOCKER_COMPOSE} --profile lint build --no-cache
+	${DOCKER_COMPOSE} --profile testing build --no-cache
+	${DOCKER_COMPOSE} --profile production build --no-cache
 
 compose/lint/markdown: compose/build
-	docker-compose --profile lint build
-	docker-compose --profile lint run --rm algorithm-exercises-js-lint make lint/markdown
+	${DOCKER_COMPOSE} --profile lint build
+	${DOCKER_COMPOSE} --profile lint run --rm algorithm-exercises-js-lint make lint/markdown
 
 compose/lint/yaml: compose/build
-	docker-compose --profile lint run --rm algorithm-exercises-js-lint make lint/yaml
+	${DOCKER_COMPOSE} --profile lint run --rm algorithm-exercises-js-lint make lint/yaml
 
 compose/test/styling: compose/build
-	docker-compose --profile lint run --rm algorithm-exercises-js-lint make test/styling
+	${DOCKER_COMPOSE} --profile lint run --rm algorithm-exercises-js-lint make test/styling
 
 compose/test/static: compose/build
-	docker-compose --profile lint run --rm algorithm-exercises-js-lint make test/static
+	${DOCKER_COMPOSE} --profile lint run --rm algorithm-exercises-js-lint make test/static
 
 compose/lint: compose/lint/markdown compose/lint/yaml compose/test/styling compose/test/static
 
 compose/test: compose/build
-	docker-compose --profile testing run --rm algorithm-exercises-js-test make test
+	${DOCKER_COMPOSE} --profile testing run --rm algorithm-exercises-js-test make test
 
 compose/run: compose/build
-	docker-compose --profile production run --rm algorithm-exercises-js make run
+	${DOCKER_COMPOSE} --profile production run --rm algorithm-exercises-js make run
 
 all: env dependencies test
 
