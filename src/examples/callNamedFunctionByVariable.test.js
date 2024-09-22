@@ -1,5 +1,5 @@
 import { describe, expect, it } from '@jest/globals';
-import objTest from './callNamedFunctionByVariable.js';
+import { objTest } from './callNamedFunctionByVariable.js';
 
 describe('calling function from object', () => {
   it('calling function from object as a variable', () => {
