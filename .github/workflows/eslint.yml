@@ -54,18 +54,20 @@ jobs:
         run: |
           npm install --include=dev eslint@8.57.0
           npm install --include=dev @microsoft/eslint-formatter-sarif@3.0.0
+
       - name: Test ESLint
         run: |
           npx --yes eslint --env-info
+
       - name: Run ESLint
         run: >
           npx eslint .
-          --config .eslintrc
+          --color
           --max-warnings=0
-          --ext .js,.jsx,.ts,.tsx
           --format @microsoft/eslint-formatter-sarif
           --output-file eslint-results.sarif
         continue-on-error: true
+
       - name: Upload analysis results to GitHub
         uses: github/codeql-action/upload-sarif@v3
         with:

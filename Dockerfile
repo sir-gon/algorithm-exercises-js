@@ -39,8 +39,7 @@ COPY ./Makefile ${WORKDIR}/
 # code linting conf
 COPY ./.prettierrc ${WORKDIR}/
 COPY ./.prettierignore ${WORKDIR}/
-COPY ./.eslintrc ${WORKDIR}/
-COPY ./.eslintignore ${WORKDIR}/
+COPY ./eslint.config.js ${WORKDIR}/
 COPY ./.babelrc ${WORKDIR}/
 
 # markdownlint conf
