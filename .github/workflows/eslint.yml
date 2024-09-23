@@ -52,7 +52,7 @@ jobs:
 
       - name: Install ESLint
         run: |
-          npm install --include=dev eslint@8.57.0
+          npm install --include=dev eslint@8.57.1
           npm install --include=dev @microsoft/eslint-formatter-sarif@3.0.0
 
       - name: Test ESLint
