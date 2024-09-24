@@ -11,18 +11,16 @@ import TEST_CASES from './ctci_comparator_sorting.testcases.json';
 
 describe('comparatorSorting', () => {
   it('test_player', () => {
-    expect.assertions(2);
+    expect.assertions(1);
 
-    const aPlayer = new Player();
+    const _NAME_ = 'name';
+    const _SCORE_ = 0;
+
+    const aPlayer = new Player(_NAME_, _SCORE_);
     const aPlayerAsString = aPlayer.toString();
-    const aExpected = '';
+    const aExpected = 'name 0';
 
     expect(aExpected).toStrictEqual(aPlayerAsString);
-
-    const bPlayer = new Player();
-    const comparatorAnswerExpected = 0;
-
-    expect(aPlayer.comparator(bPlayer)).toStrictEqual(comparatorAnswerExpected);
   });
 
   it('test_comparator_sorting', () => {

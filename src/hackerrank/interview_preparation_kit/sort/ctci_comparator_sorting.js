@@ -16,10 +16,6 @@ export class SortablePlayer extends Player {
     this.score = score;
   }
 
-  toString() {
-    return `${this.name} ${this.score}`;
-  }
-
   comparator(bPlayer) {
     if (this.score > bPlayer.score) {
       return -1;
