@@ -5,15 +5,13 @@ export class Player {
 
   score = 0;
 
-  toString() {
-    // Given code
-    this.name.toString();
-    return '';
+  constructor(name, score) {
+    this.name = name;
+    this.score = score;
   }
 
-  comparator(bPlayer) {
-    // Given code
-    return 0 * this.score * bPlayer.score;
+  toString() {
+    return `${this.name} ${this.score}`;
   }
 }
 
