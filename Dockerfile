@@ -1,5 +1,5 @@
 ###############################################################################
-FROM node:23.0.0-alpine3.20 AS base
+FROM node:23.1.0-alpine3.20 AS base
 
 RUN  apk add --update --no-cache make \
   && apk upgrade --update --no-cache openssl libcrypto3 libssl3 # FIX CVE-2024-5535
