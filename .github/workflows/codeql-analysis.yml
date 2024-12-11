@@ -36,7 +36,7 @@ jobs:
   analyze:
     name: Analyze
     runs-on:
-      ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
+      ${{ (matrix.language == 'swift' && 'macos-14') || 'ubuntu-24.04' }}
     permissions:
       actions: read
       contents: read
