@@ -10,7 +10,8 @@ on: # yamllint disable-line rule:truthy
   workflow_dispatch:
 
 jobs:
-  build:
+  coverage:
+    name: NodeJS CI Coverage
     runs-on: ubuntu-24.04
 
     steps:
