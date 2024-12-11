@@ -33,8 +33,5 @@ jobs:
       - name: Install dependencies
         run: npm ci --verbose
 
-      # - name: Lint
-      #   run: npm run lint
-
       - name: Run the tests
         run: npm run jest:ci
