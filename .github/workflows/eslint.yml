@@ -34,7 +34,13 @@ on: # yamllint disable-line rule:truthy
 jobs:
   eslint:
     name: Run eslint scanning
-    runs-on: ubuntu-24.04
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: ["ubuntu-24.04", "macos-14", "windows-2022"]
+        node-version: [18.x, 20.x, 22.x]
+        # See supported Node.js release schedule
+        # at https://nodejs.org/en/about/releases/
     permissions:
       contents: read
       security-events: write
