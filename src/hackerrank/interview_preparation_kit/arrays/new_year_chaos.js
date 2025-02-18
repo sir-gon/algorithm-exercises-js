@@ -2,19 +2,23 @@
  * @link Problem definition [[docs/hackerrank/interview_preparation_kit/arrays/new_year_chaos.md]]
  */
 
-export const TOO_CHAOTIC_ERROR = 'Too chaotic';
+const TOO_CHAOTIC_ERROR = 'Too chaotic';
+const NEW_YEAR_CHAOS_TOLERANCE = 2;
 
-export function minimumBribes(q) {
+function minimumBribesCalculate(q) {
   let bribes = 0;
   let i = 0;
 
   q.forEach((value) => {
     const position = i + 1;
-    if (value - position > 2) {
+    if (value - position > NEW_YEAR_CHAOS_TOLERANCE) {
       throw new Error(TOO_CHAOTIC_ERROR);
     }
 
-    const fragment = q.slice(Math.max(value - 2, 0), i);
+    const fragment = q.slice(
+      Math.min(Math.max(value - NEW_YEAR_CHAOS_TOLERANCE, 0), i),
+      i
+    );
 
     fragment.forEach((k) => {
       if (k > value) {
@@ -27,12 +31,21 @@ export function minimumBribes(q) {
   return bribes;
 }
 
-export function minimumBribesTransform(queue) {
+function minimumBribesText(queue) {
   try {
-    return minimumBribes(queue).toString(10);
+    return minimumBribesCalculate(queue).toString(10);
   } catch (e) {
-    return TOO_CHAOTIC_ERROR;
+    return e.message;
   }
 }
 
-export default { minimumBribes, minimumBribesTransform, TOO_CHAOTIC_ERROR };
+function minimumBribes(q) {
+  console.log(minimumBribesText(q));
+}
+
+export default {
+  minimumBribes,
+  minimumBribesCalculate,
+  minimumBribesText,
+  TOO_CHAOTIC_ERROR
+};
