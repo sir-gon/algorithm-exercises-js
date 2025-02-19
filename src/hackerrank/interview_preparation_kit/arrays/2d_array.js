@@ -2,7 +2,7 @@
  * @link Problem definition [[docs/hackerrank/interview_preparation_kit/arrays/2d_array.md]]
  */
 
-export function gethourGlass(arr, positionX, positionY) {
+function gethourGlass(arr, positionX, positionY) {
   const result = [];
 
   // top
@@ -18,7 +18,7 @@ export function gethourGlass(arr, positionX, positionY) {
   return result;
 }
 
-export function hourglassSum(arr) {
+function hourglassSum(arr) {
   let matrixSize = 0;
 
   if (arr?.[0]) {
