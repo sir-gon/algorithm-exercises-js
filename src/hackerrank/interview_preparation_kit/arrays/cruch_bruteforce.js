@@ -5,7 +5,7 @@
 
 import { logger as console } from '../../../logger.js';
 
-export function arrayManipulation(n, queries) {
+function arrayManipulation(n, queries) {
   const LENGTH = n + 1;
   const SURROGATE_VALUE = 0;
   const result = Array(LENGTH).fill(SURROGATE_VALUE);

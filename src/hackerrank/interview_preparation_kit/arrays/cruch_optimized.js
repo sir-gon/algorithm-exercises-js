@@ -2,7 +2,7 @@
  * @link Problem definition [[docs/hackerrank/interview_preparation_kit/arrays/crush.md]]
  */
 
-export function arrayManipulation(n, queries) {
+function arrayManipulation(n, queries) {
   // why adding 2?
   //   first slot to adjust 1-based index and
   //   last slot for storing accumSum result
