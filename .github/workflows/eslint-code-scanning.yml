@@ -9,7 +9,7 @@
 
 ---
 
-name: ESLint
+name: ESLint Code Scanning
 
 
 on: # yamllint disable-line rule:truthy
@@ -19,17 +19,22 @@ on: # yamllint disable-line rule:truthy
     # The branches below must be a subset of the branches above
     branches: ["main"]
   workflow_dispatch:
+  schedule:
+    #        ┌───────────── minute (0 - 59)
+    #        │  ┌───────────── hour (0 - 23)
+    #        │  │ ┌───────────── day of the month (1 - 31)
+    #        │  │ │ ┌───────────── month (1 - 12 or JAN-DEC)
+    #        │  │ │ │ ┌───────────── day of the week (0 - 6 or SUN-SAT)
+    #        │  │ │ │ │
+    #        │  │ │ │ │
+    #        │  │ │ │ │
+    #        *  * * * *
+    - cron: '23 15 * * 2'
 
 jobs:
   eslint:
     name: Run eslint scanning
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: ["ubuntu-24.04", "macos-14", "windows-2022"]
-        node-version: [18.x, 20.x, 22.x]
-        # See supported Node.js release schedule
-        # at https://nodejs.org/en/about/releases/
+    runs-on: ubuntu-24.04
     permissions:
       contents: read
       security-events: write
@@ -48,6 +53,7 @@ jobs:
       - name: Install ESLint
         run: |
           npm install --include=dev eslint@8.57.1
+          npm install --include=dev @microsoft/eslint-formatter-sarif@3.0.0
 
       - name: Test ESLint
         run: |
@@ -58,4 +64,12 @@ jobs:
           npx eslint .
           --color
           --max-warnings=0
-          && echo '✔  Your code looks good.'
+          --format @microsoft/eslint-formatter-sarif
+          --output-file eslint-results.sarif
+        continue-on-error: true
+
+      - name: Upload analysis results to GitHub
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: eslint-results.sarif
+          wait-for-processing: true
