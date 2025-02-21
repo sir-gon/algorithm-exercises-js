@@ -5,7 +5,7 @@
 const __YES__ = 'Yes';
 const __NO__ = 'No';
 
-export function checkMagazineCompute(magazine, note) {
+function checkMagazineCompute(magazine, note) {
   const dictionary = {};
 
   for (const word of magazine) {
@@ -27,8 +27,13 @@ export function checkMagazineCompute(magazine, note) {
   return true;
 }
 
-export function checkMagazine(magazine, note) {
+function checkMagazineText(magazine, note) {
   return checkMagazineCompute(magazine, note) ? __YES__ : __NO__;
 }
 
-export default { checkMagazine };
+function checkMagazine(magazine, note) {
+  console.log(checkMagazineCompute(magazine, note) ? __YES__ : __NO__);
+}
+
+export default { checkMagazine, checkMagazineText };
+export { checkMagazine, checkMagazineText };
