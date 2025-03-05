@@ -1,7 +1,7 @@
 import { describe, expect, it } from '@jest/globals';
 import { logger as console } from '../../../logger.js';
 
-import { minimumAbsoluteDifference } from './minimum_absolute_difference_in_an_array.js';
+import mad from './minimum_absolute_difference_in_an_array.js';
 
 import TEST_CASES from './minimum_absolute_difference_in_an_array.testcases.json';
 
@@ -10,7 +10,7 @@ describe('minimum_absolute_difference_in_an_array', () => {
     expect.assertions(3);
 
     TEST_CASES.forEach((test) => {
-      const answer = minimumAbsoluteDifference(test.input);
+      const answer = mad.minimumAbsoluteDifference(test.input);
 
       console.debug(
         `minimumAbsoluteDifference(${test.input}) solution found: ${answer}`
