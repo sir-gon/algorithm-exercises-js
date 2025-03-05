@@ -1,0 +1,57 @@
+[
+  {
+    "title": "Example 1 and 2",
+    "tests": [
+      {
+        "s1": "and",
+        "s2": "art",
+        "expected": "YES"
+      },
+      {
+        "s1": "be",
+        "s2": "cat",
+        "expected": "NO"
+      }
+    ]
+  },
+  {
+    "title": "Sample Test Case 0",
+    "tests": [
+      {
+        "s1": "hello",
+        "s2": "world",
+        "expected": "YES"
+      },
+      {
+        "s1": "hi",
+        "s2": "world",
+        "expected": "NO"
+      }
+    ]
+  },
+  {
+    "title": "Sample Test Case 6",
+    "tests": [
+      {
+        "s1": "wouldyoulikefries",
+        "s2": "abcabcabcabcabcabc",
+        "expected": "NO"
+      },
+      {
+        "s1": "hackerrankcommunity",
+        "s2": "cdecdecdecde",
+        "expected": "YES"
+      },
+      {
+        "s1": "jackandjill",
+        "s2": "wentupthehill",
+        "expected": "YES"
+      },
+      {
+        "s1": "writetoyourparents",
+        "s2": "fghmqzldbc",
+        "expected": "NO"
+      }
+    ]
+  }
+]
