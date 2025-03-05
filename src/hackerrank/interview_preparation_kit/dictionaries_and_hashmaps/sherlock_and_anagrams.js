@@ -10,7 +10,7 @@ function extraLongFactorials(n) {
   return rs;
 }
 
-export function sherlockAndAnagrams(s) {
+function sherlockAndAnagrams(s) {
   const candidates = {};
   const size = s.length;
 
@@ -66,3 +66,4 @@ export function sherlockAndAnagrams(s) {
 }
 
 export default { sherlockAndAnagrams };
+export { sherlockAndAnagrams };
