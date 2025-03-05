@@ -1,7 +1,7 @@
 import { describe, expect, it } from '@jest/globals';
 import { logger as console } from '../../../logger.js';
 
-import { freqQuery } from './frequency_queries_bruteforce.js';
+import frequencyQueries from './frequency_queries_bruteforce.js';
 import SMALL_TEST_CASES from './frequency_queries_testcases.json';
 
 describe('frequency_queries', () => {
@@ -9,7 +9,7 @@ describe('frequency_queries', () => {
     expect.assertions(4);
 
     SMALL_TEST_CASES.forEach((value) => {
-      const answer = freqQuery(value.input);
+      const answer = frequencyQueries.freqQuery(value.input);
 
       console.debug(`freqQuery(${value.input}) solution found: ${answer}`);
 
@@ -21,7 +21,7 @@ describe('frequency_queries', () => {
     expect.assertions(1);
 
     expect(() => {
-      freqQuery([[4, 1]]);
+      frequencyQueries.freqQuery([[4, 1]]);
     }).toThrow('Invalid operation');
   });
 });
