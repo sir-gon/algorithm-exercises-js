@@ -3,7 +3,7 @@
  * @see Solution Notes: [[docs/hackerrank/interview_preparation_kit/dictionaries_and_hashmaps/frequency-queries-solution-notes.md]]
  */
 
-export function updateFrequency(frequencyMap, data, currentFreq, newFreq) {
+function updateFrequency(frequencyMap, data, currentFreq, newFreq) {
   const freqMap = frequencyMap;
 
   if (newFreq > 0) {
@@ -25,7 +25,7 @@ export function updateFrequency(frequencyMap, data, currentFreq, newFreq) {
   return freqMap;
 }
 
-export function freqQuery(queries) {
+function freqQuery(queries) {
   const result = [];
   const dataMap = {};
   const freqMap = {};
@@ -81,3 +81,4 @@ export function freqQuery(queries) {
 }
 
 export default { freqQuery };
+export { freqQuery };

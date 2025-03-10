@@ -3,7 +3,7 @@
  * @see Solution Notes: [[docs/hackerrank/interview_preparation_kit/dictionaries_and_hashmaps/frequency-queries-solution-notes.md]]
  */
 
-export function freqQuery(queries) {
+function freqQuery(queries) {
   const result = [];
   const dataMap = {};
 
@@ -45,3 +45,4 @@ export function freqQuery(queries) {
 }
 
 export default { freqQuery };
+export { freqQuery };
