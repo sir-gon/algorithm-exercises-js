@@ -39,7 +39,7 @@ class Contest {
   }
 }
 
-export function luckBalance(k, contests) {
+function luckBalance(k, contests) {
   let importantContests = [];
   const nonimportantContests = [];
 

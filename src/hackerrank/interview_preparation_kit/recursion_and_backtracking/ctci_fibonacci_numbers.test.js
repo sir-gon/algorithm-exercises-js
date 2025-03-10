@@ -1,7 +1,7 @@
 import { describe, expect, it } from '@jest/globals';
 import { logger as console } from '../../../logger.js';
 
-import { fibonacci } from './ctci_fibonacci_numbers.js';
+import fibonacciNumbers from './ctci_fibonacci_numbers.js';
 import TEST_CASES from './ctci_fibonacci_numbers.testcases.json';
 
 describe('ctci_fibonacci_numbers', () => {
@@ -9,7 +9,7 @@ describe('ctci_fibonacci_numbers', () => {
     expect.assertions(3);
 
     TEST_CASES.forEach((test) => {
-      const answer = fibonacci(test.input);
+      const answer = fibonacciNumbers.fibonacci(test.input);
 
       console.debug(`fibonacci(${test.input}) solution found: ${answer}`);
 

@@ -1,57 +1,8 @@
 import { describe, expect, it } from '@jest/globals';
 import { logger as console } from '../../../logger.js';
 
-import { flippingBits } from './flipping-bits.js';
-
-const TEST_CASES = [
-  {
-    title: 'Sample Test Case 0',
-    tests: [
-      {
-        input: 2147483647,
-        expected: 2147483648
-      },
-      {
-        input: 1,
-        expected: 4294967294
-      },
-      {
-        input: 0,
-        expected: 4294967295
-      }
-    ]
-  },
-  {
-    title: 'Sample Test Case 1',
-    tests: [
-      {
-        input: 4,
-        expected: 4294967291
-      },
-      {
-        input: 123456,
-        expected: 4294843839
-      }
-    ]
-  },
-  {
-    title: 'Sample Test Case 2',
-    tests: [
-      {
-        input: 0,
-        expected: 4294967295
-      },
-      {
-        input: 802743475,
-        expected: 3492223820
-      },
-      {
-        input: 35601423,
-        expected: 4259365872
-      }
-    ]
-  }
-];
+import flippingBits from './flipping-bits.js';
+import TEST_CASES from './flipping-bits.testcases.json';
 
 describe('flipping bits', () => {
   it('flipping bits test cases', () => {
@@ -59,7 +10,7 @@ describe('flipping bits', () => {
 
     TEST_CASES.forEach((testSet) => {
       testSet.tests.forEach((test) => {
-        const answer = flippingBits(test.input);
+        const answer = flippingBits.flippingBits(test.input);
 
         console.debug(`flippingBits(${test.input}) solution found: ${answer}`);
 
@@ -74,7 +25,7 @@ describe('flipping bits', () => {
     const input = 9;
     const expected = 4294967286;
 
-    const answer = flippingBits(input);
+    const answer = flippingBits.flippingBits(input);
 
     console.debug(`flippingBits(${input}) solution found: ${answer}`);
 

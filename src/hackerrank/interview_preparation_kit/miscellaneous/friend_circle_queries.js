@@ -56,7 +56,7 @@ class GropingFriends {
   }
 }
 
-export function maxCircle(queries) {
+function maxCircle(queries) {
   const result = [];
   const friends = new GropingFriends();
 

@@ -1,7 +1,7 @@
 import { describe, expect, it } from '@jest/globals';
 import { logger as console } from '../../../logger.js';
 
-import { maxCircle } from './friend_circle_queries.js';
+import friendCircleQueries from './friend_circle_queries.js';
 import TEST_CASES from './friend_circle_queries.testcases.json';
 
 describe('friend_circle_queries', () => {
@@ -9,7 +9,7 @@ describe('friend_circle_queries', () => {
     expect.assertions(4);
 
     TEST_CASES.forEach((test) => {
-      const answer = maxCircle(test.arr);
+      const answer = friendCircleQueries.maxCircle(test.arr);
 
       console.debug(`maxCircle(${test.arr}) solution found: ${answer}`);
 
