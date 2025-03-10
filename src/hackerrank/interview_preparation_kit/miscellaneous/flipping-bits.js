@@ -5,7 +5,7 @@
 const __BINARY_BASE__ = 2;
 const __NUMBER_SIZE_IN_BITS__ = 32;
 
-export function flippingBits(n) {
+function flippingBits(n) {
   let nBinaryStr = n.toString(__BINARY_BASE__);
   nBinaryStr = nBinaryStr.padStart(__NUMBER_SIZE_IN_BITS__, '0');
 
@@ -23,3 +23,4 @@ export function flippingBits(n) {
 }
 
 export default { flippingBits };
+export { flippingBits };
