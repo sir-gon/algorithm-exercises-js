@@ -2,7 +2,7 @@
  * @link Problem definition [[docs/hackerrank/interview_preparation_kit/recursion_and_backtracking/ctci_fibonacci_numbers.md]]
  */
 
-export function fibonacci(n) {
+function fibonacci(n) {
   if (n === 0) {
     return 0;
   }
@@ -14,3 +14,4 @@ export function fibonacci(n) {
 }
 
 export default { fibonacci };
+export { fibonacci };
