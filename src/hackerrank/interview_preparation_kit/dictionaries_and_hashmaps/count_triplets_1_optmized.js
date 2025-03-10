@@ -3,7 +3,7 @@
  * @see Solution Notes: [[docs/hackerrank/interview_preparation_kit/dictionaries_and_hashmaps/count_triplets_1-solution-notes.md]]
  */
 
-export function countTriplets(arr, ratio) {
+function countTriplets(arr, ratio) {
   let triplets = 0;
 
   const aCounter = arr.reduce((accumulator, entry) => {
@@ -36,3 +36,4 @@ export function countTriplets(arr, ratio) {
 }
 
 export default { countTriplets };
+export { countTriplets };
