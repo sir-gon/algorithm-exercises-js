@@ -2,7 +2,7 @@
  * @link Problem definition [[docs/hackerrank/interview_preparation_kit/search/ctci-ice-cream-parlor.md]]
  */
 
-export function whatFlavorsBruteforceCompute(cost, money) {
+function whatFlavorsBruteforceCompute(cost, money) {
   const RADIX = 10;
 
   for (const key of Object.keys(cost)) {
@@ -22,8 +22,9 @@ export function whatFlavorsBruteforceCompute(cost, money) {
   return [];
 }
 
-export function whatFlavors(cost, money) {
+function whatFlavors(cost, money) {
   console.log(whatFlavorsBruteforceCompute(cost, money)?.join(' '));
 }
 
 export default { whatFlavorsBruteforceCompute, whatFlavors };
+export { whatFlavorsBruteforceCompute, whatFlavors };
