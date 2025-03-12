@@ -1,6 +1,6 @@
 // Start Given code
 
-export class Player {
+class Player {
   name = '';
 
   score = 0;
@@ -18,3 +18,4 @@ export class Player {
 // End Given code
 
 export default { Player };
+export { Player };

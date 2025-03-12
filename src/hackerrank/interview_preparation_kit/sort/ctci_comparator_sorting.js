@@ -4,7 +4,7 @@
 
 import { Player } from './ctci_comparator_sorting.Player.js';
 
-export class SortablePlayer extends Player {
+class SortablePlayer extends Player {
   name = '';
 
   score = 0;
@@ -34,14 +34,20 @@ export class SortablePlayer extends Player {
   }
 }
 
-export function comparatorSorting(players) {
+function comparatorSorting(players) {
   const sortedPlayers = [...players].sort((a, b) => a.comparator(b));
 
   return sortedPlayers.map((player) => player.toString());
 }
 
-export function comparatorSortingPrint(players) {
+function comparatorSortingPrint(players) {
   console.log(comparatorSorting(players)?.join('\n'));
 }
 
-export default { Player, SortablePlayer, comparatorSorting };
+export default {
+  Player,
+  SortablePlayer,
+  comparatorSorting,
+  comparatorSortingPrint
+};
+export { Player, SortablePlayer, comparatorSorting, comparatorSortingPrint };
