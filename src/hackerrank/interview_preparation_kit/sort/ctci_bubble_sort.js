@@ -4,7 +4,7 @@
 
 const SEPARATOR = '\n';
 
-export class SortableGroup {
+class SortableGroup {
   group;
 
   count;
@@ -38,7 +38,7 @@ export class SortableGroup {
   }
 }
 
-export function countSwaps(a) {
+function countSwaps(a) {
   const sortableGroup = new SortableGroup(a);
   sortableGroup.bubble_sort();
 
@@ -53,3 +53,4 @@ export function countSwaps(a) {
 }
 
 export default { countSwaps, SortableGroup };
+export { countSwaps, SortableGroup };
