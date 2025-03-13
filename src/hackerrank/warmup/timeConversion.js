@@ -2,7 +2,7 @@
  * @link Problem definition [[docs/hackerrank/warmup/timeConversion.md]]
  */
 
-export function timeConversion(s) {
+function timeConversion(s) {
   let meridian = s.substring(s.length - 2, s.length);
   meridian = meridian.toLowerCase();
 
@@ -26,3 +26,4 @@ export function timeConversion(s) {
 }
 
 export default { timeConversion };
+export { timeConversion };

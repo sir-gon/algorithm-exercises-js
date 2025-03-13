@@ -2,7 +2,7 @@
  * @link Problem definition [[docs/hackerrank/warmup/compareTriplets.md]]
  */
 
-export function compareTriplets(a, b) {
+function compareTriplets(a, b) {
   const awards = [0, 0];
 
   if (a.length !== b.length) {
@@ -21,3 +21,4 @@ export function compareTriplets(a, b) {
 }
 
 export default { compareTriplets };
+export { compareTriplets };

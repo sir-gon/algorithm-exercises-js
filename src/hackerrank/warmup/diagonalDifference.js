@@ -4,7 +4,7 @@
 
 import { logger as console } from '../../logger.js';
 
-export function diagonalDifference(arr) {
+function diagonalDifference(arr) {
   let diag1 = 0;
   let diag2 = 0;
   const last = arr.length - 1;
@@ -24,3 +24,4 @@ export function diagonalDifference(arr) {
 }
 
 export default { diagonalDifference };
+export { diagonalDifference };

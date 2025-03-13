@@ -2,7 +2,7 @@
  * @link Problem definition [[docs/hackerrank/warmup/miniMaxSum.md]]
  */
 
-export function miniMaxSum(arr) {
+function miniMaxSum(arr) {
   if (arr.length === 0) {
     throw new Error('Empty input');
   }
@@ -27,3 +27,4 @@ export function miniMaxSum(arr) {
 }
 
 export default { miniMaxSum };
+export { miniMaxSum };
