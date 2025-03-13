@@ -5,7 +5,7 @@
 const __YES__ = 'YES';
 const __NO__ = 'NO';
 
-export function isValidCompute(s) {
+function isValidCompute(s) {
   if (s.length <= 1) {
     return true;
   }
@@ -48,8 +48,9 @@ export function isValidCompute(s) {
   return false;
 }
 
-export function isValid(s) {
+function isValid(s) {
   return isValidCompute(s) ? __YES__ : __NO__;
 }
 
 export default { isValid };
+export { isValid };
