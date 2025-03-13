@@ -1,6 +1,6 @@
 /* istanbul ignore file */
 
-export class BigIntMath {
+class BigIntMath {
   static max(...values) {
     if (values.length === 0) {
       return null;
@@ -79,3 +79,4 @@ export class BigIntMath {
 }
 
 export default { BigIntMath };
+export { BigIntMath };
