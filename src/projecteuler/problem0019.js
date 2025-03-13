@@ -6,7 +6,7 @@ import { daysInMonth, __SUNDAY__ } from '../constants/index.js';
 
 const __FEBRUARY__KEY__ = 'FEBRUARY';
 
-export function problem0019(
+function problem0019(
   _dayOfWeek = __SUNDAY__,
   _sinceYear = 1901,
   _untilYear = 2000
@@ -44,3 +44,4 @@ export function problem0019(
 }
 
 export default { problem0019 };
+export { problem0019 };

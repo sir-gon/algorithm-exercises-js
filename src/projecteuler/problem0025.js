@@ -5,7 +5,7 @@
 import { logger as console } from '../logger.js';
 import { bigNum, bigSum, bigNumToString } from './helpers/index.js';
 
-export function problem0025(_top) {
+function problem0025(_top) {
   let last1 = bigNum('1');
   let last2 = bigNum('1');
   let counter = 2;
@@ -26,3 +26,4 @@ export function problem0025(_top) {
 }
 
 export default { problem0025 };
+export { problem0025 };

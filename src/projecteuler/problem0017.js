@@ -5,7 +5,7 @@
 import { logger as console } from '../logger.js';
 import { numberToWord } from './helpers/index.js';
 
-export default function problem0017(init, last) {
+function problem0017(init, last) {
   let replaced;
   let word;
   let acum = 0;
@@ -24,4 +24,5 @@ export default function problem0017(init, last) {
   return acum;
 }
 
+export default { problem0017 };
 export { problem0017 };
