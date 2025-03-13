@@ -4,7 +4,7 @@
 
 import { logger as console } from '../../logger.js';
 
-export function divisibleSumPairs(n, k, ar) {
+function divisibleSumPairs(n, k, ar) {
   let pairs = 0;
   for (let i = 0; i < ar.length; i++) {
     for (let j = i + 1; j < ar.length; j++) {
@@ -19,3 +19,4 @@ export function divisibleSumPairs(n, k, ar) {
 }
 
 export default { divisibleSumPairs };
+export { divisibleSumPairs };

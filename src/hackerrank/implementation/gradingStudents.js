@@ -2,7 +2,7 @@
  * @link Problem definition [[docs/hackerrank/implementation/gradingStudents.md]]
  */
 
-export function gradingStudents(grades) {
+function gradingStudents(grades) {
   const minimum = 38;
   const roundTo = 5;
   const result = [];
@@ -23,3 +23,4 @@ export function gradingStudents(grades) {
 }
 
 export default { gradingStudents };
+export { gradingStudents };

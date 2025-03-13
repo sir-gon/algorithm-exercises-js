@@ -4,7 +4,7 @@
 
 import { logger as console } from '../../logger.js';
 
-export function bonAppetit(bill, k, b) {
+function bonAppetit(bill, k, b) {
   const totalSum = bill.reduce(
     (previousValue, currentValue) => previousValue + currentValue,
     0
@@ -25,3 +25,4 @@ export function bonAppetit(bill, k, b) {
 }
 
 export default { bonAppetit };
+export { bonAppetit };

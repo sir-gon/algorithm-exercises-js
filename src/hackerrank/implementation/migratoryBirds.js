@@ -5,7 +5,7 @@
 import util from 'util';
 import { logger as console } from '../../logger.js';
 
-export function migratoryBirds(arr) {
+function migratoryBirds(arr) {
   if (arr.length === 0) {
     throw new Error('Empty input');
   }
@@ -35,3 +35,4 @@ export function migratoryBirds(arr) {
 }
 
 export default { migratoryBirds };
+export { migratoryBirds };

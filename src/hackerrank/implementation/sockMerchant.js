@@ -4,7 +4,7 @@
 
 import { logger as console } from '../../logger.js';
 
-export function sockMerchant(n, ar) {
+function sockMerchant(n, ar) {
   let result = 0;
 
   const matches = {};
@@ -25,3 +25,4 @@ export function sockMerchant(n, ar) {
 }
 
 export default { sockMerchant };
+export { sockMerchant };

@@ -2,7 +2,7 @@
  * @link Problem definition [[docs/hackerrank/implementation/betweenTwoSets.md]]
  */
 
-export function isFactor(n, group) {
+function isFactor(n, group) {
   let result = true;
   let i = 0;
 
@@ -19,7 +19,7 @@ export function isFactor(n, group) {
   return result;
 }
 
-export function factorOf(n, group) {
+function factorOf(n, group) {
   let result = true;
   let i = 0;
 
@@ -36,7 +36,7 @@ export function factorOf(n, group) {
   return result;
 }
 
-export function getTotalX(a, b) {
+function getTotalX(a, b) {
   let max = 0;
   for (const j of b) {
     if (j > max) max = j;
@@ -53,4 +53,5 @@ export function getTotalX(a, b) {
   return result.length;
 }
 
-export default { getTotalX };
+export default { getTotalX, isFactor, factorOf };
+export { getTotalX, isFactor, factorOf };

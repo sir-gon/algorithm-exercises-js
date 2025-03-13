@@ -4,7 +4,7 @@
 
 import { logger as console } from '../../logger.js';
 
-export function birthday(s, d, m) {
+function birthday(s, d, m) {
   let result = 0;
   console.debug(`s: ${s}`);
 
@@ -23,3 +23,4 @@ export function birthday(s, d, m) {
 }
 
 export default { birthday };
+export { birthday };
