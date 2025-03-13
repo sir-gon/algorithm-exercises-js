@@ -19,7 +19,7 @@ function sum(values) {
   );
 }
 
-export function makeAnagram(a, b) {
+function makeAnagram(a, b) {
   const aMap = charToDicMap(a);
   const bMap = charToDicMap(b);
 
@@ -34,3 +34,4 @@ export function makeAnagram(a, b) {
 }
 
 export default { makeAnagram };
+export { makeAnagram };

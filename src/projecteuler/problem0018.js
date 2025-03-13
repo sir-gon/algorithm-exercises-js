@@ -7,7 +7,7 @@ import { logger as console } from '../logger.js';
 const rootCoordinateI = 0;
 const rootCoordinateJ = 0;
 
-export function problem0018(_triangle) {
+function problem0018(_triangle) {
   console.debug('_triangle', _triangle);
   console.debug(
     '_triangle',
@@ -33,3 +33,4 @@ export function problem0018(_triangle) {
 }
 
 export default { problem0018 };
+export { problem0018 };

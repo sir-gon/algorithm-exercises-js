@@ -6,7 +6,7 @@
 const bigIntMax = (...args) =>
   args.reduce((m, e) => (e > m ? e : m), BigInt(0));
 
-export function maxSubsetSum(arr) {
+function maxSubsetSum(arr) {
   const arrCopy = arr.map((x) => BigInt(x));
 
   if (arrCopy.length === 0) {
@@ -32,3 +32,4 @@ export function maxSubsetSum(arr) {
 }
 
 export default { maxSubsetSum };
+export { maxSubsetSum };

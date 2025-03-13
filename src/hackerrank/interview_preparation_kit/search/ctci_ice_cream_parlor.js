@@ -2,7 +2,7 @@
  * @link Problem definition [[docs/hackerrank/interview_preparation_kit/search/ctci-ice-cream-parlor.md]]
  */
 
-export function whatFlavorsCompute(cost, money) {
+function whatFlavorsCompute(cost, money) {
   const cache = {};
   const RADIX = 10;
 
@@ -20,8 +20,9 @@ export function whatFlavorsCompute(cost, money) {
   return [];
 }
 
-export function whatFlavors(cost, money) {
+function whatFlavors(cost, money) {
   console.log(whatFlavorsCompute(cost, money)?.join(' '));
 }
 
 export default { whatFlavorsCompute, whatFlavors };
+export { whatFlavorsCompute, whatFlavors };

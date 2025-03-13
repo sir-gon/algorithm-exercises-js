@@ -1,6 +1,6 @@
 /* istanbul ignore file */
 
-export class Node {
+class Node {
   left;
 
   right;
@@ -15,3 +15,4 @@ export class Node {
 }
 
 export default { Node };
+export { Node };

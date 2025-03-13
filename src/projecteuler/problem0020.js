@@ -13,7 +13,7 @@ import { logger as console } from '../logger.js';
 
 import { bigFactorial, bigSumMany } from './helpers/bigNumbers.js';
 
-export function problem0020(_limit) {
+function problem0020(_limit) {
   const strFactorial = bigFactorial(_limit);
 
   console.log(`Factorial of ${_limit}!:`, strFactorial);
@@ -24,3 +24,4 @@ export function problem0020(_limit) {
 }
 
 export default { problem0020 };
+export { problem0020 };

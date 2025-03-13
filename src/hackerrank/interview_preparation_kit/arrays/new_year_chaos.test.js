@@ -1,7 +1,7 @@
 import { describe, expect, it } from '@jest/globals';
 import { logger as console } from '../../../logger.js';
 
-import testingModule from './new_year_chaos.js';
+import { minimumBribes, minimumBribesText } from './new_year_chaos.js';
 
 import TEST_CASES from './new_year_chaos.testcases.json';
 
@@ -10,8 +10,8 @@ describe('new_year_chaos', () => {
     expect.assertions(5);
 
     TEST_CASES.forEach((test) => {
-      const answer = testingModule.minimumBribesText(test.input);
-      testingModule.minimumBribes(test.input);
+      const answer = minimumBribesText(test.input);
+      minimumBribes(test.input);
 
       console.debug(
         `minimumBribesText(${test.input}) solution found: ${answer}`

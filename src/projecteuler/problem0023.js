@@ -5,7 +5,7 @@
 import { logger as console } from '../logger.js';
 import { abundance, ___DIVISORS_ABUNDANT___, sum } from './helpers/index.js';
 
-export function problem0023(_underLimit, _superLimit) {
+function problem0023(_underLimit, _superLimit) {
   const allNumsList = [];
   const abundantNumberList = [];
 
@@ -64,3 +64,4 @@ export function problem0023(_underLimit, _superLimit) {
 }
 
 export default { problem0023 };
+export { problem0023 };

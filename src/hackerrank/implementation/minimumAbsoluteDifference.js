@@ -4,7 +4,7 @@
 
 import { logger as console } from '../../logger.js';
 
-export function minimumAbsoluteDifference(arr) {
+function minimumAbsoluteDifference(arr) {
   if (arr.length === 0) {
     throw new Error('Empty input');
   }
@@ -31,3 +31,4 @@ export function minimumAbsoluteDifference(arr) {
 }
 
 export default { minimumAbsoluteDifference };
+export { minimumAbsoluteDifference };

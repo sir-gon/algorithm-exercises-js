@@ -4,7 +4,7 @@
 
 import { logger as console } from '../../logger.js';
 
-export function jumpingOnClouds(c) {
+function jumpingOnClouds(c) {
   let result = 0;
   let key = 0;
 
@@ -26,3 +26,4 @@ export function jumpingOnClouds(c) {
 }
 
 export default { jumpingOnClouds };
+export { jumpingOnClouds };

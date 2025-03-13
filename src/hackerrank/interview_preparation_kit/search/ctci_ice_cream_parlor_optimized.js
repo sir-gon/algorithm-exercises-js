@@ -2,7 +2,7 @@
  * @link Problem definition [[docs/hackerrank/interview_preparation_kit/search/ctci-ice-cream-parlor.md]]
  */
 
-export function whatFlavorsCompute(cost, money) {
+function whatFlavorsCompute(cost, money) {
   let ans1;
   let ans2;
 
@@ -44,8 +44,9 @@ export function whatFlavorsCompute(cost, money) {
   return Array.from(result);
 }
 
-export function whatFlavors(cost, money) {
+function whatFlavors(cost, money) {
   console.log(whatFlavorsCompute(cost, money)?.join(' '));
 }
 
 export default { whatFlavorsCompute, whatFlavors };
+export { whatFlavorsCompute, whatFlavors };

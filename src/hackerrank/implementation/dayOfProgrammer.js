@@ -7,7 +7,7 @@ import { daysInMonthNumber } from '../../constants/index.js';
 
 const zeroPad = (num, places) => String(num).padStart(places, '0');
 
-export function dayOfProgrammer(year) {
+function dayOfProgrammer(year) {
   const dayToSearch = 256;
   let leap;
 
@@ -51,3 +51,4 @@ export function dayOfProgrammer(year) {
 }
 
 export default { dayOfProgrammer };
+export { dayOfProgrammer };

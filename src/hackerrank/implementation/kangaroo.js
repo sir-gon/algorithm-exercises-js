@@ -2,7 +2,7 @@
  * @link Problem definition [[docs/hackerrank/implementation/kangaroo.md]]
  */
 
-export function kangaroo(x1, v1, x2, v2) {
+function kangaroo(x1, v1, x2, v2) {
   if (v1 === v2) {
     if (x1 !== x2) return 'NO';
     return 'YES';
@@ -18,3 +18,4 @@ export function kangaroo(x1, v1, x2, v2) {
 }
 
 export default { kangaroo };
+export { kangaroo };

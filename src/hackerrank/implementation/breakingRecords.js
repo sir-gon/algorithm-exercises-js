@@ -2,7 +2,7 @@
  * @link Problem definition [[docs/hackerrank/implementation/breakingRecords.md]]
  */
 
-export function breakingRecords(scores) {
+function breakingRecords(scores) {
   if (scores.length === 0) {
     throw new Error('Empty input');
   }
@@ -29,3 +29,4 @@ export function breakingRecords(scores) {
 }
 
 export default { breakingRecords };
+export { breakingRecords };

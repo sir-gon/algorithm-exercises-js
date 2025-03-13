@@ -49,3 +49,10 @@ export default {
   minimumBribesText,
   TOO_CHAOTIC_ERROR
 };
+
+export {
+  minimumBribes,
+  minimumBribesCalculate,
+  minimumBribesText,
+  TOO_CHAOTIC_ERROR
+};

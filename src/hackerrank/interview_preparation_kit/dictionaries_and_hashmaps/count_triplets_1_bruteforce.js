@@ -4,7 +4,7 @@
  */
 import { logger as console } from '../../../logger.js';
 
-export function countTriplets(arr, ratio) {
+function countTriplets(arr, ratio) {
   const size = arr.length;
   let counter = 0;
 
@@ -24,3 +24,4 @@ export function countTriplets(arr, ratio) {
 }
 
 export default { countTriplets };
+export { countTriplets };

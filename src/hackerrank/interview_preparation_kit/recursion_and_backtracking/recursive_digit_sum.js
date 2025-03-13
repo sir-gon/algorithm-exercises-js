@@ -4,7 +4,7 @@
 
 const RADIX = 10;
 
-export function superDigitCompute(n) {
+function superDigitCompute(n) {
   if (n.length === 1) {
     return parseInt(n, RADIX);
   }
@@ -17,7 +17,7 @@ export function superDigitCompute(n) {
   return superDigitCompute(`${partial}`);
 }
 
-export function superDigit(n, k) {
+function superDigit(n, k) {
   const accumulator = `${superDigitCompute(n)}`;
 
   let result = '';
@@ -29,3 +29,4 @@ export function superDigit(n, k) {
 }
 
 export default { superDigit };
+export { superDigit };

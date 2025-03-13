@@ -6,7 +6,7 @@
 
 import { logger as console } from './logger.js';
 
-export function problem0000() {
+function problem0000() {
   const result = null;
 
   console.log(`result ${String(result)}`);
@@ -15,3 +15,4 @@ export function problem0000() {
 }
 
 export default { problem0000 };
+export { problem0000 };

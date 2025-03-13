@@ -2,7 +2,7 @@
  * @link Problem definition [[docs/hackerrank/interview_preparation_kit/greedy_algorithms/angry-children.md]]
  */
 
-export function maxMin(k, arr) {
+function maxMin(k, arr) {
   const sortedlist = arr.map((x) => x).sort((a, b) => a - b);
 
   let result = sortedlist[sortedlist.length - 1] - sortedlist[0];
@@ -17,3 +17,4 @@ export function maxMin(k, arr) {
 }
 
 export default { maxMin };
+export { maxMin };

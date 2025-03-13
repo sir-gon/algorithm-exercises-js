@@ -1,16 +1,16 @@
 /**
- * @link Problem export functioninition [[docs/hackerrank/interview_preparation_kit/search/swap-nodes-algo.md]]
+ * @link Problem definition [[docs/hackerrank/interview_preparation_kit/search/swap-nodes-algo.md]]
  */
 
 import { Node } from '../../lib/Node.js';
 
 // CONSTANTS
-export const __INITIAL_LEVEL__ = 1;
-export const __ROOT_VALUE__ = 1;
-export const __LEAF_VALUE__ = -1;
+const __INITIAL_LEVEL__ = 1;
+const __ROOT_VALUE__ = 1;
+const __LEAF_VALUE__ = -1;
 const __RADIX__ = 10;
 
-export class Tree {
+class Tree {
   root;
 
   nodeCollector;
@@ -97,7 +97,7 @@ export class Tree {
   }
 }
 
-export function swapNodes(indexes, queries) {
+function swapNodes(indexes, queries) {
   const tree = new Tree(indexes);
   let nodeCollector = tree.getCollector();
   const output = [];
@@ -126,4 +126,5 @@ export function swapNodes(indexes, queries) {
   return output;
 }
 
-export default { swapNodes, __INITIAL_LEVEL__ };
+export default { swapNodes, Tree, __INITIAL_LEVEL__ };
+export { swapNodes, Tree, __INITIAL_LEVEL__ };

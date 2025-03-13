@@ -29,3 +29,4 @@ function arrayManipulation(n, queries) {
 }
 
 export default { arrayManipulation };
+export { arrayManipulation };

@@ -58,3 +58,4 @@ function hourglassSum(arr) {
 }
 
 export default { hourglassSum };
+export { hourglassSum };

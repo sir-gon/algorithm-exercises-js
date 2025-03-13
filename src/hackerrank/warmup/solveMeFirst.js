@@ -2,7 +2,7 @@
  * @link Problem definition [[docs/hackerrank/warmup/solveMeFirst.md]]
  */
 
-export function solveMeFirst(inputLines) {
+function solveMeFirst(inputLines) {
   let result = 0;
   const radix = 10;
 
@@ -14,3 +14,4 @@ export function solveMeFirst(inputLines) {
 }
 
 export default { solveMeFirst };
+export { solveMeFirst };

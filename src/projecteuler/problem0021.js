@@ -19,7 +19,7 @@ import { logger as console } from '../logger.js';
 
 import { divisors, bigSumMany } from './helpers/index.js';
 
-export function problem0021(_start, _limit) {
+function problem0021(_start, _limit) {
   const data = {};
 
   for (let i = _start; i <= _limit; i++) {
@@ -49,3 +49,4 @@ export function problem0021(_start, _limit) {
 }
 
 export default { problem0021 };
+export { problem0021 };

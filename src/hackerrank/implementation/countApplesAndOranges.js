@@ -2,7 +2,7 @@
  * @link Problem definition [[docs/hackerrank/implementation/countApplesAndOranges.md]]
  */
 
-export function countApplesAndOranges(s, t, a, b, apples, oranges) {
+function countApplesAndOranges(s, t, a, b, apples, oranges) {
   let cApples = 0;
   let cOranges = 0;
 
@@ -26,3 +26,4 @@ export function countApplesAndOranges(s, t, a, b, apples, oranges) {
 }
 
 export default { countApplesAndOranges };
+export { countApplesAndOranges };
