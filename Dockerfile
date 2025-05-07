@@ -1,5 +1,7 @@
+ARG BASE_IMAGE=node:23.11.0-alpine3.20
+
 ###############################################################################
-FROM node:23.11.0-alpine3.20 AS base
+FROM ${BASE_IMAGE} AS base
 
 RUN  apk add --update --no-cache make \
   && apk upgrade --update --no-cache openssl libcrypto3 libssl3 # FIX CVE-2024-5535
