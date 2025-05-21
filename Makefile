@@ -63,13 +63,16 @@ dependencies:
 	test -x ./node_modules ||  npm install --verbose
 	@echo "################################################################################"
 
+lint/json:
+	prettier --check ./src/**/*.json
+
 lint/markdown:
 	markdownlint '**/*.md' --ignore node_modules && echo '✔  Your code looks good.'
 
 lint/yaml:
 	yamllint --stric . && echo '✔  Your code looks good.'
 
-lint: lint/markdown lint/yaml test/styling test/static
+lint: lint/markdown lint/yaml lint/json test/styling test/static
 
 test/static: dependencies
 	${NPM} run lint
@@ -77,8 +80,13 @@ test/static: dependencies
 test/styling: dependencies
 	${NPM} run style:check
 
-format: dependencies
+format/sources: dependencies
 	${NPM} run style:format
+
+format/json:
+	prettier --write ./src/**/*.json
+
+format: format/sources format/json
 
 test: env dependencies
 	${NPM} run jest:ci
