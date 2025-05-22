@@ -27,7 +27,7 @@ jobs:
     strategy:
       matrix:
         os: ["ubuntu-24.04", "macos-14", "windows-2022"]
-        node-version: [18.x, 20.x, 22.x]
+        node-version: [20.x, 22.x, 24.x]
         # See supported Node.js release schedule
         # at https://nodejs.org/en/about/releases/
     permissions:
@@ -43,7 +43,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22.x
+          node-version: ${{ matrix.node-version }}
 
       - name: Install ESLint
         run: |
