@@ -6,7 +6,9 @@ import TEST_CASES from './two_strings.testcases.json';
 
 describe('two_strings', () => {
   it('twoStrings test cases', () => {
-    expect.assertions(8);
+    expect.assertions(10);
+
+    let totalTestsCount = 0;
 
     TEST_CASES.forEach((testCase) => {
       testCase.tests.forEach((test) => {
@@ -17,7 +19,12 @@ describe('two_strings', () => {
         );
 
         expect(answer).toStrictEqual(test.expected);
+
+        totalTestsCount += 1;
       });
     });
+
+    expect(TEST_CASES).toHaveLength(3);
+    expect(totalTestsCount).toBe(8);
   });
 });

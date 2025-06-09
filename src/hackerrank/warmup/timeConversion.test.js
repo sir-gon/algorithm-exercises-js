@@ -4,7 +4,7 @@ import { timeConversion } from './timeConversion.js';
 
 describe('timeConversion', () => {
   it('timeConversion example', () => {
-    expect.assertions(2);
+    expect.assertions(3);
 
     const tests = [
       { input: '12:01:00PM', answer: '12:01:00' },
@@ -17,6 +17,8 @@ describe('timeConversion', () => {
 
       expect(calculated).toBe(test.answer);
     }
+
+    expect(tests).toHaveLength(2);
   });
 
   it('timeConversion test case 0', () => {

@@ -10,7 +10,9 @@ import TEST_CASES_BORDER_CASES from './ctci_ice_cream_parlor.border_testcases.js
 
 describe('ctci_ice_cream_parlor_optimized', () => {
   it('whatFlavorsCompute test cases', () => {
-    expect.assertions(10);
+    expect.assertions(12);
+
+    let totalTestsCount = 0;
 
     TEST_CASES.forEach((testSet) => {
       testSet?.tests.forEach((test) => {
@@ -22,12 +24,19 @@ describe('ctci_ice_cream_parlor_optimized', () => {
 
         expect(answer).toStrictEqual(test.expected);
         expect(whatFlavors(test.costs, test.money)).toBeUndefined();
+
+        totalTestsCount += 1;
       });
     });
+
+    expect(TEST_CASES).toHaveLength(3);
+    expect(totalTestsCount).toBe(5);
   });
 
   it('whatFlavors border test cases', () => {
-    expect.assertions(2);
+    expect.assertions(4);
+
+    let totalTestsCount = 0;
 
     TEST_CASES_BORDER_CASES.forEach((testSet) => {
       testSet?.tests.forEach((test) => {
@@ -35,8 +44,13 @@ describe('ctci_ice_cream_parlor_optimized', () => {
           test.expected
         );
         expect(whatFlavors(test.costs, test.money)).toBeUndefined();
+
+        totalTestsCount += 1;
       });
     });
+
+    expect(TEST_CASES_BORDER_CASES).toHaveLength(1);
+    expect(totalTestsCount).toBe(1);
   });
 
   it('whatFlavors test caller function', () => {

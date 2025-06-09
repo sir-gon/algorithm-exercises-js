@@ -24,7 +24,7 @@ describe('comparatorSorting', () => {
   });
 
   it('test_comparator_sorting', () => {
-    expect.assertions(8);
+    expect.assertions(9);
 
     TEST_CASES.forEach((test) => {
       const players = [];
@@ -36,5 +36,7 @@ describe('comparatorSorting', () => {
       expect(comparatorSorting(players)).toStrictEqual(test.sorted);
       expect(comparatorSortingPrint(players)).toBeUndefined();
     });
+
+    expect(TEST_CASES).toHaveLength(4);
   });
 });

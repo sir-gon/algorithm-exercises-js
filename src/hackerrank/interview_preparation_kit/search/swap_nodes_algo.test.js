@@ -2,7 +2,7 @@ import { describe, expect, it } from '@jest/globals';
 
 import { Node } from '../../lib/Node.js';
 import { Tree, swapNodes, __INITIAL_LEVEL__ } from './swap_nodes_algo.js';
-import TESTCASES from './swap_nodes_algo.testcases.json';
+import TEST_CASES from './swap_nodes_algo.testcases.json';
 
 describe('swap_nodes_algo', () => {
   it('testbuildTree_empty', () => {
@@ -33,23 +33,27 @@ describe('swap_nodes_algo', () => {
   });
 
   it('build tree and flattened tree test cases', () => {
-    expect.assertions(4);
+    expect.assertions(5);
 
-    TESTCASES.forEach((test) => {
+    TEST_CASES.forEach((test) => {
       const tree = new Tree(test.nodes);
       const tresult = tree.flatTree();
 
       expect(tresult).toStrictEqual(test.flattened);
     });
+
+    expect(TEST_CASES).toHaveLength(4);
   });
 
   it('swapNodes test cases', () => {
-    expect.assertions(4);
+    expect.assertions(5);
 
-    TESTCASES.forEach((test) => {
+    TEST_CASES.forEach((test) => {
       const tresult = swapNodes(test.nodes, test.queries);
 
       expect(tresult).toStrictEqual(test.expected);
     });
+
+    expect(TEST_CASES).toHaveLength(4);
   });
 });

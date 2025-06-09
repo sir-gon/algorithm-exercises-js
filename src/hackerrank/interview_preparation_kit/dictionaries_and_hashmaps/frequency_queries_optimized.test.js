@@ -6,7 +6,7 @@ import TEST_CASES from './frequency_queries_testcases.json';
 
 describe('frequency_queries', () => {
   it('freqQuery test cases', () => {
-    expect.assertions(4);
+    expect.assertions(5);
 
     TEST_CASES.forEach((value) => {
       const answer = freqQuery(value.input);
@@ -15,6 +15,8 @@ describe('frequency_queries', () => {
 
       expect(answer).toStrictEqual(value.expected);
     });
+
+    expect(TEST_CASES).toHaveLength(4);
   });
 
   it('freqQuery border case', () => {

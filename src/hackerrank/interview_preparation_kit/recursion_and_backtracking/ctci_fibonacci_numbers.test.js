@@ -6,7 +6,7 @@ import TEST_CASES from './ctci_fibonacci_numbers.testcases.json';
 
 describe('ctci_fibonacci_numbers', () => {
   it('fibonacci test cases', () => {
-    expect.assertions(3);
+    expect.assertions(4);
 
     TEST_CASES.forEach((test) => {
       const answer = fibonacci(test.input);
@@ -15,5 +15,7 @@ describe('ctci_fibonacci_numbers', () => {
 
       expect(answer).toStrictEqual(test.expected);
     });
+
+    expect(TEST_CASES).toHaveLength(3);
   });
 });

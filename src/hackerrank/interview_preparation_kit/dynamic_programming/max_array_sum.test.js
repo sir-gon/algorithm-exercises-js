@@ -12,7 +12,7 @@ const DECIMAL_RADIX = 10;
 
 describe('max_array_sum', () => {
   it('maxSubsetSum test cases', () => {
-    expect.assertions(4);
+    expect.assertions(5);
 
     ALL_TEST_CASES.forEach((test) => {
       const answer = maxSubsetSum(test.input).toString(DECIMAL_RADIX);
@@ -21,6 +21,8 @@ describe('max_array_sum', () => {
 
       expect(answer).toStrictEqual(test.expected);
     });
+
+    expect(TEST_CASES).toHaveLength(3);
   });
 
   it('maxSubsetSum edge case zero', () => {

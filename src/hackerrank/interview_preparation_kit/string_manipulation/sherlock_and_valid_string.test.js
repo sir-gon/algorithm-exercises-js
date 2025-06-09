@@ -5,7 +5,7 @@ import TEST_CASES from './sherlock_and_valid_string.testcases.json';
 
 describe('isValid', () => {
   it('isValid test cases', () => {
-    expect.assertions(9);
+    expect.assertions(10);
 
     const __YES__ = 'YES';
 
@@ -14,5 +14,7 @@ describe('isValid', () => {
 
       expect(result).toStrictEqual(test.expected);
     });
+
+    expect(TEST_CASES).toHaveLength(9);
   });
 });

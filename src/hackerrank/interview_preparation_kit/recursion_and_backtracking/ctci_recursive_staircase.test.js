@@ -7,7 +7,7 @@ import TEST_CASES_GENERALIZED from './ctci_recursive_staircase_generalized.testc
 
 describe('ctci_recursive_staircase', () => {
   it('stepPerms test cases', () => {
-    expect.assertions(8);
+    expect.assertions(9);
 
     TEST_CASES.forEach((testSet) => {
       testSet?.tests.forEach((test) => {
@@ -18,10 +18,12 @@ describe('ctci_recursive_staircase', () => {
         expect(answer).toStrictEqual(test.expected);
       });
     });
+
+    expect(TEST_CASES).toHaveLength(3);
   });
 
   it('stepPermsComputWithCache test cases', () => {
-    expect.assertions(3);
+    expect.assertions(4);
 
     const TOP_LIMIT = 10 ** 10 + 7;
 
@@ -38,5 +40,7 @@ describe('ctci_recursive_staircase', () => {
         expect(answer).toStrictEqual(test.expected);
       });
     });
+
+    expect(TEST_CASES).toHaveLength(3);
   });
 });

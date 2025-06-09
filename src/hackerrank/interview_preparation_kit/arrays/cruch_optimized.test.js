@@ -7,7 +7,7 @@ import { arrayManipulation } from './cruch_optimized.js';
 
 describe('arrays: crush (optimized)', () => {
   it('arrayManipulation Test Cases', () => {
-    expect.assertions(3);
+    expect.assertions(4);
 
     TEST_CASES.forEach((test) => {
       const answer = arrayManipulation(test.n, test.queries);
@@ -18,5 +18,7 @@ describe('arrays: crush (optimized)', () => {
 
       expect(answer).toStrictEqual(test.expected);
     });
+
+    expect(TEST_CASES).toHaveLength(3);
   });
 });

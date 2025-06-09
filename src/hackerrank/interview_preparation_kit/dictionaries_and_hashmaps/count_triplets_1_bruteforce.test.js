@@ -7,7 +7,7 @@ import SMALL_TEST_CASES from './count_triplets_1.small.testcases.json';
 
 describe('count_triplets_1', () => {
   it('countTriplets test cases', () => {
-    expect.assertions(4);
+    expect.assertions(5);
 
     SMALL_TEST_CASES.forEach((test) => {
       const answer = countTriplets(test.input, test.r);
@@ -18,5 +18,7 @@ describe('count_triplets_1', () => {
 
       expect(answer).toStrictEqual(test.expected);
     });
+
+    expect(SMALL_TEST_CASES).toHaveLength(4);
   });
 });
