@@ -12,7 +12,7 @@ describe('miniMaxSum', () => {
   });
 
   it('miniMaxSum test case 1', () => {
-    expect.assertions(2);
+    expect.assertions(3);
 
     const tests = [
       { input: [1, 2, 3, 4, 5], answer: '10 14' },
@@ -25,5 +25,7 @@ describe('miniMaxSum', () => {
 
       expect(solutionFound).toBe(test.answer);
     }
+
+    expect(tests).toHaveLength(2);
   });
 });

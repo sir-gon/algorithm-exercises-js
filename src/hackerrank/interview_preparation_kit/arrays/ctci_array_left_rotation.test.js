@@ -7,7 +7,7 @@ import ROT_LEFT_TEST_CASES from './ctci_array_left_rotation.testcases.json';
 
 describe('ctci_array_left_rotation', () => {
   it('rotLeft Test cases', () => {
-    expect.assertions(8);
+    expect.assertions(9);
 
     ROT_LEFT_TEST_CASES.forEach((test) => {
       const answer = rotLeft(test.input, test.d_rotations);
@@ -16,5 +16,7 @@ describe('ctci_array_left_rotation', () => {
 
       expect(answer).toStrictEqual(test.expected);
     });
+
+    expect(ROT_LEFT_TEST_CASES).toHaveLength(8);
   });
 });

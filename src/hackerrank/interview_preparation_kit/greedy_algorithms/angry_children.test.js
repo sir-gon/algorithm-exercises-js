@@ -7,7 +7,7 @@ import TEST_CASES from './angry_children.testcases.json';
 
 describe('angry_children', () => {
   it('maxMin test cases', () => {
-    expect.assertions(4);
+    expect.assertions(5);
 
     TEST_CASES.forEach((test) => {
       const answer = maxMin(test.k, test.arr);
@@ -16,5 +16,7 @@ describe('angry_children', () => {
 
       expect(answer).toStrictEqual(test.expected);
     });
+
+    expect(TEST_CASES).toHaveLength(4);
   });
 });

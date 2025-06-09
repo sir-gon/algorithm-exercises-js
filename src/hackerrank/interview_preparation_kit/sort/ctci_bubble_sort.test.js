@@ -5,7 +5,7 @@ import TEST_CASES from './ctci_bubble_sort.testcases.json';
 
 describe('countSwaps', () => {
   it('build tree and flattened tree test cases', () => {
-    expect.assertions(6);
+    expect.assertions(7);
 
     TEST_CASES.forEach((test) => {
       const sortable = new SortableGroup(test.input);
@@ -15,5 +15,7 @@ describe('countSwaps', () => {
       expect(resultPrint).toBeUndefined();
       expect(resultSort).toStrictEqual(test.sorted);
     });
+
+    expect(TEST_CASES).toHaveLength(3);
   });
 });

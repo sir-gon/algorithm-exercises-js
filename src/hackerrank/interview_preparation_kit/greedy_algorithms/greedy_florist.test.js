@@ -7,7 +7,7 @@ import TEST_CASES from './greedy_florist.testcases.json';
 
 describe('greedy_florist', () => {
   it('getMinimumCost test cases', () => {
-    expect.assertions(3);
+    expect.assertions(4);
 
     TEST_CASES.forEach((test) => {
       const answer = getMinimumCost(test.k, test.contests);
@@ -18,5 +18,7 @@ describe('greedy_florist', () => {
 
       expect(answer).toStrictEqual(test.expected);
     });
+
+    expect(TEST_CASES).toHaveLength(3);
   });
 });

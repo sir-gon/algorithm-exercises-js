@@ -7,7 +7,7 @@ import TEST_CASES from './euler003.testcases.json';
 
 describe('euler003', () => {
   it('euler003 JSON Test cases', () => {
-    expect.assertions(2);
+    expect.assertions(3);
 
     TEST_CASES.forEach((test) => {
       const calculated = euler003(test.n);
@@ -15,6 +15,8 @@ describe('euler003', () => {
 
       expect(`${calculated}`).toBe(`${test.expected}`);
     });
+
+    expect(TEST_CASES).toHaveLength(2);
   });
 
   it('euler003 Edge case', () => {

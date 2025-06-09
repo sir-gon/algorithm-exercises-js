@@ -7,7 +7,7 @@ import TEST_CASES from './luck-balance.testcases.json';
 
 describe('luck-balance', () => {
   it('luckBalance test cases', () => {
-    expect.assertions(3);
+    expect.assertions(4);
 
     TEST_CASES.forEach((test) => {
       const answer = luckBalance(test.k, test.contests);
@@ -18,5 +18,7 @@ describe('luck-balance', () => {
 
       expect(answer).toStrictEqual(test.expected);
     });
+
+    expect(TEST_CASES).toHaveLength(3);
   });
 });

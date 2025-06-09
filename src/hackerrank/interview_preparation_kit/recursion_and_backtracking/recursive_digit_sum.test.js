@@ -6,7 +6,7 @@ import TEST_CASES from './recursive_digit_sum.testcases.json';
 
 describe('recursive_digit_sum', () => {
   it('superDigit test cases', () => {
-    expect.assertions(4);
+    expect.assertions(5);
 
     TEST_CASES.forEach((test) => {
       const answer = superDigit(test.n, test.k);
@@ -15,5 +15,7 @@ describe('recursive_digit_sum', () => {
 
       expect(answer).toStrictEqual(test.expected);
     });
+
+    expect(TEST_CASES).toHaveLength(4);
   });
 });

@@ -6,7 +6,9 @@ import TEST_CASES from './sherlock_and_anagrams.testcases.json';
 
 describe('sherlock_and_anagrams', () => {
   it('sherlockAndAnagrams test cases', () => {
-    expect.assertions(15);
+    expect.assertions(17);
+
+    let totalTestsCount = 0;
 
     TEST_CASES.forEach((testSet) => {
       testSet.tests.forEach((test) => {
@@ -17,7 +19,12 @@ describe('sherlock_and_anagrams', () => {
         );
 
         expect(answer).toStrictEqual(test.expected);
+
+        totalTestsCount += 1;
       });
     });
+
+    expect(TEST_CASES).toHaveLength(4);
+    expect(totalTestsCount).toBe(15);
   });
 });

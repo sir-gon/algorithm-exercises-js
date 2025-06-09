@@ -12,7 +12,7 @@ describe('birthdayCakeCandles', () => {
   });
 
   it('birthdayCakeCandles Test case 0', () => {
-    expect.assertions(2);
+    expect.assertions(3);
 
     const tests = [
       { input: [3, 2, 1, 3], answer: 2 },
@@ -27,5 +27,7 @@ describe('birthdayCakeCandles', () => {
 
       expect(calculated).toBe(test.answer);
     }
+
+    expect(tests).toHaveLength(2);
   });
 });
