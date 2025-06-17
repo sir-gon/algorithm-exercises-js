@@ -22,7 +22,7 @@ describe('max_array_sum', () => {
       expect(answer).toStrictEqual(test.expected);
     });
 
-    expect(TEST_CASES).toHaveLength(3);
+    expect(ALL_TEST_CASES).toHaveLength(4);
   });
 
   it('maxSubsetSum edge case zero', () => {

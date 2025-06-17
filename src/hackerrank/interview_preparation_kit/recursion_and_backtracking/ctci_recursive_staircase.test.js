@@ -41,6 +41,6 @@ describe('ctci_recursive_staircase', () => {
       });
     });
 
-    expect(TEST_CASES).toHaveLength(3);
+    expect(TEST_CASES_GENERALIZED).toHaveLength(3);
   });
 });
