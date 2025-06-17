@@ -112,6 +112,9 @@ export const primeFactors = (target) => {
   return { 'factors': factors, 'cycles': cycles };
 };
 
+export const isPrime = (target) =>
+  target !== 1 && target === nextPrimeFactor(target).factor;
+
 export const abundance = (target) => {
   const theDivisors = properDivisors(target);
   const divSum = sum(theDivisors);
