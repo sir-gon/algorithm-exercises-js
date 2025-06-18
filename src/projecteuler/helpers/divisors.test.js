@@ -1,15 +1,17 @@
 import { describe, expect, it } from '@jest/globals';
 import {
-  divisors,
   abundance,
+  divisors,
+  isPrime,
   nextPrimeFactor,
   primeFactors,
+  properDivisors,
   ___DIVISORS_DEFICIENT___,
   ___DIVISORS_PERFECT___,
   ___DIVISORS_ABUNDANT___
 } from './divisors.js';
 
-describe('divisors of a number', () => {
+describe('divisors and prime numbers', () => {
   it('divisors of one', () => {
     expect.assertions(1);
 
@@ -33,6 +35,16 @@ describe('divisors of a number', () => {
     expect(divisors(18632)).toStrictEqual([
       1, 2, 4, 8, 17, 34, 68, 136, 137, 274, 548, 1096, 2329, 4658, 9316, 18632
     ]);
+  });
+
+  it('proper divisors of a number', () => {
+    expect.assertions(5);
+
+    expect(properDivisors(1)).toStrictEqual([]);
+    expect(properDivisors(2)).toStrictEqual([1]);
+    expect(properDivisors(8)).toStrictEqual([1, 2, 4]);
+    expect(properDivisors(9)).toStrictEqual([1, 3]);
+    expect(properDivisors(16)).toStrictEqual([1, 2, 4, 8]);
   });
 
   it('next prime factor of a target number', () => {
@@ -79,6 +91,24 @@ describe('divisors of a number', () => {
       'factors': [2, 2, 2, 3, 5],
       'cycles': 9
     });
+  });
+
+  it('some numbers are prime', () => {
+    expect.assertions(4);
+
+    expect(isPrime(1)).toBe(false);
+    expect(isPrime(2)).toBe(true);
+    expect(isPrime(7)).toBe(true);
+    expect(isPrime(13)).toBe(true);
+  });
+
+  it('some numbers are not prime', () => {
+    expect.assertions(4);
+
+    expect(isPrime(4)).toBe(false);
+    expect(isPrime(10)).toBe(false);
+    expect(isPrime(100)).toBe(false);
+    expect(isPrime(3000)).toBe(false);
   });
 
   it('abundance of a integer number', () => {
