@@ -39,7 +39,7 @@
     "eslint-plugin-prettier": "5.5.1",
     "eslint-watch": "8.0.0",
     "globals": "^16.0.0",
-    "jest": "30.0.3",
+    "jest": "30.0.4",
     "prettier": "3.6.2"
   },
   "dependencies": {
