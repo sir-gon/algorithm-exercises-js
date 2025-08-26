@@ -1,6 +1,6 @@
 # Algorithm Exercises (NodeJS ES6)
 
-[![Node.js CI](https://github.com/sir-gon/algorithm-exercises-js/actions/workflows/node.js.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-js/actions/workflows/node.js.yml)
+[![Node.js CI Tests](https://github.com/sir-gon/algorithm-exercises-js/actions/workflows/node-test.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-js/actions/workflows/node-test.yml)
 [![ESLint](https://github.com/sir-gon/algorithm-exercises-js/actions/workflows/eslint.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-js/actions/workflows/eslint.yml)
 [![Markdown Lint](https://github.com/sir-gon/algorithm-exercises-js/actions/workflows/markdown-lint.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-js/actions/workflows/markdown-lint.yml)
 [![YAML lint](https://github.com/sir-gon/algorithm-exercises-js/actions/workflows/yamllint.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-js/actions/workflows/yamllint.yml)
