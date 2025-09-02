@@ -47,6 +47,11 @@ jobs:
     needs: build-and-test
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
       - name: Download coverage artifact
         uses: actions/download-artifact@v5
         with:
