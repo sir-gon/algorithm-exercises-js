@@ -7,7 +7,7 @@ function solveMeFirst(inputLines) {
   const radix = 10;
 
   inputLines.forEach((v) => {
-    result += parseInt(v, radix);
+    result += Number.parseInt(v, radix);
   });
 
   return result;

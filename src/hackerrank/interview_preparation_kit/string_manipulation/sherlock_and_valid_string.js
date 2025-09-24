@@ -34,8 +34,8 @@ function isValidCompute(s) {
     );
     const __RADIX__ = 10;
     const __TOLERANCE__ = 1;
-    const minorFreq = parseInt(frequenciesList[0][0], __RADIX__);
-    const majorFreq = parseInt(frequenciesList[1][0], __RADIX__);
+    const minorFreq = Number.parseInt(frequenciesList[0][0], __RADIX__);
+    const majorFreq = Number.parseInt(frequenciesList[1][0], __RADIX__);
 
     if (
       frequencies[minorFreq] === __TOLERANCE__ &&

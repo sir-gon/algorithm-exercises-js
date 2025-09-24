@@ -7,7 +7,7 @@ function whatFlavorsCompute(cost, money) {
   const RADIX = 10;
 
   for (const [key, price] of Object.entries(cost)) {
-    const i = parseInt(key, RADIX);
+    const i = Number.parseInt(key, RADIX);
     const diff = money - price;
 
     if (Number.isInteger(cache?.[diff])) {

@@ -15,7 +15,7 @@ function problem0013alt(arrayOfNumbers, numberOfFirstDigits) {
 
   console.debug(`Sum: ${sum}`);
 
-  const firstDigits = parseInt(
+  const firstDigits = Number.parseInt(
     sum.toString().slice(0, numberOfFirstDigits),
     radix
   );

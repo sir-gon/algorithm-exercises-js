@@ -12,7 +12,7 @@ function problem0013(arrayOfNumbers, _firtsDigits) {
 
   console.debug(`Sum: ${sum}`);
 
-  const first = parseInt(sum.slice(0, _firtsDigits), radix);
+  const first = Number.parseInt(sum.slice(0, _firtsDigits), radix);
 
   console.log(`First ${_firtsDigits} digits of huge sume are ${first}`);
 
