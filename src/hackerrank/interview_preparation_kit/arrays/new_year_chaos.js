@@ -9,7 +9,7 @@ function minimumBribesCalculate(q) {
   let bribes = 0;
   let i = 0;
 
-  q.forEach((value) => {
+  for (const value of q) {
     const position = i + 1;
     if (value - position > NEW_YEAR_CHAOS_TOLERANCE) {
       throw new Error(TOO_CHAOTIC_ERROR);
@@ -20,13 +20,13 @@ function minimumBribesCalculate(q) {
       i
     );
 
-    fragment.forEach((k) => {
+    for (const k of fragment) {
       if (k > value) {
         bribes += 1;
       }
-    });
+    }
     i += 1;
-  });
+  }
 
   return bribes;
 }

@@ -9,12 +9,12 @@ function getMinimumCost(k, c) {
   let total = 0;
 
   let i = 0;
-  flowers.forEach((flowerCost) => {
+  for (const flowerCost of flowers) {
     const position = Math.floor(i / k);
 
     total += (position + 1) * flowerCost;
     i += 1;
-  });
+  }
 
   return total;
 }

@@ -60,13 +60,13 @@ function maxCircle(queries) {
   const result = [];
   const friends = new GropingFriends();
 
-  queries.forEach((query) => {
+  for (const query of queries) {
     // Computing friendship
     friends.unite(query[0], query[1]);
 
     // Counting friends groups
     result.push(friends.count_groups());
-  });
+  }
 
   return result;
 }

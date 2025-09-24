@@ -11,15 +11,15 @@ describe('isBalanced', () => {
 
     let totalTestsCount = 0;
 
-    TEST_CASES.forEach((testSet) => {
-      testSet?.tests.forEach((test) => {
+    for (const testSet of TEST_CASES) {
+      for (const test of testSet.tests) {
         const result = isBalanced(test.input) === __YES__;
 
         expect(result).toStrictEqual(test.expected);
 
         totalTestsCount += 1;
-      });
-    });
+      }
+    }
 
     expect(TEST_CASES).toHaveLength(3);
     expect(totalTestsCount).toBe(8);

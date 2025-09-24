@@ -36,9 +36,9 @@ function _replaceMaximum(_element, count, _group) {
 function _primeFactorsCollection(_factors) {
   let collection = {};
 
-  _factors.forEach((factor) => {
+  for (const factor of _factors) {
     collection = _increase(factor, collection);
-  });
+  }
 
   return collection;
 }

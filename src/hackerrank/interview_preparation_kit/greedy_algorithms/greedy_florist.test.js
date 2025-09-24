@@ -9,7 +9,7 @@ describe('greedy_florist', () => {
   it('getMinimumCost test cases', () => {
     expect.assertions(4);
 
-    TEST_CASES.forEach((test) => {
+    for (const test of TEST_CASES) {
       const answer = getMinimumCost(test.k, test.contests);
 
       console.debug(
@@ -17,7 +17,7 @@ describe('greedy_florist', () => {
       );
 
       expect(answer).toStrictEqual(test.expected);
-    });
+    }
 
     expect(TEST_CASES).toHaveLength(3);
   });

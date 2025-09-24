@@ -8,7 +8,7 @@ describe('arrays: 2d Array hourglassSum', () => {
   it('hourglassSum Test Cases', () => {
     expect.assertions(4);
 
-    TEST_CASES.forEach((test) => {
+    for (const test of TEST_CASES) {
       const answer = hourglassSum(test.input);
 
       console.debug(
@@ -16,7 +16,7 @@ describe('arrays: 2d Array hourglassSum', () => {
       );
 
       expect(answer).toStrictEqual(test.expected);
-    });
+    }
 
     expect(TEST_CASES).toHaveLength(3);
   });

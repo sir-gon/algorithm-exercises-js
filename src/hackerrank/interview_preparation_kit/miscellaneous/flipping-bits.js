@@ -11,15 +11,15 @@ function flippingBits(n) {
 
   let resultBinStr = '';
 
-  nBinaryStr.split('').forEach((binDigit) => {
+  for (const binDigit of nBinaryStr.split('')) {
     if (binDigit === '1') {
       resultBinStr += '0';
     } else {
       resultBinStr += '1';
     }
-  });
+  }
 
-  return parseInt(resultBinStr, __BINARY_BASE__);
+  return Number.parseInt(resultBinStr, __BINARY_BASE__);
 }
 
 export default { flippingBits };

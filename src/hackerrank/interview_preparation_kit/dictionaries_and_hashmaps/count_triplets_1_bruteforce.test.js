@@ -9,7 +9,7 @@ describe('count_triplets_1', () => {
   it('countTriplets test cases', () => {
     expect.assertions(5);
 
-    SMALL_TEST_CASES.forEach((test) => {
+    for (const test of SMALL_TEST_CASES) {
       const answer = countTriplets(test.input, test.r);
 
       console.debug(
@@ -17,7 +17,7 @@ describe('count_triplets_1', () => {
       );
 
       expect(answer).toStrictEqual(test.expected);
-    });
+    }
 
     expect(SMALL_TEST_CASES).toHaveLength(4);
   });

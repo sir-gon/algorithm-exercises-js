@@ -9,11 +9,11 @@ function countAs(word) {
 
   const chars = word.split('');
 
-  chars.forEach((char) => {
+  for (const char of chars) {
     if (char === 'a') {
       result += 1;
     }
-  });
+  }
 
   return result;
 }

@@ -9,7 +9,7 @@ describe('luck-balance', () => {
   it('luckBalance test cases', () => {
     expect.assertions(4);
 
-    TEST_CASES.forEach((test) => {
+    for (const test of TEST_CASES) {
       const answer = luckBalance(test.k, test.contests);
 
       console.debug(
@@ -17,7 +17,7 @@ describe('luck-balance', () => {
       );
 
       expect(answer).toStrictEqual(test.expected);
-    });
+    }
 
     expect(TEST_CASES).toHaveLength(3);
   });

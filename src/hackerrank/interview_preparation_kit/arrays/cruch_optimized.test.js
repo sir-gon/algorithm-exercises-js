@@ -9,7 +9,7 @@ describe('arrays: crush (optimized)', () => {
   it('arrayManipulation Test Cases', () => {
     expect.assertions(4);
 
-    TEST_CASES.forEach((test) => {
+    for (const test of TEST_CASES) {
       const answer = arrayManipulation(test.n, test.queries);
 
       console.debug(
@@ -17,7 +17,7 @@ describe('arrays: crush (optimized)', () => {
       );
 
       expect(answer).toStrictEqual(test.expected);
-    });
+    }
 
     expect(TEST_CASES).toHaveLength(3);
   });

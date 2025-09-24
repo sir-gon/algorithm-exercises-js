@@ -11,8 +11,8 @@ describe('flipping bits', () => {
 
     let totalTestsCount = 0;
 
-    TEST_CASES.forEach((testSet) => {
-      testSet.tests.forEach((test) => {
+    for (const testSet of TEST_CASES) {
+      for (const test of testSet.tests) {
         const answer = flippingBitsAlt(test.input);
 
         console.debug(
@@ -22,8 +22,8 @@ describe('flipping bits', () => {
         expect(answer).toStrictEqual(test.expected);
 
         totalTestsCount += 1;
-      });
-    });
+      }
+    }
 
     expect(TEST_CASES).toHaveLength(3);
     expect(totalTestsCount).toBe(8);

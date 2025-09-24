@@ -7,11 +7,11 @@ describe('makeAnagram', () => {
   it('makeAnagram test cases', () => {
     expect.assertions(4);
 
-    TEST_CASES.forEach((test) => {
+    for (const test of TEST_CASES) {
       const result = makeAnagram(test.a, test.b);
 
       expect(result).toStrictEqual(test.expected);
-    });
+    }
 
     expect(TEST_CASES).toHaveLength(3);
   });

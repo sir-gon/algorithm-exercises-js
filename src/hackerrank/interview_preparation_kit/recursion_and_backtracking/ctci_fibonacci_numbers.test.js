@@ -8,13 +8,13 @@ describe('ctci_fibonacci_numbers', () => {
   it('fibonacci test cases', () => {
     expect.assertions(4);
 
-    TEST_CASES.forEach((test) => {
+    for (const test of TEST_CASES) {
       const answer = fibonacci(test.input);
 
       console.debug(`fibonacci(${test.input}) solution found: ${answer}`);
 
       expect(answer).toStrictEqual(test.expected);
-    });
+    }
 
     expect(TEST_CASES).toHaveLength(3);
   });

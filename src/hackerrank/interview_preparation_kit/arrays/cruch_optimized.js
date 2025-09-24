@@ -11,19 +11,19 @@ function arrayManipulation(n, queries) {
   const result = Array(LENGTH).fill(INITIAL_VALUE);
   let maximum = 0;
 
-  queries.forEach((query) => {
+  for (const query of queries) {
     const [aStart, bEnd, kValue] = query;
 
     result[aStart] += kValue;
     result[bEnd + 1] -= kValue;
-  });
+  }
 
   let accumSum = 0;
 
-  result.forEach((value) => {
+  for (const value of result) {
     accumSum += value;
     maximum = Math.max(maximum, accumSum);
-  });
+  }
 
   return maximum;
 }

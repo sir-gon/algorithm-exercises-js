@@ -17,7 +17,7 @@ function countTriplets(arr, ratio) {
 
   const bCounter = {};
 
-  arr.forEach((x) => {
+  for (const x of arr) {
     const j = Math.floor(x / ratio);
     const k = x * ratio;
     aCounter[x] -= 1;
@@ -30,7 +30,7 @@ function countTriplets(arr, ratio) {
     } else {
       bCounter[x] = 1;
     }
-  });
+  }
 
   return triplets;
 }

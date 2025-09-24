@@ -9,12 +9,12 @@ describe('euler003', () => {
   it('euler003 JSON Test cases', () => {
     expect.assertions(3);
 
-    TEST_CASES.forEach((test) => {
+    for (const test of TEST_CASES) {
       const calculated = euler003(test.n);
       console.log(`euler003(${test.n}) solution found: ${test.expected}`);
 
       expect(`${calculated}`).toBe(`${test.expected}`);
-    });
+    }
 
     expect(TEST_CASES).toHaveLength(2);
   });

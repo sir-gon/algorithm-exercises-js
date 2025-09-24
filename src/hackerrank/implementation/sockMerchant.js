@@ -9,9 +9,9 @@ function sockMerchant(n, ar) {
 
   const matches = {};
 
-  ar.forEach((v) => {
+  for (const v of ar) {
     matches[v] = matches?.[v] ? matches[v] + 1 : 1;
-  });
+  }
 
   console.debug(matches);
 

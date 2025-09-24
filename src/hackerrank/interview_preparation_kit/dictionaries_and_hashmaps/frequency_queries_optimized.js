@@ -38,7 +38,7 @@ function freqQuery(queries) {
   const __NOT_FOUND__ = 0;
   const __FOUND__ = 1;
 
-  queries.forEach((query) => {
+  for (const query of queries) {
     const [operation, data] = query;
 
     const currentFreq = dataMap?.[data] ?? __INITIAL__;
@@ -75,7 +75,7 @@ function freqQuery(queries) {
     if (operation === __INSERT__ || operation === __DELETE__) {
       updateFrequency(freqMap, data, currentFreq, newFreq);
     }
-  });
+  }
 
   return result;
 }

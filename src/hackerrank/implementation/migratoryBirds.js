@@ -2,7 +2,7 @@
  * @link Problem definition [[docs/hackerrank/implementation/migratoryBirds.md]]
  */
 
-import util from 'util';
+import util from 'node:util';
 import { logger as console } from '../../logger.js';
 
 function migratoryBirds(arr) {
@@ -16,10 +16,10 @@ function migratoryBirds(arr) {
   for (const bird of arr) {
     console.debug(`bird ${bird}`);
 
-    if (!map[bird]) {
-      map[bird] = 1;
-    } else {
+    if (map[bird]) {
       map[bird] += 1;
+    } else {
+      map[bird] = 1;
     }
 
     console.debug(`bird = ${bird} ~> map[bird] = ${map[bird]}`);

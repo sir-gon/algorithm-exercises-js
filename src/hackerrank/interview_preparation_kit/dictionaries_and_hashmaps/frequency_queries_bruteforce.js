@@ -15,7 +15,7 @@ function freqQuery(queries) {
   const __NOT_FOUND__ = 0;
   const __FOUND__ = 1;
 
-  queries.forEach((query) => {
+  for (const query of queries) {
     const [operation, data] = query;
 
     const current = dataMap?.[data] ?? __INITIAL__;
@@ -39,7 +39,7 @@ function freqQuery(queries) {
       default:
         throw new Error('Invalid operation');
     }
-  });
+  }
 
   return result;
 }

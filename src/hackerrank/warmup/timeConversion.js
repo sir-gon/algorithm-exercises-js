@@ -8,7 +8,7 @@ function timeConversion(s) {
 
   const timeStr = s.substring(0, s.length - 2);
   const time = timeStr.split(':');
-  let hour = parseInt(time[0], 10);
+  let hour = Number.parseInt(time[0], 10);
 
   if (hour >= 12) {
     hour = 0;

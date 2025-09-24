@@ -9,13 +9,13 @@ function problem0013alt(arrayOfNumbers, numberOfFirstDigits) {
 
   let sum = BigInt(0);
 
-  arrayOfNumbers.forEach((num) => {
+  for (const num of arrayOfNumbers) {
     sum += BigInt(num);
-  });
+  }
 
   console.debug(`Sum: ${sum}`);
 
-  const firstDigits = parseInt(
+  const firstDigits = Number.parseInt(
     sum.toString().slice(0, numberOfFirstDigits),
     radix
   );

@@ -9,14 +9,14 @@ describe('euler001', () => {
   it('euler001 JSON Test Cases', () => {
     expect.assertions(4);
 
-    TEST_CASES.forEach((test) => {
+    for (const test of TEST_CASES) {
       const calculated = euler001(test.a, test.b, test.n);
       console.log(
         `euler001(${test.a}, ${test.b}, ${test.n}) solution found: ${test.answer}`
       );
 
       expect(calculated).toStrictEqual(test.answer);
-    });
+    }
 
     expect(TEST_CASES).toHaveLength(3);
   });
