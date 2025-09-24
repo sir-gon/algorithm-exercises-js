@@ -27,7 +27,7 @@ function problem0018(_triangle) {
   console.debug('leafs count', leafs.length, 'leafs', leafs);
 
   const __START_FROM__ = 0;
-  const max = leafs.reduce((a, b) => (a > b ? a : b), __START_FROM__);
+  const max = leafs.reduce((a, b) => Math.max(a, b), __START_FROM__);
 
   return max;
 }
