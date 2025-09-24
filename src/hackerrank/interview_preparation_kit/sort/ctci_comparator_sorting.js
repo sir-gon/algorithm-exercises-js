@@ -50,4 +50,5 @@ export default {
   comparatorSorting,
   comparatorSortingPrint
 };
-export { Player, SortablePlayer, comparatorSorting, comparatorSortingPrint };
+export { Player } from './ctci_comparator_sorting.Player.js';
+export { SortablePlayer, comparatorSorting, comparatorSortingPrint };
