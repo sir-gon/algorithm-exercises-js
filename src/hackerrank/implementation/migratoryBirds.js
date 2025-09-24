@@ -2,7 +2,7 @@
  * @link Problem definition [[docs/hackerrank/implementation/migratoryBirds.md]]
  */
 
-import util from 'util';
+import util from 'node:util';
 import { logger as console } from '../../logger.js';
 
 function migratoryBirds(arr) {
