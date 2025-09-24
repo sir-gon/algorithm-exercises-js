@@ -12,7 +12,7 @@ function problem0017(init, last) {
 
   for (let i = init; i <= last; i++) {
     word = numberToWord(i);
-    replaced = word.replace(/[^a-z0-9]/gi, '');
+    replaced = word.replaceAll(/[^a-z0-9]/gi, '');
 
     acum += replaced.length;
 
