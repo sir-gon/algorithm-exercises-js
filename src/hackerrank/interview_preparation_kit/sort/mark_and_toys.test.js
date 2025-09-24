@@ -7,11 +7,11 @@ describe('maximumToys', () => {
   it('maximumToys test cases', () => {
     expect.assertions(4);
 
-    TEST_CASES.forEach((test) => {
+    for (const test of TEST_CASES) {
       const result = maximumToys(test.prices, test.budget);
 
       expect(result).toStrictEqual(test.expected);
-    });
+    }
 
     expect(TEST_CASES).toHaveLength(3);
   });

@@ -8,13 +8,13 @@ describe('recursive_digit_sum', () => {
   it('superDigit test cases', () => {
     expect.assertions(5);
 
-    TEST_CASES.forEach((test) => {
+    for (const test of TEST_CASES) {
       const answer = superDigit(test.n, test.k);
 
       console.debug(`superDigit(${test.n}) solution found: ${answer}`);
 
       expect(answer).toStrictEqual(test.expected);
-    });
+    }
 
     expect(TEST_CASES).toHaveLength(4);
   });

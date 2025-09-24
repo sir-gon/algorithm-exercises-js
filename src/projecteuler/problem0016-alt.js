@@ -32,9 +32,9 @@ function problem0016alt(base, exponent) {
   const digits = strPower.split('');
 
   let result = 0;
-  digits.forEach((num) => {
+  for (const num of digits) {
     result += Number.parseInt(num, radix);
-  });
+  }
 
   console.log(`Sum of Digits: (${result})`);
 

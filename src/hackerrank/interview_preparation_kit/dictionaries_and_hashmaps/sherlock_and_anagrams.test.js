@@ -10,8 +10,8 @@ describe('sherlock_and_anagrams', () => {
 
     let totalTestsCount = 0;
 
-    TEST_CASES.forEach((testSet) => {
-      testSet.tests.forEach((test) => {
+    for (const testSet of TEST_CASES) {
+      for (const test of testSet.tests) {
         const answer = sherlockAndAnagrams(test.input);
 
         console.debug(
@@ -21,8 +21,8 @@ describe('sherlock_and_anagrams', () => {
         expect(answer).toStrictEqual(test.expected);
 
         totalTestsCount += 1;
-      });
-    });
+      }
+    }
 
     expect(TEST_CASES).toHaveLength(4);
     expect(totalTestsCount).toBe(15);

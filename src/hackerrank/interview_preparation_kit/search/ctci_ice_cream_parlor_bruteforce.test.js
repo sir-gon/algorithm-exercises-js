@@ -14,8 +14,8 @@ describe('ctci_ice_cream_parlor_bruteforce', () => {
 
     let totalTestsCount = 0;
 
-    TEST_CASES.forEach((testSet) => {
-      testSet?.tests.forEach((test) => {
+    for (const testSet of TEST_CASES) {
+      for (const test of testSet.tests) {
         const answer = whatFlavorsBruteforceCompute(test.costs, test.money);
 
         console.debug(
@@ -26,8 +26,8 @@ describe('ctci_ice_cream_parlor_bruteforce', () => {
         expect(whatFlavors(test.costs, test.money)).toBeUndefined();
 
         totalTestsCount += 1;
-      });
-    });
+      }
+    }
 
     expect(TEST_CASES).toHaveLength(3);
     expect(totalTestsCount).toBe(5);
@@ -38,16 +38,16 @@ describe('ctci_ice_cream_parlor_bruteforce', () => {
 
     let totalTestsCount = 0;
 
-    TEST_CASES_BORDER_CASES.forEach((testSet) => {
-      testSet?.tests.forEach((test) => {
+    for (const testSet of TEST_CASES_BORDER_CASES) {
+      for (const test of testSet.tests) {
         expect(
           whatFlavorsBruteforceCompute(test.costs, test.money)
         ).toStrictEqual(test.expected);
         expect(whatFlavors(test.costs, test.money)).toBeUndefined();
 
         totalTestsCount += 1;
-      });
-    });
+      }
+    }
 
     expect(TEST_CASES_BORDER_CASES).toHaveLength(1);
     expect(totalTestsCount).toBe(1);

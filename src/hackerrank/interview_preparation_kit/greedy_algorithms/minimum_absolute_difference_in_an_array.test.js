@@ -9,7 +9,7 @@ describe('minimum_absolute_difference_in_an_array', () => {
   it('minimumAbsoluteDifference test cases', () => {
     expect.assertions(4);
 
-    TEST_CASES.forEach((test) => {
+    for (const test of TEST_CASES) {
       const answer = minimumAbsoluteDifference(test.input);
 
       console.debug(
@@ -17,7 +17,7 @@ describe('minimum_absolute_difference_in_an_array', () => {
       );
 
       expect(answer).toStrictEqual(test.expected);
-    });
+    }
 
     expect(TEST_CASES).toHaveLength(3);
   });

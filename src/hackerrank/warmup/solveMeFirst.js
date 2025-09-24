@@ -6,9 +6,9 @@ function solveMeFirst(inputLines) {
   let result = 0;
   const radix = 10;
 
-  inputLines.forEach((v) => {
+  for (const v of inputLines) {
     result += Number.parseInt(v, radix);
-  });
+  }
 
   return result;
 }

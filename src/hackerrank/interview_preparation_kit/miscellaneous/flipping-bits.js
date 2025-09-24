@@ -11,13 +11,13 @@ function flippingBits(n) {
 
   let resultBinStr = '';
 
-  nBinaryStr.split('').forEach((binDigit) => {
+  for (const binDigit of nBinaryStr.split('')) {
     if (binDigit === '1') {
       resultBinStr += '0';
     } else {
       resultBinStr += '1';
     }
-  });
+  }
 
   return Number.parseInt(resultBinStr, __BINARY_BASE__);
 }

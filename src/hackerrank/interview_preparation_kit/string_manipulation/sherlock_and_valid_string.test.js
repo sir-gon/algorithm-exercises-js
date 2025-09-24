@@ -9,11 +9,11 @@ describe('isValid', () => {
 
     const __YES__ = 'YES';
 
-    TEST_CASES.forEach((test) => {
+    for (const test of TEST_CASES) {
       const result = isValid(test.input) === __YES__;
 
       expect(result).toStrictEqual(test.expected);
-    });
+    }
 
     expect(TEST_CASES).toHaveLength(9);
   });

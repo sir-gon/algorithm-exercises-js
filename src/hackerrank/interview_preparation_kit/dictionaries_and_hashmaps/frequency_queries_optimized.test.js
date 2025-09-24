@@ -8,13 +8,13 @@ describe('frequency_queries', () => {
   it('freqQuery test cases', () => {
     expect.assertions(5);
 
-    TEST_CASES.forEach((value) => {
+    for (const value of TEST_CASES) {
       const answer = freqQuery(value.input);
 
       console.debug(`freqQuery(${value.input}) solution found: ${answer}`);
 
       expect(answer).toStrictEqual(value.expected);
-    });
+    }
 
     expect(TEST_CASES).toHaveLength(4);
   });

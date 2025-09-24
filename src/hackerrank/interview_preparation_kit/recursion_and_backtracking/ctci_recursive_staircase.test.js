@@ -9,15 +9,15 @@ describe('ctci_recursive_staircase', () => {
   it('stepPerms test cases', () => {
     expect.assertions(9);
 
-    TEST_CASES.forEach((testSet) => {
-      testSet?.tests.forEach((test) => {
+    for (const testSet of TEST_CASES) {
+      for (const test of testSet.tests) {
         const answer = stepPerms(test.n_steps);
 
         console.debug(`stepPerms(${test.n_steps}) solution found: ${answer}`);
 
         expect(answer).toStrictEqual(test.expected);
-      });
-    });
+      }
+    }
 
     expect(TEST_CASES).toHaveLength(3);
   });
@@ -27,8 +27,8 @@ describe('ctci_recursive_staircase', () => {
 
     const TOP_LIMIT = 10 ** 10 + 7;
 
-    TEST_CASES_GENERALIZED.forEach((testSet) => {
-      testSet?.tests.forEach((test) => {
+    for (const testSet of TEST_CASES_GENERALIZED) {
+      for (const test of testSet.tests) {
         const stairs = new StepPerms(TOP_LIMIT, test.steps_limit);
 
         const answer = stairs.stepPermsComputWithCache(test.n_steps);
@@ -38,8 +38,8 @@ describe('ctci_recursive_staircase', () => {
         );
 
         expect(answer).toStrictEqual(test.expected);
-      });
-    });
+      }
+    }
 
     expect(TEST_CASES_GENERALIZED).toHaveLength(3);
   });

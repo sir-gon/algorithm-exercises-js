@@ -28,7 +28,7 @@ function problem0021(_start, _limit) {
 
   const amicableNumbers = [];
 
-  Object.entries(data).forEach((entry) => {
+  for (const entry of Object.entries(data)) {
     const [index, value] = entry;
 
     if (
@@ -40,7 +40,7 @@ function problem0021(_start, _limit) {
     ) {
       amicableNumbers.push(`${index}`);
     }
-  });
+  }
 
   console.log(`result`, data);
   console.log(`amicableNumbers`, amicableNumbers);

@@ -9,7 +9,7 @@ describe('count_triplets_1 (optimized)', () => {
   it('countTriplets small test cases', () => {
     expect.assertions(5);
 
-    SMALL_TEST_CASES.forEach((test) => {
+    for (const test of SMALL_TEST_CASES) {
       const answer = countTriplets(test.input, test.r);
 
       console.debug(
@@ -17,7 +17,7 @@ describe('count_triplets_1 (optimized)', () => {
       );
 
       expect(answer).toStrictEqual(test.expected);
-    });
+    }
 
     expect(SMALL_TEST_CASES).toHaveLength(4);
   });
@@ -25,7 +25,7 @@ describe('count_triplets_1 (optimized)', () => {
   it('countTriplets big test cases', () => {
     expect.assertions(2);
 
-    BIG_TEST_CASES.forEach((test) => {
+    for (const test of BIG_TEST_CASES) {
       const answer = countTriplets(test.input, test.r);
 
       console.debug(
@@ -33,7 +33,7 @@ describe('count_triplets_1 (optimized)', () => {
       );
 
       expect(answer).toStrictEqual(test.expected);
-    });
+    }
 
     expect(BIG_TEST_CASES).toHaveLength(1);
   });

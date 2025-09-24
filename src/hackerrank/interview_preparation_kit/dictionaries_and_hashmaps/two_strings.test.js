@@ -10,8 +10,8 @@ describe('two_strings', () => {
 
     let totalTestsCount = 0;
 
-    TEST_CASES.forEach((testCase) => {
-      testCase.tests.forEach((test) => {
+    for (const testCase of TEST_CASES) {
+      for (const test of testCase.tests) {
         const answer = twoStrings(test.s1, test.s2);
 
         console.debug(
@@ -21,8 +21,8 @@ describe('two_strings', () => {
         expect(answer).toStrictEqual(test.expected);
 
         totalTestsCount += 1;
-      });
-    });
+      }
+    }
 
     expect(TEST_CASES).toHaveLength(3);
     expect(totalTestsCount).toBe(8);
