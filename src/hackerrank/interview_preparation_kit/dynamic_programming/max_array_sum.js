@@ -7,7 +7,7 @@ const bigIntMax = (...args) =>
   args.reduce((m, e) => (e > m ? e : m), BigInt(0));
 
 function maxSubsetSum(arr) {
-  const arrCopy = arr.map((x) => BigInt(x));
+  const arrCopy = arr.map(BigInt);
 
   if (arrCopy.length === 0) {
     return 0;
