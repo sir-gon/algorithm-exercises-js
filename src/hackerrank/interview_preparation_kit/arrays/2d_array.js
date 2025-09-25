@@ -3,19 +3,18 @@
  */
 
 function gethourGlass(arr, positionX, positionY) {
-  const result = [];
-
-  // top
-  result.push(arr[positionX - 1][positionY - 1]);
-  result.push(arr[positionX - 1][positionY]);
-  result.push(arr[positionX - 1][positionY + 1]);
-  // middle
-  result.push(arr[positionX][positionY]);
-  // bottom
-  result.push(arr[positionX + 1][positionY - 1]);
-  result.push(arr[positionX + 1][positionY]);
-  result.push(arr[positionX + 1][positionY + 1]);
-  return result;
+  return [
+    // top
+    arr[positionX - 1][positionY - 1],
+    arr[positionX - 1][positionY],
+    arr[positionX - 1][positionY + 1],
+    // middle
+    arr[positionX][positionY],
+    // bottom
+    arr[positionX + 1][positionY - 1],
+    arr[positionX + 1][positionY],
+    arr[positionX + 1][positionY + 1]
+  ];
 }
 
 function hourglassSum(arr) {
