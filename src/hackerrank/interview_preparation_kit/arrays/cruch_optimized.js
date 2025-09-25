@@ -8,7 +8,7 @@ function arrayManipulation(n, queries) {
   //   last slot for storing accumSum result
   const LENGTH = n + 2;
   const INITIAL_VALUE = 0;
-  const result = Array(LENGTH).fill(INITIAL_VALUE);
+  const result = new Array(LENGTH).fill(INITIAL_VALUE);
   let maximum = 0;
 
   for (const query of queries) {
