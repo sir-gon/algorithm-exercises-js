@@ -5,12 +5,11 @@
 const SEPARATOR = '\n';
 
 class SortableGroup {
+  count = 0;
+
   group;
 
-  count;
-
   constructor(group) {
-    this.count = 0;
     this.group = group;
   }
 
