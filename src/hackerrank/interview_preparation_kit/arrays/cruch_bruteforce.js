@@ -8,7 +8,7 @@ import { logger as console } from '../../../logger.js';
 function arrayManipulation(n, queries) {
   const LENGTH = n + 1;
   const SURROGATE_VALUE = 0;
-  const result = Array(LENGTH).fill(SURROGATE_VALUE);
+  const result = new Array(LENGTH).fill(SURROGATE_VALUE);
   let maximum = 0;
 
   for (const query of queries) {
