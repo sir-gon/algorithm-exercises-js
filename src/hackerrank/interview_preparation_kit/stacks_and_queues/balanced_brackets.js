@@ -12,10 +12,7 @@ function isBalancedCompute(s) {
   for (const letter of s.split('')) {
     if (letter in pairs) {
       brackets.push(letter);
-    } else if (
-      brackets.length > 0 &&
-      pairs[brackets[brackets.length - 1]] === letter
-    ) {
+    } else if (brackets.length > 0 && pairs[brackets.at(-1)] === letter) {
       brackets.pop();
     } else {
       return false;

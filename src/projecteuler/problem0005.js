@@ -25,7 +25,7 @@ function _replaceMaximum(_element, count, _group) {
   const group = _group;
   if (Object.hasOwn(group, _element)) {
     const elem = _group[_element];
-    group[_element] = count > elem ? count : elem;
+    group[_element] = Math.max(count, elem);
   } else {
     group[_element] = count;
   }
