@@ -25,7 +25,7 @@
   "devDependencies": {
     "@babel/eslint-parser": "^7.25.8",
     "@babel/plugin-syntax-import-assertions": "^7.23.3",
-    "@eslint/compat": "^1.4.1",
+    "@eslint/compat": "^2.0.0",
     "@eslint/eslintrc": "^3.1.0",
     "@eslint/js": "^9.39.0",
     "@jest/globals": "^30.0.0",
