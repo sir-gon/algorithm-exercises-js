@@ -27,4 +27,5 @@ in scientific notation, losing precision.
 This loss of precision can result in an erroneous result
 in the final calculation of permutations.
 
-To avoid this problem, it is necessary to introduce large number handling using BigInt.
+To avoid this problem, it is necessary to introduce large number handling using
+BigInt.

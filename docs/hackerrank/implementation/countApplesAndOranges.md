@@ -19,8 +19,9 @@ In the diagram below:
   fell $ d $ units to the tree's left, and a positive value of $ d $ means it falls
   $ d $ units to the tree's right.
 
-Given the value of $ d $ for $ m $ apples and $ n $ oranges, determine how many apples
-and oranges will fall on Sam's house (i.e., in the inclusive range $ [s, t] $)?
+Given the value of $ d $ for $ m $ apples and $ n $ oranges, determine how many
+apples and oranges will fall on Sam's house (i.e., in the inclusive range
+$ [s, t] $)?
 
 For example, Sam's house is between $ s = 7 $ and $ t = 10 $. The apple tree is
 located at $ a = 4 $ and the orange at $ b = 12 $. There are $ m = 3 $ apples
