@@ -9,7 +9,8 @@ on: # yamllint disable-line rule:truthy
     branches: ["main"]
   workflow_dispatch:
 
-permissions: read-all
+permissions:
+  contents: read
 
 jobs:
   markdownlint:
@@ -26,7 +27,12 @@ jobs:
           node-version: 24.x
 
       - name: Install dependencies
-        run: npm install -g markdownlint-cli
+        run: >
+          npm install -g --ignore-scripts markdownlint-cli@0.47.0
+
+      - name: Test dependencies
+        run: |
+          markdownlint --version
 
       - name: Lint
         run: >
