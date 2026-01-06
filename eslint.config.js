@@ -63,6 +63,10 @@ export default [
       'no-restricted-syntax': 0,
       'no-console': 'off',
       'no-underscore-dangle': 0,
+      // Disable jest rules that require TypeScript type information
+      'jest/no-error-equal': 0,
+      'jest/no-unnecessary-assertion': 0,
+      'jest/valid-expect-with-promise': 0,
 
       'no-plusplus': [
         'error',
