@@ -54,7 +54,7 @@ COPY ./.yamlignore ${WORKDIR}/
 COPY ./.gitignore ${WORKDIR}/
 
 # Dependencies
-RUN npm ci --verbose --ignore-scripts
+RUN npm ci --legacy-peer-deps --ignore-scripts
 
 CMD ["make", "lint"]
 ###############################################################################
@@ -122,7 +122,7 @@ COPY ./Makefile ${WORKDIR}/
 COPY ./package.json ${WORKDIR}/package.json
 COPY ./package-lock.json ${WORKDIR}/package-lock.json
 
-RUN  npm ci --verbose --omit=dev --omit=optional --ignore-scripts --no-cache \
+RUN  npm ci --legacy-peer-deps --omit=dev --omit=optional --ignore-scripts --no-cache \
   && ls -alh
 
 USER node
