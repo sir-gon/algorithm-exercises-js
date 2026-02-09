@@ -9,7 +9,7 @@ function problem0025(_top) {
   let last1 = bigNum('1');
   let last2 = bigNum('1');
   let counter = 2;
-  let fibo = '0';
+  let fibo;
 
   do {
     fibo = bigSum(bigNumToString(last1), bigNumToString(last2));

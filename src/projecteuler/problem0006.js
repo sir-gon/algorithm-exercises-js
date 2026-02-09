@@ -12,19 +12,16 @@
 import { logger as console } from '../logger.js';
 
 function problem0006(_bottom = 1, _top = 100) {
-  let answer = 0;
-
   let sumOfSquares = 0;
   let baseForSquareOfSum = 0;
-  let squareOfSum = 0;
 
   for (let i = _bottom; i <= _top; i++) {
     sumOfSquares += i ** 2;
     baseForSquareOfSum += i;
   }
 
-  squareOfSum = baseForSquareOfSum ** 2;
-  answer = squareOfSum - sumOfSquares;
+  const squareOfSum = baseForSquareOfSum ** 2;
+  const answer = squareOfSum - sumOfSquares;
 
   console.debug(`Sum of first ${_top} squares = ${sumOfSquares}`);
   console.debug(
