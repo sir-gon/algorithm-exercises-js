@@ -19,8 +19,6 @@ function countAs(word) {
 }
 
 function repeatedString(s, n) {
-  let result = 0;
-
   const blockSize = s.length;
 
   const countBlocks = Math.floor(n / blockSize);
@@ -28,7 +26,7 @@ function repeatedString(s, n) {
 
   console.debug(`countBlocks: ${countBlocks} + rest: ${restSize}`);
 
-  result = countAs(s) * countBlocks + countAs(s.slice(0, restSize));
+  const result = countAs(s) * countBlocks + countAs(s.slice(0, restSize));
   return result;
 }
 

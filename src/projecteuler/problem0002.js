@@ -10,7 +10,7 @@ function problem0002(_top) {
   let last2 = 0;
   let evenSum = 0;
 
-  let fibo = 0;
+  let fibo;
   do {
     fibo = last2 + last1;
 

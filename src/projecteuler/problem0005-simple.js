@@ -26,7 +26,6 @@ function problem0005Simple(_bottom, _top, _startFrom) {
 
   do {
     i = 2;
-    fail = false;
     do {
       fail = test % i !== 0;
 

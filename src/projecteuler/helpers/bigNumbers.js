@@ -15,9 +15,9 @@ export const bigSum = (strNumberA, strNumberB) => {
   const a = bigNum(strNumberA).reverse();
   const b = bigNum(strNumberB).reverse();
 
-  let sum = 0;
+  let sum;
+  let digit;
   let carry = 0;
-  let digit = 0;
 
   // adjust numbers length
   if (a.length > b.length) {
@@ -65,9 +65,9 @@ export const bigMultiplyRowToBigNum = (strNumber, multiplierDigit) => {
   const number = bigNum(strNumber).reverse();
   const result = [];
 
-  let mul = 0;
+  let mul;
+  let digit;
   let carry = 0;
-  let digit = 0;
 
   for (const multiplicand of number) {
     mul = multiplicand * multiplierDigit + carry;
