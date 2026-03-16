@@ -28,7 +28,7 @@
     "@eslint/compat": "^2.0.3",
     "@eslint/eslintrc": "^3.3.5",
     "@eslint/js": "^10.0.1",
-    "@jest/globals": "^30.0.0",
+    "@jest/globals": "^30.3.0",
     "concurrently": "9.2.1",
     "cross-env": "^10.0.0",
     "eslint": "^9.39.2",
