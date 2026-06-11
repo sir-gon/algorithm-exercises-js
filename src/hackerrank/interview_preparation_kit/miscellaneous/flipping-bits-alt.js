@@ -4,9 +4,7 @@
  */
 
 function flippingBitsAlt(n) {
-  // eslint-disable-next-line no-bitwise
   return ~n >>> 0;
 }
-
 export default { flippingBitsAlt };
 export { flippingBitsAlt };
