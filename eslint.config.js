@@ -27,7 +27,7 @@ export default [
       'eslint:recommended',
       'airbnb-base',
       'prettier',
-      'plugin:jest/all'
+      'plugin:jest/recommended'
     )
   ),
   {
