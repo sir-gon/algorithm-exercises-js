@@ -97,7 +97,7 @@ export const primeFactors = (target) => {
   let cycles = 0;
 
   if (target === 1) {
-    return { 'factors': [1], 'cycles': 1 };
+    return { factors: [1], cycles: 1 };
   }
 
   let factor = target;
@@ -109,7 +109,7 @@ export const primeFactors = (target) => {
     factor = partial.carry;
   }
 
-  return { 'factors': factors, 'cycles': cycles };
+  return { factors, cycles };
 };
 
 export const isPrime = (target) =>
