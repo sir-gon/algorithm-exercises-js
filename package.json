@@ -7,7 +7,6 @@
     "build": "npx --yes copyfiles --verbose -R --up 1 -e \"**/*.test.js\" -e \"**/*.config.js\" \"**/*.js\" dist/",
     "start": "npm run test",
     "lint": "npx --yes eslint --env-info; npx --yes eslint . --color --max-warnings=0 && echo '✔  Your code looks good.'",
-    "lint:watch": "npx --yes esw . --color --max-warnings=0 --watch",
     "jest:ci": "cross-env NODE_OPTIONS=--experimental-vm-modules npx jest --no-cache --ci --color --detectOpenHandles --forceExit --runInBand --debug",
     "jest:clean": "npx --yes jest --clearCache && npx --yes watchman watch-del-all",
     "jest:bruteforce": "cross-env BRUTEFORCE=true NODE_OPTIONS=--experimental-vm-modules npx jest --no-cache --ci --color --detectOpenHandles --forceExit --runInBand --debug",
@@ -34,11 +33,13 @@
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-jest": "29.15.2",
     "eslint-plugin-prettier": "5.5.6",
-    "eslint-watch": "8.0.0",
     "globals": "^17.0.0",
     "jest": "30.4.2",
     "neostandard": "^0.13.0",
     "prettier": "3.8.4"
+  },
+  "overrides": {
+    "eslint": "$eslint"
   },
   "dependencies": {
     "pino": "^10.1.0",
