@@ -9,5 +9,7 @@
     "connectionId": "sir-gon",
     "projectKey": "sir-gon_algorithm-exercises-js"
   },
-  "snyk.advanced.additionalParameters": "--exclude=.trunk,coverage"
+  "snyk.advanced.additionalParameters": "--exclude=.trunk,coverage",
+  "snyk.advanced.organization": "52c13fa7-37a8-4c92-a695-3352fb0c3586",
+  "snyk.advanced.autoSelectOrganization": true
 }
