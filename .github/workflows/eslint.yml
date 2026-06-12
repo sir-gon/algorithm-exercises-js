@@ -47,7 +47,7 @@ jobs:
 
       - name: Install ESLint
         run: |
-          npm install --include=dev eslint@8.57.1
+          npm install --include=dev eslint@10.4.1
 
       - name: Test ESLint
         run: |
