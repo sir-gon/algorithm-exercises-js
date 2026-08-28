@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=node:26.7.0-alpine3.24
+ARG BASE_IMAGE=node:26.8.1-alpine3.24
 
 ###############################################################################
 FROM ${BASE_IMAGE} AS base
