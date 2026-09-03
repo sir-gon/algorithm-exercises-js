@@ -39,6 +39,7 @@
     "prettier": "3.9.6"
   },
   "overrides": {
+    "@babel/core": "^7.29.1",
     "eslint": "$eslint"
   },
   "dependencies": {
