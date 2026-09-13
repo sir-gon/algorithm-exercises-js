@@ -81,7 +81,9 @@ lint/markdown:
 lint/yaml:
 	yamllint --strict . && echo '✔  Your code looks good.'
 
-lint: lint/markdown lint/yaml lint/json test/styling test/static
+lint: test/styling test/static
+
+lint/all: lint/markdown lint/yaml test/styling test/static
 
 test/static: dependencies
 	${NPM} run lint
@@ -123,12 +125,19 @@ compose/rebuild: env
 	${DOCKER_COMPOSE} --profile testing build --no-cache
 	${DOCKER_COMPOSE} --profile production build --no-cache
 
-compose/lint/markdown: compose/build
-	${DOCKER_COMPOSE} --profile lint build
-	${DOCKER_COMPOSE} --profile lint run --rm algorithm-exercises-js-lint make lint/markdown
+compose/lint/markdown:
+	${DOCKER_COMPOSE} --profile lint run --rm \
+    --workdir /workspace \
+    -v "$$(pwd):/workspace" \
+    markdownlint --config /workspace/.markdownlint.json '/workspace/**/*.md' \
+		&& echo '✔  Your code looks good.'
 
-compose/lint/yaml: compose/build
-	${DOCKER_COMPOSE} --profile lint run --rm algorithm-exercises-js-lint make lint/yaml
+compose/lint/yaml:
+	${DOCKER_COMPOSE} --profile lint run --rm \
+	--workdir /workspace \
+	-v "$$(pwd):/workspace" \
+ 	yamllint --strict . \
+  && echo '✔  Your code looks good.'s
 
 compose/test/styling: compose/build
 	${DOCKER_COMPOSE} --profile lint run --rm algorithm-exercises-js-lint make test/styling

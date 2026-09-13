@@ -15,11 +15,6 @@ FROM base AS lint
 ENV WORKDIR=/app
 WORKDIR ${WORKDIR}
 
-RUN  apk add --update --no-cache make nodejs npm \
-  && apk add --update --no-cache yamllint \
-  && npm install -g --ignore-scripts markdownlint-cli@0.49.1 \
-  && npm install -g --ignore-scripts prettier@3.7.4
-
 # [!TIP] Use a bind-mount to "/app" to override following "copys"
 # for lint and test against "current" sources in this stage
 
@@ -40,18 +35,8 @@ COPY ./package-lock.json ${WORKDIR}/package-lock.json
 COPY ./Makefile ${WORKDIR}/
 
 # code linting conf
-COPY ./.prettierrc.yaml ${WORKDIR}/
-COPY ./.prettierignore ${WORKDIR}/
 COPY ./eslint.config.js ${WORKDIR}/
 COPY ./.babelrc ${WORKDIR}/
-
-# markdownlint conf
-COPY ./.markdownlint.json ${WORKDIR}/
-
-# yamllint conf
-COPY ./.yamllint ${WORKDIR}/
-COPY ./.yamlignore ${WORKDIR}/
-COPY ./.gitignore ${WORKDIR}/
 
 # Dependencies
 RUN npm ci --verbose --ignore-scripts
