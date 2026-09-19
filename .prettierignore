@@ -1,5 +1,7 @@
+/*.json
 coverage
 dist
 node_modules
 .serverless
 .webpack
+.vscode

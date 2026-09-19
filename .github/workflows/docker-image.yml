@@ -105,6 +105,16 @@ jobs:
         run: >
           make compose/lint/yaml
 
+  run-lint-json:
+    name: "Run in docker: JSON LINT"
+    runs-on: ubuntu-26.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - name: Run JSON lint
+        run: >
+          make compose/lint/json
+
   run-lint:
     name: 'Run in docker: LINT'
     runs-on: ubuntu-26.04
