@@ -73,7 +73,7 @@ dependencies:
 	@echo "################################################################################"
 
 lint/json:
-	prettier --check ./src/**/*.json
+	prettier --check ./**/*.json
 
 lint/markdown:
 	markdownlint --config .markdownlint.json '**/*.md' --ignore node_modules && echo '✔  Your code looks good.'
@@ -83,7 +83,7 @@ lint/yaml:
 
 lint: test/styling test/static
 
-lint/all: lint/markdown lint/yaml test/styling test/static
+lint/all: lint/markdown lint/yaml lint/json test/styling test/static
 
 test/static: dependencies
 	${NPM} run lint
@@ -95,7 +95,7 @@ format/sources: dependencies
 	${NPM} run style:format
 
 format/json:
-	prettier --write ./src/**/*.json
+	prettier --write ./**/*.json
 
 format: format/sources format/json
 
@@ -139,13 +139,22 @@ compose/lint/yaml:
  	yamllint --strict . \
   && echo '✔  Your code looks good.'s
 
+compose/lint/json:
+	${DOCKER_COMPOSE} --profile lint run --rm \
+    --workdir /workspace \
+    -v "$$(pwd):/workspace" \
+    prettier --check /workspace/**/*.json \
+		&& echo '✔  Your code looks good.'
+
 compose/test/styling: compose/build
 	${DOCKER_COMPOSE} --profile lint run --rm algorithm-exercises-js-lint make test/styling
 
 compose/test/static: compose/build
 	${DOCKER_COMPOSE} --profile lint run --rm algorithm-exercises-js-lint make test/static
 
-compose/lint: compose/lint/markdown compose/lint/yaml compose/test/styling compose/test/static
+compose/lint: compose/test/styling compose/test/static
+
+compose/lint/all: compose/lint/markdown compose/lint/yaml compose/lint/json compose/test/styling compose/test/static
 
 compose/test: compose/build
 	${DOCKER_COMPOSE} --profile testing run --rm algorithm-exercises-js-test make test

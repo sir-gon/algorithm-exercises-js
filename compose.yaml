@@ -38,6 +38,13 @@ services:
       - ./:/workspace
     profiles: ['lint']
 
+  prettier:
+    image: goncl/prettier:3.9.8
+    working_dir: /workspace
+    volumes:
+      - ./:/workspace
+    profiles: ["lint"]
+
   algorithm-exercises-js-dev:
     image: ${IMAGE_NAME:-algorithm-exercises-js}:dev
     build:
