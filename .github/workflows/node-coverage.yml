@@ -11,7 +11,7 @@ on: # yamllint disable-line rule:truthy
 jobs:
   build-and-test:
     name: Build, Lint & Test
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
 
     steps:
       - name: Checkout repository
@@ -43,7 +43,7 @@ jobs:
 
   codecov:
     name: Upload to Codecov
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     needs: build-and-test
 
     steps:
@@ -66,7 +66,7 @@ jobs:
 
   sonarqube:
     name: Analyze with SonarQube
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     needs: build-and-test
 
     steps:
