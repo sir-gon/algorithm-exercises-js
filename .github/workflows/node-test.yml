@@ -16,7 +16,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: ["ubuntu-26.04", "macos-26", "windows-2022"]
+        os: ["ubuntu-26.04", "macos-26", "windows-2025"]
         node-version: [22.x, 24.x, 26.x]
         # See supported Node.js release schedule
         # at https://nodejs.org/en/about/releases/
