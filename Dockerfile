@@ -3,7 +3,7 @@ ARG BASE_IMAGE=node:26.9.0-alpine3.24
 ###############################################################################
 FROM ${BASE_IMAGE} AS base
 
-RUN  apk add --update --no-cache make \
+RUN apk add --update --no-cache "make=4.4.1-r4" \
   && apk upgrade --update --no-cache openssl libcrypto3 libssl3 # FIX CVE-2024-5535
 
 ENV WORKDIR=/app
@@ -107,8 +107,8 @@ COPY ./Makefile ${WORKDIR}/
 COPY ./package.json ${WORKDIR}/package.json
 COPY ./package-lock.json ${WORKDIR}/package-lock.json
 
-RUN  npm ci --verbose --omit=dev --omit=optional --ignore-scripts --no-cache \
+RUN npm ci --verbose --omit=dev --omit=optional --ignore-scripts --no-cache \
   && ls -alh
 
-USER node
+USER 1000
 CMD ["ls", "-alh"]
