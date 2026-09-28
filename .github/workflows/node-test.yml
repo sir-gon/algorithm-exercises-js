@@ -10,6 +10,9 @@ on: # yamllint disable-line rule:truthy
     branches: ["main"]
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   test:
     name: NodeJS Jest CI Test
