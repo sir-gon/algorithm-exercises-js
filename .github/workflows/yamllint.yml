@@ -9,6 +9,9 @@ on: # yamllint disable-line rule:truthy
     branches: ["main"]
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   lint:
     name: YAML lint
@@ -18,7 +21,8 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
       - name: Install yamllint
-        run: pip install yamllint
+        run: |
+          pip install --only-binary :all: yamllint==1.38.0
 
       - name: Lint YAML files
         run: >

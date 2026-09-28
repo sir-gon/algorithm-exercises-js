@@ -11,6 +11,7 @@
 
 name: ESLint
 
+# yamllint disable rule:line-length
 
 on: # yamllint disable-line rule:truthy
   push:
@@ -47,15 +48,15 @@ jobs:
 
       - name: Install ESLint
         run: |
-          npm install --include=dev eslint@10.4.1
+          npm install --ignore-scripts --include=dev eslint@10.4.1
 
       - name: Test ESLint
         run: |
-          npx --yes eslint --env-info
+          ./node_modules/.bin/eslint --env-info
 
       - name: Run ESLint
         run: >
-          npx eslint .
+          ./node_modules/.bin/eslint .
           --color
           --max-warnings=0
           && echo '✔  Your code looks good.'

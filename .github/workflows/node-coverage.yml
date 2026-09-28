@@ -8,6 +8,9 @@ on: # yamllint disable-line rule:truthy
     branches: ["main"]
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   build-and-test:
     name: Build, Lint & Test
@@ -25,7 +28,7 @@ jobs:
           node-version: 26.x
 
       - name: Install dependencies
-        run: npm ci --verbose
+        run: npm ci --ignore-scripts --verbose
 
       - name: Lint
         run: npm run lint
@@ -39,7 +42,6 @@ jobs:
         with:
           name: coverage-report
           path: coverage # o la carpeta donde jest genera los reportes
-
 
   codecov:
     name: Upload to Codecov
@@ -59,7 +61,7 @@ jobs:
           path: coverage
 
       - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v7
+        uses: codecov/codecov-action@303a32d7a59b442fa8d48b6a1cc6825c09c847a5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           verbose: true
@@ -82,7 +84,8 @@ jobs:
           path: coverage
 
       - name: SonarQube Scan
-        uses: SonarSource/sonarqube-scan-action@master
+        # yamllint disable-line rule:line-length
+        uses: SonarSource/sonarqube-scan-action@ba9859eae8dd6bd29e412f25ddbbef3d032000f4
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
