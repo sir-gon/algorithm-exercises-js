@@ -32,6 +32,9 @@ on: # yamllint disable-line rule:truthy
     #        *  * * * *
     - cron: '23 15 * * 2'
 
+permissions:
+  contents: read
+
 jobs:
   eslint:
     name: Run eslint scanning
