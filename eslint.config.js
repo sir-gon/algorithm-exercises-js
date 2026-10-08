@@ -5,7 +5,7 @@ import prettierConfig from 'eslint-config-prettier';
 
 export default [
   ...neostandard({
-    ignores: ['**/coverage', '**/dist', '**/node_modules', 'eslint.config.js'],
+    ignores: ['**/coverage', '**/dist', '**/node_modules', 'eslint.config.js']
   }),
   {
     files: ['**/*.js'],
