@@ -24,7 +24,7 @@ jobs:
 
       - name: Install Prettier
         run: |
-          npm install -g --ignore-scripts prettier@3.9.8
+          npm install -g --ignore-scripts prettier@3.9.10
 
       - name: Tool check
         run: |
