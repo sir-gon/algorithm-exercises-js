@@ -2,7 +2,7 @@ import { describe, expect, it } from '@jest/globals';
 import { logger as console } from '../../../logger.js';
 
 import { hourglassSum } from './2d_array.js';
-import TEST_CASES from './2d_array.testcases_test.json';
+import TEST_CASES from './2d_array.testcases.json' with { type: 'json' };
 
 describe('arrays: 2d Array hourglassSum', () => {
   it('hourglassSum Test Cases', () => {

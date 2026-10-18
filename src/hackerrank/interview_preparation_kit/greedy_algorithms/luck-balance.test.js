@@ -3,7 +3,7 @@ import { logger as console } from '../../../logger.js';
 
 import { luckBalance } from './luck-balance.js';
 
-import TEST_CASES from './luck-balance.testcases.json';
+import TEST_CASES from './luck-balance.testcases.json' with { type: 'json' };
 
 describe('luck-balance', () => {
   it('luckBalance test cases', () => {

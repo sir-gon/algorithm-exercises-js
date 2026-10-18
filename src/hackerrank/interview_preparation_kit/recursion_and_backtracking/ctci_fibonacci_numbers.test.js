@@ -2,7 +2,7 @@ import { describe, expect, it } from '@jest/globals';
 import { logger as console } from '../../../logger.js';
 
 import { fibonacci } from './ctci_fibonacci_numbers.js';
-import TEST_CASES from './ctci_fibonacci_numbers.testcases.json';
+import TEST_CASES from './ctci_fibonacci_numbers.testcases.json' with { type: 'json' };
 
 describe('ctci_fibonacci_numbers', () => {
   it('fibonacci test cases', () => {

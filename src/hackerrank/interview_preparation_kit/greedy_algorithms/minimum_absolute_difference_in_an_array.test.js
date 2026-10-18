@@ -3,7 +3,7 @@ import { logger as console } from '../../../logger.js';
 
 import { minimumAbsoluteDifference } from './minimum_absolute_difference_in_an_array.js';
 
-import TEST_CASES from './minimum_absolute_difference_in_an_array.testcases.json';
+import TEST_CASES from './minimum_absolute_difference_in_an_array.testcases.json' with { type: 'json' };
 
 describe('minimum_absolute_difference_in_an_array', () => {
   it('minimumAbsoluteDifference test cases', () => {

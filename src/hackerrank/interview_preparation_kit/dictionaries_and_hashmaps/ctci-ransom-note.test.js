@@ -2,7 +2,7 @@ import { describe, expect, it } from '@jest/globals';
 import { logger as console } from '../../../logger.js';
 
 import { checkMagazine, checkMagazineText } from './ctci-ransom-note.js';
-import TEST_CASES from './ctci-ransom-note.testcases.json';
+import TEST_CASES from './ctci-ransom-note.testcases.json' with { type: 'json' };
 
 describe('ctci_ransom_note', () => {
   it('checkMagazine test cases', () => {

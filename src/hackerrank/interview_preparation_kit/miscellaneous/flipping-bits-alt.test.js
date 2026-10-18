@@ -3,7 +3,7 @@ import { logger as console } from '../../../logger.js';
 
 import { flippingBitsAlt } from './flipping-bits-alt.js';
 
-import TEST_CASES from './flipping-bits.testcases.json';
+import TEST_CASES from './flipping-bits.testcases.json' with { type: 'json' };
 
 describe('flipping bits', () => {
   it('flipping bits test cases', () => {

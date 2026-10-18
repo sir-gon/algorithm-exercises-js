@@ -1,7 +1,7 @@
 import { describe, expect, it } from '@jest/globals';
 
 import { countSwaps, SortableGroup } from './ctci_bubble_sort.js';
-import TEST_CASES from './ctci_bubble_sort.testcases.json';
+import TEST_CASES from './ctci_bubble_sort.testcases.json' with { type: 'json' };
 
 describe('countSwaps', () => {
   it('build tree and flattened tree test cases', () => {

@@ -2,8 +2,8 @@ import { describe, expect, it } from '@jest/globals';
 import { logger as console } from '../../../logger.js';
 
 import { stepPerms, StepPerms } from './ctci_recursive_staircase.js';
-import TEST_CASES from './ctci_recursive_staircase.testcases.json';
-import TEST_CASES_GENERALIZED from './ctci_recursive_staircase_generalized.testcases.json';
+import TEST_CASES from './ctci_recursive_staircase.testcases.json' with { type: 'json' };
+import TEST_CASES_GENERALIZED from './ctci_recursive_staircase_generalized.testcases.json' with { type: 'json' };
 
 describe('ctci_recursive_staircase', () => {
   it('stepPerms test cases', () => {

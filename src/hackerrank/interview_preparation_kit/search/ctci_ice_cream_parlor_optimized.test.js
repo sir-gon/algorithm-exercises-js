@@ -5,8 +5,8 @@ import {
   whatFlavors,
   whatFlavorsCompute
 } from './ctci_ice_cream_parlor_optimized.js';
-import TEST_CASES from './ctci_ice_cream_parlor.testcases.json';
-import TEST_CASES_BORDER_CASES from './ctci_ice_cream_parlor.border_testcases.json';
+import TEST_CASES from './ctci_ice_cream_parlor.testcases.json' with { type: 'json' };
+import TEST_CASES_BORDER_CASES from './ctci_ice_cream_parlor_border.testcases.json' with { type: 'json' };
 
 describe('ctci_ice_cream_parlor_optimized', () => {
   it('whatFlavorsCompute test cases', () => {

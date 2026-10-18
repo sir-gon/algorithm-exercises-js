@@ -3,7 +3,7 @@ import { logger as console } from '../../logger.js';
 
 import { euler002 } from './euler002.js';
 
-import TEST_CASES from './euler002.testcases.json';
+import TEST_CASES from './euler002.testcases.json' with { type: 'json' };
 
 describe('euler002', () => {
   it('euler002 JSON Test cases', () => {

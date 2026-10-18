@@ -2,7 +2,7 @@ import { describe, expect, it } from '@jest/globals';
 import { logger as console } from '../../../logger.js';
 
 import { sherlockAndAnagrams } from './sherlock_and_anagrams.js';
-import TEST_CASES from './sherlock_and_anagrams.testcases.json';
+import TEST_CASES from './sherlock_and_anagrams.testcases.json' with { type: 'json' };
 
 describe('sherlock_and_anagrams', () => {
   it('sherlockAndAnagrams test cases', () => {

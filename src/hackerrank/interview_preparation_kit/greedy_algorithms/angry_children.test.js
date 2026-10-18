@@ -3,7 +3,7 @@ import { logger as console } from '../../../logger.js';
 
 import { maxMin } from './angry_children.js';
 
-import TEST_CASES from './angry_children.testcases.json';
+import TEST_CASES from './angry_children.testcases.json' with { type: 'json' };
 
 describe('angry_children', () => {
   it('maxMin test cases', () => {

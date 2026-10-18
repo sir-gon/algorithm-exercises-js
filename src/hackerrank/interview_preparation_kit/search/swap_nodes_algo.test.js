@@ -2,7 +2,7 @@ import { describe, expect, it } from '@jest/globals';
 
 import { Node } from '../../lib/Node.js';
 import { Tree, swapNodes, __INITIAL_LEVEL__ } from './swap_nodes_algo.js';
-import TEST_CASES from './swap_nodes_algo.testcases.json';
+import TEST_CASES from './swap_nodes_algo.testcases.json' with { type: 'json' };
 
 describe('swap_nodes_algo', () => {
   it('testbuildTree_empty', () => {

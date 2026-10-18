@@ -3,7 +3,7 @@ import { logger as console } from '../../../logger.js';
 
 import { getMinimumCost } from './greedy_florist.js';
 
-import TEST_CASES from './greedy_florist.testcases.json';
+import TEST_CASES from './greedy_florist.testcases.json' with { type: 'json' };
 
 describe('greedy_florist', () => {
   it('getMinimumCost test cases', () => {
