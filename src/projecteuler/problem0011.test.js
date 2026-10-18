@@ -3,7 +3,7 @@ import { logger as console } from '../logger.js';
 
 import { problem0011 } from './problem0011.js';
 
-import matrix from './data/problem0011.json';
+import matrix from './data/problem0011.json' with { type: 'json' };
 
 describe('problem 0011', () => {
   it('problem 0011 solution found', () => {

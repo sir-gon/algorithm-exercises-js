@@ -3,7 +3,7 @@ import { logger as console } from '../../../logger.js';
 
 import { minimumBribes, minimumBribesText } from './new_year_chaos.js';
 
-import TEST_CASES from './new_year_chaos.testcases.json';
+import TEST_CASES from './new_year_chaos.testcases.json' with { type: 'json' };
 
 describe('new_year_chaos', () => {
   it('minimumBribes Test Cases', () => {

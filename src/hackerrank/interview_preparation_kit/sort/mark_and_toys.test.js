@@ -1,7 +1,7 @@
 import { describe, expect, it } from '@jest/globals';
 
 import { maximumToys } from './mark_and_toys.js';
-import TEST_CASES from './mark_and_toys.testcases.json';
+import TEST_CASES from './mark_and_toys.testcases.json' with { type: 'json' };
 
 describe('maximumToys', () => {
   it('maximumToys test cases', () => {

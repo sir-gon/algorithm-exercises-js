@@ -1,7 +1,7 @@
 import { describe, expect, it } from '@jest/globals';
 
 import { Tree, swapNodes } from './swap_nodes_algo.js';
-import BIG_TEST_CASES from './swap_nodes_algo.big.testcases.json';
+import BIG_TEST_CASES from './swap_nodes_algo.big.testcases.json' with { type: 'json' };
 
 describe('swap_nodes_algo', () => {
   it('build_tree and plain test cases', () => {

@@ -2,7 +2,7 @@ import { describe, expect, it } from '@jest/globals';
 import { logger as console } from '../../../logger.js';
 
 import { maxCircle } from './friend_circle_queries.js';
-import TEST_CASES from './friend_circle_queries.testcases.json';
+import TEST_CASES from './friend_circle_queries.testcases.json' with { type: 'json' };
 
 describe('friend_circle_queries', () => {
   it('maxCircle test cases', () => {

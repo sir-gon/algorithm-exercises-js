@@ -1,7 +1,7 @@
 import { describe, expect, it } from '@jest/globals';
 
 import { alternatingCharacters } from './alternating_characters.js';
-import TEST_CASES from './alternating_characters.testcases.json';
+import TEST_CASES from './alternating_characters.testcases.json' with { type: 'json' };
 
 describe('alternatingCharacters', () => {
   it('alternatingCharacters test cases', () => {

@@ -1,7 +1,7 @@
 import { describe, expect, it } from '@jest/globals';
 
 import { isBalanced } from './balanced_brackets.js';
-import TEST_CASES from './balanced_brackets.testcases.json';
+import TEST_CASES from './balanced_brackets.testcases.json' with { type: 'json' };
 
 describe('isBalanced', () => {
   it('isBalanced test cases', () => {

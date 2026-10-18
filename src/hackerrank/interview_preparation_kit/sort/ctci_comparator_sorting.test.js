@@ -7,7 +7,7 @@ import {
   comparatorSorting,
   comparatorSortingPrint
 } from './ctci_comparator_sorting.js';
-import TEST_CASES from './ctci_comparator_sorting.testcases.json';
+import TEST_CASES from './ctci_comparator_sorting.testcases.json' with { type: 'json' };
 
 describe('comparatorSorting', () => {
   it('test_player', () => {

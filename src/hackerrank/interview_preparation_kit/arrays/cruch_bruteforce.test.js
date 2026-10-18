@@ -1,7 +1,7 @@
 import { describe, expect, it } from '@jest/globals';
 import { logger as console } from '../../../logger.js';
 
-import TEST_CASES from './cruch_testcases_test.json';
+import TEST_CASES from './cruch.testcases.json' with { type: 'json' };
 
 import { arrayManipulation } from './cruch_bruteforce.js';
 

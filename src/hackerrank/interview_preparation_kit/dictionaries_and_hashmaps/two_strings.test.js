@@ -2,7 +2,7 @@ import { describe, expect, it } from '@jest/globals';
 import { logger as console } from '../../../logger.js';
 
 import { twoStrings } from './two_strings.js';
-import TEST_CASES from './two_strings.testcases.json';
+import TEST_CASES from './two_strings.testcases.json' with { type: 'json' };
 
 describe('two_strings', () => {
   it('twoStrings test cases', () => {

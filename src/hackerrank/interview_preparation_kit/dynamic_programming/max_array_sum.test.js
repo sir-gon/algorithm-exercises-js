@@ -3,7 +3,7 @@ import { logger as console } from '../../../logger.js';
 
 import { maxSubsetSum } from './max_array_sum.js';
 
-import TEST_CASES from './max_array_sum.testcases.json';
+import TEST_CASES from './max_array_sum.testcases.json' with { type: 'json' };
 import TEST_CASE3 from './max_array_sum.testcase3.json';
 
 const ALL_TEST_CASES = [...TEST_CASES, TEST_CASE3];

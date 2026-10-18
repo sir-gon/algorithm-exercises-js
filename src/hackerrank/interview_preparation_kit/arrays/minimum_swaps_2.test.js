@@ -3,7 +3,7 @@ import { logger as console } from '../../../logger.js';
 
 import { minimumSwaps } from './minimum_swaps_2.js';
 
-import TEST_CASES from './minimum_swaps_2.testcases.json';
+import TEST_CASES from './minimum_swaps_2.testcases.json' with { type: 'json' };
 
 describe('minimum swaps 2', () => {
   it('minimumSwaps', () => {

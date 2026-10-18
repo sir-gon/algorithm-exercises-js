@@ -3,7 +3,7 @@ import { logger as console } from '../../../logger.js';
 
 import { rotLeft } from './ctci_array_left_rotation.js';
 
-import ROT_LEFT_TEST_CASES from './ctci_array_left_rotation.testcases.json';
+import ROT_LEFT_TEST_CASES from './ctci_array_left_rotation.testcases.json' with { type: 'json' };
 
 describe('ctci_array_left_rotation', () => {
   it('rotLeft Test cases', () => {

@@ -2,8 +2,8 @@ import { describe, expect, it } from '@jest/globals';
 import { logger as console } from '../../../logger.js';
 
 import { countTriplets } from './count_triplets_1_optmized.js';
-import SMALL_TEST_CASES from './count_triplets_1.small.testcases.json';
-import BIG_TEST_CASES from './count_triplets_1.big.testcases.json';
+import SMALL_TEST_CASES from './count_triplets_1.small.testcases.json' with { type: 'json' };
+import BIG_TEST_CASES from './count_triplets_1.big.testcases.json' with { type: 'json' };
 
 describe('count_triplets_1 (optimized)', () => {
   it('countTriplets small test cases', () => {

@@ -1,7 +1,7 @@
 import { describe, expect, it } from '@jest/globals';
 
 import { makeAnagram } from './ctci_making_anagrams.js';
-import TEST_CASES from './ctci_making_anagrams.testcases.json';
+import TEST_CASES from './ctci_making_anagrams.testcases.json' with { type: 'json' };
 
 describe('makeAnagram', () => {
   it('makeAnagram test cases', () => {

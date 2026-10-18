@@ -1,7 +1,7 @@
 import { describe, expect, it } from '@jest/globals';
 
 import { isValid } from './sherlock_and_valid_string.js';
-import TEST_CASES from './sherlock_and_valid_string.testcases.json';
+import TEST_CASES from './sherlock_and_valid_string.testcases.json' with { type: 'json' };
 
 describe('isValid', () => {
   it('isValid test cases', () => {
