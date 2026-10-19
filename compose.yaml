@@ -39,7 +39,7 @@ services:
     profiles: ['lint']
 
   prettier:
-    image: goncl/prettier:3.9.8
+    image: goncl/prettier:3.9.10
     working_dir: /workspace
     volumes:
       - ./:/workspace
